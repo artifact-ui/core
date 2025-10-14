@@ -3,6 +3,20 @@
   "version": "1.0.0",
   "description": "React component library - design artifacts built on Radix UI primitives.",
   "type": "module",
+  "module": "./dist/artifact-ui.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/artifact-ui.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Ryan Brockhoff",
+  "license": "MIT",
   "keywords": [
     "react",
     "components",
@@ -12,8 +26,6 @@
     "radix-ui",
     "typescript"
   ],
-  "author": "Ryan Brockhoff",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/artifact-ui/core"
@@ -22,11 +34,37 @@
     "url": "https://github.com/artifact-ui/core/issues"
   },
   "homepage": "https://github.com/artifact-ui/core#readme",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite build --watch",
+    "type-check": "tsc --noEmit",
+    "commit": "cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "dependencies": {
     "radix-ui": "^1.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.3.0"
   }
 }
