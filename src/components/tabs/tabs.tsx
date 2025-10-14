@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
 import styles from './tabs.module.css';
 
 // Tabs Root

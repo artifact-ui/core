@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
 import styles from './separator.module.css';
 
 export interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {

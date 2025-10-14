@@ -1,7 +1,8 @@
 import React, { forwardRef, createContext, useContext } from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { CheckIcon, CaretDownIcon } from '@/components/icons';
-import { cn } from '@/styles/utils';
+import { CheckIcon } from '../../icons/CheckIcon';
+import { CaretDownIcon } from '../../icons/CaretDownIcon';
+import { cn } from '../../utils/cn';
 import { type FormError } from '@/types/form-types';
 import { getErrorState, getErrorMessage } from '@/utils/form-error-helpers';
 import { Text } from '../text/text';
@@ -181,7 +182,7 @@ const Trigger = forwardRef<
 					{iconRight && <span className={styles.iconRight}>{iconRight}</span>}
 				</span>
 				<SelectPrimitive.Icon className={styles.triggerIcon}>
-					<CaretDownIcon size={16} />
+					<CaretDownIcon />
 				</SelectPrimitive.Icon>
 			</SelectPrimitive.Trigger>
 		);
@@ -288,7 +289,7 @@ const Item = forwardRef<React.ElementRef<typeof SelectPrimitive.Item>, SelectIte
 				</span>
 				{!compact && (
 					<SelectPrimitive.ItemIndicator className={styles.itemIndicator}>
-						<CheckIcon size={16} />
+						<CheckIcon />
 					</SelectPrimitive.ItemIndicator>
 				)}
 			</SelectPrimitive.Item>

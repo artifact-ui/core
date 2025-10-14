@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react';
 import { Dialog } from 'radix-ui';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
 import styles from './modal.module.css';
 import { Button } from '../button/button';
-import { CloseIcon } from '@/components/icons';
+import { CloseIcon } from '../../icons/CloseIcon';
 
 export interface ModalProps {
 	open?: boolean;

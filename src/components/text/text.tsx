@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
 import styles from './text.module.css';
 
 type TextElement = HTMLParagraphElement | HTMLSpanElement | HTMLLabelElement;

@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { Form } from 'radix-ui';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
 import { type RadixFormMatchType } from '@/types/radix-types';
 import { type FormError } from '@/types/form-types';
 import { getErrorState, getErrorMessage } from '@/utils/form-error-helpers';

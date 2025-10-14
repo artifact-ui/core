@@ -1,7 +1,7 @@
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { forwardRef } from 'react';
-import { CheckIcon } from '@/components/icons';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
+import { CheckIcon } from '../../icons/CheckIcon';
 import styles from './checkbox.module.css';
 
 export interface CheckboxProps

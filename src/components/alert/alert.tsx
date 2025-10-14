@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react';
-import { CheckIcon, ErrorIcon, InfoIcon } from '@/components/icons';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
 import styles from './alert.module.css';
 
 type AlertVariant = 'default' | 'success' | 'error';
@@ -15,12 +14,6 @@ export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
 	iconRight?: React.ReactNode;
 	override?: boolean;
 }
-
-const defaultIconMap = {
-	default: InfoIcon,
-	success: CheckIcon,
-	error: ErrorIcon,
-} as const;
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(
 	(
@@ -38,9 +31,6 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
 		},
 		ref,
 	) => {
-		// Use custom icon or fallback to default variant icon
-		const DefaultIcon = defaultIconMap[variant];
-		const leftIcon = iconLeft || (variant !== 'default' && DefaultIcon ? <DefaultIcon /> : null);
 
 		const variantClasses = {
 			default: styles.alertDefault,
@@ -77,7 +67,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
 				role="alert"
 				aria-live="polite"
 				{...props}>
-				{leftIcon && <span className={styles.iconLeft}>{leftIcon}</span>}
+				{iconLeft && <span className={styles.iconLeft}>{iconLeft}</span>}
 
 				<div className={styles.content}>{children}</div>
 
