@@ -1,5 +1,3 @@
-/* CSS Reset and base styles */
-
 @layer foundation {
 
 *,
@@ -24,19 +22,11 @@ dd {
 	margin: 0;
 }
 
-html {
-	scroll-behavior: smooth;
-}
-
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
 	* {
 		animation: none !important;
 		transition: none !important;
-	}
-
-	html {
-		scroll-behavior: auto;
 	}
 }
 

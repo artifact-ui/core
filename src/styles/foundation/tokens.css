@@ -12,11 +12,6 @@
 	--sage-800: #1a4b3a;
 	--sage-900: #173d30;
 
-	--cloud-500: #6279B8;
-	--midnight-500: #5B4A7D;
-	--clay-500: #DD6E42;
-	--amber-500: #C89046;
-
 	--gray-100: #f3f4f6;
 	--gray-200: #e5e7eb;
 	--gray-300: #d1d5db;
@@ -142,13 +137,6 @@
 
 	/* Animations */
 	--animation-spin: spin 1s linear infinite;
-	--animation-spin-center: spinCenter 1s linear infinite;
-	--animation-breathe: breathe 2s ease-in-out infinite;
-	--animation-skeleton-shine: skeletonShine 1s linear 0s infinite normal forwards;
-	--animation-modal-enter: modalEnter 0.2s ease-out forwards;
-	--animation-fade-in: fadeIn 0.3s ease-in-out;
-	--animation-slide-in: slideIn 0.3s ease-out;
-	--animation-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
 	/* Effects */
 	--color-overlay: rgba(0, 0, 0, 0.5);
@@ -168,5 +156,14 @@
 @supports (height: 100dvh) {
 	:root {
 		--full-height: calc(100dvh - var(--top-nav-height));
+	}
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
 	}
 }
