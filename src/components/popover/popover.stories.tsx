@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as Popover from './popover';
 import { Button } from '../button/button';
 import { Text } from '../text/text';
-import { TextField } from '../text-field/text-field';
+import * as TextField from '../textfield/textfield';
 import { Stack } from '../layout/stack';
 import { Flex } from '../layout/flex';
 import { CloseIcon } from '../../icons/CloseIcon';
 
 const meta: Meta<typeof Popover.Root> = {
-	title: 'Alpine/Popover',
+	title: 'Artifact/Popover',
 	component: Popover.Root,
 	parameters: {
 		layout: 'centered',

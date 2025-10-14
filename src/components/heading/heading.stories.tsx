@@ -3,7 +3,7 @@ import { Heading } from './heading';
 import { Stack } from '../layout/stack';
 
 const meta: Meta<typeof Heading> = {
-	title: 'Alpine/Heading',
+	title: 'Artifact/Heading',
 	component: Heading,
 	parameters: {
 		layout: 'centered',

@@ -4,7 +4,7 @@ import { Stack } from '../layout/stack';
 import { Flex } from '../layout/flex';
 
 const meta: Meta<typeof Separator> = {
-	title: 'Alpine/Separator',
+	title: 'Artifact/Separator',
 	component: Separator,
 	parameters: {
 		layout: 'centered',

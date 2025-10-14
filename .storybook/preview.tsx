@@ -27,9 +27,9 @@ const preview = {
 			// Apply theme to body for Radix portal content
 			React.useEffect(() => {
 				document.body.setAttribute('data-theme', theme);
-				return () => {
-					document.body.removeAttribute('data-theme');
-				};
+				document.body.style.backgroundColor = 'var(--color-bg-primary)';
+				document.body.style.color = 'var(--color-text-primary)';
+				document.body.style.margin = '0';
 			}, [theme]);
 
 			return (

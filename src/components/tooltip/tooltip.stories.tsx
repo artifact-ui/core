@@ -3,7 +3,7 @@ import * as Tooltip from './tooltip';
 import { Button } from '../button/button';
 
 const meta = {
-	title: 'Alpine/Tooltip',
+	title: 'Artifact/Tooltip',
 	component: Tooltip.Content,
 	parameters: {
 		layout: 'centered',

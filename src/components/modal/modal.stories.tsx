@@ -4,7 +4,7 @@ import { Button } from '../button/button';
 import { Stack } from '../layout/stack';
 
 const meta: Meta<typeof Modal.Root> = {
-	title: 'Alpine/Modal',
+	title: 'Artifact/Modal',
 	component: Modal.Root,
 	parameters: {
 		layout: 'centered',

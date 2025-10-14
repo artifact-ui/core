@@ -3,7 +3,7 @@ import { Text } from './text';
 import { Stack } from '../layout/stack';
 
 const meta: Meta<typeof Text> = {
-	title: 'Alpine/Text',
+	title: 'Artifact/Text',
 	component: Text,
 	parameters: {
 		layout: 'centered',

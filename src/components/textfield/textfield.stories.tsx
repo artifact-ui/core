@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextField } from '../';
-import { SearchIcon } from '../../icons';
+import * as TextField from './textfield';
 
 const meta = {
-	title: 'Alpine/TextField',
+	title: 'Artifact/TextField',
 	component: TextField.Standalone,
 	parameters: {
 		layout: 'centered',
@@ -34,11 +33,6 @@ export const Examples: Story = {
 			{/* Variants */}
 			<TextField.Standalone placeholder="Default variant" variant="default" />
 			<TextField.Standalone placeholder="Minimal variant" variant="minimal" />
-			<TextField.Standalone
-				placeholder="Icon variant"
-				variant="icon"
-				iconLeft={<SearchIcon />}
-			/>
 
 			{/* States */}
 			<TextField.Standalone placeholder="Error state" variant="default" error />
@@ -56,13 +50,6 @@ export const Examples: Story = {
 				variant="default"
 				size="2"
 				compact
-			/>
-			<TextField.Standalone
-				placeholder="Compact with icon"
-				variant="icon"
-				size="2"
-				compact
-				iconLeft={<SearchIcon />}
 			/>
 
 			{/* Radius */}

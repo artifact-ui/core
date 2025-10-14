@@ -3,7 +3,7 @@ import * as Card from './card';
 import { Button } from '../button/button';
 
 const meta: Meta<typeof Card.Root> = {
-	title: 'Alpine/Card',
+	title: 'Artifact/Card',
 	component: Card.Root,
 	parameters: {
 		layout: 'centered',

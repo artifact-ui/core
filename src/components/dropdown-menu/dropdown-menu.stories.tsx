@@ -5,7 +5,7 @@ import { Flex } from '../layout/flex';
 import * as DropdownMenu from './dropdown-menu';
 
 const meta = {
-	title: 'Alpine/DropdownMenu',
+	title: 'Artifact/DropdownMenu',
 	component: DropdownMenu.DropdownMenu,
 	parameters: {
 		layout: 'centered',

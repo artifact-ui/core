@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Checkbox } from './checkbox';
-import { Text, Heading } from '../';
+import { Text } from '../text/text';
+import { Heading } from '../heading/heading';
 import { Stack } from '../layout/stack';
 
 const meta = {
-	title: 'Alpine/Checkbox',
+	title: 'Artifact/Checkbox',
 	component: Checkbox,
 	parameters: {
 		layout: 'centered',

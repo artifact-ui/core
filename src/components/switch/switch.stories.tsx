@@ -6,7 +6,7 @@ import { Text } from '../text/text';
 import { useState } from 'react';
 
 const meta: Meta<typeof Switch> = {
-	title: 'Alpine/Switch',
+	title: 'Artifact/Switch',
 	component: Switch,
 	parameters: {
 		layout: 'centered',
