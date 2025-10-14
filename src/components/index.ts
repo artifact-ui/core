@@ -16,3 +16,9 @@ export { Separator } from './separator/separator';
 export { Badge } from './badge/badge';
 export { Switch } from './switch/switch';
 export { Checkbox } from './checkbox/checkbox';
+
+// Layout components
+export { Stack } from './layout/stack';
+export { Flex } from './layout/flex';
+export { Box } from './layout/box';
+export { Grid } from './layout/grid';
