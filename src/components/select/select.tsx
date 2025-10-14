@@ -3,8 +3,8 @@ import * as SelectPrimitive from '@radix-ui/react-select';
 import { CheckIcon } from '../../icons/CheckIcon';
 import { CaretDownIcon } from '../../icons/CaretDownIcon';
 import { cn } from '../../utils/cn';
-import { type FormError } from '@/types/form-types';
-import { getErrorState, getErrorMessage } from '@/utils/form-error-helpers';
+import { type FormError } from '../../types/form-types';
+import { getErrorState, getErrorMessage } from '../../utils/form-error-helpers';
 import { Text } from '../text/text';
 import styles from './select.module.css';
 

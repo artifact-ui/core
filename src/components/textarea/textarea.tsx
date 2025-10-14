@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react';
 import { Form } from 'radix-ui';
 import { cn } from '../../utils/cn';
-import { type RadixFormMatchType } from '@/types/radix-types';
-import { type FormError } from '@/types/form-types';
-import { getErrorState, getErrorMessage } from '@/utils/form-error-helpers';
+import { type RadixFormMatchType } from '../../types/radix-types';
+import { type FormError } from '../../types/form-types';
+import { getErrorState, getErrorMessage } from '../../utils/form-error-helpers';
 import styles from './textarea.module.css';
 
 export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {

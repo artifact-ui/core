@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as Select from './select';
-import { Stack } from '@/components/layout';
-import { UserIcon, BackpackIcon } from '@/components/icons';
+import { Stack } from '../layout/stack';
 
 const meta: Meta<typeof Select.Root> = {
 	title: 'Alpine/Select',
@@ -45,7 +44,7 @@ export const Minimal: Story = {
 
 export const Examples: Story = {
 	render: () => (
-		<Stack className="gap-4 w-80">
+		<Stack gap="4" style={{ width: '20rem' }}>
 			{/* Variants */}
 			<Select.Root defaultValue="default">
 				<Select.Trigger variant="default" placeholder="Default variant..." />
@@ -107,19 +106,6 @@ export const Examples: Story = {
 				<Select.Trigger placeholder="Disabled..." />
 				<Select.Content>
 					<Select.Item value="disabled">Disabled</Select.Item>
-				</Select.Content>
-			</Select.Root>
-
-			{/* Icons */}
-			<Select.Root defaultValue="user">
-				<Select.Trigger iconLeft={<UserIcon size={16} />} placeholder="With icons..." />
-				<Select.Content>
-					<Select.Item value="user" iconLeft={<UserIcon size={16} />}>
-						User
-					</Select.Item>
-					<Select.Item value="backpack" iconLeft={<BackpackIcon size={16} />}>
-						Backpack
-					</Select.Item>
 				</Select.Content>
 			</Select.Root>
 

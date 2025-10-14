@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Switch } from './switch';
-import { Stack, Flex } from '@/components/layout';
-import { Text } from '@/components/alpine';
+import { Stack } from '../layout/stack';
+import { Flex } from '../layout/flex';
+import { Text } from '../text/text';
 import { useState } from 'react';
 
 const meta: Meta<typeof Switch> = {
@@ -32,39 +33,39 @@ const ExamplesComponent = () => {
 	const [checked5, setChecked5] = useState(false);
 
 	return (
-		<Stack className="gap-6 w-96">
+		<Stack gap="5" style={{ width: '24rem' }}>
 			{/* Sizes */}
-			<Stack className="gap-3">
-				<Flex className="items-center justify-between">
+			<Stack gap="3">
+				<Flex align="center" justify="between">
 					<Text size="2">Size 1 (small)</Text>
 					<Switch size="1" checked={checked1} onCheckedChange={setChecked1} />
 				</Flex>
-				<Flex className="items-center justify-between">
+				<Flex align="center" justify="between">
 					<Text size="2">Size 2 (default)</Text>
 					<Switch size="2" checked={checked2} onCheckedChange={setChecked2} />
 				</Flex>
-				<Flex className="items-center justify-between">
+				<Flex align="center" justify="between">
 					<Text size="2">Size 3 (large)</Text>
 					<Switch size="3" checked={checked3} onCheckedChange={setChecked3} />
 				</Flex>
 			</Stack>
 
 			{/* States */}
-			<Stack className="gap-3">
-				<Flex className="items-center justify-between">
+			<Stack gap="3">
+				<Flex align="center" justify="between">
 					<Text size="2">Disabled (unchecked)</Text>
 					<Switch disabled checked={false} />
 				</Flex>
-				<Flex className="items-center justify-between">
+				<Flex align="center" justify="between">
 					<Text size="2">Disabled (checked)</Text>
 					<Switch disabled checked={true} />
 				</Flex>
 			</Stack>
 
 			{/* Use Cases */}
-			<Stack className="gap-3">
-				<Flex className="items-center justify-between">
-					<Stack className="gap-1">
+			<Stack gap="3">
+				<Flex align="center" justify="between">
+					<Stack gap="1">
 						<label htmlFor="public-switch">
 							<Text size="3">Public Pack</Text>
 						</label>
@@ -80,8 +81,8 @@ const ExamplesComponent = () => {
 					/>
 				</Flex>
 
-				<Flex className="items-center justify-between">
-					<Stack className="gap-1">
+				<Flex align="center" justify="between">
+					<Stack gap="1">
 						<label htmlFor="pricing-switch">
 							<Text size="3">Show Pricing</Text>
 						</label>

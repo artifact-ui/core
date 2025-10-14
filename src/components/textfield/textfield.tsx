@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react';
 import { Form } from 'radix-ui';
 import { cn } from '../../utils/cn';
-import { type RadixInputType, type RadixFormMatchType } from '@/types/radix-types';
-import { type FormError } from '@/types/form-types';
-import { getErrorState, getErrorMessage } from '@/utils/form-error-helpers';
+import { type RadixInputType, type RadixFormMatchType } from '../../types/radix-types';
+import { type FormError } from '../../types/form-types';
+import { getErrorState, getErrorMessage } from '../../utils/form-error-helpers';
 import styles from './textfield.module.css';
 
 export interface TextFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {

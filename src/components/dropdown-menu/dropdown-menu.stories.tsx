@@ -1,16 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../button/button';
+import { Stack } from '../layout/stack';
+import { Flex } from '../layout/flex';
 import * as DropdownMenu from './dropdown-menu';
-import {
-	MenuIcon,
-	EditPencilIcon,
-	TrashIcon,
-	ShareIcon,
-	SettingsIcon,
-	UserIcon,
-	LogoutIcon,
-	MoveIcon,
-} from '@/components/icons';
 
 const meta = {
 	title: 'Alpine/DropdownMenu',
@@ -25,37 +17,28 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	render: () => (
-		<div className="flex flex-col gap-12 items-center">
+		<Stack gap="8" align="center">
 			{/* Basic dropdown */}
-			<div className="flex flex-col gap-2 items-center">
-				<h3 className="text-sm font-semibold">Basic Menu</h3>
+			<Stack gap="2" align="center">
+				<h3 style={{ fontSize: '0.875rem', fontWeight: 600 }}>Basic Menu</h3>
 				<DropdownMenu.DropdownMenu>
 					<DropdownMenu.DropdownMenuTrigger asChild>
-						<Button variant="outline" size="1" iconLeft={<MenuIcon />}>
+						<Button variant="outline" size="1">
 							Menu
 						</Button>
 					</DropdownMenu.DropdownMenuTrigger>
 					<DropdownMenu.DropdownMenuContent>
-						<DropdownMenu.DropdownMenuItem>
-							<EditPencilIcon />
-							Edit
-						</DropdownMenu.DropdownMenuItem>
-						<DropdownMenu.DropdownMenuItem>
-							<ShareIcon />
-							Share
-						</DropdownMenu.DropdownMenuItem>
+						<DropdownMenu.DropdownMenuItem>Edit</DropdownMenu.DropdownMenuItem>
+						<DropdownMenu.DropdownMenuItem>Share</DropdownMenu.DropdownMenuItem>
 						<DropdownMenu.DropdownMenuSeparator />
-						<DropdownMenu.DropdownMenuItem>
-							<TrashIcon />
-							Delete
-						</DropdownMenu.DropdownMenuItem>
+						<DropdownMenu.DropdownMenuItem>Delete</DropdownMenu.DropdownMenuItem>
 					</DropdownMenu.DropdownMenuContent>
 				</DropdownMenu.DropdownMenu>
-			</div>
+			</Stack>
 
 			{/* With submenu */}
-			<div className="flex flex-col gap-2 items-center">
-				<h3 className="text-sm font-semibold">With Submenu</h3>
+			<Stack gap="2" align="center">
+				<h3 style={{ fontSize: '0.875rem', fontWeight: 600 }}>With Submenu</h3>
 				<DropdownMenu.DropdownMenu>
 					<DropdownMenu.DropdownMenuTrigger asChild>
 						<Button variant="outline" size="1">
@@ -63,13 +46,9 @@ export const Default: Story = {
 						</Button>
 					</DropdownMenu.DropdownMenuTrigger>
 					<DropdownMenu.DropdownMenuContent>
-						<DropdownMenu.DropdownMenuItem>
-							<EditPencilIcon />
-							Edit
-						</DropdownMenu.DropdownMenuItem>
+						<DropdownMenu.DropdownMenuItem>Edit</DropdownMenu.DropdownMenuItem>
 						<DropdownMenu.DropdownMenuSub>
 							<DropdownMenu.DropdownMenuSubTrigger>
-								<MoveIcon />
 								Move to...
 							</DropdownMenu.DropdownMenuSubTrigger>
 							<DropdownMenu.DropdownMenuSubContent>
@@ -79,17 +58,16 @@ export const Default: Story = {
 							</DropdownMenu.DropdownMenuSubContent>
 						</DropdownMenu.DropdownMenuSub>
 						<DropdownMenu.DropdownMenuSeparator />
-						<DropdownMenu.DropdownMenuItem>
-							<TrashIcon />
-							Delete
-						</DropdownMenu.DropdownMenuItem>
+						<DropdownMenu.DropdownMenuItem>Delete</DropdownMenu.DropdownMenuItem>
 					</DropdownMenu.DropdownMenuContent>
 				</DropdownMenu.DropdownMenu>
-			</div>
+			</Stack>
 
 			{/* With labels and disabled items */}
-			<div className="flex flex-col gap-2 items-center">
-				<h3 className="text-sm font-semibold">With Labels & Disabled Items</h3>
+			<Stack gap="2" align="center">
+				<h3 style={{ fontSize: '0.875rem', fontWeight: 600 }}>
+					With Labels & Disabled Items
+				</h3>
 				<DropdownMenu.DropdownMenu>
 					<DropdownMenu.DropdownMenuTrigger asChild>
 						<Button variant="outline" size="1">
@@ -99,27 +77,20 @@ export const Default: Story = {
 					<DropdownMenu.DropdownMenuContent>
 						<DropdownMenu.DropdownMenuLabel>My Account</DropdownMenu.DropdownMenuLabel>
 						<DropdownMenu.DropdownMenuSeparator />
-						<DropdownMenu.DropdownMenuItem>
-							<UserIcon />
-							Profile
-						</DropdownMenu.DropdownMenuItem>
+						<DropdownMenu.DropdownMenuItem>Profile</DropdownMenu.DropdownMenuItem>
 						<DropdownMenu.DropdownMenuItem disabled>
-							<SettingsIcon />
 							Settings (Coming Soon)
 						</DropdownMenu.DropdownMenuItem>
 						<DropdownMenu.DropdownMenuSeparator />
-						<DropdownMenu.DropdownMenuItem>
-							<LogoutIcon />
-							Logout
-						</DropdownMenu.DropdownMenuItem>
+						<DropdownMenu.DropdownMenuItem>Logout</DropdownMenu.DropdownMenuItem>
 					</DropdownMenu.DropdownMenuContent>
 				</DropdownMenu.DropdownMenu>
-			</div>
+			</Stack>
 
 			{/* Size variations */}
-			<div className="flex flex-col gap-2 items-center">
-				<h3 className="text-sm font-semibold">Size Variations</h3>
-				<div className="flex gap-4">
+			<Stack gap="2" align="center">
+				<h3 style={{ fontSize: '0.875rem', fontWeight: 600 }}>Size Variations</h3>
+				<Flex gap="4">
 					<DropdownMenu.DropdownMenu>
 						<DropdownMenu.DropdownMenuTrigger asChild>
 							<Button variant="outline" size="1">
@@ -139,14 +110,8 @@ export const Default: Story = {
 							</Button>
 						</DropdownMenu.DropdownMenuTrigger>
 						<DropdownMenu.DropdownMenuContent>
-							<DropdownMenu.DropdownMenuItem>
-								<EditPencilIcon />
-								Edit Item
-							</DropdownMenu.DropdownMenuItem>
-							<DropdownMenu.DropdownMenuItem>
-								<TrashIcon />
-								Delete Item
-							</DropdownMenu.DropdownMenuItem>
+							<DropdownMenu.DropdownMenuItem>Edit Item</DropdownMenu.DropdownMenuItem>
+							<DropdownMenu.DropdownMenuItem>Delete Item</DropdownMenu.DropdownMenuItem>
 						</DropdownMenu.DropdownMenuContent>
 					</DropdownMenu.DropdownMenu>
 
@@ -158,17 +123,15 @@ export const Default: Story = {
 						</DropdownMenu.DropdownMenuTrigger>
 						<DropdownMenu.DropdownMenuContent size="3">
 							<DropdownMenu.DropdownMenuItem>
-								<EditPencilIcon />
 								Edit This Item
 							</DropdownMenu.DropdownMenuItem>
 							<DropdownMenu.DropdownMenuItem>
-								<TrashIcon />
 								Delete Permanently
 							</DropdownMenu.DropdownMenuItem>
 						</DropdownMenu.DropdownMenuContent>
 					</DropdownMenu.DropdownMenu>
-				</div>
-			</div>
-		</div>
+				</Flex>
+			</Stack>
+		</Stack>
 	),
 };

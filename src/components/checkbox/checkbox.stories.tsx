@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Checkbox } from './checkbox';
 import { Text, Heading } from '../';
-import { Stack } from '@/components/layout';
+import { Stack } from '../layout/stack';
 
 const meta = {
 	title: 'Alpine/Checkbox',
@@ -16,9 +16,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Examples: Story = {
 	render: () => (
-		<Stack className="gap-8" style={{ maxWidth: '500px' }}>
+		<Stack gap="6" style={{ maxWidth: '500px' }}>
 			{/* Default */}
-			<Stack className="gap-2">
+			<Stack gap="2">
 				<Heading size="3">Default</Heading>
 				<label
 					style={{
@@ -35,7 +35,7 @@ export const Examples: Story = {
 			</Stack>
 
 			{/* Checked */}
-			<Stack className="gap-2">
+			<Stack gap="2">
 				<Heading size="3">Checked</Heading>
 				<label
 					style={{
@@ -52,9 +52,9 @@ export const Examples: Story = {
 			</Stack>
 
 			{/* Disabled */}
-			<Stack className="gap-2">
+			<Stack gap="2">
 				<Heading size="3">Disabled</Heading>
-				<Stack className="gap-3">
+				<Stack gap="3">
 					<label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
 						<Checkbox id="disabled" disabled />
 						<Text as="span" size="3" color="tertiary">
@@ -71,9 +71,9 @@ export const Examples: Story = {
 			</Stack>
 
 			{/* Multiple */}
-			<Stack className="gap-2">
+			<Stack gap="2">
 				<Heading size="3">Multiple</Heading>
-				<Stack className="gap-3">
+				<Stack gap="3">
 					<label
 						style={{
 							display: 'flex',
@@ -114,9 +114,9 @@ export const Examples: Story = {
 			</Stack>
 
 			{/* Sizes */}
-			<Stack className="gap-2">
+			<Stack gap="2">
 				<Heading size="3">Sizes</Heading>
-				<Stack className="gap-4">
+				<Stack gap="4">
 					<label
 						style={{
 							display: 'flex',
