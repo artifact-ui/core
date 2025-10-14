@@ -1,13 +1,32 @@
 {
-  "name": "artifact-ui",
+  "name": "@artifact-ui/core",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "React component library - design artifacts built on Radix UI primitives.",
+  "type": "module",
+  "keywords": [
+    "react",
+    "components",
+    "design-system",
+    "ui",
+    "artifact",
+    "radix-ui",
+    "typescript"
+  ],
+  "author": "Ryan Brockhoff",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artifact-ui/core"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "bugs": {
+    "url": "https://github.com/artifact-ui/core/issues"
+  },
+  "homepage": "https://github.com/artifact-ui/core#readme",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "radix-ui": "^1.4.3"
+  }
 }
