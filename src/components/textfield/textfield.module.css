@@ -1,0 +1,393 @@
+/* Alpine - TextField Component */
+
+@layer alpine-components {
+/* Field wrapper */
+.field {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+	margin: var(--space-2) 0;
+}
+
+@media (max-width: 768px) {
+	.fieldResponsive {
+		width: 100%;
+	}
+}
+
+.label {
+	font-size: var(--font-size-2);
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-secondary);
+	margin-left: var(--space-1);
+}
+
+/* Base input */
+.input {
+	font-family: inherit;
+	color: var(--color-text-primary);
+	border-radius: var(--radius);
+	outline: none;
+	width: 100%;
+	box-sizing: border-box;
+	line-height: 1;
+}
+
+/* Radius variants */
+.inputRadius1 {
+	border-radius: var(--radius);
+}
+
+.inputRadius2 {
+	border-radius: var(--radius-lg);
+}
+
+.inputRadius3 {
+	border-radius: var(--radius-xl);
+}
+
+/* Extra padding for rounder radius */
+.inputRadius3:not(.inputIcon) {
+	padding-left: var(--space-4);
+	padding-right: var(--space-4);
+}
+
+/* Input Sizes - match Select sizes (opt-in) */
+.inputSm {
+	font-size: var(--font-size-2);
+	padding: var(--space-1) var(--space-2);
+	min-height: 28px;
+}
+
+.inputMd {
+	font-size: var(--font-size-3);
+	padding: var(--space-2);
+	min-height: 36px;
+}
+
+.inputLg {
+	font-size: var(--font-size-4);
+	padding: var(--space-3);
+	min-height: 44px;
+}
+
+.inputXl {
+	font-size: var(--font-size-5);
+	padding: var(--space-3);
+	min-height: 52px;
+}
+
+/* Compact */
+.inputCompact.inputSm {
+	padding: 0 var(--space-2);
+}
+
+.inputCompact.inputMd {
+	padding: var(--space-1) var(--space-2);
+}
+
+.inputCompact.inputLg {
+	padding: var(--space-2);
+}
+
+.inputCompact.inputXl {
+	padding: var(--space-2);
+}
+
+/* Default variant */
+.inputDefault {
+	background-color: var(--color-bg-primary);
+	border: 1px solid var(--color-border-primary);
+	color: var(--color-text-primary);
+}
+
+.inputDefault:hover:not(:focus) {
+	border-color: var(--color-border-secondary);
+}
+
+.inputDefault:focus,
+.inputDefault:focus-visible {
+	border-color: var(--color-brand);
+	box-shadow: 0 0 0 1px var(--color-brand);
+	outline: none;
+}
+
+.inputDefault:disabled {
+	background-color: var(--color-bg-secondary);
+	color: var(--color-text-tertiary);
+	cursor: not-allowed;
+	opacity: var(--opacity-80);
+}
+
+/* Minimal variant */
+.inputMinimal {
+	background: transparent;
+	border: 1px solid transparent;
+	outline: 2px solid transparent;
+	outline-offset: 0;
+	transition: outline-color var(--transition);
+}
+
+.inputMinimal:hover:not(:focus) {
+	outline-color: var(--color-border-primary);
+}
+
+.inputMinimal:focus {
+	outline-color: var(--color-brand);
+}
+
+.inputMinimal:disabled {
+	opacity: var(--opacity-60);
+	cursor: text;
+	pointer-events: auto;
+}
+
+.inputMinimal:disabled:hover {
+	border: 1px solid transparent;
+	outline: 2px solid transparent;
+}
+
+/* Icon variant */
+.inputIcon {
+	background-color: var(--color-bg-primary);
+	border: none;
+	padding: var(--space-2) var(--space-3);
+}
+
+.inputIcon.inputCompact {
+	padding: var(--space-1) var(--space-2);
+}
+
+.inputIcon:focus {
+	outline: none;
+}
+
+/* Container for icon variant */
+.rootIcon {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+}
+
+.rootIcon .inputContainer {
+	position: relative;
+	display: flex;
+	align-items: center;
+	background-color: var(--color-bg-primary);
+	border: 1px solid var(--color-border-primary);
+	border-radius: var(--radius);
+	overflow: hidden;
+}
+
+/* Container radius variants */
+.containerRadius1 {
+	border-radius: var(--radius);
+}
+
+.containerRadius2 {
+	border-radius: var(--radius-lg);
+}
+
+.containerRadius3 {
+	border-radius: var(--radius-xl);
+}
+
+/* Apply font-size to container so icon inherits it */
+.rootIcon:has(.inputSm) .inputContainer {
+	font-size: var(--font-size-2);
+}
+
+.rootIcon:has(.inputMd) .inputContainer {
+	font-size: var(--font-size-3);
+}
+
+.rootIcon:has(.inputLg) .inputContainer {
+	font-size: var(--font-size-4);
+}
+
+.rootIcon:has(.inputXl) .inputContainer {
+	font-size: var(--font-size-5);
+}
+
+.rootIcon .inputContainer:hover:not(:focus-within) {
+	border-color: var(--color-border-secondary);
+}
+
+.rootIcon .inputContainer:focus-within {
+	border-color: var(--color-brand);
+	box-shadow: 0 0 0 1px var(--color-brand);
+}
+
+/* Standalone version (used outside of Form) */
+.standalone {
+	width: 100%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+}
+
+/* Collapsible error message for standalone fields */
+.standaloneMessageCollapsible {
+	transition:
+		height var(--transition),
+		opacity var(--transition),
+		margin var(--transition);
+	overflow: hidden;
+	height: auto;
+	opacity: 1;
+}
+
+.standaloneMessageCollapsibleHidden {
+	height: 0;
+	opacity: 0;
+	margin: 0;
+}
+
+/* Icon slot */
+.slot {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	color: var(--color-text-tertiary);
+	z-index: 1;
+	pointer-events: auto;
+}
+
+.slot svg {
+	width: 1em;
+	height: 1em;
+}
+
+/* Icon positioning matches input padding */
+.rootIcon:has(.inputSm) .slot {
+	left: var(--space-2);
+}
+
+.rootIcon:has(.inputMd) .slot {
+	left: var(--space-2);
+}
+
+.rootIcon:has(.inputLg) .slot,
+.rootIcon:has(.inputXl) .slot {
+	left: var(--space-3);
+}
+
+.rootIcon:has(.inputCompact) .slot {
+	left: var(--space-2);
+}
+
+.rootIcon:has(.inputSm) .slotRight {
+	left: auto;
+	right: var(--space-2);
+}
+
+.rootIcon:has(.inputMd) .slotRight {
+	left: auto;
+	right: var(--space-2);
+}
+
+.rootIcon:has(.inputLg) .slotRight,
+.rootIcon:has(.inputXl) .slotRight {
+	left: auto;
+	right: var(--space-3);
+}
+
+.rootIcon:has(.inputCompact) .slotRight {
+	left: auto;
+	right: var(--space-2);
+}
+
+/* Input padding when icon is present: base padding + icon (1em) + gap (0.5em) */
+.rootIcon:has(.inputSm) .inputIcon {
+	padding-left: calc(var(--space-2) + 1em + 0.5em);
+}
+
+.rootIcon:has(.inputMd) .inputIcon {
+	padding-left: calc(var(--space-2) + 1em + 0.5em);
+}
+
+.rootIcon:has(.inputLg) .inputIcon,
+.rootIcon:has(.inputXl) .inputIcon {
+	padding-left: calc(var(--space-3) + 1em + 0.5em);
+}
+
+.rootIcon:has(.inputCompact) .inputIcon {
+	padding-left: calc(var(--space-2) + 1em + 0.5em);
+}
+
+.rootIcon:has(.slotRight):has(.inputSm) .inputIcon {
+	padding-left: var(--space-2);
+	padding-right: calc(var(--space-2) + 1em + 0.5em);
+}
+
+.rootIcon:has(.slotRight):has(.inputMd) .inputIcon {
+	padding-left: var(--space-2);
+	padding-right: calc(var(--space-2) + 1em + 0.5em);
+}
+
+.rootIcon:has(.slotRight):has(.inputLg) .inputIcon,
+.rootIcon:has(.slotRight):has(.inputXl) .inputIcon {
+	padding-left: var(--space-3);
+	padding-right: calc(var(--space-3) + 1em + 0.5em);
+}
+
+.rootIcon:has(.slotRight):has(.inputCompact) .inputIcon {
+	padding-left: var(--space-2);
+	padding-right: calc(var(--space-2) + 1em + 0.5em);
+}
+
+/* Error state */
+.inputError {
+	border-color: var(--color-error);
+	background-color: var(--color-error-bg);
+}
+
+.inputError:focus {
+	border-color: var(--color-error);
+	box-shadow: 0 0 0 1px var(--color-error);
+}
+
+.rootIcon:has(.inputError) .inputContainer {
+	border-color: var(--color-error);
+	background-color: var(--color-error-bg);
+}
+
+.rootIcon:has(.inputError) .inputContainer:focus-within {
+	border-color: var(--color-error);
+	box-shadow: 0 0 0 1px var(--color-error);
+}
+
+/* Message */
+.message {
+	font-size: var(--font-size-2);
+	color: var(--color-error);
+	margin-left: var(--space-1);
+}
+
+/* Placeholder */
+.input::placeholder {
+	color: var(--color-text-tertiary);
+	opacity: 1;
+}
+
+/* Input container for icon variant */
+.inputContainer {
+	position: relative;
+	width: 100%;
+}
+
+/* Ensure input fills container in icon variant */
+.inputContainer .input {
+	width: 100%;
+	border: none;
+	background: transparent;
+}
+
+.inputContainer .input:focus {
+	outline: none;
+}
+
+}

@@ -1,0 +1,123 @@
+/* Alpine - Alert Component */
+
+@layer alpine-components {
+/* Alert - Root */
+.alert {
+	display: flex;
+	align-items: center;
+	gap: var(--space-2);
+	width: 100%;
+	border-radius: var(--radius);
+	border: 1px solid;
+	position: relative;
+	font-size: var(--font-size-3);
+	font-weight: var(--font-weight-normal);
+	line-height: 1;
+}
+
+/* Alert - Sizes */
+.alertSize1 {
+	padding: var(--space-2);
+	font-size: var(--font-size-2);
+}
+
+.alertSize2 {
+	padding: var(--space-3);
+	font-size: var(--font-size-3);
+}
+
+.alertSize3 {
+	padding: var(--space-4);
+	font-size: var(--font-size-4);
+}
+
+/* Alert - Variants */
+.alertDefault {
+	background-color: var(--color-bg-secondary);
+	color: var(--color-text-primary);
+	border-color: var(--color-border-primary);
+}
+
+.alertSuccess {
+	background-color: var(--color-success-bg);
+	color: var(--color-success);
+	border-color: var(--color-success);
+}
+
+.alertError {
+	background-color: var(--color-error-bg);
+	color: var(--color-error);
+	border-color: var(--color-error);
+}
+
+/* Dark mode changes */
+[data-theme='dark'] .alertSuccess {
+	color: var(--sage-300);
+	border-color: var(--sage-500);
+}
+
+[data-theme='dark'] .alertError {
+	color: var(--red-400);
+	border-color: var(--red-500);
+}
+
+/* Alert - Icons */
+.iconLeft,
+.iconRight {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.iconLeft svg,
+.iconRight svg {
+	width: 1.25em;
+	height: 1.25em;
+}
+
+.alertSuccess .iconLeft svg,
+.alertSuccess .iconRight svg {
+	color: var(--color-success);
+}
+
+.alertError .iconLeft svg,
+.alertError .iconRight svg {
+	color: var(--color-error);
+}
+
+.alertDefault .iconLeft svg,
+.alertDefault .iconRight svg {
+	color: var(--color-text-primary);
+}
+
+.iconLeft,
+.iconRight {
+	width: 1.25em;
+	height: 1.25em;
+}
+
+/* Alert - Content */
+.content {
+	flex: 1;
+	min-width: 0;
+}
+
+/* Alert - Modifiers */
+.alertShadowClassic {
+	box-shadow: var(--shadow-classic);
+}
+
+.alertShadowSpread {
+	box-shadow: var(--shadow-spread);
+}
+
+.alertShadowPaper {
+	box-shadow: var(--shadow-paper);
+}
+
+.alertRounded {
+	border-radius: var(--radius-lg);
+}
+
+}

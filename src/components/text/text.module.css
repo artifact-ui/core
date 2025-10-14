@@ -1,0 +1,131 @@
+/* Alpine - Text Component */
+
+@layer alpine-components {
+	/* Text - Root */
+	.text {
+		display: inline;
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	/* Text with icons */
+	.textWithIcons {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25em;
+		line-height: 1;
+	}
+
+	/* Text - Size */
+	.textSize1 {
+		font-size: var(--font-size-1);
+	}
+
+	.textSize2 {
+		font-size: var(--font-size-2);
+	}
+
+	.textSize3 {
+		font-size: var(--font-size-3);
+	}
+
+	.textSize4 {
+		font-size: var(--font-size-4);
+	}
+
+	.textSize5 {
+		font-size: var(--font-size-5);
+	}
+
+	.textSize6 {
+		font-size: var(--font-size-6);
+	}
+
+	.textSize7 {
+		font-size: var(--font-size-7);
+	}
+
+	.textSize8 {
+		font-size: var(--font-size-8);
+	}
+
+	/* Text - Weight */
+	.textWeightNormal {
+		font-weight: var(--font-weight-normal);
+	}
+
+	.textWeightMedium {
+		font-weight: var(--font-weight-medium);
+	}
+
+	.textWeightSemibold {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.textWeightBold {
+		font-weight: var(--font-weight-bold);
+	}
+
+	/* Text - Color */
+	.textColorPrimary {
+		color: var(--color-text-primary);
+	}
+
+	.textColorSecondary {
+		color: var(--color-text-secondary);
+	}
+
+	.textColorTertiary {
+		color: var(--color-text-tertiary);
+	}
+
+	.textColorBrand {
+		color: var(--color-brand);
+	}
+
+	.textColorInfo {
+		color: var(--color-info);
+	}
+
+	.textColorDanger {
+		color: var(--color-error);
+	}
+
+	/* Text - Uppercase */
+	.textUppercase {
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	/* Text - Italic */
+	.textItalic {
+		font-style: italic;
+	}
+
+	/* Text - Alignment */
+	.textAlignLeft {
+		text-align: left;
+	}
+
+	.textAlignCenter {
+		text-align: center;
+	}
+
+	.textAlignRight {
+		text-align: right;
+	}
+
+	/* Text - Icons */
+	.iconLeft,
+	.iconRight {
+		display: inline-flex;
+		align-items: center;
+		flex-shrink: 0;
+	}
+
+	.iconLeft svg,
+	.iconRight svg {
+		width: 1em;
+		height: 1em;
+	}
+}

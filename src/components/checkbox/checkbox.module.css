@@ -1,0 +1,65 @@
+@layer alpine-components {
+	.root {
+		border-radius: var(--radius-sm);
+		border: 1px solid var(--color-border-primary);
+		background-color: var(--color-bg-primary);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		transition: all var(--transition);
+		flex-shrink: 0;
+	}
+
+	/* Size variants */
+	.sizeSm {
+		width: 1rem;
+		height: 1rem;
+	}
+
+	.sizeSm .indicator svg {
+		width: 0.75rem;
+		height: 0.75rem;
+	}
+
+	.sizeMd {
+		width: 1.25rem;
+		height: 1.25rem;
+	}
+
+	.sizeMd .indicator svg {
+		width: 0.875rem;
+		height: 0.875rem;
+	}
+
+	.root:hover {
+		border-color: var(--color-border-secondary);
+	}
+
+	.root:focus-visible {
+		outline: 2px solid var(--color-brand);
+		outline-offset: 2px;
+	}
+
+	.root[data-state='checked'] {
+		background-color: var(--color-brand);
+		border-color: var(--color-brand);
+	}
+
+	.root[data-state='checked']:hover {
+		background-color: var(--color-brand-hover);
+		border-color: var(--color-brand-hover);
+	}
+
+	.root[data-disabled] {
+		opacity: var(--opacity-60);
+		cursor: not-allowed;
+	}
+
+	.indicator {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--color-text-inverse);
+	}
+}

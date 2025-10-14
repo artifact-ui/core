@@ -1,0 +1,92 @@
+/* Alpine - Switch Component */
+
+@layer alpine-components {
+	/* Switch - Root */
+	.switch {
+		all: unset;
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		background-color: var(--color-bg-tertiary);
+		border-radius: 9999px;
+		cursor: pointer;
+		transition: background-color 0.2s ease, box-shadow 0.2s ease;
+		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.switch:focus-visible {
+		outline: 2px solid var(--color-focus);
+		outline-offset: 2px;
+	}
+
+	.switch:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+
+	.switch[data-state='checked'] {
+		background-color: var(--color-brand);
+		box-shadow: none;
+	}
+
+	.switch[data-state='checked']:hover {
+		background-color: var(--color-brand-hover);
+	}
+
+	/* Switch - Sizes */
+	.switchSm {
+		width: 32px;
+		height: 20px;
+	}
+
+	.switchMd {
+		width: 42px;
+		height: 25px;
+	}
+
+	.switchLg {
+		width: 52px;
+		height: 30px;
+	}
+
+	/* Switch - Thumb */
+	.thumb {
+		display: block;
+		background-color: white;
+		border-radius: 9999px;
+		box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+		transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+		will-change: transform;
+	}
+
+	.thumbSm {
+		width: 16px;
+		height: 16px;
+		transform: translateX(2px);
+	}
+
+	.thumbMd {
+		width: 21px;
+		height: 21px;
+		transform: translateX(2px);
+	}
+
+	.thumbLg {
+		width: 26px;
+		height: 26px;
+		transform: translateX(2px);
+	}
+
+	.switch[data-state='checked'] .thumbSm {
+		transform: translateX(14px);
+	}
+
+	.switch[data-state='checked'] .thumbMd {
+		transform: translateX(19px);
+	}
+
+	.switch[data-state='checked'] .thumbLg {
+		transform: translateX(24px);
+	}
+}

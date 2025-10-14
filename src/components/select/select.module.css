@@ -1,0 +1,397 @@
+/* Select - Trigger */
+.trigger {
+	all: unset;
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5em;
+	font-family: var(--font-family);
+	font-size: var(--font-size-2);
+	line-height: 1;
+	font-weight: var(--font-weight-medium);
+	color: var(--color-text-primary);
+	background-color: var(--color-bg-primary);
+	border: 1px solid var(--color-border-primary);
+	border-radius: var(--radius-2);
+	padding: var(--space-2) var(--space-3);
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.15s ease;
+	box-sizing: border-box;
+}
+
+.trigger:hover {
+	background-color: var(--color-bg-secondary);
+	border-color: var(--color-border-secondary);
+}
+
+.trigger:focus {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.trigger:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.trigger[data-placeholder] {
+	color: var(--color-text-tertiary);
+}
+
+/* Select - Trigger Variants */
+.triggerDefault {
+	/* Base styles already applied */
+}
+
+.triggerMinimal {
+	border: none;
+	background-color: transparent;
+	padding: var(--space-1) var(--space-2);
+}
+
+.triggerMinimal:hover {
+	background-color: var(--color-bg-tertiary);
+}
+
+/* Select - Trigger Radius */
+.triggerRadius1 {
+	border-radius: var(--radius);
+}
+
+.triggerRadius2 {
+	border-radius: var(--radius-lg);
+}
+
+.triggerRadius3 {
+	border-radius: var(--radius-xl);
+}
+
+/* Select - Trigger Colors */
+.triggerColorDefault {
+	/* Uses base trigger styles */
+}
+
+.triggerColorSecondary {
+	background-color: var(--color-bg-secondary);
+	border-color: var(--color-border-primary);
+}
+
+.triggerColorSecondary:hover {
+	background-color: var(--color-bg-tertiary);
+	border-color: var(--color-border-secondary);
+}
+
+.triggerColorTertiary {
+	background-color: var(--color-bg-tertiary);
+	border-color: var(--color-border-secondary);
+}
+
+.triggerColorTertiary:hover {
+	background-color: var(--color-hover);
+	border-color: var(--color-border-primary);
+}
+
+/* Select - Trigger Error State */
+.triggerError {
+	border-color: var(--color-error);
+	background-color: var(--color-error-bg);
+}
+
+.triggerError:hover {
+	border-color: var(--color-error-hover);
+	background-color: var(--color-error-bg);
+}
+
+.triggerError:focus {
+	outline-color: var(--color-error);
+}
+
+/* Select - Trigger Sizes */
+.triggerSm {
+	font-size: var(--font-size-2);
+	padding: var(--space-1) var(--space-2);
+	min-height: 28px;
+}
+
+.triggerMd {
+	font-size: var(--font-size-3);
+	padding: var(--space-2) var(--space-3);
+	min-height: 36px;
+}
+
+.triggerLg {
+	font-size: var(--font-size-4);
+	padding: var(--space-3) var(--space-4);
+	min-height: 44px;
+}
+
+.triggerXl {
+	font-size: var(--font-size-5);
+	padding: var(--space-4) var(--space-5);
+	min-height: 52px;
+}
+
+/* Select - Trigger Compact */
+.triggerCompact {
+	padding: var(--space-1) var(--space-2);
+	min-height: auto;
+}
+
+/* Select - Value Container */
+.valueContainer {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	flex: 1;
+}
+
+/* Select - Trigger Icon (Caret) */
+.triggerIcon {
+	display: flex;
+	align-items: center;
+	color: var(--color-text-secondary);
+	transition: transform 0.2s ease;
+	flex-shrink: 0;
+}
+
+.trigger[data-state='open'] .triggerIcon {
+	transform: rotate(180deg);
+}
+
+/* Select - Custom Icons (iconLeft/iconRight) */
+.iconLeft,
+.iconRight {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 1em;
+	height: 1em;
+}
+
+.iconLeft svg,
+.iconRight svg {
+	width: 1em;
+	height: 1em;
+}
+
+/* Select - Content */
+.content {
+	overflow: hidden;
+	background-color: var(--color-bg-primary);
+	border: 1px solid var(--color-border-primary);
+	border-radius: var(--radius-2);
+	z-index: 1100;
+	max-height: 300px;
+	min-width: var(--radix-select-trigger-width);
+}
+
+.content[data-state='open'] {
+	animation: fadeIn 0.15s ease-out;
+}
+
+.content[data-state='closed'] {
+	animation: fadeOut 0.1s ease-in;
+}
+
+/* Select - Content Sizes */
+.contentSm {
+	font-size: var(--font-size-2);
+}
+
+.contentMd {
+	font-size: var(--font-size-3);
+}
+
+.contentLg {
+	font-size: var(--font-size-4);
+}
+
+.contentXl {
+	font-size: var(--font-size-5);
+}
+
+/* Select - Content Radius */
+.contentRadius1 {
+	border-radius: var(--radius);
+}
+
+.contentRadius2 {
+	border-radius: var(--radius-lg);
+}
+
+.contentRadius3 {
+	border-radius: var(--radius-xl);
+}
+
+/* Select - Content Shadow */
+.contentShadowClassic {
+	box-shadow: var(--shadow-classic);
+}
+
+.contentShadowSpread {
+	box-shadow: var(--shadow-spread);
+}
+
+.contentShadowPaper {
+	box-shadow: var(--shadow-paper);
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	to {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+}
+
+/* Select - Viewport */
+.viewport {
+	padding: var(--space-1);
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-1);
+}
+
+/* Select - Item */
+.item {
+	all: unset;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5em;
+	font-size: inherit;
+	line-height: inherit;
+	color: var(--color-text-primary);
+	padding: var(--space-2) var(--space-3);
+	cursor: pointer;
+	user-select: none;
+	position: relative;
+	transition: background-color 0.1s ease;
+}
+
+/* Select - Item Text Container */
+.itemTextContainer {
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	flex: 1;
+}
+
+/* Select - Item Radius */
+.itemRadius1 {
+	border-radius: var(--radius);
+}
+
+.itemRadius2 {
+	border-radius: var(--radius-lg);
+}
+
+.itemRadius3 {
+	border-radius: var(--radius-xl);
+}
+
+/* Select - Item Compact */
+.itemCompact {
+	padding: var(--space-1) var(--space-2);
+}
+
+.item:hover {
+	background-color: var(--color-bg-secondary);
+	outline: none;
+}
+
+.item:focus {
+	background-color: var(--color-bg-secondary);
+	outline: none;
+}
+
+.item[data-highlighted] {
+	background-color: var(--color-bg-secondary);
+	outline: none;
+}
+
+.item[data-state='checked'] {
+	background-color: var(--color-bg-tertiary);
+}
+
+.item[data-disabled] {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+/* Select - Item Indicator */
+.itemIndicator {
+	display: flex;
+	align-items: center;
+	color: var(--color-primary);
+}
+
+/* Select - Item Icons */
+.itemIconLeft,
+.itemIconRight {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	width: 1em;
+	height: 1em;
+}
+
+.itemIconLeft svg,
+.itemIconRight svg {
+	width: 1em;
+	height: 1em;
+}
+
+/* Select - Label */
+.label {
+	display: block;
+	line-height: 1;
+	font-weight: var(--font-weight-semibold);
+	color: var(--color-text-secondary);
+	padding: var(--space-2) var(--space-3);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	opacity: 0.8;
+}
+
+/* Select - Label Sizes (one size smaller than content) */
+.labelSm {
+	font-size: var(--font-size-1);
+}
+
+.labelMd {
+	font-size: var(--font-size-2);
+}
+
+.labelLg {
+	font-size: var(--font-size-3);
+}
+
+.labelXl {
+	font-size: var(--font-size-4);
+}
+
+/* Select - Separator */
+.separator {
+	height: 1px;
+	background-color: var(--color-border-primary);
+	margin: var(--space-1) 0;
+}

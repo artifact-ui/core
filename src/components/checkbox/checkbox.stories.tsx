@@ -1,0 +1,148 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Checkbox } from './checkbox';
+import { Text, Heading } from '../';
+import { Stack } from '@/components/layout';
+
+const meta = {
+	title: 'Alpine/Checkbox',
+	component: Checkbox,
+	parameters: {
+		layout: 'centered',
+	},
+} satisfies Meta<typeof Checkbox>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Examples: Story = {
+	render: () => (
+		<Stack className="gap-8" style={{ maxWidth: '500px' }}>
+			{/* Default */}
+			<Stack className="gap-2">
+				<Heading size="3">Default</Heading>
+				<label
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						gap: '0.5rem',
+						cursor: 'pointer',
+					}}>
+					<Checkbox id="default" />
+					<Text as="span" size="3">
+						Accept terms and conditions
+					</Text>
+				</label>
+			</Stack>
+
+			{/* Checked */}
+			<Stack className="gap-2">
+				<Heading size="3">Checked</Heading>
+				<label
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						gap: '0.5rem',
+						cursor: 'pointer',
+					}}>
+					<Checkbox id="checked" defaultChecked />
+					<Text as="span" size="3">
+						I agree to the terms
+					</Text>
+				</label>
+			</Stack>
+
+			{/* Disabled */}
+			<Stack className="gap-2">
+				<Heading size="3">Disabled</Heading>
+				<Stack className="gap-3">
+					<label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+						<Checkbox id="disabled" disabled />
+						<Text as="span" size="3" color="tertiary">
+							Disabled unchecked
+						</Text>
+					</label>
+					<label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+						<Checkbox id="disabled-checked" disabled defaultChecked />
+						<Text as="span" size="3" color="tertiary">
+							Disabled checked
+						</Text>
+					</label>
+				</Stack>
+			</Stack>
+
+			{/* Multiple */}
+			<Stack className="gap-2">
+				<Heading size="3">Multiple</Heading>
+				<Stack className="gap-3">
+					<label
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							gap: '0.5rem',
+							cursor: 'pointer',
+						}}>
+						<Checkbox id="option1" defaultChecked />
+						<Text as="span" size="3">
+							Email notifications
+						</Text>
+					</label>
+					<label
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							gap: '0.5rem',
+							cursor: 'pointer',
+						}}>
+						<Checkbox id="option2" />
+						<Text as="span" size="3">
+							SMS notifications
+						</Text>
+					</label>
+					<label
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							gap: '0.5rem',
+							cursor: 'pointer',
+						}}>
+						<Checkbox id="option3" defaultChecked />
+						<Text as="span" size="3">
+							Push notifications
+						</Text>
+					</label>
+				</Stack>
+			</Stack>
+
+			{/* Sizes */}
+			<Stack className="gap-2">
+				<Heading size="3">Sizes</Heading>
+				<Stack className="gap-4">
+					<label
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							gap: '0.5rem',
+							cursor: 'pointer',
+						}}>
+						<Checkbox id="size1" size="1" defaultChecked />
+						<Text as="span" size="2">
+							Size 1 (default) - For compact UI and legal text
+						</Text>
+					</label>
+					<label
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							gap: '0.5rem',
+							cursor: 'pointer',
+						}}>
+						<Checkbox id="size2" size="2" defaultChecked />
+						<Text as="span" size="4">
+							Size 2 - For todos and task lists
+						</Text>
+					</label>
+				</Stack>
+			</Stack>
+		</Stack>
+	),
+};

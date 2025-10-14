@@ -1,0 +1,119 @@
+/* Alpine - Heading Component */
+
+@layer alpine-components {
+	/* Heading - Root */
+	.heading {
+		margin: 0;
+		line-height: 1.2;
+	}
+
+	/* Heading - Size */
+	.headingSize1 {
+		font-size: var(--font-size-1);
+	}
+
+	.headingSize2 {
+		font-size: var(--font-size-2);
+	}
+
+	.headingSize3 {
+		font-size: var(--font-size-3);
+	}
+
+	.headingSize4 {
+		font-size: var(--font-size-4);
+	}
+
+	.headingSize5 {
+		font-size: var(--font-size-5);
+	}
+
+	.headingSize6 {
+		font-size: var(--font-size-6);
+	}
+
+	.headingSize7 {
+		font-size: var(--font-size-7);
+	}
+
+	.headingSize8 {
+		font-size: var(--font-size-8);
+	}
+
+	/* Heading - Weight */
+	.headingWeightNormal {
+		font-weight: var(--font-weight-normal);
+	}
+
+	.headingWeightMedium {
+		font-weight: var(--font-weight-medium);
+	}
+
+	.headingWeightSemibold {
+		font-weight: var(--font-weight-semibold);
+	}
+
+	.headingWeightBold {
+		font-weight: var(--font-weight-bold);
+	}
+
+	/* Heading - Color */
+	.headingColorPrimary {
+		color: var(--color-text-primary);
+	}
+
+	.headingColorSecondary {
+		color: var(--color-text-secondary);
+	}
+
+	.headingColorTertiary {
+		color: var(--color-text-tertiary);
+	}
+
+	.headingColorBrand {
+		color: var(--color-brand);
+	}
+
+	.headingColorError {
+		color: var(--color-error);
+	}
+
+	.headingColorError svg {
+		color: var(--color-error);
+	}
+
+	/* Heading - Alignment */
+	.headingAlignLeft {
+		text-align: left;
+	}
+
+	.headingAlignCenter {
+		text-align: center;
+	}
+
+	.headingAlignRight {
+		text-align: right;
+	}
+
+	/* Heading with icons */
+	.headingWithIcons {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25em;
+	}
+
+	/* Heading - Icons */
+	.heading .iconLeft,
+	.heading .iconRight {
+		display: inline-flex;
+		align-items: center;
+		flex-shrink: 0;
+		line-height: 1;
+	}
+
+	.heading .iconLeft svg,
+	.heading .iconRight svg {
+		width: 1em;
+		height: 1em;
+	}
+}

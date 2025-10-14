@@ -1,0 +1,172 @@
+:root {
+	font-family: 'Inter Variable', Inter, system-ui, sans-serif;
+
+	/* Colors */
+	--sage-100: #daf1e3;
+	--sage-200: #b8e2cc;
+	--sage-300: #8acbad;
+	--sage-400: #59ae89;
+	--sage-500: #338866;
+	--sage-600: #267557;
+	--sage-700: #1f5d48;
+	--sage-800: #1a4b3a;
+	--sage-900: #173d30;
+
+	--cloud-500: #6279B8;
+	--midnight-500: #5B4A7D;
+	--clay-500: #DD6E42;
+	--amber-500: #C89046;
+
+	--gray-100: #f3f4f6;
+	--gray-200: #e5e7eb;
+	--gray-300: #d1d5db;
+	--gray-400: #9ca3af;
+	--gray-500: #6b7280;
+	--gray-600: #4b5563;
+	--gray-700: #374151;
+	--gray-800: #1f2937;
+	--gray-900: #111827;
+
+	--color-constant-white: #ffffff;
+	--color-constant-black: #000000;
+
+	--blue-50: #eff6ff;
+	--blue-100: #dbeafe;
+	--blue-200: #bfdbfe;
+	--blue-300: #93c5fd;
+	--blue-400: #60a5fa;
+	--blue-500: #3b82f6;
+	--blue-600: #2563eb;
+	--blue-700: #1d4ed8;
+	--blue-800: #1e40af;
+	--blue-900: #1e3a8a;
+
+	--red-50: #fef2f2;
+	--red-100: #fee2e2;
+	--red-200: #fecaca;
+	--red-300: #fca5a5;
+	--red-400: #f87171;
+	--red-500: #ef4444;
+	--red-600: #dc2626;
+	--red-700: #b91c1c;
+	--red-800: #991b1b;
+	--red-900: #7f1d1d;
+
+	--yellow-50: #fefce8;
+	--yellow-100: #fef3c7;
+	--yellow-200: #fde68a;
+	--yellow-300: #fcd34d;
+	--yellow-400: #facc15;
+	--yellow-500: #eab308;
+	--yellow-600: #ca8a04;
+	--yellow-700: #a16207;
+	--yellow-800: #854d0e;
+	--yellow-900: #713f12;
+
+	/* Typography */
+	--font-size-1: 0.75rem; /* 12px */
+	--font-size-2: 0.8125rem; /* 13px */
+	--font-size-3: 0.875rem; /* 14px */
+	--font-size-4: 1rem; /* 16px */
+	--font-size-5: 1.125rem; /* 18px */
+	--font-size-6: 1.25rem; /* 20px */
+	--font-size-7: 1.5rem; /* 24px */
+	--font-size-8: 2rem; /* 32px */
+
+	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+
+	--line-height-tight: 1.25;
+	--line-height-normal: 1.5;
+	--line-height-relaxed: 1.75;
+
+	/* Spacing */
+	--space-1: 0.25rem; /* 4px */
+	--space-2: 0.5rem; /* 8px */
+	--space-3: 0.75rem; /* 12px */
+	--space-4: 1rem; /* 16px */
+	--space-5: 1.25rem; /* 20px */
+	--space-6: 1.5rem; /* 24px */
+	--space-7: 1.75rem; /* 28px */
+	--space-8: 2rem; /* 32px */
+	--space-10: 2.5rem; /* 40px */
+	--space-12: 3rem; /* 48px */
+	--space-16: 4rem; /* 64px */
+
+	/* Layout */
+	--max-width: 1280px;
+	--full-height: 100vh;
+
+	--app-layout-padding-x: 4em;
+	--app-layout-padding-y: var(--space-12);
+
+	--header-height: 5rem;
+	--top-nav-height: 4rem;
+	--mobile-nav-height: 4rem;
+	--footer-height: 12rem;
+
+	/* Icons */
+	--icon-match: 1em;
+	--icon-sm: 1.25rem; /* 20px */
+	--icon-md: 1.5rem; /* 24px */
+	--icon-lg: 2rem; /* 32px */
+	--icon-xl: 3rem; /* 48px */
+
+	/* Border radius */
+	--radius: 0.25rem; /* 4px */
+	--radius-lg: 0.5rem; /* 8px  */
+	--radius-xl: 1rem; /* 16px */
+	--radius-circle: 50%;
+
+	/* Box shadow */
+	--shadow-classic: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 1px 0 rgba(0, 0, 0, 0.1),
+		0 2px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+	--shadow-spread: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+	--shadow-paper: 0px 8px 0px -6px rgba(0, 0, 0, 0.1);
+
+	/* Z-Index */
+	--z-base: 0;
+	--z-above: 1;
+	--z-dropdown: 100;
+	--z-popover: 200;
+	--z-modal: 1000;
+	--z-modal-popover: 1050;
+	--z-tooltip: 1100;
+	--z-toast: 1200;
+
+	/* Transitions */
+	--transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+	/* Animations */
+	--animation-spin: spin 1s linear infinite;
+	--animation-spin-center: spinCenter 1s linear infinite;
+	--animation-breathe: breathe 2s ease-in-out infinite;
+	--animation-skeleton-shine: skeletonShine 1s linear 0s infinite normal forwards;
+	--animation-modal-enter: modalEnter 0.2s ease-out forwards;
+	--animation-fade-in: fadeIn 0.3s ease-in-out;
+	--animation-slide-in: slideIn 0.3s ease-out;
+	--animation-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+	/* Effects */
+	--color-overlay: rgba(0, 0, 0, 0.5);
+
+	--opacity-60: 0.6;
+	--opacity-80: 0.8;
+
+	--brightness-dark-2: brightness(80%);
+	--brightness-dark-1: brightness(95%);
+	--brightness-light-1: brightness(105%);
+	--brightness-light-2: brightness(120%);
+
+	--color-border-focus: var(--sage-500);
+}
+
+/* Override if dynamic viewport is suported - mobile fix */
+@supports (height: 100dvh) {
+	:root {
+		--full-height: calc(100dvh - var(--top-nav-height));
+	}
+}

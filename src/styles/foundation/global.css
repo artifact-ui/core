@@ -1,0 +1,81 @@
+@layer foundation {
+
+html[data-theme='light'] {
+	background-color: #ffffff;
+}
+
+html[data-theme='dark'] {
+	background-color: var(--gray-900);
+}
+
+body {
+	background-color: var(--color-bg-primary);
+	color: var(--color-text-primary);
+	line-height: var(--line-height-normal);
+	font-size: var(--font-size-3);
+	margin: 0;
+	transition:
+		background-color var(--transition),
+		color var(--transition);
+}
+
+#root {
+	background-color: var(--color-bg-primary);
+}
+
+*:focus-visible {
+	outline: 2px solid var(--color-border-focus);
+	outline-offset: 2px;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: 150ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 50ms;
+	}
+}
+
+label {
+	color: var(--color-text-primary);
+}
+
+/* Lucide icons */
+.lucide {
+	width: 1em;
+	height: 1em;
+}
+.lucide.lucide-sm {
+	width: var(--icon-sm);
+	height: var(--icon-sm);
+}
+
+.lucide.lucide-md {
+	width: var(--icon-md);
+	height: var(--icon-md);
+}
+
+.lucide.lucide-lg {
+	width: var(--icon-lg);
+	height: var(--icon-lg);
+}
+
+.lucide.lucide-xl {
+	width: var(--icon-xl);
+	height: var(--icon-xl);
+}
+
+/* Override border color for outline buttons on secondary background */
+.aow.outline-button-dark {
+	border-color: var(--color-border-secondary);
+}
+
+.aow.outline-button-dark:hover {
+	border-color: var(--color-border-tertiary);
+}
+
+}

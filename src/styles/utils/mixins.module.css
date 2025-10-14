@@ -1,0 +1,204 @@
+.hidden {
+	display: none;
+}
+.invisible {
+	opacity: 0;
+}
+
+.halfWidth {
+	width: 50%;
+}
+
+.responsivePanel {
+	width: 50%;
+}
+
+.textCenter {
+	text-align: center;
+}
+.textLeft {
+	text-align: left;
+}
+.textRight {
+	text-align: right;
+}
+
+.textEllipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.lineClamp2 {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 1.5;
+	max-height: calc(1.5em * 2);
+}
+
+.textInherit {
+	color: inherit;
+}
+
+.textWrap {
+	white-space: normal;
+}
+.textNoWrap {
+	white-space: nowrap;
+}
+
+.textSm {
+	font-size: var(--font-size-2);
+}
+.primaryBg {
+	background-color: var(--color-bg-primary);
+}
+
+.secondaryBg {
+	background-color: var(--color-bg-secondary);
+}
+
+.primaryText {
+	color: var(--color-brand);
+}
+.primaryBorder {
+	border-color: var(--color-brand);
+}
+
+.successBg {
+	background-color: var(--color-success);
+}
+.successText {
+	color: var(--color-success);
+}
+
+.errorBg {
+	background-color: var(--color-error);
+}
+.errorText {
+	color: var(--color-error);
+}
+
+.warningBg {
+	background-color: var(--color-warning);
+}
+.warningText {
+	color: var(--color-warning);
+}
+
+.whiteText {
+	color: var(--color-constant-white);
+}
+.blackText {
+	color: var(--color-constant-black);
+}
+
+.borderRadius {
+	border-radius: var(--radius);
+}
+.borderRadiusLg {
+	border-radius: var(--radius-lg);
+}
+.borderNone {
+	border: none;
+}
+
+.shadow {
+	box-shadow: var(--shadow-classic);
+}
+.shadowLg {
+	box-shadow: var(--shadow-spread);
+}
+.shadowPaper {
+	box-shadow: var(--shadow-paper);
+}
+.shadowNone {
+	box-shadow: none;
+}
+
+.hover:hover {
+	background-color: var(--color-hover);
+}
+.active:active {
+	background-color: var(--color-active);
+}
+.focus:focus {
+	outline: 2px solid var(--color-border-focus);
+	outline-offset: 2px;
+}
+.pointer {
+	cursor: pointer;
+}
+.pointer:hover {
+	filter: var(--brightness-dark-1);
+}
+
+.noPointer {
+	cursor: default;
+}
+
+.visuallyHidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.uploadHoverContainer :global(.uploadFileForm) {
+	display: none;
+}
+
+.uploadHoverContainer:hover :global(.uploadFileForm) {
+	display: inherit;
+}
+
+.responsiveContent {
+	width: 50%;
+}
+
+.responsivePanel {
+	width: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+	.mobileHidden {
+		display: none;
+	}
+	.mobileBlock {
+		display: block;
+	}
+	.mobileFlex {
+		display: flex;
+	}
+	.mobileFullWidth {
+		width: 100%;
+	}
+	.mobileColumn {
+		flex-direction: column;
+	}
+	.mobileCenter {
+		text-align: center;
+	}
+	.mobilePxs {
+		padding: var(--space-2);
+	}
+	.mobileMxs {
+		margin: var(--space-2);
+	}
+
+	.responsiveContent {
+		width: 100%;
+	}
+
+	.responsivePanel {
+		width: 100%;
+	}
+}

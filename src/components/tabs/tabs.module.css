@@ -1,0 +1,82 @@
+/* Alpine - Tabs Component */
+
+@layer alpine-components {
+	/* Tabs - Root */
+	.root {
+		display: flex;
+		flex-direction: column;
+	}
+
+	/* Tabs - List */
+	.list {
+		display: flex;
+		border-bottom: 1px solid var(--color-border-secondary);
+		gap: var(--space-1);
+	}
+
+	.listSm {
+		gap: var(--space-1);
+		font-size: var(--font-size-1);
+	}
+
+	.listMd {
+		gap: var(--space-2);
+		font-size: var(--font-size-2);
+	}
+
+	.listLg {
+		gap: var(--space-3);
+		font-size: var(--font-size-3);
+	}
+
+	/* Tabs - Trigger */
+	.trigger {
+		all: unset;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--space-1) var(--space-4);
+		font-weight: var(--font-weight-medium);
+		color: var(--color-text-secondary);
+		cursor: pointer;
+		border-bottom: 2px solid transparent;
+		border-radius: var(--radius) var(--radius) 0 0;
+		transition: all 0.2s ease;
+		user-select: none;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.trigger:hover {
+		color: var(--color-text-primary);
+		background-color: var(--color-bg-secondary);
+	}
+
+	.trigger:focus-visible {
+		outline: 2px solid var(--color-focus);
+		outline-offset: 2px;
+		border-radius: var(--radius-sm);
+	}
+
+	.trigger[data-state='active'] {
+		color: var(--color-brand);
+		border-bottom-color: var(--color-brand);
+	}
+
+	.trigger:disabled {
+		color: var(--color-text-tertiary);
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+
+	/* Tabs - Content */
+	.content {
+		padding: var(--space-4) 0;
+		outline: none;
+	}
+
+	.content:focus-visible {
+		outline: 2px solid var(--color-focus);
+		outline-offset: 2px;
+		border-radius: var(--radius-sm);
+	}
+}

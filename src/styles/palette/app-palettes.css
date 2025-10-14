@@ -1,0 +1,69 @@
+/* User Accent Color Theme Options */
+/* Used for user's pack chart visualization and accent color for pack category */
+
+/* Earth Tones Palette */
+[data-theme-palette='tidytrek'] {
+	--palette-01: #338866;
+	--palette-02: #78b87a;
+	--palette-03: #5f84a2;
+	--palette-04: #7bb8c0;
+	--palette-05: #a7b5fe;
+	--palette-06: #f36f3b;
+	--palette-07: #feb737;
+	--palette-08: #dabb9f;
+}
+
+[data-theme-palette='southwest'] {
+	--palette-01: #dd7c2b;
+	--palette-02: #f6c6ae;
+	--palette-03: #d8af5f;
+	--palette-04: #f4be69;
+	--palette-05: #de9f7e;
+	--palette-06: #8f5c3d;
+	--palette-07: #db9444;
+	--palette-08: #d9b690;
+}
+
+[data-theme-palette='atlas'] {
+	--palette-01: #706348;
+	--palette-02: #b9a367;
+	--palette-03: #bbaf99;
+	--palette-04: #615626;
+	--palette-05: #74746b;
+	--palette-06: #acb48c;
+	--palette-07: #c36b2b;
+	--palette-08: #dac8a9;
+}
+
+[data-theme-palette='colorado'] {
+	--palette-01: #308f7f;
+	--palette-02: #49c5d3;
+	--palette-03: #f299b7;
+	--palette-04: #70a0db;
+	--palette-05: #824968;
+	--palette-06: #ed503d;
+	--palette-07: #ed9c00;
+	--palette-08: #1b633b;
+}
+
+[data-theme-palette='earth-tones'] {
+	--palette-01: #5c7453;
+	--palette-02: #acb48c;
+	--palette-03: #ba9473;
+	--palette-04: #7a4020;
+	--palette-05: #c36b2b;
+	--palette-06: #dcc6a0;
+	--palette-07: #535f45;
+	--palette-08: #bcccbc;
+}
+
+[data-theme-palette='arctic'] {
+	--palette-01: #1b4965;
+	--palette-02: #62b6cb;
+	--palette-03: #bee9e8;
+	--palette-04: #cae9ff;
+	--palette-05: #5fa8d3;
+	--palette-06: #abc4ff;
+	--palette-07: #b8bedd;
+	--palette-08: #f0e6ef;
+}
