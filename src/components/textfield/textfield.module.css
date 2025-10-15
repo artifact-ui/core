@@ -36,21 +36,19 @@
 
 /* Radius variants */
 .inputRadius1 {
-	border-radius: var(--radius);
+	border-radius: var(--radius-1);
 }
 
 .inputRadius2 {
-	border-radius: var(--radius-lg);
+	border-radius: var(--radius-2);
 }
 
 .inputRadius3 {
-	border-radius: var(--radius-xl);
+	border-radius: var(--radius-3);
 }
 
-/* Extra padding for rounder radius */
-.inputRadius3:not(.inputIcon) {
-	padding-left: var(--space-4);
-	padding-right: var(--space-4);
+.inputRadiusFull {
+	border-radius: var(--radius-full);
 }
 
 /* Input Sizes - match Select sizes (opt-in) */
@@ -183,15 +181,19 @@
 
 /* Container radius variants */
 .containerRadius1 {
-	border-radius: var(--radius);
+	border-radius: var(--radius-1);
 }
 
 .containerRadius2 {
-	border-radius: var(--radius-lg);
+	border-radius: var(--radius-2);
 }
 
 .containerRadius3 {
-	border-radius: var(--radius-xl);
+	border-radius: var(--radius-3);
+}
+
+.containerRadiusFull {
+	border-radius: var(--radius-full);
 }
 
 /* Apply font-size to container so icon inherits it */

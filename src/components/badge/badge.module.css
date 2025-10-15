@@ -57,15 +57,19 @@
 
 	/* Badge - Radius */
 	.badgeRadius1 {
-		border-radius: var(--radius);
+		border-radius: var(--radius-1);
 	}
 
 	.badgeRadius2 {
-		border-radius: var(--radius-lg);
+		border-radius: var(--radius-2);
+	}
+
+	.badgeRadius3 {
+		border-radius: var(--radius-3);
 	}
 
 	.badgeRadiusFull {
-		border-radius: 9999px;
+		border-radius: var(--radius-full);
 	}
 
 	/* Badge - Colors - Solid Variant */

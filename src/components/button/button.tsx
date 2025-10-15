@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import { cn } from '../../utils/cn';
+import { Radius } from '../../types/style-props';
 import styles from './button.module.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -7,7 +8,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 	color?: 'primary' | 'neutral' | 'info' | 'success' | 'danger';
 	customColor?: string;
 	size?: '1' | '2' | '3';
-	radius?: 'default' | 'circle';
+	radius?: Radius;
 	loading?: boolean;
 	iconLeft?: React.ReactNode;
 	iconRight?: React.ReactNode;
@@ -21,7 +22,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			color = 'primary',
 			customColor,
 			size = '2',
-			radius = 'default',
+			radius = '2',
 			loading = false,
 			iconLeft,
 			iconRight,
@@ -34,7 +35,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		},
 		ref,
 	) => {
-		// no children and has icon component
 		const isIconOnly = !children && (iconLeft || iconRight) ? true : false;
 
 		const variantClasses = {
@@ -61,8 +61,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		};
 
 		const radiusClasses = {
-			default: styles.buttonRadiusDefault,
-			circle: styles.buttonRadiusCircle,
+			'1': styles.buttonRadius1,
+			'2': styles.buttonRadius2,
+			'3': styles.buttonRadius3,
+			full: styles.buttonRadiusFull,
 		};
 
 		const buttonClasses = cn(

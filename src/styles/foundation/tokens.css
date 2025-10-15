@@ -111,10 +111,10 @@
 	--icon-xl: 3rem; /* 48px */
 
 	/* Border radius */
-	--radius: 0.25rem; /* 4px */
-	--radius-lg: 0.5rem; /* 8px  */
-	--radius-xl: 1rem; /* 16px */
-	--radius-circle: 50%;
+	--radius-1: 0.125rem; /* 2px */
+	--radius-2: 0.25rem; /* 4px */
+	--radius-3: 0.5rem; /* 8px */
+	--radius-full: 9999px;
 
 	/* Box shadow */
 	--shadow-classic: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 1px 0 rgba(0, 0, 0, 0.1),

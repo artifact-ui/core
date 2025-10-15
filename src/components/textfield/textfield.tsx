@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Form } from 'radix-ui';
 import { cn } from '../../utils/cn';
+import { Radius } from '../../types/style-props';
 import { type RadixInputType, type RadixFormMatchType } from '../../types/radix-types';
 import { type FormError } from '../../types/form-types';
 import { getErrorState, getErrorMessage } from '../../utils/form-error-helpers';
@@ -9,7 +10,7 @@ import styles from './textfield.module.css';
 export interface TextFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
 	variant?: 'default' | 'minimal' | 'icon';
 	size?: '1' | '2' | '3' | '4';
-	radius?: '1' | '2' | '3';
+	radius?: Radius;
 	error?: boolean | FormError | null;
 	type?: RadixInputType;
 	label?: string;
@@ -106,7 +107,7 @@ const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 		{
 			variant = 'default',
 			size = '2',
-			radius = '1',
+			radius = '2',
 			error,
 			type = 'text',
 			className,
@@ -144,6 +145,7 @@ const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 			'1': styles.inputRadius1,
 			'2': styles.inputRadius2,
 			'3': styles.inputRadius3,
+			full: styles.inputRadiusFull,
 		};
 
 		const inputClasses = cn(
@@ -182,6 +184,7 @@ const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 			'1': styles.containerRadius1,
 			'2': styles.containerRadius2,
 			'3': styles.containerRadius3,
+			full: styles.containerRadiusFull,
 		};
 
 		if (variant === 'icon' && (iconLeft || iconRight)) {
@@ -231,7 +234,7 @@ const Standalone = forwardRef<
 		{
 			variant = 'default',
 			size = '2',
-			radius = '1',
+			radius = '2',
 			error,
 			type = 'text',
 			className,
@@ -266,6 +269,7 @@ const Standalone = forwardRef<
 			'1': styles.inputRadius1,
 			'2': styles.inputRadius2,
 			'3': styles.inputRadius3,
+			full: styles.inputRadiusFull,
 		};
 
 		const inputClasses = cn(
@@ -290,6 +294,7 @@ const Standalone = forwardRef<
 			'1': styles.containerRadius1,
 			'2': styles.containerRadius2,
 			'3': styles.containerRadius3,
+			full: styles.containerRadiusFull,
 		};
 
 		if (variant === 'icon' && (iconLeft || iconRight)) {

@@ -42,11 +42,19 @@
 
 	/* Separator - Radius */
 	.separatorRadius1 {
-		border-radius: var(--radius);
+		border-radius: var(--radius-1);
 	}
 
 	.separatorRadius2 {
-		border-radius: var(--radius-lg);
+		border-radius: var(--radius-2);
+	}
+
+	.separatorRadius3 {
+		border-radius: var(--radius-3);
+	}
+
+	.separatorRadiusFull {
+		border-radius: var(--radius-full);
 	}
 
 	/* Separator - Color */

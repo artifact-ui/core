@@ -7,7 +7,7 @@
 	align-items: center;
 	justify-content: center;
 	white-space: nowrap;
-	border-radius: var(--radius);
+	border-radius: var(--radius-2);
 	font-size: var(--font-size-3);
 	font-weight: var(--font-weight-semibold);
 	line-height: 1;
@@ -60,8 +60,20 @@
 }
 
 /* Button - Radius */
-.buttonRadiusCircle {
-	border-radius: var(--radius-circle);
+.buttonRadius1 {
+	border-radius: var(--radius-1);
+}
+
+.buttonRadius2 {
+	border-radius: var(--radius-2);
+}
+
+.buttonRadius3 {
+	border-radius: var(--radius-3);
+}
+
+.buttonRadiusFull {
+	border-radius: var(--radius-full);
 }
 
 /* Button - Variants */

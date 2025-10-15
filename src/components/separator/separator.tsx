@@ -1,11 +1,12 @@
 import React, { forwardRef } from 'react';
 import { cn } from '../../utils/cn';
+import { Radius } from '../../types/style-props';
 import styles from './separator.module.css';
 
 export interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {
 	size?: '1' | '2' | '3' | '4';
 	orientation?: 'horizontal' | 'vertical';
-	radius?: '1' | '2';
+	radius?: Radius;
 	color?: 'primary' | 'secondary' | 'tertiary' | 'accent' | 'info' | 'danger';
 	opacity?: '10' | '20' | '30' | '40' | '50' | '60' | '70' | '80' | '90';
 	spaceY?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
@@ -46,6 +47,8 @@ const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
 		const radiusClasses = {
 			'1': styles.separatorRadius1,
 			'2': styles.separatorRadius2,
+			'3': styles.separatorRadius3,
+			full: styles.separatorRadiusFull,
 		};
 
 		const colorClasses = {
