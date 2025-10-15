@@ -70,15 +70,15 @@
 		color: var(--color-text-tertiary);
 	}
 
-	.headingColorBrand {
+	.headingColorAccent {
 		color: var(--color-brand);
 	}
 
-	.headingColorError {
+	.headingColorDanger {
 		color: var(--color-error);
 	}
 
-	.headingColorError svg {
+	.headingColorDanger svg {
 		color: var(--color-error);
 	}
 

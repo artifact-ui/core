@@ -42,13 +42,12 @@ export const Examples: Story = {
 				<Stack gap="4">
 					<Flex gap="2" align="center">
 						<Badge color="primary">Primary</Badge>
-						<Badge color="secondary">Secondary</Badge>
-						<Badge color="tertiary">Tertiary</Badge>
+						<Badge color="neutral">Neutral</Badge>
 					</Flex>
 					<Flex gap="2" align="center">
-						<Badge color="brand">Brand</Badge>
 						<Badge color="info">Info</Badge>
-						<Badge color="error">Error</Badge>
+						<Badge color="success">Success</Badge>
+						<Badge color="danger">Danger</Badge>
 					</Flex>
 				</Stack>
 			</div>
@@ -128,25 +127,25 @@ export const Examples: Story = {
 				<Stack gap="4">
 					<Flex gap="2" align="center">
 						<span>Item Count:</span>
-						<Badge variant="solid" color="secondary" radius="full">
+						<Badge variant="solid" color="neutral" radius="full">
 							24
 						</Badge>
 					</Flex>
 					<Flex gap="2" align="center">
 						<span>Quantity:</span>
-						<Badge variant="solid" color="secondary" radius="full">
+						<Badge variant="solid" color="neutral" radius="full">
 							x 3
 						</Badge>
 					</Flex>
 					<Flex gap="2" align="center">
 						<span>Weight:</span>
-						<Badge variant="outline" color="tertiary">
+						<Badge variant="outline" color="neutral">
 							2.5 lbs
 						</Badge>
 					</Flex>
 					<Flex gap="2" align="center">
 						<span>Category:</span>
-						<Badge variant="soft" color="brand" size="1" iconLeft={<UserIcon />}>
+						<Badge variant="soft" color="primary" size="1" iconLeft={<UserIcon />}>
 							Account
 						</Badge>
 					</Flex>

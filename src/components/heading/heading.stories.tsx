@@ -32,7 +32,7 @@ export const Examples: Story = {
 			<Heading size="2" color="secondary">
 				Small secondary heading
 			</Heading>
-			<Heading color="brand">Brand colored heading</Heading>
+			<Heading color="accent">Accent colored heading</Heading>
 			<Heading weight="normal" color="tertiary">
 				Light tertiary heading
 			</Heading>

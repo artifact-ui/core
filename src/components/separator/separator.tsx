@@ -6,7 +6,7 @@ export interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {
 	size?: '1' | '2' | '3' | '4';
 	orientation?: 'horizontal' | 'vertical';
 	radius?: '1' | '2';
-	color?: 'primary' | 'secondary' | 'tertiary' | 'brand' | 'info' | 'error';
+	color?: 'primary' | 'secondary' | 'tertiary' | 'accent' | 'info' | 'danger';
 	opacity?: '10' | '20' | '30' | '40' | '50' | '60' | '70' | '80' | '90';
 	spaceY?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
 	spaceX?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
@@ -52,9 +52,9 @@ const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
 			primary: styles.separatorColorPrimary,
 			secondary: styles.separatorColorSecondary,
 			tertiary: styles.separatorColorTertiary,
-			brand: styles.separatorColorBrand,
+			accent: styles.separatorColorAccent,
 			info: styles.separatorColorInfo,
-			error: styles.separatorColorError,
+			danger: styles.separatorColorDanger,
 		};
 
 		const opacityClasses = {

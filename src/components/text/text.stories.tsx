@@ -35,7 +35,7 @@ export const Examples: Story = {
 			<Text color="secondary" italic>
 				Italic description text
 			</Text>
-			<Text color="brand">Brand colored text</Text>
+			<Text color="accent">Accent colored text</Text>
 		</Stack>
 	),
 };

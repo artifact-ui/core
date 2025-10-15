@@ -3,8 +3,8 @@ import { cn } from '../../utils/cn';
 import styles from './button.module.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	variant?: 'default' | 'outline' | 'secondary' | 'ghost' | 'link';
-	color?: 'primary' | 'secondary' | 'tertiary' | 'info' | 'danger';
+	variant?: 'default' | 'outline' | 'secondary' | 'tertiary' | 'ghost' | 'link';
+	color?: 'primary' | 'neutral' | 'info' | 'success' | 'danger';
 	customColor?: string;
 	size?: '1' | '2' | '3';
 	radius?: 'default' | 'circle';
@@ -41,15 +41,16 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			default: styles.buttonDefault,
 			outline: styles.buttonOutline,
 			secondary: styles.buttonSecondary,
+			tertiary: styles.buttonTertiary,
 			ghost: styles.buttonGhost,
 			link: styles.buttonLink,
 		};
 
 		const colorClasses = {
 			primary: styles.buttonColorPrimary,
-			secondary: styles.buttonColorSecondary,
-			tertiary: styles.buttonColorTertiary,
+			neutral: styles.buttonColorNeutral,
 			info: styles.buttonColorInfo,
+			success: styles.buttonColorSuccess,
 			danger: styles.buttonColorDanger,
 		};
 

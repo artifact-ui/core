@@ -7,7 +7,7 @@ type HeadingElement = HTMLHeadingElement;
 export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 	size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
 	weight?: 'normal' | 'medium' | 'semibold' | 'bold';
-	color?: 'primary' | 'secondary' | 'tertiary' | 'brand' | 'error';
+	color?: 'primary' | 'secondary' | 'tertiary' | 'accent' | 'danger';
 	align?: 'left' | 'center' | 'right';
 	iconLeft?: React.ReactNode;
 	iconRight?: React.ReactNode;
@@ -56,8 +56,8 @@ const Heading = forwardRef<HeadingElement, HeadingProps>(
 			primary: styles.headingColorPrimary,
 			secondary: styles.headingColorSecondary,
 			tertiary: styles.headingColorTertiary,
-			brand: styles.headingColorBrand,
-			error: styles.headingColorError,
+			accent: styles.headingColorAccent,
+			danger: styles.headingColorDanger,
 		};
 
 		const alignClasses = {

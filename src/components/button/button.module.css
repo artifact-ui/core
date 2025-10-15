@@ -106,6 +106,17 @@
 	background-color: var(--color-bg-tertiary);
 }
 
+.buttonTertiary {
+	background-color: var(--color-bg-tertiary);
+	color: var(--color-text-primary);
+	border-color: var(--color-border-secondary);
+}
+
+.buttonTertiary:hover {
+	background-color: var(--color-hover);
+	border-color: var(--color-border-primary);
+}
+
 .buttonGhost {
 	background-color: transparent;
 	color: var(--color-text-primary);
@@ -148,7 +159,7 @@
 	--btn-text-outline: var(--color-brand);
 }
 
-.buttonColorSecondary {
+.buttonColorNeutral {
 	--btn-bg: var(--color-bg-secondary);
 	--btn-bg-hover: var(--color-bg-tertiary);
 	--btn-border: var(--color-border-primary);
@@ -157,13 +168,13 @@
 	--btn-text-outline: var(--color-text-primary);
 }
 
-.buttonColorTertiary {
-	--btn-bg: var(--color-bg-tertiary);
-	--btn-bg-hover: var(--color-hover);
-	--btn-border: var(--color-border-secondary);
-	--btn-border-hover: var(--color-border-primary);
-	--btn-text: var(--color-text-primary);
-	--btn-text-outline: var(--color-text-secondary);
+.buttonColorSuccess {
+	--btn-bg: var(--color-success);
+	--btn-bg-hover: var(--color-success-hover);
+	--btn-border: var(--color-success);
+	--btn-border-hover: var(--color-success-hover);
+	--btn-text: var(--color-constant-white);
+	--btn-text-outline: var(--color-success);
 }
 
 .buttonColorInfo {
@@ -187,8 +198,8 @@
 /* Apply color variables to default variant */
 .buttonDefault.buttonCustomColor,
 .buttonDefault.buttonColorPrimary,
-.buttonDefault.buttonColorSecondary,
-.buttonDefault.buttonColorTertiary,
+.buttonDefault.buttonColorNeutral,
+.buttonDefault.buttonColorSuccess,
 .buttonDefault.buttonColorInfo,
 .buttonDefault.buttonColorDanger {
 	background-color: var(--btn-bg);
@@ -198,8 +209,8 @@
 
 .buttonDefault.buttonCustomColor:hover,
 .buttonDefault.buttonColorPrimary:hover,
-.buttonDefault.buttonColorSecondary:hover,
-.buttonDefault.buttonColorTertiary:hover,
+.buttonDefault.buttonColorNeutral:hover,
+.buttonDefault.buttonColorSuccess:hover,
 .buttonDefault.buttonColorInfo:hover,
 .buttonDefault.buttonColorDanger:hover {
 	background-color: var(--btn-bg-hover);
@@ -270,6 +281,7 @@
 /* Colors with white text get white svg color */
 .buttonDefault.buttonCustomColor svg,
 .buttonDefault.buttonColorPrimary svg,
+.buttonDefault.buttonColorSuccess svg,
 .buttonDefault.buttonColorInfo svg,
 .buttonDefault.buttonColorDanger svg {
 	color: var(--color-constant-white);
@@ -290,6 +302,7 @@
 
 .buttonDefault.buttonCustomColor .spinner,
 .buttonDefault.buttonColorPrimary .spinner,
+.buttonDefault.buttonColorSuccess .spinner,
 .buttonDefault.buttonColorInfo .spinner,
 .buttonDefault.buttonColorDanger .spinner {
 	border-top-color: var(--color-constant-white);
@@ -298,6 +311,10 @@
 /* Outline button spinner colors */
 .buttonOutline.buttonColorDanger .spinner {
 	border-top-color: var(--color-error);
+}
+
+.buttonOutline.buttonColorSuccess .spinner {
+	border-top-color: var(--color-success);
 }
 
 .buttonOutline.buttonColorInfo .spinner {

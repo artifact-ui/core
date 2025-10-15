@@ -74,19 +74,9 @@
 		color: var(--color-constant-white);
 	}
 
-	.badgeVariantSolid.badgeColorSecondary {
+	.badgeVariantSolid.badgeColorNeutral {
 		background-color: var(--color-bg-secondary);
 		color: var(--color-text-primary);
-	}
-
-	.badgeVariantSolid.badgeColorTertiary {
-		background-color: var(--color-bg-tertiary);
-		color: var(--color-text-primary);
-	}
-
-	.badgeVariantSolid.badgeColorBrand {
-		background-color: var(--color-brand);
-		color: var(--color-constant-white);
 	}
 
 	.badgeVariantSolid.badgeColorInfo {
@@ -94,7 +84,12 @@
 		color: var(--color-constant-white);
 	}
 
-	.badgeVariantSolid.badgeColorError {
+	.badgeVariantSolid.badgeColorSuccess {
+		background-color: var(--color-success);
+		color: var(--color-constant-white);
+	}
+
+	.badgeVariantSolid.badgeColorDanger {
 		background-color: var(--color-error);
 		color: var(--color-constant-white);
 	}
@@ -106,22 +101,10 @@
 		background-color: color-mix(in srgb, var(--color-brand) 15%, transparent);
 	}
 
-	.badgeVariantSoft.badgeColorSecondary {
+	.badgeVariantSoft.badgeColorNeutral {
 		background-color: var(--color-bg-secondary);
 		color: var(--color-text-secondary);
 		opacity: var(--opacity-80);
-	}
-
-	.badgeVariantSoft.badgeColorTertiary {
-		background-color: var(--color-bg-tertiary);
-		color: var(--color-text-tertiary);
-		opacity: var(--opacity-80);
-	}
-
-	.badgeVariantSoft.badgeColorBrand {
-		background-color: var(--color-brand);
-		color: var(--color-brand);
-		background-color: color-mix(in srgb, var(--color-brand) 15%, transparent);
 	}
 
 	.badgeVariantSoft.badgeColorInfo {
@@ -130,7 +113,13 @@
 		background-color: color-mix(in srgb, var(--color-info) 15%, transparent);
 	}
 
-	.badgeVariantSoft.badgeColorError {
+	.badgeVariantSoft.badgeColorSuccess {
+		background-color: var(--color-success);
+		color: var(--color-success);
+		background-color: color-mix(in srgb, var(--color-success) 15%, transparent);
+	}
+
+	.badgeVariantSoft.badgeColorDanger {
 		background-color: var(--color-error);
 		color: var(--color-error);
 		background-color: color-mix(in srgb, var(--color-error) 15%, transparent);
@@ -143,19 +132,9 @@
 		color: var(--color-brand);
 	}
 
-	.badgeVariantOutline.badgeColorSecondary {
+	.badgeVariantOutline.badgeColorNeutral {
 		border-color: var(--color-border-secondary);
 		color: var(--color-text-secondary);
-	}
-
-	.badgeVariantOutline.badgeColorTertiary {
-		border-color: var(--color-border-tertiary);
-		color: var(--color-text-tertiary);
-	}
-
-	.badgeVariantOutline.badgeColorBrand {
-		border-color: var(--color-brand);
-		color: var(--color-brand);
 	}
 
 	.badgeVariantOutline.badgeColorInfo {
@@ -163,19 +142,19 @@
 		color: var(--color-info);
 	}
 
-	.badgeVariantOutline.badgeColorError {
+	.badgeVariantOutline.badgeColorSuccess {
+		border-color: var(--color-success);
+		color: var(--color-success);
+	}
+
+	.badgeVariantOutline.badgeColorDanger {
 		border-color: var(--color-error);
 		color: var(--color-error);
 	}
 
 	/* Badge - High Contrast */
-	.badgeHighContrast.badgeVariantSolid.badgeColorSecondary {
+	.badgeHighContrast.badgeVariantSolid.badgeColorNeutral {
 		background-color: var(--color-text-primary);
-		color: var(--color-bg-primary);
-	}
-
-	.badgeHighContrast.badgeVariantSolid.badgeColorTertiary {
-		background-color: var(--color-text-secondary);
 		color: var(--color-bg-primary);
 	}
 

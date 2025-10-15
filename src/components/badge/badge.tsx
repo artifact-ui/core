@@ -4,7 +4,7 @@ import styles from './badge.module.css';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 	variant?: 'solid' | 'soft' | 'outline';
-	color?: 'primary' | 'secondary' | 'tertiary' | 'brand' | 'info' | 'error';
+	color?: 'primary' | 'neutral' | 'info' | 'success' | 'danger';
 	size?: '1' | '2' | '3' | '4';
 	radius?: '1' | '2' | 'full';
 	highContrast?: boolean;
@@ -18,7 +18,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 	(
 		{
 			variant = 'solid',
-			color = 'secondary',
+			color = 'neutral',
 			size = '3',
 			radius = '1',
 			highContrast = false,
@@ -40,11 +40,10 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 
 		const colorClasses = {
 			primary: styles.badgeColorPrimary,
-			secondary: styles.badgeColorSecondary,
-			tertiary: styles.badgeColorTertiary,
-			brand: styles.badgeColorBrand,
+			neutral: styles.badgeColorNeutral,
 			info: styles.badgeColorInfo,
-			error: styles.badgeColorError,
+			success: styles.badgeColorSuccess,
+			danger: styles.badgeColorDanger,
 		};
 
 		const sizeClasses = {

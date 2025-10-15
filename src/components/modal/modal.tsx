@@ -147,7 +147,7 @@ const Header = forwardRef<HTMLDivElement, ModalHeaderProps>(
 					<Dialog.Close asChild>
 						<Button
 							variant="ghost"
-							color="tertiary"
+							color="neutral"
 							size="1"
 							className={cn(styles.closeButton, closeButtonClassName)}
 							aria-label="Close modal">
