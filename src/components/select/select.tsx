@@ -1,7 +1,7 @@
 import React, { forwardRef, createContext, useContext } from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { CheckIcon } from '../../icons/CheckIcon';
-import { CaretDownIcon } from '../../icons/CaretDownIcon';
+import { ChevronDownIcon } from '../../icons/ChevronDownIcon';
 import { cn } from '../../utils/cn';
 import { type FormError } from '../../types/form-types';
 import { getErrorState, getErrorMessage } from '../../utils/form-error-helpers';
@@ -182,7 +182,7 @@ const Trigger = forwardRef<
 					{iconRight && <span className={styles.iconRight}>{iconRight}</span>}
 				</span>
 				<SelectPrimitive.Icon className={styles.triggerIcon}>
-					<CaretDownIcon />
+					<ChevronDownIcon />
 				</SelectPrimitive.Icon>
 			</SelectPrimitive.Trigger>
 		);

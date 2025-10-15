@@ -10,7 +10,7 @@
       "import": "./dist/artifact-ui.js",
       "types": "./dist/index.d.ts"
     },
-    "./styles.css": "./dist/style.css"
+    "./styles.css": "./dist/artifact-ui.css"
   },
   "files": [
     "dist"
