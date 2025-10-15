@@ -13,8 +13,12 @@ export default defineConfig({
 			fileName: 'artifact-ui',
 		},
 		rollupOptions: {
-			// Don't include
 			external: ['react', 'react-dom', 'react/jsx-runtime'],
+			output: {
+				preserveModules: true,
+				preserveModulesRoot: 'src',
+				entryFileNames: '[name].js',
+			},
 		},
 		sourcemap: true,
 		emptyOutDir: true,

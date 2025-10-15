@@ -1,78 +1,85 @@
 {
-  "name": "@artifact-ui/core",
-  "version": "1.0.0",
-  "description": "React component library - design artifacts built on Radix UI primitives.",
-  "type": "module",
-  "module": "./dist/artifact-ui.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/artifact-ui.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./styles.css": "./dist/artifact-ui.css"
-  },
-  "files": [
-    "dist"
-  ],
-  "author": "Ryan Brockhoff",
-  "license": "MIT",
-  "keywords": [
-    "react",
-    "components",
-    "design-system",
-    "ui",
-    "artifact",
-    "radix-ui",
-    "typescript"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/artifact-ui/core"
-  },
-  "bugs": {
-    "url": "https://github.com/artifact-ui/core/issues"
-  },
-  "homepage": "https://github.com/artifact-ui/core#readme",
-  "scripts": {
-    "build": "tsc && vite build",
-    "dev": "vite build --watch",
-    "type-check": "tsc --noEmit",
-    "commit": "cz",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "dependencies": {
-    "radix-ui": "^1.4.3"
-  },
-  "devDependencies": {
-    "@storybook/addon-docs": "^9.1.10",
-    "@storybook/addon-onboarding": "^9.1.10",
-    "@storybook/react-vite": "^9.1.10",
-    "@types/node": "^22.10.2",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
-    "@vitejs/plugin-react": "^4.3.4",
-    "autoprefixer": "^10.4.21",
-    "commitizen": "^4.3.1",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.55.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "eslint-plugin-storybook": "^9.1.10",
-    "prettier": "^3.4.2",
-    "storybook": "^9.1.10",
-    "typescript": "^5.7.2",
-    "vite": "^6.0.7",
-    "vite-plugin-dts": "^4.3.0"
-  }
+	"name": "@artifact-ui/core",
+	"version": "1.0.0",
+	"description": "React component library - design artifacts built on Radix UI primitives.",
+	"type": "module",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"sideEffects": [
+		"**/*.css"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./styles.css": "./dist/artifact-ui.css",
+		"./*": {
+			"import": "./dist/*.js",
+			"types": "./dist/*.d.ts"
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"author": "Ryan Brockhoff",
+	"license": "MIT",
+	"keywords": [
+		"react",
+		"components",
+		"design-system",
+		"ui",
+		"artifact",
+		"radix-ui",
+		"typescript"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/artifact-ui/core"
+	},
+	"bugs": {
+		"url": "https://github.com/artifact-ui/core/issues"
+	},
+	"homepage": "https://github.com/artifact-ui/core#readme",
+	"scripts": {
+		"build": "tsc && vite build",
+		"dev": "vite build --watch",
+		"type-check": "tsc --noEmit",
+		"commit": "cz",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"peerDependencies": {
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0"
+	},
+	"dependencies": {
+		"radix-ui": "^1.4.3"
+	},
+	"devDependencies": {
+		"@storybook/addon-docs": "^9.1.10",
+		"@storybook/addon-onboarding": "^9.1.10",
+		"@storybook/react-vite": "^9.1.10",
+		"@types/node": "^22.10.2",
+		"@types/react": "^18.3.18",
+		"@types/react-dom": "^18.3.5",
+		"@vitejs/plugin-react": "^4.3.4",
+		"autoprefixer": "^10.4.21",
+		"commitizen": "^4.3.1",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^8.55.0",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.5",
+		"eslint-plugin-storybook": "^9.1.10",
+		"prettier": "^3.4.2",
+		"storybook": "^9.1.10",
+		"typescript": "^5.7.2",
+		"vite": "^6.0.7",
+		"vite-plugin-dts": "^4.3.0"
+	}
 }
