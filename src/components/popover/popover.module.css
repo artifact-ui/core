@@ -11,11 +11,6 @@
 		outline: none;
 	}
 
-	.content:focus-visible {
-		outline: 2px solid var(--color-focus);
-		outline-offset: 2px;
-	}
-
 	/* Animation */
 	.content[data-state='open'] {
 		animation: popoverFadeIn 150ms ease-out;

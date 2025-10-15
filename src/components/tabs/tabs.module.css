@@ -51,12 +51,6 @@
 		background-color: var(--color-bg-subtle);
 	}
 
-	.trigger:focus-visible {
-		outline: 2px solid var(--color-focus);
-		outline-offset: 2px;
-		border-radius: var(--radius-sm);
-	}
-
 	.trigger[data-state='active'] {
 		color: var(--color-primary);
 		border-bottom-color: var(--color-primary);
@@ -72,11 +66,5 @@
 	.content {
 		padding: var(--space-4) 0;
 		outline: none;
-	}
-
-	.content:focus-visible {
-		outline: 2px solid var(--color-focus);
-		outline-offset: 2px;
-		border-radius: var(--radius-sm);
 	}
 }
