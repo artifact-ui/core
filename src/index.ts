@@ -6,9 +6,14 @@ import './styles/foundation/global.css';
 // Themes
 import './styles/themes/light.css';
 import './styles/themes/dark.css';
+import './styles/themes/accent.css';
 
-// Export all components
+// Provider
+export { ArtifactProvider } from './ArtifactProvider';
+export type { Theme, Accent, ArtifactProviderProps } from './ArtifactProvider';
+
+// Components
 export * from './components';
 
-// Export utils (internal use, but available if needed)
+// Utils (internal use, but available if needed)
 export { cn } from './utils/cn';

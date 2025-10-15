@@ -1,11 +1,4 @@
 [data-theme='dark'] {
-	/* Primary colors (accent/brand) */
-	--color-primary: var(--gray-300);
-	--color-primary-hover: var(--gray-200);
-	--color-primary-emphasis: var(--gray-200);
-	--color-primary-surface: var(--gray-600);
-	--color-primary-surface-hover: var(--gray-500);
-
 	/* Dark theme shadows */
 	--shadow-classic: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.3),
 		0 2px 1px -1px rgba(0, 0, 0, 0.3), 0 1px 3px 0 rgba(0, 0, 0, 0.4);
@@ -30,6 +23,7 @@
 	--color-border-default: var(--gray-600);
 	--color-border-subtle: var(--gray-600);
 	--color-border-muted: var(--gray-500);
+	--color-border-focus: var(--gray-300);
 
 	/* State colors */
 	--color-success: var(--green-400);

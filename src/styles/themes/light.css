@@ -1,11 +1,4 @@
 [data-theme='light'] {
-	/* Primary colors (accent/brand) */
-	--color-primary: var(--gray-900);
-	--color-primary-hover: var(--gray-800);
-	--color-primary-emphasis: var(--gray-900);
-	--color-primary-surface: var(--gray-900);
-	--color-primary-surface-hover: var(--gray-800);
-
 	/* Light theme shadows */
 	--shadow-classic: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 1px 0 rgba(0, 0, 0, 0.1),
 		0 2px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
