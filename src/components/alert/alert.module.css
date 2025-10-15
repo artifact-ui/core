@@ -33,9 +33,9 @@
 
 /* Alert - Variants */
 .alertDefault {
-	background-color: var(--color-bg-secondary);
-	color: var(--color-text-primary);
-	border-color: var(--color-border-primary);
+	background-color: var(--color-bg-subtle);
+	color: var(--color-text-default);
+	border-color: var(--color-border-default);
 }
 
 .alertSuccess {
@@ -88,7 +88,7 @@
 
 .alertDefault .iconLeft svg,
 .alertDefault .iconRight svg {
-	color: var(--color-text-primary);
+	color: var(--color-text-default);
 }
 
 .iconLeft,

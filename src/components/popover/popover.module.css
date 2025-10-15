@@ -2,8 +2,8 @@
 
 @layer components {
 	.content {
-		background-color: var(--color-bg-primary);
-		border: 1px solid var(--color-border-primary);
+		background-color: var(--color-bg-default);
+		border: 1px solid var(--color-border-default);
 		border-radius: var(--radius-lg);
 		padding: var(--space-3);
 		box-shadow: var(--shadow-spread);

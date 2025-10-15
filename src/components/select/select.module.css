@@ -9,9 +9,9 @@
 	font-size: var(--font-size-2);
 	line-height: 1;
 	font-weight: var(--font-weight-medium);
-	color: var(--color-text-primary);
-	background-color: var(--color-bg-primary);
-	border: 1px solid var(--color-border-primary);
+	color: var(--color-text-default);
+	background-color: var(--color-bg-default);
+	border: 1px solid var(--color-border-default);
 	border-radius: var(--radius-2);
 	padding: var(--space-2) var(--space-3);
 	cursor: pointer;
@@ -21,8 +21,8 @@
 }
 
 .trigger:hover {
-	background-color: var(--color-bg-secondary);
-	border-color: var(--color-border-secondary);
+	background-color: var(--color-bg-subtle);
+	border-color: var(--color-border-subtle);
 }
 
 .trigger:focus {
@@ -37,7 +37,7 @@
 }
 
 .trigger[data-placeholder] {
-	color: var(--color-text-tertiary);
+	color: var(--color-text-muted);
 }
 
 /* Select - Trigger Variants */
@@ -52,20 +52,20 @@
 }
 
 .triggerMinimal:hover {
-	background-color: var(--color-bg-tertiary);
+	background-color: var(--color-bg-muted);
 }
 
 /* Select - Trigger Radius */
 .triggerRadius1 {
-	border-radius: var(--radius);
+	border-radius: var(--radius-1);
 }
 
 .triggerRadius2 {
-	border-radius: var(--radius-lg);
+	border-radius: var(--radius-2);
 }
 
 .triggerRadius3 {
-	border-radius: var(--radius-xl);
+	border-radius: var(--radius-3);
 }
 
 /* Select - Trigger Colors */
@@ -74,23 +74,23 @@
 }
 
 .triggerColorSecondary {
-	background-color: var(--color-bg-secondary);
-	border-color: var(--color-border-primary);
+	background-color: var(--color-bg-subtle);
+	border-color: var(--color-border-default);
 }
 
 .triggerColorSecondary:hover {
-	background-color: var(--color-bg-tertiary);
-	border-color: var(--color-border-secondary);
+	background-color: var(--color-bg-muted);
+	border-color: var(--color-border-subtle);
 }
 
 .triggerColorTertiary {
-	background-color: var(--color-bg-tertiary);
-	border-color: var(--color-border-secondary);
+	background-color: var(--color-bg-muted);
+	border-color: var(--color-border-subtle);
 }
 
 .triggerColorTertiary:hover {
 	background-color: var(--color-hover);
-	border-color: var(--color-border-primary);
+	border-color: var(--color-border-default);
 }
 
 /* Select - Trigger Error State */
@@ -151,7 +151,7 @@
 .triggerIcon {
 	display: flex;
 	align-items: center;
-	color: var(--color-text-secondary);
+	color: var(--color-text-subtle);
 	transition: transform 0.2s ease;
 	flex-shrink: 0;
 }
@@ -180,8 +180,8 @@
 /* Select - Content */
 .content {
 	overflow: hidden;
-	background-color: var(--color-bg-primary);
-	border: 1px solid var(--color-border-primary);
+	background-color: var(--color-bg-default);
+	border: 1px solid var(--color-border-default);
 	border-radius: var(--radius-2);
 	z-index: 1100;
 	max-height: 300px;
@@ -215,15 +215,15 @@
 
 /* Select - Content Radius */
 .contentRadius1 {
-	border-radius: var(--radius);
+	border-radius: var(--radius-1);
 }
 
 .contentRadius2 {
-	border-radius: var(--radius-lg);
+	border-radius: var(--radius-2);
 }
 
 .contentRadius3 {
-	border-radius: var(--radius-xl);
+	border-radius: var(--radius-3);
 }
 
 /* Select - Content Shadow */
@@ -278,7 +278,7 @@
 	gap: 0.5em;
 	font-size: inherit;
 	line-height: inherit;
-	color: var(--color-text-primary);
+	color: var(--color-text-default);
 	padding: var(--space-2) var(--space-3);
 	cursor: pointer;
 	user-select: none;
@@ -296,15 +296,15 @@
 
 /* Select - Item Radius */
 .itemRadius1 {
-	border-radius: var(--radius);
+	border-radius: var(--radius-1);
 }
 
 .itemRadius2 {
-	border-radius: var(--radius-lg);
+	border-radius: var(--radius-2);
 }
 
 .itemRadius3 {
-	border-radius: var(--radius-xl);
+	border-radius: var(--radius-3);
 }
 
 /* Select - Item Compact */
@@ -313,22 +313,22 @@
 }
 
 .item:hover {
-	background-color: var(--color-bg-secondary);
+	background-color: var(--color-bg-subtle);
 	outline: none;
 }
 
 .item:focus {
-	background-color: var(--color-bg-secondary);
+	background-color: var(--color-bg-subtle);
 	outline: none;
 }
 
 .item[data-highlighted] {
-	background-color: var(--color-bg-secondary);
+	background-color: var(--color-bg-subtle);
 	outline: none;
 }
 
 .item[data-state='checked'] {
-	background-color: var(--color-bg-tertiary);
+	background-color: var(--color-bg-muted);
 }
 
 .item[data-disabled] {
@@ -365,7 +365,7 @@
 	display: block;
 	line-height: 1;
 	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-secondary);
+	color: var(--color-text-subtle);
 	padding: var(--space-2) var(--space-3);
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
@@ -392,6 +392,6 @@
 /* Select - Separator */
 .separator {
 	height: 1px;
-	background-color: var(--color-border-primary);
+	background-color: var(--color-border-default);
 	margin: var(--space-1) 0;
 }

@@ -68,19 +68,19 @@
 
 	/* Text - Color */
 	.textColorPrimary {
-		color: var(--color-text-primary);
+		color: var(--color-text-default);
 	}
 
 	.textColorSecondary {
-		color: var(--color-text-secondary);
+		color: var(--color-text-subtle);
 	}
 
 	.textColorTertiary {
-		color: var(--color-text-tertiary);
+		color: var(--color-text-muted);
 	}
 
 	.textColorAccent {
-		color: var(--color-brand);
+		color: var(--color-primary);
 	}
 
 	.textColorInfo {

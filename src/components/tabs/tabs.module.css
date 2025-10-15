@@ -10,7 +10,7 @@
 	/* Tabs - List */
 	.list {
 		display: flex;
-		border-bottom: 1px solid var(--color-border-secondary);
+		border-bottom: 1px solid var(--color-border-subtle);
 		gap: var(--space-1);
 	}
 
@@ -37,7 +37,7 @@
 		justify-content: center;
 		padding: var(--space-1) var(--space-4);
 		font-weight: var(--font-weight-medium);
-		color: var(--color-text-secondary);
+		color: var(--color-text-subtle);
 		cursor: pointer;
 		border-bottom: 2px solid transparent;
 		border-radius: var(--radius) var(--radius) 0 0;
@@ -47,8 +47,8 @@
 	}
 
 	.trigger:hover {
-		color: var(--color-text-primary);
-		background-color: var(--color-bg-secondary);
+		color: var(--color-text-default);
+		background-color: var(--color-bg-subtle);
 	}
 
 	.trigger:focus-visible {
@@ -58,12 +58,12 @@
 	}
 
 	.trigger[data-state='active'] {
-		color: var(--color-brand);
-		border-bottom-color: var(--color-brand);
+		color: var(--color-primary);
+		border-bottom-color: var(--color-primary);
 	}
 
 	.trigger:disabled {
-		color: var(--color-text-tertiary);
+		color: var(--color-text-muted);
 		cursor: not-allowed;
 		opacity: 0.5;
 	}

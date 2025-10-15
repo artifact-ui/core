@@ -59,19 +59,19 @@
 
 	/* Heading - Color */
 	.headingColorPrimary {
-		color: var(--color-text-primary);
+		color: var(--color-text-default);
 	}
 
 	.headingColorSecondary {
-		color: var(--color-text-secondary);
+		color: var(--color-text-subtle);
 	}
 
 	.headingColorTertiary {
-		color: var(--color-text-tertiary);
+		color: var(--color-text-muted);
 	}
 
 	.headingColorAccent {
-		color: var(--color-brand);
+		color: var(--color-primary);
 	}
 
 	.headingColorDanger {

@@ -1,10 +1,10 @@
 [data-theme='light'] {
-	/* Brand colors */
-	--color-brand: var(--gray-900);
-	--color-brand-hover: var(--gray-800);
-	--color-brand-emphasis: var(--gray-900);
-	--color-brand-surface: var(--gray-900);
-	--color-brand-surface-hover: var(--gray-800);
+	/* Primary colors (accent/brand) */
+	--color-primary: var(--gray-900);
+	--color-primary-hover: var(--gray-800);
+	--color-primary-emphasis: var(--gray-900);
+	--color-primary-surface: var(--gray-900);
+	--color-primary-surface-hover: var(--gray-800);
 
 	/* Light theme shadows */
 	--shadow-classic: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 1px 0 rgba(0, 0, 0, 0.1),
@@ -13,22 +13,23 @@
 	--shadow-paper: 0px 8px 0px -6px rgba(0, 0, 0, 0.1);
 
 	/* Background colors */
-	--color-bg-primary: #ffffff;
-	--color-bg-secondary: var(--gray-100);
-	--color-bg-tertiary: var(--gray-200);
+	--color-bg-default: #ffffff;
+	--color-bg-subtle: var(--gray-100);
+	--color-bg-muted: var(--gray-200);
 	--color-bg-overlay: rgba(255, 255, 255, 0.9);
 	--color-bg-accent: #f2f5f4;
 
 	/* Text colors */
-	--color-text-primary: #000000;
-	--color-text-secondary: var(--gray-700);
-	--color-text-tertiary: var(--gray-500);
+	--color-text-default: #000000;
+	--color-text-subtle: var(--gray-700);
+	--color-text-muted: var(--gray-500);
 	--color-text-inverse: #ffffff;
 	--color-bg-inverse: var(--gray-900);
 
 	/* Border colors */
-	--color-border-primary: var(--gray-200);
-	--color-border-secondary: var(--gray-300);
+	--color-border-default: var(--gray-200);
+	--color-border-subtle: var(--gray-300);
+	--color-border-muted: var(--gray-400);
 
 	/* State colors */
 	--color-success: var(--green-500);

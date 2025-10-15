@@ -12,13 +12,13 @@
 
 /* Table - Variants */
 .tableDefault {
-	border: 1px solid var(--color-border-primary);
+	border: 1px solid var(--color-border-default);
 	border-radius: var(--radius);
 }
 
 .tableSurface {
-	background-color: var(--color-bg-secondary);
-	border: 1px solid var(--color-border-primary);
+	background-color: var(--color-bg-subtle);
+	border: 1px solid var(--color-border-default);
 	border-radius: var(--radius);
 }
 
@@ -42,18 +42,18 @@
 
 /* Table - Header */
 .header {
-	border-bottom: 1px solid var(--color-border-primary);
+	border-bottom: 1px solid var(--color-border-default);
 }
 
 /* Table - Footer */
 .footer {
-	border-top: 1px solid var(--color-border-primary);
+	border-top: 1px solid var(--color-border-default);
 }
 
 /* Table - Row */
 .row {
 	border: none;
-	border-bottom: 1px solid var(--color-border-primary);
+	border-bottom: 1px solid var(--color-border-default);
 	background-color: transparent;
 	transition: background-color var(--transition);
 }
@@ -78,9 +78,9 @@
 	padding: var(--space-4);
 	text-align: left;
 	font-weight: var(--font-weight-medium);
-	color: var(--color-text-secondary);
-	background-color: var(--color-bg-secondary);
-	border-bottom: 1px solid var(--color-border-primary);
+	color: var(--color-text-subtle);
+	background-color: var(--color-bg-subtle);
+	border-bottom: 1px solid var(--color-border-default);
 	vertical-align: middle;
 }
 
@@ -99,9 +99,9 @@
 /* Table - Cell */
 .cell {
 	padding: var(--space-4);
-	border-bottom: 1px solid var(--color-border-primary);
+	border-bottom: 1px solid var(--color-border-default);
 	vertical-align: middle;
-	color: var(--color-text-primary);
+	color: var(--color-text-default);
 }
 
 .alignStart {
@@ -156,7 +156,7 @@
 
 /* Table - Striped -- alternate row colors */
 .tableStriped .body .row:nth-child(even) {
-	background-color: var(--color-bg-tertiary);
+	background-color: var(--color-bg-muted);
 }
 
 /* Surface variant - hover effects */

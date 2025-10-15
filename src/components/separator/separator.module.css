@@ -3,7 +3,7 @@
 @layer components {
 	/* Separator - Root */
 	.separator {
-		background-color: var(--color-border-primary);
+		background-color: var(--color-border-default);
 		flex-shrink: 0;
 	}
 
@@ -59,19 +59,19 @@
 
 	/* Separator - Color */
 	.separatorColorPrimary {
-		background-color: var(--color-border-primary);
+		background-color: var(--color-border-default);
 	}
 
 	.separatorColorSecondary {
-		background-color: var(--color-border-secondary);
+		background-color: var(--color-border-subtle);
 	}
 
 	.separatorColorTertiary {
-		background-color: var(--color-border-tertiary);
+		background-color: var(--color-border-muted);
 	}
 
 	.separatorColorAccent {
-		background-color: var(--color-brand);
+		background-color: var(--color-primary);
 	}
 
 	.separatorColorInfo {

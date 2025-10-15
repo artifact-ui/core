@@ -74,13 +74,13 @@
 
 	/* Badge - Colors - Solid Variant */
 	.badgeVariantSolid.badgeColorPrimary {
-		background-color: var(--color-brand-surface);
+		background-color: var(--color-primary-surface);
 		color: var(--color-constant-white);
 	}
 
 	.badgeVariantSolid.badgeColorNeutral {
-		background-color: var(--color-bg-secondary);
-		color: var(--color-text-primary);
+		background-color: var(--color-bg-subtle);
+		color: var(--color-text-default);
 	}
 
 	.badgeVariantSolid.badgeColorInfo {
@@ -100,14 +100,14 @@
 
 	/* Badge - Colors - Soft Variant */
 	.badgeVariantSoft.badgeColorPrimary {
-		background-color: var(--color-brand);
-		color: var(--color-brand);
-		background-color: color-mix(in srgb, var(--color-brand) 15%, transparent);
+		background-color: var(--color-primary);
+		color: var(--color-primary);
+		background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
 	}
 
 	.badgeVariantSoft.badgeColorNeutral {
-		background-color: var(--color-bg-secondary);
-		color: var(--color-text-secondary);
+		background-color: var(--color-bg-subtle);
+		color: var(--color-text-subtle);
 		opacity: var(--opacity-80);
 	}
 
@@ -132,13 +132,13 @@
 
 	/* Badge - Colors - Outline Variant */
 	.badgeVariantOutline.badgeColorPrimary {
-		border-color: var(--color-brand);
-		color: var(--color-brand);
+		border-color: var(--color-primary);
+		color: var(--color-primary);
 	}
 
 	.badgeVariantOutline.badgeColorNeutral {
-		border-color: var(--color-border-secondary);
-		color: var(--color-text-secondary);
+		border-color: var(--color-border-subtle);
+		color: var(--color-text-subtle);
 	}
 
 	.badgeVariantOutline.badgeColorInfo {
@@ -158,8 +158,8 @@
 
 	/* Badge - High Contrast */
 	.badgeHighContrast.badgeVariantSolid.badgeColorNeutral {
-		background-color: var(--color-text-primary);
-		color: var(--color-bg-primary);
+		background-color: var(--color-text-default);
+		color: var(--color-bg-default);
 	}
 
 	.badgeHighContrast.badgeVariantSoft {

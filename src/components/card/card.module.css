@@ -5,22 +5,22 @@
 .card {
 	display: flex;
 	flex-direction: column;
-	border: 1px solid var(--color-border-primary);
+	border: 1px solid var(--color-border-default);
 	border-radius: var(--radius);
-	background-color: var(--color-bg-primary);
+	background-color: var(--color-bg-default);
 	transition: var(--transition);
 	overflow: hidden;
 }
 
 /* Card - Variants */
 .cardDefault {
-	border: 1px solid var(--color-border-primary);
-	background-color: var(--color-bg-primary);
+	border: 1px solid var(--color-border-default);
+	background-color: var(--color-bg-default);
 }
 
 .cardSurface {
-	border: 1px solid var(--color-border-primary);
-	background-color: var(--color-bg-secondary);
+	border: 1px solid var(--color-border-default);
+	background-color: var(--color-bg-subtle);
 }
 
 .cardGhost {
@@ -57,9 +57,9 @@
 /* Card - Header */
 .header {
 	padding: var(--space-4);
-	border-bottom: 1px solid var(--color-border-primary);
-	background-color: var(--color-bg-secondary);
-	color: var(--color-text-primary);
+	border-bottom: 1px solid var(--color-border-default);
+	background-color: var(--color-bg-subtle);
+	color: var(--color-text-default);
 	font-weight: var(--font-weight-medium);
 }
 
@@ -71,15 +71,15 @@
 /* Card - Components */
 .body {
 	padding: var(--space-4);
-	color: var(--color-text-primary);
+	color: var(--color-text-default);
 	flex: 1;
 }
 
 .footer {
 	padding: var(--space-4);
-	border-top: 1px solid var(--color-border-primary);
-	background-color: var(--color-bg-secondary);
-	color: var(--color-text-secondary);
+	border-top: 1px solid var(--color-border-default);
+	background-color: var(--color-bg-subtle);
+	color: var(--color-text-subtle);
 }
 
 .cardGhost .footer {
