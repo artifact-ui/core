@@ -26,12 +26,12 @@
 	}
 
 	.switch[data-state='checked'] {
-		background-color: var(--color-brand);
+		background-color: var(--color-brand-surface);
 		box-shadow: none;
 	}
 
 	.switch[data-state='checked']:hover {
-		background-color: var(--color-brand-hover);
+		background-color: var(--color-brand-surface-hover);
 	}
 
 	/* Switch - Sizes */

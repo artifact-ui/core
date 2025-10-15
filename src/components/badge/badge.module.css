@@ -70,8 +70,8 @@
 
 	/* Badge - Colors - Solid Variant */
 	.badgeVariantSolid.badgeColorPrimary {
-		background-color: var(--color-bg-primary);
-		color: var(--color-text-primary);
+		background-color: var(--color-brand-surface);
+		color: var(--color-constant-white);
 	}
 
 	.badgeVariantSolid.badgeColorSecondary {
@@ -101,9 +101,9 @@
 
 	/* Badge - Colors - Soft Variant */
 	.badgeVariantSoft.badgeColorPrimary {
-		background-color: var(--color-bg-primary);
-		color: var(--color-text-primary);
-		opacity: var(--opacity-70);
+		background-color: var(--color-brand);
+		color: var(--color-brand);
+		background-color: color-mix(in srgb, var(--color-brand) 15%, transparent);
 	}
 
 	.badgeVariantSoft.badgeColorSecondary {
@@ -139,8 +139,8 @@
 
 	/* Badge - Colors - Outline Variant */
 	.badgeVariantOutline.badgeColorPrimary {
-		border-color: var(--color-border-primary);
-		color: var(--color-text-primary);
+		border-color: var(--color-brand);
+		color: var(--color-brand);
 	}
 
 	.badgeVariantOutline.badgeColorSecondary {

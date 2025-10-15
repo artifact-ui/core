@@ -52,8 +52,8 @@
 
 /* Dark mode changes */
 [data-theme='dark'] .alertSuccess {
-	color: var(--sage-300);
-	border-color: var(--sage-500);
+	color: var(--green-300);
+	border-color: var(--green-500);
 }
 
 [data-theme='dark'] .alertError {

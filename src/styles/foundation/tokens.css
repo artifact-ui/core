@@ -2,15 +2,16 @@
 	font-family: 'Inter Variable', Inter, system-ui, sans-serif;
 
 	/* Colors */
-	--sage-100: #daf1e3;
-	--sage-200: #b8e2cc;
-	--sage-300: #8acbad;
-	--sage-400: #59ae89;
-	--sage-500: #338866;
-	--sage-600: #267557;
-	--sage-700: #1f5d48;
-	--sage-800: #1a4b3a;
-	--sage-900: #173d30;
+	--green-50: #f0fdf4;
+	--green-100: #daf1e3;
+	--green-200: #b8e2cc;
+	--green-300: #8acbad;
+	--green-400: #59ae89;
+	--green-500: #338866;
+	--green-600: #267557;
+	--green-700: #1f5d48;
+	--green-800: #1a4b3a;
+	--green-900: #173d30;
 
 	--gray-100: #f3f4f6;
 	--gray-200: #e5e7eb;
@@ -149,7 +150,7 @@
 	--brightness-light-1: brightness(105%);
 	--brightness-light-2: brightness(120%);
 
-	--color-border-focus: var(--sage-500);
+	--color-border-focus: var(--gray-900);
 }
 
 /* Override if dynamic viewport is suported - mobile fix */
