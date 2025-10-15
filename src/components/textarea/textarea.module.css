@@ -1,6 +1,6 @@
 /* Alpine - TextArea Component */
 
-@layer alpine-components {
+@layer components {
 /* Field wrapper */
 .field {
 	width: 100%;

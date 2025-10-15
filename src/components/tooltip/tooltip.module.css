@@ -1,6 +1,6 @@
 /* Alpine - Tooltip Component */
 
-@layer alpine-components {
+@layer components {
 	.content {
 		background-color: var(--color-bg-inverse);
 		color: var(--color-text-inverse);

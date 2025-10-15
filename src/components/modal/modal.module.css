@@ -1,6 +1,6 @@
 /* Alpine - Modal Component */
 
-@layer alpine-components {
+@layer components {
 	/* Modal - Overlay */
 	.overlay {
 		position: fixed;

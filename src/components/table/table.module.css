@@ -1,6 +1,6 @@
 /* Alpine - Table Component */
 
-@layer alpine-components {
+@layer components {
 /* Table - Root */
 .table {
 	border-collapse: collapse;

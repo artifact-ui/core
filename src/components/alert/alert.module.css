@@ -1,6 +1,6 @@
 /* Alpine - Alert Component */
 
-@layer alpine-components {
+@layer components {
 /* Alert - Root */
 .alert {
 	display: flex;

@@ -1,6 +1,6 @@
 /* Alpine - Card Component */
 
-@layer alpine-components {
+@layer components {
 /* Card - Root */
 .card {
 	display: flex;

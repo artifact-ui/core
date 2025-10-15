@@ -1,6 +1,6 @@
 /* Alpine - Tabs Component */
 
-@layer alpine-components {
+@layer components {
 	/* Tabs - Root */
 	.root {
 		display: flex;

@@ -1,6 +1,6 @@
 /* Alpine - Badge Component */
 
-@layer alpine-components {
+@layer components {
 	/* Badge - Root */
 	.badge {
 		display: inline-flex;

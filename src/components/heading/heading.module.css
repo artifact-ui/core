@@ -1,6 +1,6 @@
 /* Alpine - Heading Component */
 
-@layer alpine-components {
+@layer components {
 	/* Heading - Root */
 	.heading {
 		margin: 0;

@@ -1,6 +1,6 @@
 /* Alpine - Separator Component */
 
-@layer alpine-components {
+@layer components {
 	/* Separator - Root */
 	.separator {
 		background-color: var(--color-border-primary);

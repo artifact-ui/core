@@ -1,6 +1,6 @@
 /* Alpine - Button Component */
 
-@layer alpine-components {
+@layer components {
 	/* Button - Root */
 	.button {
 	display: inline-flex;

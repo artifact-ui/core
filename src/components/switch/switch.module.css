@@ -1,6 +1,6 @@
 /* Alpine - Switch Component */
 
-@layer alpine-components {
+@layer components {
 	/* Switch - Root */
 	.switch {
 		all: unset;
