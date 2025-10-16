@@ -11,6 +11,11 @@ global.ResizeObserver =
 		disconnect: vi.fn(),
 	}));
 
+// Required for Radix Select
+Element.prototype.hasPointerCapture = vi.fn(() => false);
+Element.prototype.releasePointerCapture = vi.fn();
+Element.prototype.setPointerCapture = vi.fn();
+
 afterEach(() => {
 	cleanup();
 });
