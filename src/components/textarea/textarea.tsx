@@ -3,7 +3,9 @@ import { Form } from 'radix-ui';
 import { cn } from '../../utils/cn';
 import { type RadixFormMatchType } from '../../types/radix-types';
 import { type FormError } from '../../types/form-types';
+import { type SimpleRadius } from '../../types/style-props';
 import { getErrorState, getErrorMessage } from '../../utils/form-error-helpers';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './textarea.module.css';
 
 export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -14,6 +16,7 @@ export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextArea
 	height?: string;
 	rows?: number;
 	match?: RadixFormMatchType;
+	radius?: SimpleRadius;
 	override?: boolean;
 }
 
@@ -78,7 +81,22 @@ const Message = forwardRef<
 Message.displayName = 'TextAreaMessage';
 
 const Input = forwardRef<HTMLTextAreaElement, TextAreaProps>(
-	({ error, className, label, message, name, width, height, match, override = false, ...props }, ref) => {
+	(
+		{
+			error,
+			className,
+			label,
+			message,
+			name,
+			width,
+			height,
+			match,
+			radius,
+			override = false,
+			...props
+		},
+		ref,
+	) => {
 		const hasError = getErrorState(error);
 		const errorMessage = getErrorMessage(error, message);
 		const errorId = `${name}-error`;
@@ -86,6 +104,7 @@ const Input = forwardRef<HTMLTextAreaElement, TextAreaProps>(
 		const textareaClasses = cn(
 			styles.textarea,
 			styles.textareaDefault,
+			radius && radiusClasses[radius],
 			hasError && styles.textareaError,
 			className,
 		);
@@ -129,12 +148,13 @@ Input.displayName = 'TextAreaInput';
 const Standalone = forwardRef<
 	HTMLTextAreaElement,
 	Omit<TextAreaProps, 'name'> & { name?: string }
->(({ error, className, width, height, override = false, ...props }, ref) => {
+>(({ error, className, width, height, radius, override = false, ...props }, ref) => {
 	const hasError = getErrorState(error);
 
 	const textareaClasses = cn(
 		styles.textarea,
 		styles.textareaDefault,
+		radius && radiusClasses[radius],
 		hasError && styles.textareaError,
 		className,
 	);
@@ -146,7 +166,11 @@ const Standalone = forwardRef<
 
 	return (
 		<div
-			className={cn(styles.standalone, width && styles.fieldResponsive, override && 'aow')}
+			className={cn(
+				styles.standalone,
+				width && styles.fieldResponsive,
+				override && 'aow',
+			)}
 			style={rootStyle}>
 			<textarea ref={ref} className={textareaClasses} {...props} />
 		</div>

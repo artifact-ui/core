@@ -1,5 +1,7 @@
 import React, { forwardRef } from 'react';
 import { cn } from '../../utils/cn';
+import { SimpleRadius } from '../../types/style-props';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './table.module.css';
 
 export interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
@@ -7,7 +9,7 @@ export interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> 
 	size?: '1' | '2' | '3';
 	compact?: boolean;
 	striped?: boolean;
-	rounded?: false | true | 'sm' | 'md' | 'lg';
+	radius?: SimpleRadius;
 	shadow?: false | true | 'classic' | 'spread' | 'paper';
 	highlight?: boolean;
 	override?: boolean;
@@ -49,7 +51,7 @@ const Root = forwardRef<HTMLTableElement, TableProps>(
 			size = '2',
 			compact = false,
 			striped = false,
-			rounded = false,
+			radius,
 			shadow = false,
 			highlight = false,
 			override = false,
@@ -71,27 +73,15 @@ const Root = forwardRef<HTMLTableElement, TableProps>(
 			'3': styles.tableSize3,
 		};
 
-		const roundedClasses = {
-			sm: styles.tableRoundedSm,
-			md: styles.tableRoundedMd,
-			lg: styles.tableRoundedLg,
-		};
-
 		const shadowClasses = {
 			classic: styles.tableShadowClassic,
 			spread: styles.tableShadowSpread,
 			paper: styles.tableShadowPaper,
 		};
 
-		// Handle rounded prop: true = default rounded, or specific size
-		const roundedClass = rounded === true
-			? styles.tableRounded
-			: rounded && roundedClasses[rounded];
-
 		// Handle shadow prop: true = classic shadow, or specific type
-		const shadowClass = shadow === true
-			? styles.tableShadowClassic
-			: shadow && shadowClasses[shadow];
+		const shadowClass =
+			shadow === true ? styles.tableShadowClassic : shadow && shadowClasses[shadow];
 
 		const tableClasses = cn(
 			styles.table,
@@ -100,7 +90,7 @@ const Root = forwardRef<HTMLTableElement, TableProps>(
 			compact && styles.tableCompact,
 			striped && styles.tableStriped,
 			highlight && styles.tableHighlight,
-			roundedClass,
+			radius && radiusClasses[radius],
 			shadowClass,
 			override && 'aow',
 			className,

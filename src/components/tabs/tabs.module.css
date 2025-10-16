@@ -1,4 +1,4 @@
-/* Alpine - Tabs Component */
+/* Artifact UI - Tabs Component */
 
 @layer components {
 	/* Tabs - Root */
@@ -35,12 +35,12 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		padding: var(--space-1) var(--space-4);
+		padding: var(--space-2) var(--space-4);
 		font-weight: var(--font-weight-medium);
 		color: var(--color-text-subtle);
 		cursor: pointer;
 		border-bottom: 2px solid transparent;
-		border-radius: var(--radius) var(--radius) 0 0;
+		border-radius: var(--radius-default-simple) var(--radius-default-simple) 0 0;
 		transition: all 0.2s ease;
 		user-select: none;
 		-webkit-tap-highlight-color: transparent;
@@ -51,15 +51,53 @@
 		background-color: var(--color-bg-subtle);
 	}
 
-	.trigger[data-state='active'] {
+	/* Tabs - Colors */
+	.trigger.colorPrimary[data-state='active'] {
 		color: var(--color-primary);
 		border-bottom-color: var(--color-primary);
+	}
+
+	.trigger.colorNeutral[data-state='active'] {
+		color: var(--color-text-default);
+		border-bottom-color: var(--color-text-default);
+	}
+
+	.trigger.colorSuccess[data-state='active'] {
+		color: var(--color-success);
+		border-bottom-color: var(--color-success);
+	}
+
+	.trigger.colorInfo[data-state='active'] {
+		color: var(--color-info);
+		border-bottom-color: var(--color-info);
+	}
+
+	.trigger.colorDanger[data-state='active'] {
+		color: var(--color-error);
+		border-bottom-color: var(--color-error);
 	}
 
 	.trigger:disabled {
 		color: var(--color-text-muted);
 		cursor: not-allowed;
 		opacity: 0.5;
+	}
+
+	/* Tabs - Radius (top corners only) */
+	.trigger.radiusNone {
+		border-radius: 0;
+	}
+
+	.trigger.radius1 {
+		border-radius: var(--radius-1) var(--radius-1) 0 0;
+	}
+
+	.trigger.radius2 {
+		border-radius: var(--radius-2) var(--radius-2) 0 0;
+	}
+
+	.trigger.radius3 {
+		border-radius: var(--radius-3) var(--radius-3) 0 0;
 	}
 
 	/* Tabs - Content */

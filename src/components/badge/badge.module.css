@@ -1,4 +1,4 @@
-/* Alpine - Badge Component */
+/* Artifact UI - Badge Component */
 
 @layer components {
 	/* Badge - Root */
@@ -10,6 +10,7 @@
 		line-height: 1;
 		white-space: nowrap;
 		vertical-align: middle;
+		border-radius: var(--radius-default);
 	}
 
 	/* Badge with icons */
@@ -32,7 +33,6 @@
 		/* Border colors will be applied by color classes */
 	}
 
-
 	/* Badge - Sizes */
 	.badgeSize1 {
 		font-size: var(--font-size-2);
@@ -52,24 +52,6 @@
 	.badgeSize4 {
 		font-size: var(--font-size-5);
 		padding: var(--space-2) var(--space-4);
-	}
-
-
-	/* Badge - Radius */
-	.badgeRadius1 {
-		border-radius: var(--radius-1);
-	}
-
-	.badgeRadius2 {
-		border-radius: var(--radius-2);
-	}
-
-	.badgeRadius3 {
-		border-radius: var(--radius-3);
-	}
-
-	.badgeRadiusFull {
-		border-radius: var(--radius-full);
 	}
 
 	/* Badge - Colors - Solid Variant */
@@ -129,7 +111,6 @@
 		background-color: color-mix(in srgb, var(--color-error) 15%, transparent);
 	}
 
-
 	/* Badge - Colors - Outline Variant */
 	.badgeVariantOutline.badgeColorPrimary {
 		border-color: var(--color-primary);
@@ -171,14 +152,30 @@
 	}
 
 	/* Badge - Icon Gap */
-	.badgeIconGap1 { gap: var(--space-1); }
-	.badgeIconGap2 { gap: var(--space-2); }
-	.badgeIconGap3 { gap: var(--space-3); }
-	.badgeIconGap4 { gap: var(--space-4); }
-	.badgeIconGap5 { gap: var(--space-5); }
-	.badgeIconGap6 { gap: var(--space-6); }
-	.badgeIconGap7 { gap: var(--space-7); }
-	.badgeIconGap8 { gap: var(--space-8); }
+	.badgeIconGap1 {
+		gap: var(--space-1);
+	}
+	.badgeIconGap2 {
+		gap: var(--space-2);
+	}
+	.badgeIconGap3 {
+		gap: var(--space-3);
+	}
+	.badgeIconGap4 {
+		gap: var(--space-4);
+	}
+	.badgeIconGap5 {
+		gap: var(--space-5);
+	}
+	.badgeIconGap6 {
+		gap: var(--space-6);
+	}
+	.badgeIconGap7 {
+		gap: var(--space-7);
+	}
+	.badgeIconGap8 {
+		gap: var(--space-8);
+	}
 
 	/* Badge - Icons */
 	.iconLeft {

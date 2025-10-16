@@ -1,4 +1,4 @@
-/* Alpine - Switch Component */
+/* Artifact UI - Switch Component */
 
 @layer components {
 	/* Switch - Root */
@@ -10,7 +10,9 @@
 		background-color: var(--color-bg-muted);
 		border-radius: 9999px;
 		cursor: pointer;
-		transition: background-color 0.2s ease, box-shadow 0.2s ease;
+		transition:
+			background-color 0.2s ease,
+			box-shadow 0.2s ease;
 		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 		-webkit-tap-highlight-color: transparent;
 	}

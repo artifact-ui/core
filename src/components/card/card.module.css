@@ -1,147 +1,132 @@
-/* Alpine - Card Component */
+/* Artifact UI - Card Component */
 
 @layer components {
-/* Card - Root */
-.card {
-	display: flex;
-	flex-direction: column;
-	border: 1px solid var(--color-border-default);
-	border-radius: var(--radius);
-	background-color: var(--color-bg-default);
-	transition: var(--transition);
-	overflow: hidden;
-}
-
-/* Card - Variants */
-.cardDefault {
-	border: 1px solid var(--color-border-default);
-	background-color: var(--color-bg-default);
-}
-
-.cardSurface {
-	border: 1px solid var(--color-border-default);
-	background-color: var(--color-bg-subtle);
-}
-
-.cardGhost {
-	border: none;
-	background-color: transparent;
-}
-
-/* Card - Sizes */
-.cardSize1 {
-	font-size: var(--font-size-2);
-}
-
-.cardSize2 {
-	font-size: var(--font-size-3);
-}
-
-.cardSize3 {
-	font-size: var(--font-size-4);
-}
-
-/* Card - Interactive */
-.cardInteractive {
-	cursor: pointer;
-}
-
-.cardInteractive:hover {
-	background-color: var(--color-hover);
-}
-
-.cardInteractive.cardSurface:hover {
-	background-color: var(--color-active);
-}
-
-/* Card - Header */
-.header {
-	padding: var(--space-4);
-	border-bottom: 1px solid var(--color-border-default);
-	background-color: var(--color-bg-subtle);
-	color: var(--color-text-default);
-	font-weight: var(--font-weight-medium);
-}
-
-.cardGhost .header {
-	border-bottom: none;
-	background-color: transparent;
-}
-
-/* Card - Components */
-.body {
-	padding: var(--space-4);
-	color: var(--color-text-default);
-	flex: 1;
-}
-
-.footer {
-	padding: var(--space-4);
-	border-top: 1px solid var(--color-border-default);
-	background-color: var(--color-bg-subtle);
-	color: var(--color-text-subtle);
-}
-
-.cardGhost .footer {
-	border-top: none;
-	background-color: transparent;
-}
-
-.cardSize1 .header,
-.cardSize1 .body,
-.cardSize1 .footer {
-	padding: var(--space-3);
-}
-
-.cardSize2 .header,
-.cardSize2 .body,
-.cardSize2 .footer {
-	padding: var(--space-4);
-}
-
-.cardSize3 .header,
-.cardSize3 .body,
-.cardSize3 .footer {
-	padding: var(--space-6);
-}
-
-.cardRounded,
-.cardRoundedSm {
-	border-radius: var(--radius);
-}
-
-/* Card - Border Radius */
-.cardRoundedMd {
-	border-radius: var(--radius-lg);
-}
-
-.cardRoundedLg {
-	border-radius: calc(var(--radius-lg) * 2);
-}
-
-/* Card - Box Shadow */
-.cardShadowClassic {
-	box-shadow: var(--shadow-classic);
-}
-
-.cardShadowSpread {
-	box-shadow: var(--shadow-spread);
-}
-
-.cardShadowPaper {
-	box-shadow: var(--shadow-paper);
-}
-
-@media (max-width: 768px) {
+	/* Card - Root */
 	.card {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid var(--color-border-default);
+		border-radius: var(--radius-default-simple);
+		background-color: var(--color-bg-default);
+		transition: var(--transition);
+		overflow: hidden;
+	}
+
+	/* Card - Variants */
+	.cardDefault {
+		border: 1px solid var(--color-border-default);
+		background-color: var(--color-bg-default);
+	}
+
+	.cardSurface {
+		border: 1px solid var(--color-border-default);
+		background-color: var(--color-bg-subtle);
+	}
+
+	.cardGhost {
+		border: none;
+		background-color: transparent;
+	}
+
+	/* Card - Sizes */
+	.cardSize1 {
 		font-size: var(--font-size-2);
 	}
 
-	.header,
-	.body,
+	.cardSize2 {
+		font-size: var(--font-size-3);
+	}
+
+	.cardSize3 {
+		font-size: var(--font-size-4);
+	}
+
+	/* Card - Interactive */
+	.cardInteractive {
+		cursor: pointer;
+	}
+
+	.cardInteractive:hover {
+		background-color: var(--color-hover);
+	}
+
+	.cardInteractive.cardSurface:hover {
+		background-color: var(--color-active);
+	}
+
+	/* Card - Header */
+	.header {
+		padding: var(--space-4);
+		border-bottom: 1px solid var(--color-border-default);
+		background-color: var(--color-bg-subtle);
+		color: var(--color-text-default);
+		font-weight: var(--font-weight-medium);
+	}
+
+	.cardGhost .header {
+		border-bottom: none;
+		background-color: transparent;
+	}
+
+	/* Card - Components */
+	.body {
+		padding: var(--space-4);
+		color: var(--color-text-default);
+		flex: 1;
+	}
+
 	.footer {
+		padding: var(--space-4);
+		border-top: 1px solid var(--color-border-default);
+		background-color: var(--color-bg-subtle);
+		color: var(--color-text-subtle);
+	}
+
+	.cardGhost .footer {
+		border-top: none;
+		background-color: transparent;
+	}
+
+	.cardSize1 .header,
+	.cardSize1 .body,
+	.cardSize1 .footer {
 		padding: var(--space-3);
 	}
-}
 
+	.cardSize2 .header,
+	.cardSize2 .body,
+	.cardSize2 .footer {
+		padding: var(--space-4);
+	}
+
+	.cardSize3 .header,
+	.cardSize3 .body,
+	.cardSize3 .footer {
+		padding: var(--space-6);
+	}
+
+	/* Card - Box Shadow */
+	.cardShadowClassic {
+		box-shadow: var(--shadow-classic);
+	}
+
+	.cardShadowSpread {
+		box-shadow: var(--shadow-spread);
+	}
+
+	.cardShadowPaper {
+		box-shadow: var(--shadow-paper);
+	}
+
+	@media (max-width: 768px) {
+		.card {
+			font-size: var(--font-size-2);
+		}
+
+		.header,
+		.body,
+		.footer {
+			padding: var(--space-3);
+		}
+	}
 }

@@ -167,3 +167,55 @@ const SizesComponent = () => {
 export const Sizes: Story = {
 	render: () => <SizesComponent />,
 };
+
+const ExamplesComponent = () => {
+	const [activeTab, setActiveTab] = useState('primary');
+
+	return (
+		<Stack gap="8" style={{ width: '600px' }}>
+			<div>
+				<Text size="2" weight="medium" style={{ marginBottom: '0.5rem' }}>
+					Colors
+				</Text>
+				<Tabs.Root value={activeTab} onValueChange={setActiveTab}>
+					<Tabs.List>
+						<Tabs.Trigger value="primary" color="primary">
+							Primary
+						</Tabs.Trigger>
+						<Tabs.Trigger value="neutral" color="neutral">
+							Neutral
+						</Tabs.Trigger>
+						<Tabs.Trigger value="success" color="success">
+							Success
+						</Tabs.Trigger>
+						<Tabs.Trigger value="info" color="info">
+							Info
+						</Tabs.Trigger>
+						<Tabs.Trigger value="danger" color="danger">
+							Danger
+						</Tabs.Trigger>
+					</Tabs.List>
+					<Tabs.Content value="primary">
+						<Text>Primary tab content with default brand color.</Text>
+					</Tabs.Content>
+					<Tabs.Content value="neutral">
+						<Text>Neutral tab content for secondary or archived sections.</Text>
+					</Tabs.Content>
+					<Tabs.Content value="success">
+						<Text>Success tab content for completed or positive states.</Text>
+					</Tabs.Content>
+					<Tabs.Content value="info">
+						<Text>Info tab content for informational sections.</Text>
+					</Tabs.Content>
+					<Tabs.Content value="danger">
+						<Text>Danger tab content for errors or warnings.</Text>
+					</Tabs.Content>
+				</Tabs.Root>
+			</div>
+		</Stack>
+	);
+};
+
+export const Examples: Story = {
+	render: () => <ExamplesComponent />,
+};

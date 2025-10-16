@@ -1,4 +1,4 @@
-/* Alpine - Modal Component */
+/* Artifact UI - Modal Component */
 
 @layer components {
 	/* Modal - Overlay */
@@ -27,7 +27,7 @@
 		transform: translate(-50%, -50%);
 		z-index: 1001;
 		background: var(--color-bg-default);
-		border-radius: var(--radius-lg);
+		border-radius: var(--radius-default-simple);
 		box-shadow: var(--shadow-classic);
 		width: 520px;
 		max-width: 90vw;

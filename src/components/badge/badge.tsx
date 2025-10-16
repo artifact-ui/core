@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import { cn } from '../../utils/cn';
 import { Radius } from '../../types/style-props';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './badge.module.css';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
@@ -21,7 +22,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 			variant = 'solid',
 			color = 'neutral',
 			size = '3',
-			radius = '2',
+			radius,
 			highContrast = false,
 			iconLeft,
 			iconRight,
@@ -54,13 +55,6 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 			'4': styles.badgeSize4,
 		};
 
-		const radiusClasses = {
-			'1': styles.badgeRadius1,
-			'2': styles.badgeRadius2,
-			'3': styles.badgeRadius3,
-			full: styles.badgeRadiusFull,
-		};
-
 		const iconGapClasses = {
 			'1': styles.badgeIconGap1,
 			'2': styles.badgeIconGap2,
@@ -84,7 +78,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 					variantClasses[variant],
 					colorClasses[color],
 					sizeClasses[size],
-					radiusClasses[radius],
+					radius && radiusClasses[radius],
 					highContrast && styles.badgeHighContrast,
 					override && 'aow',
 					className,

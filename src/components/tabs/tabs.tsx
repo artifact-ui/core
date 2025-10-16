@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import { cn } from '../../utils/cn';
+import { type SimpleRadius } from '../../types/style-props';
 import styles from './tabs.module.css';
 
 // Tabs Root
@@ -9,18 +10,17 @@ export interface TabsRootProps
 	override?: boolean;
 }
 
-const Root = forwardRef<
-	React.ElementRef<typeof TabsPrimitive.Root>,
-	TabsRootProps
->(({ override = false, className, ...props }, ref) => {
-	return (
-		<TabsPrimitive.Root
-			ref={ref}
-			className={cn(styles.root, override && 'aow', className)}
-			{...props}
-		/>
-	);
-});
+const Root = forwardRef<React.ElementRef<typeof TabsPrimitive.Root>, TabsRootProps>(
+	({ override = false, className, ...props }, ref) => {
+		return (
+			<TabsPrimitive.Root
+				ref={ref}
+				className={cn(styles.root, override && 'aow', className)}
+				{...props}
+			/>
+		);
+	},
+);
 
 Root.displayName = 'TabsRoot';
 
@@ -31,24 +31,23 @@ export interface TabsListProps
 	override?: boolean;
 }
 
-const List = forwardRef<
-	React.ElementRef<typeof TabsPrimitive.List>,
-	TabsListProps
->(({ size = '2', override = false, className, ...props }, ref) => {
-	const sizeClasses = {
-		'1': styles.listSm,
-		'2': styles.listMd,
-		'3': styles.listLg,
-	};
+const List = forwardRef<React.ElementRef<typeof TabsPrimitive.List>, TabsListProps>(
+	({ size = '2', override = false, className, ...props }, ref) => {
+		const sizeClasses = {
+			'1': styles.listSm,
+			'2': styles.listMd,
+			'3': styles.listLg,
+		};
 
-	return (
-		<TabsPrimitive.List
-			ref={ref}
-			className={cn(styles.list, sizeClasses[size], override && 'aow', className)}
-			{...props}
-		/>
-	);
-});
+		return (
+			<TabsPrimitive.List
+				ref={ref}
+				className={cn(styles.list, sizeClasses[size], override && 'aow', className)}
+				{...props}
+			/>
+		);
+	},
+);
 
 List.displayName = 'TabsList';
 
@@ -56,16 +55,39 @@ List.displayName = 'TabsList';
 export interface TabsTriggerProps
 	extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> {
 	override?: boolean;
+	radius?: SimpleRadius;
+	color?: 'primary' | 'neutral' | 'success' | 'info' | 'danger';
 }
 
 const Trigger = forwardRef<
 	React.ElementRef<typeof TabsPrimitive.Trigger>,
 	TabsTriggerProps
->(({ override = false, className, ...props }, ref) => {
+>(({ override = false, radius, color = 'primary', className, ...props }, ref) => {
+	const radiusClasses = {
+		none: styles.radiusNone,
+		'1': styles.radius1,
+		'2': styles.radius2,
+		'3': styles.radius3,
+	};
+
+	const colorClasses = {
+		primary: styles.colorPrimary,
+		neutral: styles.colorNeutral,
+		success: styles.colorSuccess,
+		info: styles.colorInfo,
+		danger: styles.colorDanger,
+	};
+
 	return (
 		<TabsPrimitive.Trigger
 			ref={ref}
-			className={cn(styles.trigger, override && 'aow', className)}
+			className={cn(
+				styles.trigger,
+				colorClasses[color],
+				radius && radiusClasses[radius],
+				override && 'aow',
+				className,
+			)}
 			{...props}
 		/>
 	);

@@ -1,6 +1,8 @@
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
 import { forwardRef } from 'react';
 import { cn } from '../../utils/cn';
+import { type SimpleRadius } from '../../types/style-props';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './dropdown-menu.module.css';
 
 const DropdownMenu = DropdownMenuPrimitive.Root;
@@ -38,6 +40,7 @@ const DropdownMenuSubContent = ({
 type DropdownMenuContentProps = DropdownMenuPrimitive.DropdownMenuContentProps & {
 	size?: '1' | '2' | '3';
 	compact?: boolean;
+	radius?: SimpleRadius;
 };
 
 const DropdownMenuContent = ({
@@ -45,6 +48,7 @@ const DropdownMenuContent = ({
 	sideOffset = 4,
 	size = '2',
 	compact = false,
+	radius,
 	...props
 }: DropdownMenuContentProps) => {
 	const sizeClasses = {
@@ -61,6 +65,7 @@ const DropdownMenuContent = ({
 					styles.content,
 					sizeClasses[size],
 					compact && styles.contentCompact,
+					radius && radiusClasses[radius],
 					className,
 				)}
 				{...props}
@@ -73,7 +78,11 @@ const DropdownMenuItem = forwardRef<
 	React.ElementRef<typeof DropdownMenuPrimitive.Item>,
 	React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item>
 >(({ className, ...props }, ref) => (
-	<DropdownMenuPrimitive.Item ref={ref} className={cn(styles.item, className)} {...props} />
+	<DropdownMenuPrimitive.Item
+		ref={ref}
+		className={cn(styles.item, className)}
+		{...props}
+	/>
 ));
 
 DropdownMenuItem.displayName = 'DropdownMenuItem';

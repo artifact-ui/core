@@ -4,25 +4,26 @@ import { CheckIcon } from '../../icons/CheckIcon';
 import { ChevronDownIcon } from '../../icons/ChevronDownIcon';
 import { cn } from '../../utils/cn';
 import { type FormError } from '../../types/form-types';
+import { type Radius } from '../../types/style-props';
 import { getErrorState, getErrorMessage } from '../../utils/form-error-helpers';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import { Text } from '../text/text';
 import styles from './select.module.css';
 
 type SelectSize = '1' | '2' | '3' | '4';
-type SelectRadius = '1' | '2' | '3';
 type SelectColor = 'default' | 'secondary' | 'tertiary';
 type SelectShadow = 'classic' | 'spread' | 'paper';
 
 const SelectContext = createContext<{
 	size: SelectSize;
-	radius: SelectRadius;
+	radius: Radius | undefined;
 	color: SelectColor;
 	error: boolean;
 	shadow: SelectShadow;
 	compact: boolean;
 }>({
 	size: '2',
-	radius: '1',
+	radius: undefined,
 	color: 'default',
 	error: false,
 	shadow: 'classic',
@@ -41,7 +42,7 @@ export interface SelectRootProps {
 	defaultOpen?: boolean;
 	onOpenChange?: (open: boolean) => void;
 	size?: SelectSize;
-	radius?: SelectRadius;
+	radius?: Radius;
 	color?: 'default' | 'secondary' | 'tertiary';
 	shadow?: SelectShadow;
 	error?: boolean | FormError | null;
@@ -78,6 +79,7 @@ export interface SelectItemProps
 export interface SelectLabelProps
 	extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label> {
 	children: React.ReactNode;
+	uppercase?: boolean;
 }
 
 export interface SelectSeparatorProps
@@ -85,7 +87,7 @@ export interface SelectSeparatorProps
 
 const Root = ({
 	size = '2',
-	radius = '1',
+	radius,
 	color = 'default',
 	shadow = 'classic',
 	error = false,
@@ -150,12 +152,6 @@ const Trigger = forwardRef<
 			'4': styles.triggerXl,
 		};
 
-		const radiusClasses = {
-			'1': styles.triggerRadius1,
-			'2': styles.triggerRadius2,
-			'3': styles.triggerRadius3,
-		};
-
 		const colorClasses = {
 			default: styles.triggerColorDefault,
 			secondary: styles.triggerColorSecondary,
@@ -166,7 +162,7 @@ const Trigger = forwardRef<
 			styles.trigger,
 			variantClasses[variant],
 			sizeClasses[size],
-			radiusClasses[radius],
+			radius && radiusClasses[radius],
 			colorClasses[color],
 			error && styles.triggerError,
 			compact && styles.triggerCompact,
@@ -217,12 +213,6 @@ const Content = forwardRef<
 			'4': styles.contentXl,
 		};
 
-		const radiusClasses = {
-			'1': styles.contentRadius1,
-			'2': styles.contentRadius2,
-			'3': styles.contentRadius3,
-		};
-
 		const shadowClasses = {
 			classic: styles.contentShadowClassic,
 			spread: styles.contentShadowSpread,
@@ -232,7 +222,7 @@ const Content = forwardRef<
 		const contentClasses = cn(
 			styles.content,
 			sizeClasses[size],
-			radiusClasses[radius],
+			radius && radius !== 'full' && radiusClasses[radius],
 			shadowClasses[shadow],
 			className,
 		);
@@ -266,18 +256,12 @@ const Item = forwardRef<React.ElementRef<typeof SelectPrimitive.Item>, SelectIte
 	({ className, children, iconLeft, iconRight, ...props }, ref) => {
 		const { radius, compact } = useContext(SelectContext);
 
-		const radiusClasses = {
-			'1': styles.itemRadius1,
-			'2': styles.itemRadius2,
-			'3': styles.itemRadius3,
-		};
-
 		return (
 			<SelectPrimitive.Item
 				ref={ref}
 				className={cn(
 					styles.item,
-					radiusClasses[radius],
+					radius && radius !== 'full' && radiusClasses[radius],
 					compact && styles.itemCompact,
 					className,
 				)}
@@ -302,7 +286,7 @@ Item.displayName = 'SelectItem';
 const Label = forwardRef<
 	React.ElementRef<typeof SelectPrimitive.Label>,
 	SelectLabelProps
->(({ className, ...props }, ref) => {
+>(({ className, uppercase = false, ...props }, ref) => {
 	const { size } = useContext(SelectContext);
 
 	const sizeClasses = {
@@ -315,7 +299,12 @@ const Label = forwardRef<
 	return (
 		<SelectPrimitive.Label
 			ref={ref}
-			className={cn(styles.label, sizeClasses[size], className)}
+			className={cn(
+				styles.label,
+				sizeClasses[size],
+				uppercase && styles.labelUppercase,
+				className,
+			)}
 			{...props}
 		/>
 	);

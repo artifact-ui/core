@@ -22,9 +22,9 @@ const meta: Meta<typeof Table.Root> = {
 		striped: {
 			control: 'boolean',
 		},
-		rounded: {
+		radius: {
 			control: 'select',
-			options: [false, true, 'sm', 'md', 'lg'],
+			options: ['none', '1', '2', '3'],
 		},
 		shadow: {
 			control: 'select',

@@ -1,98 +1,97 @@
-/* Alpine - TextArea Component */
+/* Artifact UI - TextArea Component */
 
 @layer components {
-/* Field wrapper */
-.field {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-1);
-	margin: var(--space-2) 0;
-}
-
-/* Modifies textareas with custom width to 100% on mobile */
-@media (max-width: 768px) {
-	.fieldResponsive {
+	/* Field wrapper */
+	.field {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+		margin: var(--space-2) 0;
 	}
-}
 
-.label {
-	font-size: var(--font-size-2);
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-subtle);
-	margin-left: var(--space-1);
-}
+	/* Modifies textareas with custom width to 100% on mobile */
+	@media (max-width: 768px) {
+		.fieldResponsive {
+			width: 100%;
+		}
+	}
 
-/* Base textarea */
-.textarea {
-	font-family: inherit;
-	font-size: var(--font-size-3);
-	color: var(--color-text-default);
-	padding: var(--space-2);
-	border-radius: var(--radius);
-	transition: var(--transition);
-	outline: none;
-	width: 100%;
-	box-sizing: border-box;
-	resize: none;
-	min-height: 80px;
-}
+	.label {
+		font-size: var(--font-size-2);
+		font-weight: var(--font-weight-medium);
+		color: var(--color-text-subtle);
+		margin-left: var(--space-1);
+	}
 
-/* Default */
-.textareaDefault {
-	background-color: var(--color-bg-default);
-	border: 1px solid var(--color-border-default);
-	color: var(--color-text-default);
-}
+	/* Base textarea */
+	.textarea {
+		font-family: inherit;
+		font-size: var(--font-size-3);
+		color: var(--color-text-default);
+		padding: var(--space-2);
+		border-radius: var(--radius-default-simple);
+		transition: var(--transition);
+		outline: none;
+		width: 100%;
+		box-sizing: border-box;
+		resize: none;
+		min-height: 80px;
+	}
 
-.textareaDefault:hover:not(:focus) {
-	border-color: var(--color-border-subtle);
-}
+	/* Default */
+	.textareaDefault {
+		background-color: var(--color-bg-default);
+		border: 1px solid var(--color-border-default);
+		color: var(--color-text-default);
+	}
 
-.textareaDefault:focus,
-.textareaDefault:focus-visible {
-	border-color: var(--color-primary);
-	box-shadow: 0 0 0 1px var(--color-primary);
-	outline: none;
-}
+	.textareaDefault:hover:not(:focus) {
+		border-color: var(--color-border-subtle);
+	}
 
-.textareaDefault:disabled {
-	background-color: var(--color-bg-subtle);
-	color: var(--color-text-muted);
-	cursor: not-allowed;
-	opacity: var(--opacity-60);
-	resize: none;
-}
+	.textareaDefault:focus,
+	.textareaDefault:focus-visible {
+		border-color: var(--color-primary);
+		box-shadow: 0 0 0 1px var(--color-primary);
+		outline: none;
+	}
 
-/* Standalone version (used outside of Form) */
-.standalone {
-	width: 100%;
-	margin: 0;
-}
+	.textareaDefault:disabled {
+		background-color: var(--color-bg-subtle);
+		color: var(--color-text-muted);
+		cursor: not-allowed;
+		opacity: var(--opacity-60);
+		resize: none;
+	}
 
-/* Error state */
-.textareaError {
-	border-color: var(--color-error);
-	background-color: var(--color-error-bg);
-}
+	/* Standalone version (used outside of Form) */
+	.standalone {
+		width: 100%;
+		margin: 0;
+	}
 
-.textareaError:focus,
-.textareaError:focus-visible {
-	border-color: var(--color-error);
-	box-shadow: 0 0 0 1px var(--color-error);
-	outline: none;
-}
+	/* Error state */
+	.textareaError {
+		border-color: var(--color-error);
+		background-color: var(--color-error-bg);
+	}
 
-.message {
-	font-size: var(--font-size-2);
-	color: var(--color-error);
-	margin-left: var(--space-1);
-}
+	.textareaError:focus,
+	.textareaError:focus-visible {
+		border-color: var(--color-error);
+		box-shadow: 0 0 0 1px var(--color-error);
+		outline: none;
+	}
 
-.textarea::placeholder {
-	color: var(--color-text-muted);
-	opacity: 1;
-}
+	.message {
+		font-size: var(--font-size-2);
+		color: var(--color-error);
+		margin-left: var(--space-1);
+	}
 
+	.textarea::placeholder {
+		color: var(--color-text-muted);
+		opacity: 1;
+	}
 }

@@ -1,11 +1,13 @@
 import React, { forwardRef } from 'react';
 import { cn } from '../../utils/cn';
+import { SimpleRadius } from '../../types/style-props';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './card.module.css';
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 	variant?: 'default' | 'surface' | 'ghost';
 	size?: '1' | '2' | '3';
-	rounded?: false | true | 'sm' | 'md' | 'lg';
+	radius?: SimpleRadius;
 	shadow?: false | true | 'classic' | 'spread' | 'paper';
 	interactive?: boolean;
 	override?: boolean;
@@ -28,7 +30,7 @@ const Root = forwardRef<HTMLDivElement, CardProps>(
 		{
 			variant = 'default',
 			size = '2',
-			rounded = false,
+			radius,
 			shadow = false,
 			interactive = false,
 			override = false,
@@ -50,34 +52,22 @@ const Root = forwardRef<HTMLDivElement, CardProps>(
 			'3': styles.cardSize3,
 		};
 
-		const roundedClasses = {
-			sm: styles.cardRoundedSm,
-			md: styles.cardRoundedMd,
-			lg: styles.cardRoundedLg,
-		};
-
 		const shadowClasses = {
 			classic: styles.cardShadowClassic,
 			spread: styles.cardShadowSpread,
 			paper: styles.cardShadowPaper,
 		};
 
-		// Handle rounded prop: true = default rounded, or specific size
-		const roundedClass = rounded === true
-			? styles.cardRounded
-			: rounded && roundedClasses[rounded];
-
 		// Handle shadow prop: true = classic shadow, or specific type
-		const shadowClass = shadow === true
-			? styles.cardShadowClassic
-			: shadow && shadowClasses[shadow];
+		const shadowClass =
+			shadow === true ? styles.cardShadowClassic : shadow && shadowClasses[shadow];
 
 		const cardClasses = cn(
 			styles.card,
 			variantClasses[variant],
 			sizeClasses[size],
+			radius && radiusClasses[radius],
 			interactive && styles.cardInteractive,
-			roundedClass,
 			shadowClass,
 			override && 'aow',
 			className,

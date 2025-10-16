@@ -1,123 +1,131 @@
-/* Alpine - Alert Component */
+/* Artifact UI - Alert Component */
 
 @layer components {
-/* Alert - Root */
-.alert {
-	display: flex;
-	align-items: center;
-	gap: var(--space-2);
-	width: 100%;
-	border-radius: var(--radius);
-	border: 1px solid;
-	position: relative;
-	font-size: var(--font-size-3);
-	font-weight: var(--font-weight-normal);
-	line-height: 1;
-}
+	/* Alert - Root */
+	.alert {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		width: 100%;
+		border-radius: var(--radius-default);
+		border: 1px solid;
+		position: relative;
+		font-size: var(--font-size-3);
+		font-weight: var(--font-weight-normal);
+		line-height: 1;
+	}
 
-/* Alert - Sizes */
-.alertSize1 {
-	padding: var(--space-2);
-	font-size: var(--font-size-2);
-}
+	/* Alert - Sizes */
+	.alertSize1 {
+		padding: var(--space-2);
+		font-size: var(--font-size-2);
+	}
 
-.alertSize2 {
-	padding: var(--space-3);
-	font-size: var(--font-size-3);
-}
+	.alertSize2 {
+		padding: var(--space-3);
+		font-size: var(--font-size-3);
+	}
 
-.alertSize3 {
-	padding: var(--space-4);
-	font-size: var(--font-size-4);
-}
+	.alertSize3 {
+		padding: var(--space-4);
+		font-size: var(--font-size-4);
+	}
 
-/* Alert - Variants */
-.alertDefault {
-	background-color: var(--color-bg-subtle);
-	color: var(--color-text-default);
-	border-color: var(--color-border-default);
-}
+	/* Alert - Full Radius (adjust padding)  */
+	[data-radius='full'] .alert.alertSize1 {
+		padding-inline: var(--space-4);
+	}
 
-.alertSuccess {
-	background-color: var(--color-success-bg);
-	color: var(--color-success);
-	border-color: var(--color-success);
-}
+	[data-radius='full'] .alert.alertSize2 {
+		padding-inline: var(--space-5);
+	}
 
-.alertError {
-	background-color: var(--color-error-bg);
-	color: var(--color-error);
-	border-color: var(--color-error);
-}
+	[data-radius='full'] .alert.alertSize3 {
+		padding-inline: var(--space-6);
+	}
 
-/* Dark mode changes */
-[data-theme='dark'] .alertSuccess {
-	color: var(--green-300);
-	border-color: var(--green-500);
-}
+	/* Alert - Variants */
+	.alertDefault {
+		background-color: var(--color-bg-subtle);
+		color: var(--color-text-default);
+		border-color: var(--color-border-default);
+	}
 
-[data-theme='dark'] .alertError {
-	color: var(--red-400);
-	border-color: var(--red-500);
-}
+	.alertSuccess {
+		background-color: var(--color-success-bg);
+		color: var(--color-success);
+		border-color: var(--color-success);
+	}
 
-/* Alert - Icons */
-.iconLeft,
-.iconRight {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-shrink: 0;
-}
+	.alertError {
+		background-color: var(--color-error-bg);
+		color: var(--color-error);
+		border-color: var(--color-error);
+	}
 
-.iconLeft svg,
-.iconRight svg {
-	width: 1.25em;
-	height: 1.25em;
-}
+	/* Dark mode changes */
+	[data-theme='dark'] .alertSuccess {
+		color: var(--green-300);
+		border-color: var(--green-500);
+	}
 
-.alertSuccess .iconLeft svg,
-.alertSuccess .iconRight svg {
-	color: var(--color-success);
-}
+	[data-theme='dark'] .alertError {
+		color: var(--red-400);
+		border-color: var(--red-500);
+	}
 
-.alertError .iconLeft svg,
-.alertError .iconRight svg {
-	color: var(--color-error);
-}
+	/* Alert - Icons */
+	.iconLeft,
+	.iconRight {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
 
-.alertDefault .iconLeft svg,
-.alertDefault .iconRight svg {
-	color: var(--color-text-default);
-}
+	.iconLeft svg,
+	.iconRight svg {
+		width: 1.25em;
+		height: 1.25em;
+	}
 
-.iconLeft,
-.iconRight {
-	width: 1.25em;
-	height: 1.25em;
-}
+	.alertSuccess .iconLeft svg,
+	.alertSuccess .iconRight svg {
+		color: var(--color-success);
+	}
 
-/* Alert - Content */
-.content {
-	flex: 1;
-	min-width: 0;
-}
+	.alertError .iconLeft svg,
+	.alertError .iconRight svg {
+		color: var(--color-error);
+	}
 
-/* Alert - Modifiers */
-.alertShadowClassic {
-	box-shadow: var(--shadow-classic);
-}
+	.alertDefault .iconLeft svg,
+	.alertDefault .iconRight svg {
+		color: var(--color-text-default);
+	}
 
-.alertShadowSpread {
-	box-shadow: var(--shadow-spread);
-}
+	.iconLeft,
+	.iconRight {
+		width: 1.25em;
+		height: 1.25em;
+	}
 
-.alertShadowPaper {
-	box-shadow: var(--shadow-paper);
-}
+	/* Alert - Content */
+	.content {
+		flex: 1;
+		min-width: 0;
+	}
 
-.alertRounded {
-	border-radius: var(--radius-lg);
-}
+	/* Alert - Modifiers */
+	.alertShadowClassic {
+		box-shadow: var(--shadow-classic);
+	}
 
+	.alertShadowSpread {
+		box-shadow: var(--shadow-spread);
+	}
+
+	.alertShadowPaper {
+		box-shadow: var(--shadow-paper);
+	}
 }

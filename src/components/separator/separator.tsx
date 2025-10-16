@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import { cn } from '../../utils/cn';
 import { Radius } from '../../types/style-props';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './separator.module.css';
 
 export interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -42,13 +43,6 @@ const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
 		const orientationClasses = {
 			horizontal: styles.separatorHorizontal,
 			vertical: styles.separatorVertical,
-		};
-
-		const radiusClasses = {
-			'1': styles.separatorRadius1,
-			'2': styles.separatorRadius2,
-			'3': styles.separatorRadius3,
-			full: styles.separatorRadiusFull,
 		};
 
 		const colorClasses = {

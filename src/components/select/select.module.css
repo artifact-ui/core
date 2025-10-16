@@ -12,7 +12,7 @@
 	color: var(--color-text-default);
 	background-color: var(--color-bg-default);
 	border: 1px solid var(--color-border-default);
-	border-radius: var(--radius-2);
+	border-radius: var(--radius-default);
 	padding: var(--space-2) var(--space-3);
 	cursor: pointer;
 	user-select: none;
@@ -48,19 +48,6 @@
 
 .triggerMinimal:hover {
 	background-color: var(--color-bg-muted);
-}
-
-/* Select - Trigger Radius */
-.triggerRadius1 {
-	border-radius: var(--radius-1);
-}
-
-.triggerRadius2 {
-	border-radius: var(--radius-2);
-}
-
-.triggerRadius3 {
-	border-radius: var(--radius-3);
 }
 
 /* Select - Trigger Colors */
@@ -128,6 +115,23 @@
 	min-height: 52px;
 }
 
+/* Select - Full Radius (padding adjustment) */
+[data-radius='full'] .trigger.triggerSm {
+	padding-inline: var(--space-3);
+}
+
+[data-radius='full'] .trigger.triggerMd {
+	padding-inline: var(--space-4);
+}
+
+[data-radius='full'] .trigger.triggerLg {
+	padding-inline: var(--space-5);
+}
+
+[data-radius='full'] .trigger.triggerXl {
+	padding-inline: var(--space-6);
+}
+
 /* Select - Trigger Compact */
 .triggerCompact {
 	padding: var(--space-1) var(--space-2);
@@ -177,7 +181,7 @@
 	overflow: hidden;
 	background-color: var(--color-bg-default);
 	border: 1px solid var(--color-border-default);
-	border-radius: var(--radius-2);
+	border-radius: var(--radius-default-simple);
 	z-index: 1100;
 	max-height: 300px;
 	min-width: var(--radix-select-trigger-width);
@@ -206,19 +210,6 @@
 
 .contentXl {
 	font-size: var(--font-size-5);
-}
-
-/* Select - Content Radius */
-.contentRadius1 {
-	border-radius: var(--radius-1);
-}
-
-.contentRadius2 {
-	border-radius: var(--radius-2);
-}
-
-.contentRadius3 {
-	border-radius: var(--radius-3);
 }
 
 /* Select - Content Shadow */
@@ -275,6 +266,7 @@
 	line-height: inherit;
 	color: var(--color-text-default);
 	padding: var(--space-2) var(--space-3);
+	border-radius: var(--radius-default-simple);
 	cursor: pointer;
 	user-select: none;
 	position: relative;
@@ -287,19 +279,6 @@
 	align-items: center;
 	gap: 0.5em;
 	flex: 1;
-}
-
-/* Select - Item Radius */
-.itemRadius1 {
-	border-radius: var(--radius-1);
-}
-
-.itemRadius2 {
-	border-radius: var(--radius-2);
-}
-
-.itemRadius3 {
-	border-radius: var(--radius-3);
 }
 
 /* Select - Item Compact */
@@ -362,9 +341,12 @@
 	font-weight: var(--font-weight-semibold);
 	color: var(--color-text-subtle);
 	padding: var(--space-2) var(--space-3);
+	opacity: 0.8;
+}
+
+.labelUppercase {
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
-	opacity: 0.8;
 }
 
 /* Select - Label Sizes (one size smaller than content) */

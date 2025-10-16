@@ -22,11 +22,14 @@ export const Default: Story = {
 export const Examples: Story = {
 	render: () => (
 		<Stack gap="4" style={{ width: '500px' }}>
-			<Alert variant="success">Changes saved successfully.</Alert>
-			<Alert variant="error">Unable to complete action. Please try again.</Alert>
-			<Alert variant="default">Remember to save your work before closing.</Alert>
-			<Alert variant="error" size="1">
-				Item not found.
+			<Alert variant="success" size="1">
+				Changes saved successfully.
+			</Alert>
+			<Alert variant="error" size="2">
+				Unable to complete action. Please try again.
+			</Alert>
+			<Alert variant="default" size="3">
+				Remember to save your work before closing.
 			</Alert>
 		</Stack>
 	),

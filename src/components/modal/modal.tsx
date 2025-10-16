@@ -1,6 +1,8 @@
 import React, { forwardRef } from 'react';
 import { Dialog } from 'radix-ui';
 import { cn } from '../../utils/cn';
+import { type SimpleRadius } from '../../types/style-props';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './modal.module.css';
 import { Button } from '../button/button';
 import { CloseIcon } from '../../icons/CloseIcon';
@@ -18,6 +20,7 @@ export interface ModalContentProps extends React.ComponentProps<typeof Dialog.Co
 	variant?: 'default' | 'simple';
 	showCloseButton?: boolean;
 	ariaDescription?: string;
+	radius?: SimpleRadius;
 }
 
 export interface ModalTitleProps extends React.ComponentProps<typeof Dialog.Title> {
@@ -66,7 +69,15 @@ Overlay.displayName = 'ModalOverlay';
 
 const Content = forwardRef<React.ElementRef<typeof Dialog.Content>, ModalContentProps>(
 	(
-		{ className, size = '2', variant = 'default', ariaDescription, children, ...props },
+		{
+			className,
+			size = '2',
+			variant = 'default',
+			ariaDescription,
+			radius,
+			children,
+			...props
+		},
 		ref,
 	) => {
 		const variantClasses = {
@@ -90,6 +101,7 @@ const Content = forwardRef<React.ElementRef<typeof Dialog.Content>, ModalContent
 						styles.content,
 						variantClasses[variant],
 						sizeClasses[size],
+						radius && radiusClasses[radius],
 						className,
 					)}
 					{...props}>

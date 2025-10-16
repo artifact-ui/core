@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import { cn } from '../../utils/cn';
 import { Radius } from '../../types/style-props';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './button.module.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -22,7 +23,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			color = 'primary',
 			customColor,
 			size = '2',
-			radius = '2',
+			radius,
 			loading = false,
 			iconLeft,
 			iconRight,
@@ -60,20 +61,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			'3': styles.buttonLg,
 		};
 
-		const radiusClasses = {
-			'1': styles.buttonRadius1,
-			'2': styles.buttonRadius2,
-			'3': styles.buttonRadius3,
-			full: styles.buttonRadiusFull,
-		};
-
 		const buttonClasses = cn(
 			styles.button,
 			variantClasses[variant],
 			!customColor && colorClasses[color],
 			customColor && styles.buttonCustomColor,
 			sizeClasses[size],
-			radiusClasses[radius],
+			radius && radiusClasses[radius],
 			loading && styles.buttonLoading,
 			(disabled || loading) && styles.buttonDisabled,
 			isIconOnly && styles.buttonIconOnly,

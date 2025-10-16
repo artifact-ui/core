@@ -1,244 +1,226 @@
-/* Alpine - Table Component */
+/* Artifact UI - Table Component */
 
 @layer components {
-/* Table - Root */
-.table {
-	border-collapse: collapse;
-	table-layout: fixed;
-	width: 100%;
-	min-width: 100%;
-	border: none;
-}
-
-/* Table - Variants */
-.tableDefault {
-	border: 1px solid var(--color-border-default);
-	border-radius: var(--radius);
-}
-
-.tableSurface {
-	background-color: var(--color-bg-subtle);
-	border: 1px solid var(--color-border-default);
-	border-radius: var(--radius);
-}
-
-.tableGhost {
-	border: none;
-	background-color: transparent;
-}
-
-/* Table - Sizes */
-.tableSize1 {
-	font-size: var(--font-size-2);
-}
-
-.tableSize2 {
-	font-size: var(--font-size-3);
-}
-
-.tableSize3 {
-	font-size: var(--font-size-4);
-}
-
-/* Table - Header */
-.header {
-	border-bottom: 1px solid var(--color-border-default);
-}
-
-/* Table - Footer */
-.footer {
-	border-top: 1px solid var(--color-border-default);
-}
-
-/* Table - Row */
-.row {
-	border: none;
-	border-bottom: 1px solid var(--color-border-default);
-	background-color: transparent;
-	transition: background-color var(--transition);
-}
-
-/* Table - Highlight -- hover effect */
-.tableHighlight .row:hover {
-	background-color: var(--color-hover);
-}
-
-/* Default variant - hover effect */
-.tableHighlight.tableDefault .row:hover {
-	background-color: var(--color-hover);
-}
-
-/* Surface variant - hover effect (stronger)  */
-.tableHighlight.tableSurface .row:hover {
-	background-color: var(--color-active);
-}
-
-/* Table - Header Cell */
-.headerCell {
-	padding: var(--space-4);
-	text-align: left;
-	font-weight: var(--font-weight-medium);
-	color: var(--color-text-subtle);
-	background-color: var(--color-bg-subtle);
-	border-bottom: 1px solid var(--color-border-default);
-	vertical-align: middle;
-}
-
-.justifyStart {
-	text-align: left;
-}
-
-.justifyCenter {
-	text-align: center;
-}
-
-.justifyEnd {
-	text-align: right;
-}
-
-/* Table - Cell */
-.cell {
-	padding: var(--space-4);
-	border-bottom: 1px solid var(--color-border-default);
-	vertical-align: middle;
-	color: var(--color-text-default);
-}
-
-.alignStart {
-	text-align: left;
-}
-
-.alignCenter {
-	text-align: center;
-}
-
-.alignEnd {
-	text-align: right;
-}
-
-.valignTop {
-	vertical-align: top;
-}
-
-.valignMiddle {
-	vertical-align: middle;
-}
-
-.valignBottom {
-	vertical-align: bottom;
-}
-
-/* Table - Cell Sizes */
-.tableSize1 .headerCell,
-.tableSize1 .cell {
-	padding: var(--space-3);
-}
-
-.tableSize2 .headerCell,
-.tableSize2 .cell {
-	padding: var(--space-4);
-}
-
-.tableSize3 .headerCell,
-.tableSize3 .cell {
-	padding: var(--space-6);
-}
-
-/* Table - Compact -- reduce padding/font size */
-.tableCompact {
-	font-size: var(--font-size-1);
-}
-
-.tableCompact .headerCell,
-.tableCompact .cell {
-	padding: var(--space-1) var(--space-2);
-}
-
-/* Table - Striped -- alternate row colors */
-.tableStriped .body .row:nth-child(even) {
-	background-color: var(--color-bg-muted);
-}
-
-/* Surface variant - hover effects */
-.tableStriped.tableHighlight.tableSurface .body .row:nth-child(even):hover {
-	background-color: var(--color-active);
-}
-
-.tableStriped.tableHighlight.tableSurface .body .row:nth-child(odd):hover {
-	background-color: var(--color-active);
-}
-
-/* Default, ghost varaints - hover effects */
-.tableStriped.tableHighlight.tableDefault .body .row:hover,
-.tableStriped.tableHighlight.tableGhost .body .row:hover {
-	background-color: var(--color-hover);
-}
-
-/* Table - Border Radius */
-.tableRounded,
-.tableRoundedSm {
-	border-radius: var(--radius);
-	overflow: hidden;
-}
-
-.tableRoundedMd {
-	border-radius: var(--radius-lg);
-	overflow: hidden;
-}
-
-.tableRoundedLg {
-	border-radius: calc(var(--radius-lg) * 2);
-	overflow: hidden;
-}
-
-/* Remove border radius from header cells for rounded edges */
-.tableRounded .header .row:first-child .headerCell:first-child,
-.tableRoundedSm .header .row:first-child .headerCell:first-child {
-	border-top-left-radius: var(--radius);
-}
-
-.tableRounded .header .row:first-child .headerCell:last-child,
-.tableRoundedSm .header .row:first-child .headerCell:last-child {
-	border-top-right-radius: var(--radius);
-}
-
-.tableRoundedMd .header .row:first-child .headerCell:first-child {
-	border-top-left-radius: var(--radius-lg);
-}
-
-.tableRoundedMd .header .row:first-child .headerCell:last-child {
-	border-top-right-radius: var(--radius-lg);
-}
-
-.tableRoundedLg .header .row:first-child .headerCell:first-child {
-	border-top-left-radius: calc(var(--radius-lg) * 2);
-}
-
-.tableRoundedLg .header .row:first-child .headerCell:last-child {
-	border-top-right-radius: calc(var(--radius-lg) * 2);
-}
-/* Table - Box Shadow */
-.tableShadowClassic {
-	box-shadow: var(--shadow-classic);
-}
-
-.tableShadowSpread {
-	box-shadow: var(--shadow-spread);
-}
-
-.tableShadowPaper {
-	box-shadow: var(--shadow-paper);
-}
-
-@media (max-width: 768px) {
+	/* Table - Root */
 	.table {
+		border-collapse: separate;
+		border-spacing: 0;
+		table-layout: fixed;
+		width: 100%;
+		min-width: 100%;
+		border: none;
+		overflow: hidden;
+	}
+
+	/* Table - Variants */
+	.tableDefault {
+		border: 1px solid var(--color-border-default);
+		border-radius: var(--radius-default-simple);
+	}
+
+	.tableSurface {
+		background-color: var(--color-bg-subtle);
+		border: 1px solid var(--color-border-default);
+		border-radius: var(--radius-default-simple);
+	}
+
+	.tableGhost {
+		border: none;
+		background-color: transparent;
+	}
+
+	/* Table - Sizes */
+	.tableSize1 {
 		font-size: var(--font-size-2);
 	}
 
-	.headerCell,
+	.tableSize2 {
+		font-size: var(--font-size-3);
+	}
+
+	.tableSize3 {
+		font-size: var(--font-size-4);
+	}
+
+	/* Table - Header */
+	.header {
+		border-bottom: 1px solid var(--color-border-default);
+	}
+
+	/* Table - Footer */
+	.footer {
+		border-top: 1px solid var(--color-border-default);
+	}
+
+	/* Table - Row */
+	.row {
+		border: none;
+		border-bottom: 1px solid var(--color-border-default);
+		background-color: transparent;
+		transition: background-color var(--transition);
+	}
+
+	/* Table - Highlight -- hover effect */
+	.tableHighlight .row:hover {
+		background-color: var(--color-hover);
+	}
+
+	/* Default variant - hover effect */
+	.tableHighlight.tableDefault .row:hover {
+		background-color: var(--color-hover);
+	}
+
+	/* Surface variant - hover effect (stronger)  */
+	.tableHighlight.tableSurface .row:hover {
+		background-color: var(--color-active);
+	}
+
+	/* Table - Header Cell */
+	.headerCell {
+		padding: var(--space-4);
+		text-align: left;
+		font-weight: var(--font-weight-medium);
+		color: var(--color-text-subtle);
+		background-color: var(--color-bg-subtle);
+		border-bottom: 1px solid var(--color-border-default);
+		vertical-align: middle;
+	}
+
+	.justifyStart {
+		text-align: left;
+	}
+
+	.justifyCenter {
+		text-align: center;
+	}
+
+	.justifyEnd {
+		text-align: right;
+	}
+
+	/* Table - Cell */
 	.cell {
+		padding: var(--space-4);
+		border-bottom: 1px solid var(--color-border-default);
+		vertical-align: middle;
+		color: var(--color-text-default);
+	}
+
+	.alignStart {
+		text-align: left;
+	}
+
+	.alignCenter {
+		text-align: center;
+	}
+
+	.alignEnd {
+		text-align: right;
+	}
+
+	.valignTop {
+		vertical-align: top;
+	}
+
+	.valignMiddle {
+		vertical-align: middle;
+	}
+
+	.valignBottom {
+		vertical-align: bottom;
+	}
+
+	/* Table - Cell Sizes */
+	.tableSize1 .headerCell,
+	.tableSize1 .cell {
 		padding: var(--space-3);
 	}
-}
 
+	.tableSize2 .headerCell,
+	.tableSize2 .cell {
+		padding: var(--space-4);
+	}
+
+	.tableSize3 .headerCell,
+	.tableSize3 .cell {
+		padding: var(--space-6);
+	}
+
+	/* Table - Compact -- reduce padding/font size */
+	.tableCompact {
+		font-size: var(--font-size-1);
+	}
+
+	.tableCompact .headerCell,
+	.tableCompact .cell {
+		padding: var(--space-1) var(--space-2);
+	}
+
+	/* Table - Striped -- alternate row colors */
+	.tableStriped .body .row:nth-child(even) {
+		background-color: var(--color-bg-muted);
+	}
+
+	/* Surface variant - hover effects */
+	.tableStriped.tableHighlight.tableSurface .body .row:nth-child(even):hover {
+		background-color: var(--color-active);
+	}
+
+	.tableStriped.tableHighlight.tableSurface .body .row:nth-child(odd):hover {
+		background-color: var(--color-active);
+	}
+
+	/* Default, ghost varaints - hover effects */
+	.tableStriped.tableHighlight.tableDefault .body .row:hover,
+	.tableStriped.tableHighlight.tableGhost .body .row:hover {
+		background-color: var(--color-hover);
+	}
+
+	/* Header cell corner radius for rounded tables */
+	.tableRadius1 .header .row:first-child .headerCell:first-child {
+		border-top-left-radius: var(--radius-1);
+	}
+
+	.tableRadius1 .header .row:first-child .headerCell:last-child {
+		border-top-right-radius: var(--radius-1);
+	}
+
+	.tableRadius2 .header .row:first-child .headerCell:first-child {
+		border-top-left-radius: var(--radius-2);
+	}
+
+	.tableRadius2 .header .row:first-child .headerCell:last-child {
+		border-top-right-radius: var(--radius-2);
+	}
+
+	.tableRadius3 .header .row:first-child .headerCell:first-child {
+		border-top-left-radius: var(--radius-3);
+	}
+
+	.tableRadius3 .header .row:first-child .headerCell:last-child {
+		border-top-right-radius: var(--radius-3);
+	}
+	/* Table - Box Shadow */
+	.tableShadowClassic {
+		box-shadow: var(--shadow-classic);
+	}
+
+	.tableShadowSpread {
+		box-shadow: var(--shadow-spread);
+	}
+
+	.tableShadowPaper {
+		box-shadow: var(--shadow-paper);
+	}
+
+	@media (max-width: 768px) {
+		.table {
+			font-size: var(--font-size-2);
+		}
+
+		.headerCell,
+		.cell {
+			padding: var(--space-3);
+		}
+	}
 }
