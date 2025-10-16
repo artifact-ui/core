@@ -7,10 +7,11 @@ import './styles/foundation/global.css';
 import './styles/themes/light.css';
 import './styles/themes/dark.css';
 import './styles/themes/accent.css';
+import './styles/themes/radius.css';
 
 // Provider
 export { ArtifactProvider } from './ArtifactProvider';
-export type { Theme, Accent, ArtifactProviderProps } from './ArtifactProvider';
+export type { Theme, Accent, Radius, ArtifactProviderProps } from './ArtifactProvider';
 
 // Components
 export * from './components';

@@ -1,0 +1,20 @@
+/* Shared Radius Classes */
+.radiusNone {
+	border-radius: 0;
+}
+
+.radius1 {
+	border-radius: var(--radius-1);
+}
+
+.radius2 {
+	border-radius: var(--radius-2);
+}
+
+.radius3 {
+	border-radius: var(--radius-3);
+}
+
+.radiusFull {
+	border-radius: var(--radius-full);
+}

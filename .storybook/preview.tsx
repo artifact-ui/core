@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArtifactProvider } from '../src/ArtifactProvider';
-import type { Theme, Accent } from '../src/ArtifactProvider';
+import type { Theme, Accent, Radius } from '../src/ArtifactProvider';
 import '../src/index';
 
 const preview = {
@@ -30,23 +30,33 @@ const preview = {
 				dynamicTitle: true,
 			},
 		},
+		radius: {
+			defaultValue: 'medium',
+			toolbar: {
+				title: 'Radius',
+				items: ['none', 'small', 'medium', 'large', 'full'],
+				dynamicTitle: true,
+			},
+		},
 	},
 	decorators: [
 		(Story, context) => {
 			const theme = (context.globals.theme || 'light') as Theme;
 			const accent = (context.globals.accent || 'default') as Accent;
+			const radius = (context.globals.radius || 'medium') as Radius;
 
-			// Apply theme/accent to body for Radix portal content
+			// Apply theme/accent/radius to body for Radix portal content
 			React.useEffect(() => {
 				document.body.setAttribute('data-theme', theme);
 				document.body.setAttribute('data-accent', accent);
+				document.body.setAttribute('data-radius', radius);
 				document.body.style.backgroundColor = 'var(--color-bg-default)';
 				document.body.style.color = 'var(--color-text-default)';
 				document.body.style.margin = '0';
-			}, [theme, accent]);
+			}, [theme, accent, radius]);
 
 			return (
-				<ArtifactProvider theme={theme} accent={accent}>
+				<ArtifactProvider theme={theme} accent={accent} radius={radius}>
 					<Story />
 				</ArtifactProvider>
 			);

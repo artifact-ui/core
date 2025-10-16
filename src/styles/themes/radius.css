@@ -1,0 +1,29 @@
+/* None */
+[data-radius='none'] {
+	--radius-default: 0px;
+	--radius-default-simple: 0px;
+}
+
+/* Small */
+[data-radius='small'] {
+	--radius-default: var(--radius-1);
+	--radius-default-simple: var(--radius-1);
+}
+
+/* Medium (default) */
+[data-radius='medium'] {
+	--radius-default: var(--radius-2);
+	--radius-default-simple: var(--radius-2);
+}
+
+/* Large */
+[data-radius='large'] {
+	--radius-default: var(--radius-3);
+	--radius-default-simple: var(--radius-3);
+}
+
+/* Full - Pill-shaped */
+[data-radius='full'] {
+	--radius-default: var(--radius-full);
+	--radius-default-simple: var(--radius-3);
+}
