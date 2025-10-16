@@ -23,10 +23,21 @@ const preview = {
 			},
 		},
 		accent: {
-			defaultValue: 'default',
+			defaultValue: 'obsidian',
 			toolbar: {
 				title: 'Accent',
-				items: ['default', 'sage'],
+				items: [
+					'obsidian',
+					'sage',
+					'twilight',
+					'canopy',
+					'blush',
+					'clay',
+					'amber',
+					'crimson',
+					'patina',
+					'meridian',
+				],
 				dynamicTitle: true,
 			},
 		},
@@ -42,7 +53,7 @@ const preview = {
 	decorators: [
 		(Story, context) => {
 			const theme = (context.globals.theme || 'light') as Theme;
-			const accent = (context.globals.accent || 'default') as Accent;
+			const accent = (context.globals.accent || 'obsidian') as Accent;
 			const radius = (context.globals.radius || 'medium') as Radius;
 
 			// Apply theme/accent/radius to body for Radix portal content

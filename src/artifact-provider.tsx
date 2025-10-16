@@ -1,7 +1,17 @@
 import React, { useEffect } from 'react';
 
 export type Theme = 'light' | 'dark';
-export type Accent = 'default' | 'sage';
+export type Accent =
+	| 'obsidian'
+	| 'sage'
+	| 'twilight'
+	| 'canopy'
+	| 'blush'
+	| 'clay'
+	| 'amber'
+	| 'crimson'
+	| 'patina'
+	| 'meridian';
 export type Radius = 'none' | 'small' | 'medium' | 'large' | 'full';
 
 export interface ArtifactProviderProps {
@@ -14,7 +24,7 @@ export interface ArtifactProviderProps {
 export const ArtifactProvider = ({
 	children,
 	theme = 'light',
-	accent = 'default',
+	accent = 'obsidian',
 	radius = 'medium',
 }: ArtifactProviderProps) => {
 	useEffect(() => {

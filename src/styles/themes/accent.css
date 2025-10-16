@@ -1,5 +1,5 @@
-/* Default accent - Black */
-[data-accent='default'] {
+/* Obsidian accent - Black */
+[data-accent='obsidian'] {
 	--color-primary: var(--gray-900);
 	--color-primary-hover: var(--gray-800);
 	--color-primary-emphasis: var(--gray-900);
@@ -7,7 +7,7 @@
 	--color-primary-surface-hover: var(--gray-800);
 }
 
-[data-theme='dark'][data-accent='default'] {
+[data-theme='dark'][data-accent='obsidian'] {
 	--color-primary: var(--gray-300);
 	--color-primary-hover: var(--gray-200);
 	--color-primary-emphasis: var(--gray-200);
@@ -30,4 +30,140 @@
 	--color-primary-emphasis: var(--green-300);
 	--color-primary-surface: var(--green-600);
 	--color-primary-surface-hover: var(--green-500);
+}
+
+/* Twilight accent - Purple */
+[data-accent='twilight'] {
+	--color-primary: var(--twilight-600);
+	--color-primary-hover: var(--twilight-500);
+	--color-primary-emphasis: var(--twilight-700);
+	--color-primary-surface: var(--twilight-600);
+	--color-primary-surface-hover: var(--twilight-500);
+}
+
+[data-theme='dark'][data-accent='twilight'] {
+	--color-primary: var(--twilight-400);
+	--color-primary-hover: var(--twilight-300);
+	--color-primary-emphasis: var(--twilight-300);
+	--color-primary-surface: var(--twilight-600);
+	--color-primary-surface-hover: var(--twilight-500);
+}
+
+/* Canopy accent - Jungle green */
+[data-accent='canopy'] {
+	--color-primary: var(--canopy-600);
+	--color-primary-hover: var(--canopy-500);
+	--color-primary-emphasis: var(--canopy-700);
+	--color-primary-surface: var(--canopy-600);
+	--color-primary-surface-hover: var(--canopy-500);
+}
+
+[data-theme='dark'][data-accent='canopy'] {
+	--color-primary: var(--canopy-400);
+	--color-primary-hover: var(--canopy-300);
+	--color-primary-emphasis: var(--canopy-300);
+	--color-primary-surface: var(--canopy-600);
+	--color-primary-surface-hover: var(--canopy-500);
+}
+
+/* Blush accent - Dusty rose pink */
+[data-accent='blush'] {
+	--color-primary: var(--blush-600);
+	--color-primary-hover: var(--blush-500);
+	--color-primary-emphasis: var(--blush-700);
+	--color-primary-surface: var(--blush-600);
+	--color-primary-surface-hover: var(--blush-500);
+}
+
+[data-theme='dark'][data-accent='blush'] {
+	--color-primary: var(--blush-400);
+	--color-primary-hover: var(--blush-300);
+	--color-primary-emphasis: var(--blush-300);
+	--color-primary-surface: var(--blush-600);
+	--color-primary-surface-hover: var(--blush-500);
+}
+
+/* Patina accent - Teal */
+[data-accent='patina'] {
+	--color-primary: var(--patina-600);
+	--color-primary-hover: var(--patina-500);
+	--color-primary-emphasis: var(--patina-700);
+	--color-primary-surface: var(--patina-600);
+	--color-primary-surface-hover: var(--patina-500);
+}
+
+[data-theme='dark'][data-accent='patina'] {
+	--color-primary: var(--patina-400);
+	--color-primary-hover: var(--patina-300);
+	--color-primary-emphasis: var(--patina-300);
+	--color-primary-surface: var(--patina-600);
+	--color-primary-surface-hover: var(--patina-500);
+}
+
+/* Meridian accent - Solid blue */
+[data-accent='meridian'] {
+	--color-primary: var(--meridian-600);
+	--color-primary-hover: var(--meridian-500);
+	--color-primary-emphasis: var(--meridian-700);
+	--color-primary-surface: var(--meridian-600);
+	--color-primary-surface-hover: var(--meridian-500);
+}
+
+[data-theme='dark'][data-accent='meridian'] {
+	--color-primary: var(--meridian-400);
+	--color-primary-hover: var(--meridian-300);
+	--color-primary-emphasis: var(--meridian-300);
+	--color-primary-surface: var(--meridian-600);
+	--color-primary-surface-hover: var(--meridian-500);
+}
+
+/* Clay accent - Earthy orange */
+[data-accent='clay'] {
+	--color-primary: var(--clay-600);
+	--color-primary-hover: var(--clay-500);
+	--color-primary-emphasis: var(--clay-700);
+	--color-primary-surface: var(--clay-600);
+	--color-primary-surface-hover: var(--clay-500);
+}
+
+[data-theme='dark'][data-accent='clay'] {
+	--color-primary: var(--clay-400);
+	--color-primary-hover: var(--clay-300);
+	--color-primary-emphasis: var(--clay-300);
+	--color-primary-surface: var(--clay-600);
+	--color-primary-surface-hover: var(--clay-500);
+}
+
+/* Amber accent - Warm gold */
+[data-accent='amber'] {
+	--color-primary: var(--amber-600);
+	--color-primary-hover: var(--amber-500);
+	--color-primary-emphasis: var(--amber-700);
+	--color-primary-surface: var(--amber-600);
+	--color-primary-surface-hover: var(--amber-500);
+}
+
+[data-theme='dark'][data-accent='amber'] {
+	--color-primary: var(--amber-400);
+	--color-primary-hover: var(--amber-300);
+	--color-primary-emphasis: var(--amber-300);
+	--color-primary-surface: var(--amber-600);
+	--color-primary-surface-hover: var(--amber-500);
+}
+
+/* Crimson accent - Deep red */
+[data-accent='crimson'] {
+	--color-primary: var(--crimson-600);
+	--color-primary-hover: var(--crimson-500);
+	--color-primary-emphasis: var(--crimson-700);
+	--color-primary-surface: var(--crimson-600);
+	--color-primary-surface-hover: var(--crimson-500);
+}
+
+[data-theme='dark'][data-accent='crimson'] {
+	--color-primary: var(--crimson-400);
+	--color-primary-hover: var(--crimson-300);
+	--color-primary-emphasis: var(--crimson-300);
+	--color-primary-surface: var(--crimson-600);
+	--color-primary-surface-hover: var(--crimson-500);
 }
