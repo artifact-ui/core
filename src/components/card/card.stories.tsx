@@ -3,7 +3,7 @@ import * as Card from './card';
 import { Button } from '../button/button';
 
 const meta: Meta<typeof Card.Root> = {
-	title: 'Alpine/Card',
+	title: 'Artifact/Card',
 	component: Card.Root,
 	parameters: {
 		layout: 'centered',
@@ -17,9 +17,9 @@ const meta: Meta<typeof Card.Root> = {
 			control: 'select',
 			options: ['1', '2', '3'],
 		},
-		rounded: {
+		radius: {
 			control: 'select',
-			options: [false, true, 'sm', 'md', 'lg'],
+			options: ['none', '1', '2', '3'],
 		},
 		shadow: {
 			control: 'select',
@@ -35,7 +35,6 @@ export const Default: Story = {
 	args: {
 		variant: 'default',
 		size: '2',
-		rounded: false,
 		shadow: false,
 	},
 	render: (args) => (
@@ -60,7 +59,7 @@ export const Surface: Story = {
 	args: {
 		variant: 'surface',
 		size: '2',
-		rounded: 'md',
+		radius: '2',
 		shadow: 'classic',
 	},
 	render: (args) => (

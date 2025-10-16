@@ -1,12 +1,14 @@
 import React, { forwardRef } from 'react';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
+import { Radius } from '../../types/style-props';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './badge.module.css';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 	variant?: 'solid' | 'soft' | 'outline';
-	color?: 'primary' | 'secondary' | 'tertiary' | 'brand' | 'info' | 'error';
+	color?: 'primary' | 'neutral' | 'info' | 'success' | 'danger';
 	size?: '1' | '2' | '3' | '4';
-	radius?: '1' | '2' | 'full';
+	radius?: Radius;
 	highContrast?: boolean;
 	iconLeft?: React.ReactNode;
 	iconRight?: React.ReactNode;
@@ -18,9 +20,9 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 	(
 		{
 			variant = 'solid',
-			color = 'secondary',
+			color = 'neutral',
 			size = '3',
-			radius = '1',
+			radius,
 			highContrast = false,
 			iconLeft,
 			iconRight,
@@ -40,11 +42,10 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 
 		const colorClasses = {
 			primary: styles.badgeColorPrimary,
-			secondary: styles.badgeColorSecondary,
-			tertiary: styles.badgeColorTertiary,
-			brand: styles.badgeColorBrand,
+			neutral: styles.badgeColorNeutral,
 			info: styles.badgeColorInfo,
-			error: styles.badgeColorError,
+			success: styles.badgeColorSuccess,
+			danger: styles.badgeColorDanger,
 		};
 
 		const sizeClasses = {
@@ -52,12 +53,6 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 			'2': styles.badgeSize2,
 			'3': styles.badgeSize3,
 			'4': styles.badgeSize4,
-		};
-
-		const radiusClasses = {
-			'1': styles.badgeRadius1,
-			'2': styles.badgeRadius2,
-			full: styles.badgeRadiusFull,
 		};
 
 		const iconGapClasses = {
@@ -83,7 +78,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 					variantClasses[variant],
 					colorClasses[color],
 					sizeClasses[size],
-					radiusClasses[radius],
+					radius && radiusClasses[radius],
 					highContrast && styles.badgeHighContrast,
 					override && 'aow',
 					className,

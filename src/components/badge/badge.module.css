@@ -1,6 +1,6 @@
-/* Alpine - Badge Component */
+/* Artifact UI - Badge Component */
 
-@layer alpine-components {
+@layer components {
 	/* Badge - Root */
 	.badge {
 		display: inline-flex;
@@ -10,6 +10,7 @@
 		line-height: 1;
 		white-space: nowrap;
 		vertical-align: middle;
+		border-radius: var(--radius-default);
 	}
 
 	/* Badge with icons */
@@ -32,7 +33,6 @@
 		/* Border colors will be applied by color classes */
 	}
 
-
 	/* Badge - Sizes */
 	.badgeSize1 {
 		font-size: var(--font-size-2);
@@ -54,39 +54,15 @@
 		padding: var(--space-2) var(--space-4);
 	}
 
-
-	/* Badge - Radius */
-	.badgeRadius1 {
-		border-radius: var(--radius);
-	}
-
-	.badgeRadius2 {
-		border-radius: var(--radius-lg);
-	}
-
-	.badgeRadiusFull {
-		border-radius: 9999px;
-	}
-
 	/* Badge - Colors - Solid Variant */
 	.badgeVariantSolid.badgeColorPrimary {
-		background-color: var(--color-bg-primary);
-		color: var(--color-text-primary);
-	}
-
-	.badgeVariantSolid.badgeColorSecondary {
-		background-color: var(--color-bg-secondary);
-		color: var(--color-text-primary);
-	}
-
-	.badgeVariantSolid.badgeColorTertiary {
-		background-color: var(--color-bg-tertiary);
-		color: var(--color-text-primary);
-	}
-
-	.badgeVariantSolid.badgeColorBrand {
-		background-color: var(--color-brand);
+		background-color: var(--color-primary-surface);
 		color: var(--color-constant-white);
+	}
+
+	.badgeVariantSolid.badgeColorNeutral {
+		background-color: var(--color-bg-subtle);
+		color: var(--color-text-default);
 	}
 
 	.badgeVariantSolid.badgeColorInfo {
@@ -94,34 +70,27 @@
 		color: var(--color-constant-white);
 	}
 
-	.badgeVariantSolid.badgeColorError {
+	.badgeVariantSolid.badgeColorSuccess {
+		background-color: var(--color-success);
+		color: var(--color-constant-white);
+	}
+
+	.badgeVariantSolid.badgeColorDanger {
 		background-color: var(--color-error);
 		color: var(--color-constant-white);
 	}
 
 	/* Badge - Colors - Soft Variant */
 	.badgeVariantSoft.badgeColorPrimary {
-		background-color: var(--color-bg-primary);
-		color: var(--color-text-primary);
-		opacity: var(--opacity-70);
+		background-color: var(--color-primary);
+		color: var(--color-primary);
+		background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
 	}
 
-	.badgeVariantSoft.badgeColorSecondary {
-		background-color: var(--color-bg-secondary);
-		color: var(--color-text-secondary);
+	.badgeVariantSoft.badgeColorNeutral {
+		background-color: var(--color-bg-subtle);
+		color: var(--color-text-subtle);
 		opacity: var(--opacity-80);
-	}
-
-	.badgeVariantSoft.badgeColorTertiary {
-		background-color: var(--color-bg-tertiary);
-		color: var(--color-text-tertiary);
-		opacity: var(--opacity-80);
-	}
-
-	.badgeVariantSoft.badgeColorBrand {
-		background-color: var(--color-brand);
-		color: var(--color-brand);
-		background-color: color-mix(in srgb, var(--color-brand) 15%, transparent);
 	}
 
 	.badgeVariantSoft.badgeColorInfo {
@@ -130,32 +99,27 @@
 		background-color: color-mix(in srgb, var(--color-info) 15%, transparent);
 	}
 
-	.badgeVariantSoft.badgeColorError {
+	.badgeVariantSoft.badgeColorSuccess {
+		background-color: var(--color-success);
+		color: var(--color-success);
+		background-color: color-mix(in srgb, var(--color-success) 15%, transparent);
+	}
+
+	.badgeVariantSoft.badgeColorDanger {
 		background-color: var(--color-error);
 		color: var(--color-error);
 		background-color: color-mix(in srgb, var(--color-error) 15%, transparent);
 	}
 
-
 	/* Badge - Colors - Outline Variant */
 	.badgeVariantOutline.badgeColorPrimary {
-		border-color: var(--color-border-primary);
-		color: var(--color-text-primary);
+		border-color: var(--color-primary);
+		color: var(--color-primary);
 	}
 
-	.badgeVariantOutline.badgeColorSecondary {
-		border-color: var(--color-border-secondary);
-		color: var(--color-text-secondary);
-	}
-
-	.badgeVariantOutline.badgeColorTertiary {
-		border-color: var(--color-border-tertiary);
-		color: var(--color-text-tertiary);
-	}
-
-	.badgeVariantOutline.badgeColorBrand {
-		border-color: var(--color-brand);
-		color: var(--color-brand);
+	.badgeVariantOutline.badgeColorNeutral {
+		border-color: var(--color-border-subtle);
+		color: var(--color-text-subtle);
 	}
 
 	.badgeVariantOutline.badgeColorInfo {
@@ -163,20 +127,20 @@
 		color: var(--color-info);
 	}
 
-	.badgeVariantOutline.badgeColorError {
+	.badgeVariantOutline.badgeColorSuccess {
+		border-color: var(--color-success);
+		color: var(--color-success);
+	}
+
+	.badgeVariantOutline.badgeColorDanger {
 		border-color: var(--color-error);
 		color: var(--color-error);
 	}
 
 	/* Badge - High Contrast */
-	.badgeHighContrast.badgeVariantSolid.badgeColorSecondary {
-		background-color: var(--color-text-primary);
-		color: var(--color-bg-primary);
-	}
-
-	.badgeHighContrast.badgeVariantSolid.badgeColorTertiary {
-		background-color: var(--color-text-secondary);
-		color: var(--color-bg-primary);
+	.badgeHighContrast.badgeVariantSolid.badgeColorNeutral {
+		background-color: var(--color-text-default);
+		color: var(--color-bg-default);
 	}
 
 	.badgeHighContrast.badgeVariantSoft {
@@ -188,14 +152,30 @@
 	}
 
 	/* Badge - Icon Gap */
-	.badgeIconGap1 { gap: var(--space-1); }
-	.badgeIconGap2 { gap: var(--space-2); }
-	.badgeIconGap3 { gap: var(--space-3); }
-	.badgeIconGap4 { gap: var(--space-4); }
-	.badgeIconGap5 { gap: var(--space-5); }
-	.badgeIconGap6 { gap: var(--space-6); }
-	.badgeIconGap7 { gap: var(--space-7); }
-	.badgeIconGap8 { gap: var(--space-8); }
+	.badgeIconGap1 {
+		gap: var(--space-1);
+	}
+	.badgeIconGap2 {
+		gap: var(--space-2);
+	}
+	.badgeIconGap3 {
+		gap: var(--space-3);
+	}
+	.badgeIconGap4 {
+		gap: var(--space-4);
+	}
+	.badgeIconGap5 {
+		gap: var(--space-5);
+	}
+	.badgeIconGap6 {
+		gap: var(--space-6);
+	}
+	.badgeIconGap7 {
+		gap: var(--space-7);
+	}
+	.badgeIconGap8 {
+		gap: var(--space-8);
+	}
 
 	/* Badge - Icons */
 	.iconLeft {

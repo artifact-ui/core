@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
 import styles from './text.module.css';
 
 type TextElement = HTMLParagraphElement | HTMLSpanElement | HTMLLabelElement;
@@ -7,7 +7,7 @@ type TextElement = HTMLParagraphElement | HTMLSpanElement | HTMLLabelElement;
 export interface TextProps extends React.HTMLAttributes<HTMLElement> {
 	size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
 	weight?: 'normal' | 'medium' | 'semibold' | 'bold';
-	color?: 'primary' | 'secondary' | 'tertiary' | 'brand' | 'info' | 'danger';
+	color?: 'primary' | 'secondary' | 'tertiary' | 'accent' | 'info' | 'danger';
 	align?: 'left' | 'center' | 'right';
 	uppercase?: boolean;
 	italic?: boolean;
@@ -63,7 +63,7 @@ const Text = forwardRef<TextElement, TextProps>(
 			primary: styles.textColorPrimary,
 			secondary: styles.textColorSecondary,
 			tertiary: styles.textColorTertiary,
-			brand: styles.textColorBrand,
+			accent: styles.textColorAccent,
 			info: styles.textColorInfo,
 			danger: styles.textColorDanger,
 		};

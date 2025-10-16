@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as Modal from './modal';
-import { Button } from '@/components/alpine';
-import { SettingsIcon, MoveIcon } from '@/components/icons';
+import { Button } from '../button/button';
+import { Stack } from '../layout/stack';
 
 const meta: Meta<typeof Modal.Root> = {
-	title: 'Alpine/Modal',
+	title: 'Artifact/Modal',
 	component: Modal.Root,
 	parameters: {
 		layout: 'centered',
@@ -20,7 +20,7 @@ export const Open: Story = {
 			<Modal.Overlay />
 			<Modal.Content>
 				<Modal.Header>
-					<Modal.Title iconLeft={<SettingsIcon />}>Example Modal</Modal.Title>
+					<Modal.Title>Example Modal</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
 					<Modal.Description>This is a basic modal example.</Modal.Description>
@@ -58,26 +58,40 @@ export const SimpleWithForm: Story = {
 			<Modal.Overlay />
 			<Modal.Content variant="simple">
 				<Modal.Header>
-					<Modal.Title iconLeft={<MoveIcon />}>Move Item</Modal.Title>
+					<Modal.Title>Move Item</Modal.Title>
 					<Modal.Description>
 						Select a pack and category to move this item.
 					</Modal.Description>
 				</Modal.Header>
 				<Modal.Body>
-					<div className="space-y-4">
+					<Stack gap="4">
 						<div>
 							<label htmlFor="pack">Pack</label>
-							<select id="pack" className="w-full p-2 border rounded">
+							<select
+								id="pack"
+								style={{
+									width: '100%',
+									padding: '0.5rem',
+									border: '1px solid #ccc',
+									borderRadius: '4px',
+								}}>
 								<option>Choose a pack...</option>
 							</select>
 						</div>
 						<div>
 							<label htmlFor="category">Category</label>
-							<select id="category" className="w-full p-2 border rounded">
+							<select
+								id="category"
+								style={{
+									width: '100%',
+									padding: '0.5rem',
+									border: '1px solid #ccc',
+									borderRadius: '4px',
+								}}>
 								<option>Choose a category...</option>
 							</select>
 						</div>
-					</div>
+					</Stack>
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="ghost">Cancel</Button>

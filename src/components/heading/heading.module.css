@@ -1,6 +1,6 @@
-/* Alpine - Heading Component */
+/* Artifact UI - Heading Component */
 
-@layer alpine-components {
+@layer components {
 	/* Heading - Root */
 	.heading {
 		margin: 0;
@@ -59,26 +59,26 @@
 
 	/* Heading - Color */
 	.headingColorPrimary {
-		color: var(--color-text-primary);
+		color: var(--color-text-default);
 	}
 
 	.headingColorSecondary {
-		color: var(--color-text-secondary);
+		color: var(--color-text-subtle);
 	}
 
 	.headingColorTertiary {
-		color: var(--color-text-tertiary);
+		color: var(--color-text-muted);
 	}
 
-	.headingColorBrand {
-		color: var(--color-brand);
+	.headingColorAccent {
+		color: var(--color-primary);
 	}
 
-	.headingColorError {
+	.headingColorDanger {
 		color: var(--color-error);
 	}
 
-	.headingColorError svg {
+	.headingColorDanger svg {
 		color: var(--color-error);
 	}
 

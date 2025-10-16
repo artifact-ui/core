@@ -1,14 +1,52 @@
-@layer alpine-components {
+@layer components {
 	.root {
-		border-radius: var(--radius-sm);
-		border: 1px solid var(--color-border-primary);
-		background-color: var(--color-bg-primary);
+		border-radius: var(--checkbox-radius-default, 0.125rem);
+		border: 1px solid var(--color-border-default);
+		background-color: var(--color-bg-default);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
 		transition: all var(--transition);
 		flex-shrink: 0;
+	}
+
+	/* Checkbox - Theme-based radius defaults */
+	[data-radius='none'] .root {
+		--checkbox-radius-default: 0;
+	}
+
+	[data-radius='small'] .root {
+		--checkbox-radius-default: 0.125rem; /* 2px */
+	}
+
+	[data-radius='medium'] .root {
+		--checkbox-radius-default: 0.25rem; /* 4px */
+	}
+
+	[data-radius='large'] .root {
+		--checkbox-radius-default: 0.25rem; /* 4px */
+	}
+
+	[data-radius='full'] .root {
+		--checkbox-radius-default: 50%;
+	}
+
+	/* Checkbox - Radius */
+	.root.radiusNone {
+		border-radius: 0;
+	}
+
+	.root.radius1 {
+		border-radius: 0.125rem; /* 2px */
+	}
+
+	.root.radius2 {
+		border-radius: 0.25rem; /* 4px */
+	}
+
+	.root.radiusFull {
+		border-radius: 50%;
 	}
 
 	/* Size variants */
@@ -33,22 +71,17 @@
 	}
 
 	.root:hover {
-		border-color: var(--color-border-secondary);
-	}
-
-	.root:focus-visible {
-		outline: 2px solid var(--color-brand);
-		outline-offset: 2px;
+		border-color: var(--color-border-subtle);
 	}
 
 	.root[data-state='checked'] {
-		background-color: var(--color-brand);
-		border-color: var(--color-brand);
+		background-color: var(--color-primary);
+		border-color: var(--color-primary);
 	}
 
 	.root[data-state='checked']:hover {
-		background-color: var(--color-brand-hover);
-		border-color: var(--color-brand-hover);
+		background-color: var(--color-primary-hover);
+		border-color: var(--color-primary-hover);
 	}
 
 	.root[data-disabled] {

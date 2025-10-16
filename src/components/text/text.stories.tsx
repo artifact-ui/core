@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Text } from './text';
-import { CheckIcon } from 'lucide-react';
-import { Stack } from '@/components/layout';
+import { Stack } from '../layout/stack';
 
 const meta: Meta<typeof Text> = {
-	title: 'Alpine/Text',
+	title: 'Artifact/Text',
 	component: Text,
 	parameters: {
 		layout: 'centered',
@@ -22,7 +21,7 @@ export const Default: Story = {
 
 export const Examples: Story = {
 	render: () => (
-		<Stack className="gap-4">
+		<Stack gap="4">
 			<Text>Default text</Text>
 			<Text size="6" weight="bold">
 				Large bold text
@@ -36,9 +35,7 @@ export const Examples: Story = {
 			<Text color="secondary" italic>
 				Italic description text
 			</Text>
-			<Text color="brand">Brand colored text</Text>
-			<Text iconLeft={<CheckIcon size={16} />}>Text with icon</Text>
+			<Text color="accent">Accent colored text</Text>
 		</Stack>
 	),
 };
-

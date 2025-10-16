@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TextField } from '../';
+import * as TextField from './textfield';
 import { SearchIcon } from '../../icons';
 
 const meta = {
-	title: 'Alpine/TextField',
+	title: 'Artifact/TextField',
 	component: TextField.Standalone,
 	parameters: {
 		layout: 'centered',

@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Badge } from './badge';
-import { Stack, Flex } from '@/components/layout';
-import { LocationIcon, CheckIcon, FavoriteIcon } from '@/components/icons';
+import { Stack } from '../layout/stack';
+import { Flex } from '../layout/flex';
+import { CheckIcon, UserIcon, InfoIcon } from '../../icons';
 
 const meta: Meta<typeof Badge> = {
-	title: 'Alpine/Badge',
+	title: 'Artifact/Badge',
 	component: Badge,
 	parameters: {
 		layout: 'centered',
@@ -22,10 +23,12 @@ export const Default: Story = {
 
 export const Examples: Story = {
 	render: () => (
-		<Stack className="gap-8 p-6">
+		<Stack gap="8" style={{ padding: '2rem' }}>
 			<div>
-				<h3 className="mb-4 text-lg font-semibold">Variants</h3>
-				<Flex className="gap-4 items-center">
+				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
+					Variants
+				</h3>
+				<Flex gap="4" align="center">
 					<Badge variant="solid">Solid</Badge>
 					<Badge variant="soft">Soft</Badge>
 					<Badge variant="outline">Outline</Badge>
@@ -33,24 +36,27 @@ export const Examples: Story = {
 			</div>
 
 			<div>
-				<h3 className="mb-4 text-lg font-semibold">Colors</h3>
-				<Stack className="gap-4">
-					<Flex className="gap-2 items-center">
+				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
+					Colors
+				</h3>
+				<Stack gap="4">
+					<Flex gap="2" align="center">
 						<Badge color="primary">Primary</Badge>
-						<Badge color="secondary">Secondary</Badge>
-						<Badge color="tertiary">Tertiary</Badge>
+						<Badge color="neutral">Neutral</Badge>
 					</Flex>
-					<Flex className="gap-2 items-center">
-						<Badge color="brand">Brand</Badge>
+					<Flex gap="2" align="center">
 						<Badge color="info">Info</Badge>
-						<Badge color="error">Error</Badge>
+						<Badge color="success">Success</Badge>
+						<Badge color="danger">Danger</Badge>
 					</Flex>
 				</Stack>
 			</div>
 
 			<div>
-				<h3 className="mb-4 text-lg font-semibold">Sizes</h3>
-				<Flex className="gap-4 items-center">
+				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
+					Sizes
+				</h3>
+				<Flex gap="4" align="center">
 					<Badge size="1">Size 1 (xs)</Badge>
 					<Badge size="2">Size 2</Badge>
 					<Badge size="3">Size 3 (default)</Badge>
@@ -59,8 +65,10 @@ export const Examples: Story = {
 			</div>
 
 			<div>
-				<h3 className="mb-4 text-lg font-semibold">Radius</h3>
-				<Flex className="gap-4 items-center">
+				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
+					Radius
+				</h3>
+				<Flex gap="4" align="center">
 					<Badge radius="1">Default</Badge>
 					<Badge radius="2">Large</Badge>
 					<Badge radius="full">Full</Badge>
@@ -68,58 +76,84 @@ export const Examples: Story = {
 			</div>
 
 			<div>
-				<h3 className="mb-4 text-lg font-semibold">High Contrast</h3>
-				<Flex className="gap-4 items-center">
+				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
+					High Contrast
+				</h3>
+				<Flex gap="4" align="center">
 					<Badge>Normal</Badge>
 					<Badge highContrast>High Contrast</Badge>
 				</Flex>
 			</div>
 
 			<div>
-				<h3 className="mb-4 text-lg font-semibold">Icons</h3>
-				<Stack className="gap-4">
-					<Flex className="gap-2 items-center">
-						<Badge iconLeft={<LocationIcon size={14} />}>Mountain</Badge>
-						<Badge iconRight={<CheckIcon size={14} />}>Completed</Badge>
-						<Badge iconLeft={<FavoriteIcon size={14} />} iconRight={<CheckIcon size={14} />}>Featured</Badge>
+				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
+					Icons
+				</h3>
+				<Stack gap="4">
+					<Flex gap="2" align="center">
+						<Badge iconLeft={<UserIcon />}>User</Badge>
+						<Badge iconRight={<CheckIcon />}>Completed</Badge>
+						<Badge iconLeft={<InfoIcon />} iconRight={<CheckIcon />}>
+							Featured
+						</Badge>
 					</Flex>
 				</Stack>
 			</div>
 
 			<div>
-				<h3 className="mb-4 text-lg font-semibold">Icon Gap</h3>
-				<Stack className="gap-4">
-					<Flex className="gap-2 items-center">
-						<Badge iconLeft={<LocationIcon size={14} />}>Default</Badge>
-						<Badge iconLeft={<LocationIcon size={14} />} iconGap="2">Gap 2</Badge>
-						<Badge iconLeft={<LocationIcon size={14} />} iconGap="4">Gap 4</Badge>
-						<Badge iconLeft={<LocationIcon size={14} />} iconGap="6">Gap 6</Badge>
+				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
+					Icon Gap
+				</h3>
+				<Stack gap="4">
+					<Flex gap="2" align="center">
+						<Badge iconLeft={<UserIcon />}>Default</Badge>
+						<Badge iconLeft={<UserIcon />} iconGap="2">
+							Gap 2
+						</Badge>
+						<Badge iconLeft={<UserIcon />} iconGap="4">
+							Gap 4
+						</Badge>
+						<Badge iconLeft={<UserIcon />} iconGap="6">
+							Gap 6
+						</Badge>
 					</Flex>
 				</Stack>
 			</div>
 
 			<div>
-				<h3 className="mb-4 text-lg font-semibold">Use Cases</h3>
-				<Stack className="gap-4">
-					<Flex className="gap-2 items-center">
+				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
+					Use Cases
+				</h3>
+				<Stack gap="4">
+					<Flex gap="2" align="center">
 						<span>Item Count:</span>
-						<Badge variant="solid" color="secondary" radius="full">24</Badge>
+						<Badge variant="solid" color="neutral" radius="full">
+							24
+						</Badge>
 					</Flex>
-					<Flex className="gap-2 items-center">
+					<Flex gap="2" align="center">
 						<span>Quantity:</span>
-						<Badge variant="solid" color="secondary" radius="full">x 3</Badge>
+						<Badge variant="solid" color="neutral" radius="full">
+							x 3
+						</Badge>
 					</Flex>
-					<Flex className="gap-2 items-center">
+					<Flex gap="2" align="center">
 						<span>Weight:</span>
-						<Badge variant="outline" color="tertiary">2.5 lbs</Badge>
+						<Badge variant="outline" color="neutral">
+							2.5 lbs
+						</Badge>
 					</Flex>
-					<Flex className="gap-2 items-center">
+					<Flex gap="2" align="center">
 						<span>Category:</span>
-						<Badge variant="soft" color="brand" size="1" iconLeft={<LocationIcon size={12} />}>Shelter</Badge>
+						<Badge variant="soft" color="primary" size="1" iconLeft={<UserIcon />}>
+							Account
+						</Badge>
 					</Flex>
-					<Flex className="gap-2 items-center">
-						<span>Trail Status:</span>
-						<Badge variant="soft" color="info" iconLeft={<CheckIcon size={12} />}>Completed</Badge>
+					<Flex gap="2" align="center">
+						<span>Status:</span>
+						<Badge variant="soft" color="info" iconLeft={<CheckIcon />}>
+							Verified
+						</Badge>
 					</Flex>
 				</Stack>
 			</div>

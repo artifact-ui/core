@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Alert } from './alert';
+import { Stack } from '../layout/stack';
 
 const meta: Meta<typeof Alert> = {
-	title: 'Alpine/Alert',
+	title: 'Artifact/Alert',
 	component: Alert,
 	parameters: {
 		layout: 'centered',
@@ -14,20 +15,22 @@ type Story = StoryObj<typeof Alert>;
 
 export const Default: Story = {
 	args: {
-		children: 'Your pack has been updated.',
+		children: 'Your changes have been saved.',
 	},
 };
 
 export const Examples: Story = {
 	render: () => (
-		<div
-			style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '500px' }}>
-			<Alert variant="success">Pack saved successfully. Total weight: 12.5 lbs.</Alert>
-			<Alert variant="error">Unable to add item. Weight exceeds pack limit.</Alert>
-			<Alert variant="default">Remember to test your gear before hitting the trail.</Alert>
-			<Alert variant="error" size="1">
-				Item not found.
+		<Stack gap="4" style={{ width: '500px' }}>
+			<Alert variant="success" size="1">
+				Changes saved successfully.
 			</Alert>
-		</div>
+			<Alert variant="error" size="2">
+				Unable to complete action. Please try again.
+			</Alert>
+			<Alert variant="default" size="3">
+				Remember to save your work before closing.
+			</Alert>
+		</Stack>
 	),
 };

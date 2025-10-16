@@ -1,12 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as Tabs from './tabs';
-import { Stack, Flex } from '@/components/layout';
-import { Text } from '@/components/alpine';
-import { BackpackIcon, SettingsIcon, UserIcon } from '@/components/icons';
+import { Stack } from '../layout/stack';
+import { Text } from '../text/text';
 import { useState } from 'react';
 
 const meta: Meta<typeof Tabs.Root> = {
-	title: 'Alpine/Tabs',
+	title: 'Artifact/Tabs',
 	component: Tabs.Root,
 	parameters: {
 		layout: 'centered',
@@ -52,27 +51,12 @@ const WithIconsComponent = () => {
 		<div style={{ width: '600px' }}>
 			<Tabs.Root value={activeTab} onValueChange={setActiveTab}>
 				<Tabs.List size="2">
-					<Tabs.Trigger value="info">
-						<Flex className="items-center gap-2">
-							<BackpackIcon />
-							Pack Info
-						</Flex>
-					</Tabs.Trigger>
-					<Tabs.Trigger value="settings">
-						<Flex className="items-center gap-2">
-							<SettingsIcon />
-							Pack Settings
-						</Flex>
-					</Tabs.Trigger>
-					<Tabs.Trigger value="profile">
-						<Flex className="items-center gap-2">
-							<UserIcon />
-							Profile
-						</Flex>
-					</Tabs.Trigger>
+					<Tabs.Trigger value="info">Pack Info</Tabs.Trigger>
+					<Tabs.Trigger value="settings">Pack Settings</Tabs.Trigger>
+					<Tabs.Trigger value="profile">Profile</Tabs.Trigger>
 				</Tabs.List>
 				<Tabs.Content value="info">
-					<Stack className="gap-2">
+					<Stack gap="2">
 						<Text weight="medium">Pack Information</Text>
 						<Text size="2" color="secondary">
 							Edit your pack name, description, and other details.
@@ -80,7 +64,7 @@ const WithIconsComponent = () => {
 					</Stack>
 				</Tabs.Content>
 				<Tabs.Content value="settings">
-					<Stack className="gap-2">
+					<Stack gap="2">
 						<Text weight="medium">Pack Settings</Text>
 						<Text size="2" color="secondary">
 							Configure pack settings like pricing, affiliate links, and theme.
@@ -88,7 +72,7 @@ const WithIconsComponent = () => {
 					</Stack>
 				</Tabs.Content>
 				<Tabs.Content value="profile">
-					<Stack className="gap-2">
+					<Stack gap="2">
 						<Text weight="medium">Profile Settings</Text>
 						<Text size="2" color="secondary">
 							Manage your profile information and preferences.
@@ -110,9 +94,9 @@ const SizesComponent = () => {
 	const [tab3, setTab3] = useState('a');
 
 	return (
-		<Stack className="gap-8" style={{ width: '600px' }}>
+		<Stack gap="8" style={{ width: '600px' }}>
 			<div>
-				<Text size="2" weight="medium" className="mb-2">
+				<Text size="2" weight="medium" style={{ marginBottom: '0.5rem' }}>
 					Size 1 (Small)
 				</Text>
 				<Tabs.Root value={tab1} onValueChange={setTab1}>
@@ -134,7 +118,7 @@ const SizesComponent = () => {
 			</div>
 
 			<div>
-				<Text size="2" weight="medium" className="mb-2">
+				<Text size="2" weight="medium" style={{ marginBottom: '0.5rem' }}>
 					Size 2 (Default)
 				</Text>
 				<Tabs.Root value={tab2} onValueChange={setTab2}>
@@ -156,7 +140,7 @@ const SizesComponent = () => {
 			</div>
 
 			<div>
-				<Text size="2" weight="medium" className="mb-2">
+				<Text size="2" weight="medium" style={{ marginBottom: '0.5rem' }}>
 					Size 3 (Large)
 				</Text>
 				<Tabs.Root value={tab3} onValueChange={setTab3}>
@@ -182,4 +166,56 @@ const SizesComponent = () => {
 
 export const Sizes: Story = {
 	render: () => <SizesComponent />,
+};
+
+const ExamplesComponent = () => {
+	const [activeTab, setActiveTab] = useState('primary');
+
+	return (
+		<Stack gap="8" style={{ width: '600px' }}>
+			<div>
+				<Text size="2" weight="medium" style={{ marginBottom: '0.5rem' }}>
+					Colors
+				</Text>
+				<Tabs.Root value={activeTab} onValueChange={setActiveTab}>
+					<Tabs.List>
+						<Tabs.Trigger value="primary" color="primary">
+							Primary
+						</Tabs.Trigger>
+						<Tabs.Trigger value="neutral" color="neutral">
+							Neutral
+						</Tabs.Trigger>
+						<Tabs.Trigger value="success" color="success">
+							Success
+						</Tabs.Trigger>
+						<Tabs.Trigger value="info" color="info">
+							Info
+						</Tabs.Trigger>
+						<Tabs.Trigger value="danger" color="danger">
+							Danger
+						</Tabs.Trigger>
+					</Tabs.List>
+					<Tabs.Content value="primary">
+						<Text>Primary tab content with default brand color.</Text>
+					</Tabs.Content>
+					<Tabs.Content value="neutral">
+						<Text>Neutral tab content for secondary or archived sections.</Text>
+					</Tabs.Content>
+					<Tabs.Content value="success">
+						<Text>Success tab content for completed or positive states.</Text>
+					</Tabs.Content>
+					<Tabs.Content value="info">
+						<Text>Info tab content for informational sections.</Text>
+					</Tabs.Content>
+					<Tabs.Content value="danger">
+						<Text>Danger tab content for errors or warnings.</Text>
+					</Tabs.Content>
+				</Tabs.Root>
+			</div>
+		</Stack>
+	);
+};
+
+export const Examples: Story = {
+	render: () => <ExamplesComponent />,
 };

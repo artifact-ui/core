@@ -1,11 +1,4 @@
 [data-theme='dark'] {
-	/* Brand colors */
-	--color-brand: var(--sage-400);
-	--color-brand-hover: var(--sage-300);
-	--color-brand-emphasis: var(--sage-200);
-	--color-brand-surface: var(--sage-600);
-	--color-brand-surface-hover: var(--sage-500);
-
 	/* Dark theme shadows */
 	--shadow-classic: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.3),
 		0 2px 1px -1px rgba(0, 0, 0, 0.3), 0 1px 3px 0 rgba(0, 0, 0, 0.4);
@@ -13,26 +6,29 @@
 	--shadow-paper: 0px 8px 0px -4px rgba(0, 0, 0, 0.6);
 
 	/* Background colors */
-	--color-bg-primary: var(--gray-900);
-	--color-bg-secondary: var(--gray-700);
-	--color-bg-tertiary: var(--gray-500);
+	--color-bg-default: var(--gray-900);
+	--color-bg-subtle: var(--gray-800);
+	--color-bg-muted: var(--gray-700);
 	--color-bg-overlay: rgba(17, 24, 39, 0.9);
 	--color-bg-accent: #1d2b28;
 
 	/* Text colors */
-	--color-text-primary: #ffffff;
-	--color-text-secondary: var(--gray-300);
-	--color-text-tertiary: var(--gray-400);
+	--color-text-default: #ffffff;
+	--color-text-subtle: var(--gray-300);
+	--color-text-muted: var(--gray-400);
 	--color-text-inverse: var(--gray-900);
 	--color-bg-inverse: #ffffff;
 
 	/* Border colors */
-	--color-border-primary: var(--gray-600);
-	--color-border-secondary: var(--gray-600);
+	--color-border-default: var(--gray-600);
+	--color-border-subtle: var(--gray-600);
+	--color-border-muted: var(--gray-500);
+	--color-border-focus: var(--gray-300);
 
 	/* State colors */
-	--color-success: var(--sage-400);
-	--color-success-bg: var(--sage-900);
+	--color-success: var(--green-400);
+	--color-success-hover: var(--green-300);
+	--color-success-bg: var(--green-900);
 
 	--color-error: var(--red-500);
 	--color-error-hover: var(--red-400);
@@ -49,5 +45,5 @@
 	/* Interactive colors */
 	--color-hover: var(--gray-700);
 	--color-active: var(--gray-600);
-	--color-focus: var(--sage-900);
+	--color-focus: var(--gray-700);
 }

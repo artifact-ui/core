@@ -1,23 +1,20 @@
-/* Alpine - Switch Component */
+/* Artifact UI - Switch Component */
 
-@layer alpine-components {
+@layer components {
 	/* Switch - Root */
 	.switch {
 		all: unset;
 		position: relative;
 		display: inline-flex;
 		align-items: center;
-		background-color: var(--color-bg-tertiary);
+		background-color: var(--color-bg-muted);
 		border-radius: 9999px;
 		cursor: pointer;
-		transition: background-color 0.2s ease, box-shadow 0.2s ease;
+		transition:
+			background-color 0.2s ease,
+			box-shadow 0.2s ease;
 		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 		-webkit-tap-highlight-color: transparent;
-	}
-
-	.switch:focus-visible {
-		outline: 2px solid var(--color-focus);
-		outline-offset: 2px;
 	}
 
 	.switch:disabled {
@@ -26,12 +23,12 @@
 	}
 
 	.switch[data-state='checked'] {
-		background-color: var(--color-brand);
+		background-color: var(--color-primary-surface);
 		box-shadow: none;
 	}
 
 	.switch[data-state='checked']:hover {
-		background-color: var(--color-brand-hover);
+		background-color: var(--color-primary-surface-hover);
 	}
 
 	/* Switch - Sizes */

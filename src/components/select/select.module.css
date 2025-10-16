@@ -9,10 +9,10 @@
 	font-size: var(--font-size-2);
 	line-height: 1;
 	font-weight: var(--font-weight-medium);
-	color: var(--color-text-primary);
-	background-color: var(--color-bg-primary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--radius-2);
+	color: var(--color-text-default);
+	background-color: var(--color-bg-default);
+	border: 1px solid var(--color-border-default);
+	border-radius: var(--radius-default);
 	padding: var(--space-2) var(--space-3);
 	cursor: pointer;
 	user-select: none;
@@ -21,13 +21,8 @@
 }
 
 .trigger:hover {
-	background-color: var(--color-bg-secondary);
-	border-color: var(--color-border-secondary);
-}
-
-.trigger:focus {
-	outline: 2px solid var(--color-primary);
-	outline-offset: 2px;
+	background-color: var(--color-bg-subtle);
+	border-color: var(--color-border-subtle);
 }
 
 .trigger:disabled {
@@ -37,7 +32,7 @@
 }
 
 .trigger[data-placeholder] {
-	color: var(--color-text-tertiary);
+	color: var(--color-text-muted);
 }
 
 /* Select - Trigger Variants */
@@ -52,20 +47,7 @@
 }
 
 .triggerMinimal:hover {
-	background-color: var(--color-bg-tertiary);
-}
-
-/* Select - Trigger Radius */
-.triggerRadius1 {
-	border-radius: var(--radius);
-}
-
-.triggerRadius2 {
-	border-radius: var(--radius-lg);
-}
-
-.triggerRadius3 {
-	border-radius: var(--radius-xl);
+	background-color: var(--color-bg-muted);
 }
 
 /* Select - Trigger Colors */
@@ -74,23 +56,23 @@
 }
 
 .triggerColorSecondary {
-	background-color: var(--color-bg-secondary);
-	border-color: var(--color-border-primary);
+	background-color: var(--color-bg-subtle);
+	border-color: var(--color-border-default);
 }
 
 .triggerColorSecondary:hover {
-	background-color: var(--color-bg-tertiary);
-	border-color: var(--color-border-secondary);
+	background-color: var(--color-bg-muted);
+	border-color: var(--color-border-subtle);
 }
 
 .triggerColorTertiary {
-	background-color: var(--color-bg-tertiary);
-	border-color: var(--color-border-secondary);
+	background-color: var(--color-bg-muted);
+	border-color: var(--color-border-subtle);
 }
 
 .triggerColorTertiary:hover {
 	background-color: var(--color-hover);
-	border-color: var(--color-border-primary);
+	border-color: var(--color-border-default);
 }
 
 /* Select - Trigger Error State */
@@ -133,6 +115,23 @@
 	min-height: 52px;
 }
 
+/* Select - Full Radius (padding adjustment) */
+[data-radius='full'] .trigger.triggerSm {
+	padding-inline: var(--space-3);
+}
+
+[data-radius='full'] .trigger.triggerMd {
+	padding-inline: var(--space-4);
+}
+
+[data-radius='full'] .trigger.triggerLg {
+	padding-inline: var(--space-5);
+}
+
+[data-radius='full'] .trigger.triggerXl {
+	padding-inline: var(--space-6);
+}
+
 /* Select - Trigger Compact */
 .triggerCompact {
 	padding: var(--space-1) var(--space-2);
@@ -151,7 +150,7 @@
 .triggerIcon {
 	display: flex;
 	align-items: center;
-	color: var(--color-text-secondary);
+	color: var(--color-text-subtle);
 	transition: transform 0.2s ease;
 	flex-shrink: 0;
 }
@@ -180,9 +179,9 @@
 /* Select - Content */
 .content {
 	overflow: hidden;
-	background-color: var(--color-bg-primary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--radius-2);
+	background-color: var(--color-bg-default);
+	border: 1px solid var(--color-border-default);
+	border-radius: var(--radius-default-simple);
 	z-index: 1100;
 	max-height: 300px;
 	min-width: var(--radix-select-trigger-width);
@@ -211,19 +210,6 @@
 
 .contentXl {
 	font-size: var(--font-size-5);
-}
-
-/* Select - Content Radius */
-.contentRadius1 {
-	border-radius: var(--radius);
-}
-
-.contentRadius2 {
-	border-radius: var(--radius-lg);
-}
-
-.contentRadius3 {
-	border-radius: var(--radius-xl);
 }
 
 /* Select - Content Shadow */
@@ -278,8 +264,9 @@
 	gap: 0.5em;
 	font-size: inherit;
 	line-height: inherit;
-	color: var(--color-text-primary);
+	color: var(--color-text-default);
 	padding: var(--space-2) var(--space-3);
+	border-radius: var(--radius-default-simple);
 	cursor: pointer;
 	user-select: none;
 	position: relative;
@@ -294,41 +281,28 @@
 	flex: 1;
 }
 
-/* Select - Item Radius */
-.itemRadius1 {
-	border-radius: var(--radius);
-}
-
-.itemRadius2 {
-	border-radius: var(--radius-lg);
-}
-
-.itemRadius3 {
-	border-radius: var(--radius-xl);
-}
-
 /* Select - Item Compact */
 .itemCompact {
 	padding: var(--space-1) var(--space-2);
 }
 
 .item:hover {
-	background-color: var(--color-bg-secondary);
+	background-color: var(--color-bg-subtle);
 	outline: none;
 }
 
 .item:focus {
-	background-color: var(--color-bg-secondary);
+	background-color: var(--color-bg-subtle);
 	outline: none;
 }
 
 .item[data-highlighted] {
-	background-color: var(--color-bg-secondary);
+	background-color: var(--color-bg-subtle);
 	outline: none;
 }
 
 .item[data-state='checked'] {
-	background-color: var(--color-bg-tertiary);
+	background-color: var(--color-bg-muted);
 }
 
 .item[data-disabled] {
@@ -365,11 +339,14 @@
 	display: block;
 	line-height: 1;
 	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-secondary);
+	color: var(--color-text-subtle);
 	padding: var(--space-2) var(--space-3);
+	opacity: 0.8;
+}
+
+.labelUppercase {
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
-	opacity: 0.8;
 }
 
 /* Select - Label Sizes (one size smaller than content) */
@@ -392,6 +369,6 @@
 /* Select - Separator */
 .separator {
 	height: 1px;
-	background-color: var(--color-border-primary);
+	background-color: var(--color-border-default);
 	margin: var(--space-1) 0;
 }

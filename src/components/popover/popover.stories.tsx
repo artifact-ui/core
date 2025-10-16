@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as Popover from './popover';
-import { Button, Text, TextField } from '@/components/alpine';
-import { Stack } from '@/components/layout';
-import { CloseIcon } from '@/components/icons';
+import { Button } from '../button/button';
+import { Text } from '../text/text';
+import * as TextField from '../textfield/textfield';
+import { Stack } from '../layout/stack';
+import { Flex } from '../layout/flex';
+import { CloseIcon } from '../../icons/CloseIcon';
 
 const meta: Meta<typeof Popover.Root> = {
-	title: 'Alpine/Popover',
+	title: 'Artifact/Popover',
 	component: Popover.Root,
 	parameters: {
 		layout: 'centered',
@@ -24,7 +27,7 @@ export const Default: Story = {
 			<Popover.Content>
 				<div style={{ padding: 'var(--space-4)', width: 300 }}>
 					<Text weight="medium">Popover Content</Text>
-					<Text size="2" color="secondary" className="mt-2">
+					<Text size="2" color="secondary" style={{ marginTop: '0.5rem' }}>
 						This is a popover with arbitrary content. It can contain any React components.
 					</Text>
 				</div>
@@ -40,7 +43,7 @@ export const WithForm: Story = {
 				<Button>Edit Settings</Button>
 			</Popover.Trigger>
 			<Popover.Content side="bottom" align="start">
-				<Stack className="gap-3 p-4" style={{ width: 320 }}>
+				<Stack gap="3" style={{ padding: '1rem', width: '320px' }}>
 					<div>
 						<Text weight="medium" size="3">
 							Settings
@@ -51,14 +54,14 @@ export const WithForm: Story = {
 					</div>
 					<TextField.Standalone label="Username" placeholder="Enter username" />
 					<TextField.Standalone label="Email" placeholder="Enter email" type="email" />
-					<div className="flex gap-2 justify-end mt-2">
+					<Flex gap="2" justify="end" style={{ marginTop: '0.5rem' }}>
 						<Popover.Close asChild>
 							<Button variant="ghost">Cancel</Button>
 						</Popover.Close>
 						<Popover.Close asChild>
 							<Button>Save</Button>
 						</Popover.Close>
-					</div>
+					</Flex>
 				</Stack>
 			</Popover.Content>
 		</Popover.Root>
@@ -86,7 +89,7 @@ export const WithCloseButton: Story = {
 						/>
 					</Popover.Close>
 					<Text weight="medium">Dismissible Popover</Text>
-					<Text size="2" color="secondary" className="mt-2">
+					<Text size="2" color="secondary" style={{ marginTop: '0.5rem' }}>
 						Click the X button or click outside to close this popover.
 					</Text>
 				</div>

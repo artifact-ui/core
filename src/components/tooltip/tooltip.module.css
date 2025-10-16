@@ -1,11 +1,11 @@
-/* Alpine - Tooltip Component */
+/* Artifact UI - Tooltip Component */
 
-@layer alpine-components {
+@layer components {
 	.content {
 		background-color: var(--color-bg-inverse);
 		color: var(--color-text-inverse);
-		padding: var(--space-1) var(--space-2);
-		border-radius: var(--radius);
+		padding: var(--space-1) var(--space-3);
+		border-radius: var(--radius-default-simple);
 		font-size: var(--font-size-2);
 		line-height: 1.4;
 		max-width: 300px;

@@ -1,6 +1,6 @@
-/* Alpine - Text Component */
+/* Artifact UI - Text Component */
 
-@layer alpine-components {
+@layer components {
 	/* Text - Root */
 	.text {
 		display: inline;
@@ -68,19 +68,19 @@
 
 	/* Text - Color */
 	.textColorPrimary {
-		color: var(--color-text-primary);
+		color: var(--color-text-default);
 	}
 
 	.textColorSecondary {
-		color: var(--color-text-secondary);
+		color: var(--color-text-subtle);
 	}
 
 	.textColorTertiary {
-		color: var(--color-text-tertiary);
+		color: var(--color-text-muted);
 	}
 
-	.textColorBrand {
-		color: var(--color-brand);
+	.textColorAccent {
+		color: var(--color-primary);
 	}
 
 	.textColorInfo {

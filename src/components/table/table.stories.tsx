@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Table } from '../';
+import * as Table from './table';
 
 const meta: Meta<typeof Table.Root> = {
-	title: 'Alpine/Table',
+	title: 'Artifact/Table',
 	component: Table.Root,
 	parameters: {
 		layout: 'padded',
@@ -22,9 +22,9 @@ const meta: Meta<typeof Table.Root> = {
 		striped: {
 			control: 'boolean',
 		},
-		rounded: {
+		radius: {
 			control: 'select',
-			options: [false, true, 'sm', 'md', 'lg'],
+			options: ['none', '1', '2', '3'],
 		},
 		shadow: {
 			control: 'select',

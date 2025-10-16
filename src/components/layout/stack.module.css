@@ -1,0 +1,20 @@
+.stack {
+	display: flex;
+	flex-direction: column;
+}
+
+.stretch {
+	align-items: stretch;
+}
+
+.start {
+	align-items: flex-start;
+}
+
+.center {
+	align-items: center;
+}
+
+.end {
+	align-items: flex-end;
+}

@@ -1,19 +1,14 @@
-/* Alpine - Popover Component */
+/* Artifact UI - Popover Component */
 
-@layer alpine-components {
+@layer components {
 	.content {
-		background-color: var(--color-bg-primary);
-		border: 1px solid var(--color-border-primary);
-		border-radius: var(--radius-lg);
+		background-color: var(--color-bg-default);
+		border: 1px solid var(--color-border-default);
+		border-radius: var(--radius-default-simple);
 		padding: var(--space-3);
 		box-shadow: var(--shadow-spread);
 		z-index: var(--z-popover);
 		outline: none;
-	}
-
-	.content:focus-visible {
-		outline: 2px solid var(--color-focus);
-		outline-offset: 2px;
 	}
 
 	/* Animation */

@@ -1,15 +1,18 @@
 import React, { forwardRef } from 'react';
 import { Form } from 'radix-ui';
-import { cn } from '@/styles/utils';
-import { type RadixInputType, type RadixFormMatchType } from '@/types/radix-types';
-import { type FormError } from '@/types/form-types';
-import { getErrorState, getErrorMessage } from '@/utils/form-error-helpers';
+import { cn } from '../../utils/cn';
+import { Radius } from '../../types/style-props';
+import { type RadixInputType, type RadixFormMatchType } from '../../types/radix-types';
+import { type FormError } from '../../types/form-types';
+import { getErrorState, getErrorMessage } from '../../utils/form-error-helpers';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './textfield.module.css';
 
-export interface TextFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
+export interface TextFieldProps
+	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
 	variant?: 'default' | 'minimal' | 'icon';
 	size?: '1' | '2' | '3' | '4';
-	radius?: '1' | '2' | '3';
+	radius?: Radius;
 	error?: boolean | FormError | null;
 	type?: RadixInputType;
 	label?: string;
@@ -67,11 +70,7 @@ Label.displayName = 'TextFieldLabel';
 
 const Slot = ({ children, side }: TextFieldSlotProps) => {
 	return (
-		<div
-			className={cn(
-				styles.slot,
-				side === 'right' && styles.slotRight,
-			)}>
+		<div className={cn(styles.slot, side === 'right' && styles.slotRight)}>
 			{children}
 		</div>
 	);
@@ -106,7 +105,7 @@ const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 		{
 			variant = 'default',
 			size = '2',
-			radius = '1',
+			radius,
 			error,
 			type = 'text',
 			className,
@@ -140,17 +139,11 @@ const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 			'4': styles.inputXl,
 		};
 
-		const radiusClasses = {
-			'1': styles.inputRadius1,
-			'2': styles.inputRadius2,
-			'3': styles.inputRadius3,
-		};
-
 		const inputClasses = cn(
 			styles.input,
 			variantClasses[variant],
 			sizeClasses[size],
-			radiusClasses[radius],
+			radius && radiusClasses[radius],
 			hasError && styles.inputError,
 			compact && styles.inputCompact,
 			className,
@@ -178,17 +171,11 @@ const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 			override && 'aow',
 		);
 
-		const containerRadiusClasses = {
-			'1': styles.containerRadius1,
-			'2': styles.containerRadius2,
-			'3': styles.containerRadius3,
-		};
-
 		if (variant === 'icon' && (iconLeft || iconRight)) {
 			return (
 				<Root name={name} className={rootClassName} style={rootStyle}>
 					{label && <Label>{label}</Label>}
-					<div className={cn(styles.inputContainer, containerRadiusClasses[radius])}>
+					<div className={cn(styles.inputContainer, radius && radiusClasses[radius])}>
 						{iconLeft && <Slot side="left">{iconLeft}</Slot>}
 						{input}
 						{iconRight && <Slot side="right">{iconRight}</Slot>}
@@ -231,7 +218,7 @@ const Standalone = forwardRef<
 		{
 			variant = 'default',
 			size = '2',
-			radius = '1',
+			radius,
 			error,
 			type = 'text',
 			className,
@@ -262,17 +249,11 @@ const Standalone = forwardRef<
 			'4': styles.inputXl,
 		};
 
-		const radiusClasses = {
-			'1': styles.inputRadius1,
-			'2': styles.inputRadius2,
-			'3': styles.inputRadius3,
-		};
-
 		const inputClasses = cn(
 			styles.input,
 			variantClasses[variant],
 			sizeClasses[size],
-			radiusClasses[radius],
+			radius && radiusClasses[radius],
 			hasError && styles.inputError,
 			compact && styles.inputCompact,
 			className,
@@ -286,16 +267,12 @@ const Standalone = forwardRef<
 			override && 'aow',
 		);
 
-		const containerRadiusClasses = {
-			'1': styles.containerRadius1,
-			'2': styles.containerRadius2,
-			'3': styles.containerRadius3,
-		};
-
 		if (variant === 'icon' && (iconLeft || iconRight)) {
 			return (
-				<div className={cn(styles.rootIcon, containerClass, containerRadiusClasses[radius])} style={rootStyle}>
-					<div className={cn(styles.inputContainer, containerRadiusClasses[radius])}>
+				<div
+					className={cn(styles.rootIcon, containerClass, radius && radiusClasses[radius])}
+					style={rootStyle}>
+					<div className={cn(styles.inputContainer, radius && radiusClasses[radius])}>
 						{iconLeft && <Slot side="left">{iconLeft}</Slot>}
 						<input ref={ref} type={type} className={inputClasses} {...props} />
 						{iconRight && <Slot side="right">{iconRight}</Slot>}

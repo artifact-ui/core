@@ -1,12 +1,14 @@
 import React, { forwardRef } from 'react';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
+import { Radius } from '../../types/style-props';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './separator.module.css';
 
 export interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {
 	size?: '1' | '2' | '3' | '4';
 	orientation?: 'horizontal' | 'vertical';
-	radius?: '1' | '2';
-	color?: 'primary' | 'secondary' | 'tertiary' | 'brand' | 'info' | 'error';
+	radius?: Radius;
+	color?: 'primary' | 'secondary' | 'tertiary' | 'accent' | 'info' | 'danger';
 	opacity?: '10' | '20' | '30' | '40' | '50' | '60' | '70' | '80' | '90';
 	spaceY?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
 	spaceX?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
@@ -43,18 +45,13 @@ const Separator = forwardRef<HTMLDivElement, SeparatorProps>(
 			vertical: styles.separatorVertical,
 		};
 
-		const radiusClasses = {
-			'1': styles.separatorRadius1,
-			'2': styles.separatorRadius2,
-		};
-
 		const colorClasses = {
 			primary: styles.separatorColorPrimary,
 			secondary: styles.separatorColorSecondary,
 			tertiary: styles.separatorColorTertiary,
-			brand: styles.separatorColorBrand,
+			accent: styles.separatorColorAccent,
 			info: styles.separatorColorInfo,
-			error: styles.separatorColorError,
+			danger: styles.separatorColorDanger,
 		};
 
 		const opacityClasses = {

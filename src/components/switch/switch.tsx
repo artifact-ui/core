@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import * as SwitchPrimitive from '@radix-ui/react-switch';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
 import styles from './switch.module.css';
 
 export interface SwitchProps

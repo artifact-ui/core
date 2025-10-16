@@ -1,315 +1,303 @@
-/* Alpine - Button Component */
+/* Artifact UI - Button Component */
 
-@layer alpine-components {
+@layer components {
 	/* Button - Root */
 	.button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	white-space: nowrap;
-	border-radius: var(--radius);
-	font-size: var(--font-size-3);
-	font-weight: var(--font-weight-semibold);
-	line-height: 1;
-	transition: var(--transition);
-	cursor: pointer;
-	border: 1px solid transparent;
-	text-decoration: none;
-	position: relative;
-	gap: 0.5em;
-}
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		white-space: nowrap;
+		border-radius: var(--radius-default);
+		font-size: var(--font-size-3);
+		font-weight: var(--font-weight-semibold);
+		line-height: 1;
+		transition: var(--transition);
+		cursor: pointer;
+		border: 1px solid transparent;
+		text-decoration: none;
+		position: relative;
+		gap: 0.5em;
+	}
 
-.button:focus-visible {
-	outline: 2px solid var(--color-border-focus);
-	outline-offset: 2px;
-}
+	/* Button - Sizes */
+	.buttonSm {
+		padding: var(--space-1) var(--space-2);
+		font-size: var(--font-size-2);
+		font-weight: var(--font-weight-normal);
+		line-height: 1;
+	}
 
-/* Button - Sizes */
-.buttonSm {
-	padding: var(--space-1) var(--space-2);
-	font-size: var(--font-size-2);
-	font-weight: var(--font-weight-normal);
-	line-height: var(--line-height-tight);
-}
+	.buttonMd {
+		padding: var(--space-2) var(--space-3);
+		font-size: var(--font-size-3);
+	}
 
-.buttonMd {
-	padding: var(--space-2) var(--space-3);
-	font-size: var(--font-size-3);
-}
+	.buttonLg {
+		padding: var(--space-3) var(--space-4);
+		font-size: var(--font-size-4);
+	}
 
-.buttonLg {
-	padding: var(--space-3) var(--space-4);
-	font-size: var(--font-size-4);
-}
+	/* Button - Icon Only */
+	.buttonIconOnly {
+		aspect-ratio: 1;
+	}
 
-/* Button - Icon Only */
-.buttonIconOnly {
-	aspect-ratio: 1;
-}
+	.buttonSm.buttonIconOnly {
+		padding: var(--space-1);
+	}
 
-.buttonSm.buttonIconOnly {
-	padding: var(--space-1);
-}
+	.buttonMd.buttonIconOnly {
+		padding: var(--space-2);
+	}
 
-.buttonMd.buttonIconOnly {
-	padding: var(--space-2);
-}
+	.buttonLg.buttonIconOnly {
+		padding: var(--space-3);
+	}
 
-.buttonLg.buttonIconOnly {
-	padding: var(--space-3);
-}
+	/* Button - Variants */
+	.buttonDefault {
+		background-color: var(--color-primary-surface);
+		color: var(--color-constant-white);
+		border-color: var(--color-primary-surface);
+	}
 
-/* Button - Radius */
-.buttonRadiusCircle {
-	border-radius: var(--radius-circle);
-}
+	.buttonDefault:hover {
+		background-color: var(--color-primary-surface-hover);
+		border-color: var(--color-primary-surface-hover);
+	}
 
-/* Button - Variants */
-.buttonDefault {
-	background-color: var(--color-brand-surface);
-	color: var(--color-constant-white);
-	border-color: var(--color-brand-surface);
-}
+	.buttonOutline {
+		background-color: transparent;
+		color: var(--btn-text-outline, var(--color-text-default));
+		border-color: var(--btn-border, var(--color-border-default));
+	}
 
-.buttonDefault:hover {
-	background-color: var(--color-brand-surface-hover);
-	border-color: var(--color-brand-surface-hover);
-}
+	.buttonOutline svg {
+		color: var(--btn-text-outline, var(--color-text-default));
+	}
 
-.buttonOutline {
-	background-color: transparent;
-	color: var(--btn-text-outline, var(--color-text-primary));
-	border-color: var(--btn-border, var(--color-border-primary));
-}
+	.buttonOutline:hover {
+		background-color: var(--btn-bg, var(--color-hover));
+		border-color: var(--btn-border, var(--color-border-subtle));
+		color: var(--btn-text, var(--color-text-default));
+	}
 
-.buttonOutline svg {
-	color: var(--btn-text-outline, var(--color-text-primary));
-}
+	.buttonOutline:hover svg {
+		color: var(--btn-text, var(--color-text-default));
+	}
 
-.buttonOutline:hover {
-	background-color: var(--btn-bg, var(--color-hover));
-	border-color: var(--btn-border, var(--color-border-secondary));
-	color: var(--btn-text, var(--color-text-primary));
-}
+	.buttonSecondary {
+		background-color: var(--color-bg-subtle);
+		color: var(--color-text-default);
+		border-color: var(--color-border-default);
+	}
 
-.buttonOutline:hover svg {
-	color: var(--btn-text, var(--color-text-primary));
-}
+	.buttonSecondary:hover {
+		background-color: var(--color-bg-muted);
+	}
 
-.buttonSecondary {
-	background-color: var(--color-bg-secondary);
-	color: var(--color-text-primary);
-	border-color: var(--color-border-primary);
-}
+	.buttonTertiary {
+		background-color: var(--color-bg-muted);
+		color: var(--color-text-default);
+		border-color: var(--color-border-subtle);
+	}
 
-.buttonSecondary:hover {
-	background-color: var(--color-bg-tertiary);
-}
+	.buttonTertiary:hover {
+		background-color: var(--color-hover);
+		border-color: var(--color-border-default);
+	}
 
-.buttonGhost {
-	background-color: transparent;
-	color: var(--color-text-primary);
-	border-color: transparent;
-	font-weight: var(--font-weight-medium);
-}
+	.buttonGhost {
+		background-color: transparent;
+		color: var(--color-text-default);
+		border-color: transparent;
+		font-weight: var(--font-weight-medium);
+	}
 
-.buttonGhost:hover {
-	background-color: var(--color-hover);
-}
+	.buttonGhost:hover {
+		background-color: var(--color-hover);
+	}
 
-.buttonLink {
-	background-color: transparent;
-	color: var(--color-brand);
-	border-color: transparent;
-	text-decoration: underline;
-	text-underline-offset: 4px;
-}
+	.buttonLink {
+		background-color: transparent;
+		color: var(--color-primary);
+		border-color: transparent;
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
 
-.buttonLink:hover {
-	text-decoration: none;
-}
+	.buttonLink:hover {
+		text-decoration: none;
+	}
 
-/* Button - Colors */
-.buttonCustomColor {
-	--btn-bg: var(--button-custom-color);
-	--btn-bg-hover: var(--button-custom-color);
-	--btn-border: var(--button-custom-color);
-	--btn-border-hover: var(--button-custom-color);
-	--btn-text: var(--color-constant-white);
-	--btn-text-outline: var(--button-custom-color);
-}
+	/* Button - Colors */
+	.buttonCustomColor {
+		--btn-bg: var(--button-custom-color);
+		--btn-bg-hover: var(--button-custom-color);
+		--btn-border: var(--button-custom-color);
+		--btn-border-hover: var(--button-custom-color);
+		--btn-text: var(--color-constant-white);
+		--btn-text-outline: var(--button-custom-color);
+	}
 
-.buttonColorPrimary {
-	--btn-bg: var(--color-brand-surface);
-	--btn-bg-hover: var(--color-brand-surface-hover);
-	--btn-border: var(--color-brand-surface);
-	--btn-border-hover: var(--color-brand-surface-hover);
-	--btn-text: var(--color-constant-white);
-	--btn-text-outline: var(--color-brand);
-}
+	.buttonColorPrimary {
+		--btn-bg: var(--color-primary-surface);
+		--btn-bg-hover: var(--color-primary-surface-hover);
+		--btn-border: var(--color-primary-surface);
+		--btn-border-hover: var(--color-primary-surface-hover);
+		--btn-text: var(--color-constant-white);
+		--btn-text-outline: var(--color-primary);
+	}
 
-.buttonColorSecondary {
-	--btn-bg: var(--color-bg-secondary);
-	--btn-bg-hover: var(--color-bg-tertiary);
-	--btn-border: var(--color-border-primary);
-	--btn-border-hover: var(--color-border-secondary);
-	--btn-text: var(--color-text-primary);
-	--btn-text-outline: var(--color-text-primary);
-}
+	.buttonColorNeutral {
+		--btn-bg: var(--color-bg-subtle);
+		--btn-bg-hover: var(--color-bg-muted);
+		--btn-border: var(--color-border-default);
+		--btn-border-hover: var(--color-border-subtle);
+		--btn-text: var(--color-text-default);
+		--btn-text-outline: var(--color-text-default);
+	}
 
-.buttonColorTertiary {
-	--btn-bg: var(--color-bg-tertiary);
-	--btn-bg-hover: var(--color-hover);
-	--btn-border: var(--color-border-secondary);
-	--btn-border-hover: var(--color-border-primary);
-	--btn-text: var(--color-text-primary);
-	--btn-text-outline: var(--color-text-secondary);
-}
+	.buttonColorSuccess {
+		--btn-bg: var(--color-success);
+		--btn-bg-hover: var(--color-success-hover);
+		--btn-border: var(--color-success);
+		--btn-border-hover: var(--color-success-hover);
+		--btn-text: var(--color-constant-white);
+		--btn-text-outline: var(--color-success);
+	}
 
-.buttonColorInfo {
-	--btn-bg: var(--color-info);
-	--btn-bg-hover: var(--color-info-hover);
-	--btn-border: var(--color-info);
-	--btn-border-hover: var(--color-info-hover);
-	--btn-text: var(--color-constant-white);
-	--btn-text-outline: var(--color-info);
-}
+	.buttonColorInfo {
+		--btn-bg: var(--color-info);
+		--btn-bg-hover: var(--color-info-hover);
+		--btn-border: var(--color-info);
+		--btn-border-hover: var(--color-info-hover);
+		--btn-text: var(--color-constant-white);
+		--btn-text-outline: var(--color-info);
+	}
 
-.buttonColorDanger {
-	--btn-bg: var(--color-error);
-	--btn-bg-hover: var(--color-error-hover);
-	--btn-border: var(--color-error);
-	--btn-border-hover: var(--color-error-hover);
-	--btn-text: var(--color-constant-white);
-	--btn-text-outline: var(--color-error);
-}
+	.buttonColorDanger {
+		--btn-bg: var(--color-error);
+		--btn-bg-hover: var(--color-error-hover);
+		--btn-border: var(--color-error);
+		--btn-border-hover: var(--color-error-hover);
+		--btn-text: var(--color-constant-white);
+		--btn-text-outline: var(--color-error);
+	}
 
-/* Apply color variables to default variant */
-.buttonDefault.buttonCustomColor,
-.buttonDefault.buttonColorPrimary,
-.buttonDefault.buttonColorSecondary,
-.buttonDefault.buttonColorTertiary,
-.buttonDefault.buttonColorInfo,
-.buttonDefault.buttonColorDanger {
-	background-color: var(--btn-bg);
-	color: var(--btn-text);
-	border-color: var(--btn-border);
-}
+	/* Apply color variables to default variant */
+	.buttonDefault.buttonCustomColor,
+	.buttonDefault.buttonColorPrimary,
+	.buttonDefault.buttonColorNeutral,
+	.buttonDefault.buttonColorSuccess,
+	.buttonDefault.buttonColorInfo,
+	.buttonDefault.buttonColorDanger {
+		background-color: var(--btn-bg);
+		color: var(--btn-text);
+		border-color: var(--btn-border);
+	}
 
-.buttonDefault.buttonCustomColor:hover,
-.buttonDefault.buttonColorPrimary:hover,
-.buttonDefault.buttonColorSecondary:hover,
-.buttonDefault.buttonColorTertiary:hover,
-.buttonDefault.buttonColorInfo:hover,
-.buttonDefault.buttonColorDanger:hover {
-	background-color: var(--btn-bg-hover);
-	border-color: var(--btn-border-hover);
-}
+	.buttonDefault.buttonCustomColor:hover,
+	.buttonDefault.buttonColorPrimary:hover,
+	.buttonDefault.buttonColorNeutral:hover,
+	.buttonDefault.buttonColorSuccess:hover,
+	.buttonDefault.buttonColorInfo:hover,
+	.buttonDefault.buttonColorDanger:hover {
+		background-color: var(--btn-bg-hover);
+		border-color: var(--btn-border-hover);
+	}
 
-/* Button - States */
+	/* Button - States */
 
-.buttonDisabled {
-	opacity: var(--opacity-80);
-	cursor: not-allowed;
-	pointer-events: none;
-}
+	.buttonDisabled {
+		opacity: var(--opacity-80);
+		cursor: not-allowed;
+		pointer-events: none;
+	}
 
-/* Button - Icons */
-.iconLeft,
-.iconRight {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+	/* Button - Icons */
+	.iconLeft,
+	.iconRight {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
-/* Ensure icon position regardless of element order */
-.iconLeft {
-	order: -1;
-}
+	/* Ensure icon position regardless of element order */
+	.iconLeft {
+		order: -1;
+	}
 
-.iconRight {
-	order: 1;
-}
+	.iconRight {
+		order: 1;
+	}
 
-.buttonSm .iconLeft,
-.buttonSm .iconRight {
-	width: var(--icon-match);
-	height: var(--icon-match);
-}
+	.buttonSm.buttonIconOnly .iconLeft svg,
+	.buttonSm.buttonIconOnly .iconRight svg {
+		width: var(--icon-match);
+		height: var(--icon-match);
+	}
 
-.buttonSm.buttonIconOnly .iconLeft svg,
-.buttonSm.buttonIconOnly .iconRight svg {
-	width: var(--icon-match);
-	height: var(--icon-match);
-}
+	.buttonMd.buttonIconOnly .iconLeft svg,
+	.buttonMd.buttonIconOnly .iconRight svg {
+		width: var(--icon-sm);
+		height: var(--icon-sm);
+	}
 
-.buttonMd .iconLeft,
-.buttonMd .iconRight {
-	width: var(--icon-sm);
-	height: var(--icon-sm);
-}
+	.buttonLg.buttonIconOnly .iconLeft svg,
+	.buttonLg.buttonIconOnly .iconRight svg {
+		width: var(--icon-md);
+		height: var(--icon-md);
+	}
 
-.buttonMd.buttonIconOnly .iconLeft svg,
-.buttonMd.buttonIconOnly .iconRight svg {
-	width: var(--icon-sm);
-	height: var(--icon-sm);
-}
+	/* Colors with white text get white svg color */
+	.buttonDefault.buttonCustomColor svg,
+	.buttonDefault.buttonColorPrimary svg,
+	.buttonDefault.buttonColorSuccess svg,
+	.buttonDefault.buttonColorInfo svg,
+	.buttonDefault.buttonColorDanger svg {
+		color: var(--color-constant-white);
+	}
 
-.buttonLg .iconLeft,
-.buttonLg .iconRight {
-	width: var(--icon-md);
-	height: var(--icon-md);
-}
+	/* Button - Loading */
+	.spinner {
+		display: inline-block;
+		width: var(--icon-match);
+		height: var(--icon-match);
+		margin-right: var(--space-2);
+		border: 2px solid transparent;
+		border-top: 2px solid currentColor;
+		border-radius: 50%;
+		animation: var(--animation-spin);
+		flex-shrink: 0;
+	}
 
-.buttonLg.buttonIconOnly .iconLeft svg,
-.buttonLg.buttonIconOnly .iconRight svg {
-	width: var(--icon-md);
-	height: var(--icon-md);
-}
+	.buttonDefault.buttonCustomColor .spinner,
+	.buttonDefault.buttonColorPrimary .spinner,
+	.buttonDefault.buttonColorSuccess .spinner,
+	.buttonDefault.buttonColorInfo .spinner,
+	.buttonDefault.buttonColorDanger .spinner {
+		border-top-color: var(--color-constant-white);
+	}
 
-/* Colors with white text get white svg color */
-.buttonDefault.buttonCustomColor svg,
-.buttonDefault.buttonColorPrimary svg,
-.buttonDefault.buttonColorInfo svg,
-.buttonDefault.buttonColorDanger svg {
-	color: var(--color-constant-white);
-}
+	/* Outline button spinner colors */
+	.buttonOutline.buttonColorDanger .spinner {
+		border-top-color: var(--color-error);
+	}
 
-/* Button - Loading */
-.spinner {
-	display: inline-block;
-	width: var(--icon-match);
-	height: var(--icon-match);
-	margin-right: var(--space-2);
-	border: 2px solid transparent;
-	border-top: 2px solid currentColor;
-	border-radius: 50%;
-	animation: var(--animation-spin);
-	flex-shrink: 0;
-}
+	.buttonOutline.buttonColorSuccess .spinner {
+		border-top-color: var(--color-success);
+	}
 
-.buttonDefault.buttonCustomColor .spinner,
-.buttonDefault.buttonColorPrimary .spinner,
-.buttonDefault.buttonColorInfo .spinner,
-.buttonDefault.buttonColorDanger .spinner {
-	border-top-color: var(--color-constant-white);
-}
+	.buttonOutline.buttonColorInfo .spinner {
+		border-top-color: var(--color-info);
+	}
 
-/* Outline button spinner colors */
-.buttonOutline.buttonColorDanger .spinner {
-	border-top-color: var(--color-error);
-}
+	.buttonOutline.buttonColorPrimary .spinner {
+		border-top-color: var(--color-primary);
+	}
 
-.buttonOutline.buttonColorInfo .spinner {
-	border-top-color: var(--color-info);
-}
-
-.buttonOutline.buttonColorPrimary .spinner {
-	border-top-color: var(--color-brand);
-}
-
-.buttonOutline.buttonCustomColor .spinner {
-	border-top-color: var(--button-custom-color);
-}
-
+	.buttonOutline.buttonCustomColor .spinner {
+		border-top-color: var(--button-custom-color);
+	}
 }

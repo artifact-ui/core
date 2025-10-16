@@ -1,11 +1,11 @@
-@layer alpine-components {
+@layer components {
 
 .content,
 .subContent {
 	min-width: 180px;
-	background-color: var(--color-bg-primary);
-	border: 1px solid var(--color-border-primary);
-	border-radius: var(--radius-lg);
+	background-color: var(--color-bg-default);
+	border: 1px solid var(--color-border-default);
+	border-radius: var(--radius-default-simple);
 	padding: var(--space-1);
 	box-shadow: var(--shadow-spread);
 	z-index: var(--z-dropdown);
@@ -43,9 +43,9 @@
 	align-items: center;
 	gap: var(--space-2);
 	padding: var(--space-2) var(--space-3);
-	border-radius: var(--radius);
+	border-radius: var(--radius-default-simple);
 	font-size: var(--font-size-3);
-	color: var(--color-text-primary);
+	color: var(--color-text-default);
 	cursor: pointer;
 	user-select: none;
 	outline: none;
@@ -61,7 +61,7 @@
 
 .item[data-disabled],
 .subTrigger[data-disabled] {
-	color: var(--color-text-tertiary);
+	color: var(--color-text-muted);
 	pointer-events: none;
 }
 
@@ -69,7 +69,7 @@
 .subTrigger svg {
 	width: 1em;
 	height: 1em;
-	color: var(--color-text-secondary);
+	color: var(--color-text-subtle);
 }
 
 .subTrigger {
@@ -80,12 +80,12 @@
 .arrow {
 	position: absolute;
 	right: var(--space-2);
-	color: var(--color-text-tertiary);
+	color: var(--color-text-muted);
 }
 
 .separator {
 	height: 1px;
-	background-color: var(--color-border-primary);
+	background-color: var(--color-border-default);
 	margin: var(--space-1) 0;
 }
 
@@ -93,7 +93,7 @@
 	padding: var(--space-2) var(--space-3);
 	font-size: var(--font-size-2);
 	font-weight: var(--font-weight-semibold);
-	color: var(--color-text-tertiary);
+	color: var(--color-text-muted);
 }
 
 /* Danger variant */

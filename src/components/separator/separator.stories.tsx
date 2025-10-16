@@ -1,9 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Separator } from './separator';
-import { Stack, Flex } from '@/components/layout';
+import { Stack } from '../layout/stack';
+import { Flex } from '../layout/flex';
 
 const meta: Meta<typeof Separator> = {
-	title: 'Alpine/Separator',
+	title: 'Artifact/Separator',
 	component: Separator,
 	parameters: {
 		layout: 'centered',
@@ -19,39 +20,47 @@ export const Default: Story = {
 
 export const Examples: Story = {
 	render: () => (
-		<Stack className="gap-8 p-6">
+		<Stack gap="6" style={{ padding: '2rem' }}>
 			<div>
-				<h3 className="mb-4 text-lg font-semibold">Sizes</h3>
-				<Stack className="gap-6">
+				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
+					Sizes
+				</h3>
+				<Stack gap="5">
 					<div>
-						<p className="mb-2 text-sm">Size 1 (default)</p>
+						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+							Size 1 (default)
+						</p>
 						<Separator size="1" />
 					</div>
 					<div>
-						<p className="mb-2 text-sm">Size 2</p>
+						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>Size 2</p>
 						<Separator size="2" />
 					</div>
 					<div>
-						<p className="mb-2 text-sm">Size 3</p>
+						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>Size 3</p>
 						<Separator size="3" />
 					</div>
 					<div>
-						<p className="mb-2 text-sm">Size 4</p>
+						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>Size 4</p>
 						<Separator size="4" />
 					</div>
 				</Stack>
 			</div>
 
 			<div>
-				<h3 className="mb-4 text-lg font-semibold">Orientations</h3>
-				<Stack className="gap-6">
+				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
+					Orientations
+				</h3>
+				<Stack gap="5">
 					<div>
-						<p className="mb-2 text-sm">Horizontal (default)</p>
+						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
+							Horizontal (default)
+						</p>
 						<Separator orientation="horizontal" />
 					</div>
 					<div>
-						<p className="mb-2 text-sm">Vertical</p>
-						<Flex className="items-center gap-4" style={{ height: '100px' }}>
+						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>Vertical</p>
+						<Flex align="center" gap="4" style={{ height: '100px' }}>
 							<span>Content</span>
 							<Separator orientation="vertical" />
 							<span>More content</span>

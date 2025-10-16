@@ -1,13 +1,15 @@
 import React, { forwardRef } from 'react';
-import { cn } from '@/styles/utils';
+import { cn } from '../../utils/cn';
+import { Radius } from '../../types/style-props';
+import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './button.module.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	variant?: 'default' | 'outline' | 'secondary' | 'ghost' | 'link';
-	color?: 'primary' | 'secondary' | 'tertiary' | 'info' | 'danger';
+	variant?: 'default' | 'outline' | 'secondary' | 'tertiary' | 'ghost' | 'link';
+	color?: 'primary' | 'neutral' | 'info' | 'success' | 'danger';
 	customColor?: string;
 	size?: '1' | '2' | '3';
-	radius?: 'default' | 'circle';
+	radius?: Radius;
 	loading?: boolean;
 	iconLeft?: React.ReactNode;
 	iconRight?: React.ReactNode;
@@ -21,7 +23,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			color = 'primary',
 			customColor,
 			size = '2',
-			radius = 'default',
+			radius,
 			loading = false,
 			iconLeft,
 			iconRight,
@@ -34,22 +36,22 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		},
 		ref,
 	) => {
-		// no children and has icon component
 		const isIconOnly = !children && (iconLeft || iconRight) ? true : false;
 
 		const variantClasses = {
 			default: styles.buttonDefault,
 			outline: styles.buttonOutline,
 			secondary: styles.buttonSecondary,
+			tertiary: styles.buttonTertiary,
 			ghost: styles.buttonGhost,
 			link: styles.buttonLink,
 		};
 
 		const colorClasses = {
 			primary: styles.buttonColorPrimary,
-			secondary: styles.buttonColorSecondary,
-			tertiary: styles.buttonColorTertiary,
+			neutral: styles.buttonColorNeutral,
 			info: styles.buttonColorInfo,
+			success: styles.buttonColorSuccess,
 			danger: styles.buttonColorDanger,
 		};
 
@@ -59,18 +61,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			'3': styles.buttonLg,
 		};
 
-		const radiusClasses = {
-			default: styles.buttonRadiusDefault,
-			circle: styles.buttonRadiusCircle,
-		};
-
 		const buttonClasses = cn(
 			styles.button,
 			variantClasses[variant],
 			!customColor && colorClasses[color],
 			customColor && styles.buttonCustomColor,
 			sizeClasses[size],
-			radiusClasses[radius],
+			radius && radiusClasses[radius],
 			loading && styles.buttonLoading,
 			(disabled || loading) && styles.buttonDisabled,
 			isIconOnly && styles.buttonIconOnly,

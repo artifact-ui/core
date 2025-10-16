@@ -1,6 +1,6 @@
-/* Alpine - Tabs Component */
+/* Artifact UI - Tabs Component */
 
-@layer alpine-components {
+@layer components {
 	/* Tabs - Root */
 	.root {
 		display: flex;
@@ -10,7 +10,7 @@
 	/* Tabs - List */
 	.list {
 		display: flex;
-		border-bottom: 1px solid var(--color-border-secondary);
+		border-bottom: 1px solid var(--color-border-subtle);
 		gap: var(--space-1);
 	}
 
@@ -35,48 +35,74 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		padding: var(--space-1) var(--space-4);
+		padding: var(--space-2) var(--space-4);
 		font-weight: var(--font-weight-medium);
-		color: var(--color-text-secondary);
+		color: var(--color-text-subtle);
 		cursor: pointer;
 		border-bottom: 2px solid transparent;
-		border-radius: var(--radius) var(--radius) 0 0;
+		border-radius: var(--radius-default-simple) var(--radius-default-simple) 0 0;
 		transition: all 0.2s ease;
 		user-select: none;
 		-webkit-tap-highlight-color: transparent;
 	}
 
 	.trigger:hover {
-		color: var(--color-text-primary);
-		background-color: var(--color-bg-secondary);
+		color: var(--color-text-default);
+		background-color: var(--color-bg-subtle);
 	}
 
-	.trigger:focus-visible {
-		outline: 2px solid var(--color-focus);
-		outline-offset: 2px;
-		border-radius: var(--radius-sm);
+	/* Tabs - Colors */
+	.trigger.colorPrimary[data-state='active'] {
+		color: var(--color-primary);
+		border-bottom-color: var(--color-primary);
 	}
 
-	.trigger[data-state='active'] {
-		color: var(--color-brand);
-		border-bottom-color: var(--color-brand);
+	.trigger.colorNeutral[data-state='active'] {
+		color: var(--color-text-default);
+		border-bottom-color: var(--color-text-default);
+	}
+
+	.trigger.colorSuccess[data-state='active'] {
+		color: var(--color-success);
+		border-bottom-color: var(--color-success);
+	}
+
+	.trigger.colorInfo[data-state='active'] {
+		color: var(--color-info);
+		border-bottom-color: var(--color-info);
+	}
+
+	.trigger.colorDanger[data-state='active'] {
+		color: var(--color-error);
+		border-bottom-color: var(--color-error);
 	}
 
 	.trigger:disabled {
-		color: var(--color-text-tertiary);
+		color: var(--color-text-muted);
 		cursor: not-allowed;
 		opacity: 0.5;
+	}
+
+	/* Tabs - Radius (top corners only) */
+	.trigger.radiusNone {
+		border-radius: 0;
+	}
+
+	.trigger.radius1 {
+		border-radius: var(--radius-1) var(--radius-1) 0 0;
+	}
+
+	.trigger.radius2 {
+		border-radius: var(--radius-2) var(--radius-2) 0 0;
+	}
+
+	.trigger.radius3 {
+		border-radius: var(--radius-3) var(--radius-3) 0 0;
 	}
 
 	/* Tabs - Content */
 	.content {
 		padding: var(--space-4) 0;
 		outline: none;
-	}
-
-	.content:focus-visible {
-		outline: 2px solid var(--color-focus);
-		outline-offset: 2px;
-		border-radius: var(--radius-sm);
 	}
 }
