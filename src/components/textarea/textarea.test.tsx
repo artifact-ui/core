@@ -43,7 +43,7 @@ describe('TextArea', () => {
 					<TextArea
 						name="description"
 						label="Project Description"
-						error="Description must be at least 10 characters"
+						error={{ error: true, message: 'Description must be at least 10 characters' }}
 					/>
 				</Form.Root>,
 			);
@@ -58,7 +58,7 @@ describe('TextArea', () => {
 						name="reason"
 						label="Absence Reason"
 						error={{
-							type: 'valueMissing',
+							error: true,
 							message: 'Please provide a reason for your absence',
 						}}
 					/>
@@ -72,7 +72,6 @@ describe('TextArea', () => {
 			expect(() => {
 				renderComponent(
 					<Form.Root>
-						{/* @ts-expect-error - Testing error case */}
 						<TextArea label="Invalid" />
 					</Form.Root>,
 				);

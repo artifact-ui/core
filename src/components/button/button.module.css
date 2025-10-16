@@ -232,34 +232,16 @@
 		order: 1;
 	}
 
-	.buttonSm .iconLeft,
-	.buttonSm .iconRight {
-		width: var(--icon-match);
-		height: var(--icon-match);
-	}
-
 	.buttonSm.buttonIconOnly .iconLeft svg,
 	.buttonSm.buttonIconOnly .iconRight svg {
 		width: var(--icon-match);
 		height: var(--icon-match);
 	}
 
-	.buttonMd .iconLeft,
-	.buttonMd .iconRight {
-		width: var(--icon-sm);
-		height: var(--icon-sm);
-	}
-
 	.buttonMd.buttonIconOnly .iconLeft svg,
 	.buttonMd.buttonIconOnly .iconRight svg {
 		width: var(--icon-sm);
 		height: var(--icon-sm);
-	}
-
-	.buttonLg .iconLeft,
-	.buttonLg .iconRight {
-		width: var(--icon-md);
-		height: var(--icon-md);
 	}
 
 	.buttonLg.buttonIconOnly .iconLeft svg,

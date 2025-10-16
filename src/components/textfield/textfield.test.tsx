@@ -50,7 +50,11 @@ describe('TextField', () => {
 		it('displays error state', () => {
 			renderComponent(
 				<Form.Root>
-					<TextField name="email" label="Email" error="Please enter a valid email" />
+					<TextField
+						name="email"
+						label="Email"
+						error={{ error: true, message: 'Please enter a valid email' }}
+					/>
 				</Form.Root>,
 			);
 
@@ -61,7 +65,6 @@ describe('TextField', () => {
 			expect(() => {
 				renderComponent(
 					<Form.Root>
-						{/* @ts-expect-error - Testing error case */}
 						<TextField label="Invalid" />
 					</Form.Root>,
 				);
