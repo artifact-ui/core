@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArtifactProvider } from '../src/ArtifactProvider';
-import type { Theme, Accent, Radius } from '../src/ArtifactProvider';
+import { ArtifactProvider } from '../src/artifact-provider';
+import type { Theme, Accent, Radius } from '../src/artifact-provider';
 import '../src/index';
 
 const preview = {

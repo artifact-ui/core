@@ -10,8 +10,8 @@ import './styles/themes/accent.css';
 import './styles/themes/radius.css';
 
 // Provider
-export { ArtifactProvider } from './ArtifactProvider';
-export type { Theme, Accent, Radius, ArtifactProviderProps } from './ArtifactProvider';
+export { ArtifactProvider } from './artifact-provider';
+export type { Theme, Accent, Radius, ArtifactProviderProps } from './artifact-provider';
 
 // Components
 export * from './components';

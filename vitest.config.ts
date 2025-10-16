@@ -17,7 +17,19 @@ export default defineConfig({
 		include: ['src/**/*.{test,spec}.{ts,tsx}'],
 		exclude: ['**/node_modules/**', '**/dist/**'],
 		coverage: {
-			exclude: ['**/node_modules/**', '**/dist/**', '**/*.config.*', '**/coverage/**'],
+			provider: 'v8',
+			reporter: ['text', 'html'],
+			exclude: [
+				'**/node_modules/**',
+				'**/dist/**',
+				'**/*.config.*',
+				'**/coverage/**',
+				'**/*.test.{ts,tsx}',
+				'**/*.stories.{ts,tsx}',
+				'**/tests/**',
+				'**/icons/**',
+				'**/types/**',
+			],
 		},
 	},
 });
