@@ -1,5 +1,7 @@
 :root {
-	font-family: 'Inter Variable', Inter, system-ui, sans-serif;
+	--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+		Arial, sans-serif;
+	--font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Courier New', monospace;
 
 	/* Colors */
 	--green-50: #f0fdf4;
