@@ -3,7 +3,6 @@ import { Switch } from './switch';
 import { Stack } from '../layout/stack';
 import { Flex } from '../layout/flex';
 import { Text } from '../text/text';
-import { useState } from 'react';
 
 const meta: Meta<typeof Switch> = {
 	title: 'Artifact/Switch',
@@ -11,97 +10,87 @@ const meta: Meta<typeof Switch> = {
 	parameters: {
 		layout: 'centered',
 	},
+	tags: ['autodocs'],
+	argTypes: {
+		size: {
+			control: 'select',
+			options: ['1', '2', '3'],
+			description: 'Size scale',
+		},
+		disabled: {
+			control: 'boolean',
+			description: 'Disabled state',
+		},
+		checked: {
+			control: 'boolean',
+			description: 'Checked state',
+		},
+	},
 };
 
 export default meta;
 type Story = StoryObj<typeof Switch>;
 
-const DefaultComponent = () => {
-	const [checked, setChecked] = useState(false);
-	return <Switch checked={checked} onCheckedChange={setChecked} />;
-};
-
 export const Default: Story = {
-	render: () => <DefaultComponent />,
+	args: {
+		'aria-label': 'Toggle setting',
+		size: '2',
+	},
 };
 
-const ExamplesComponent = () => {
-	const [checked1, setChecked1] = useState(false);
-	const [checked2, setChecked2] = useState(true);
-	const [checked3, setChecked3] = useState(false);
-	const [checked4, setChecked4] = useState(false);
-	const [checked5, setChecked5] = useState(false);
+export const Checked: Story = {
+	args: {
+		'aria-label': 'Toggle setting',
+		checked: true,
+		size: '2',
+	},
+};
 
-	return (
-		<Stack gap="5" style={{ width: '24rem' }}>
-			{/* Sizes */}
-			<Stack gap="3">
-				<Flex align="center" justify="between">
-					<Text size="2">Size 1 (small)</Text>
-					<Switch size="1" checked={checked1} onCheckedChange={setChecked1} />
-				</Flex>
-				<Flex align="center" justify="between">
-					<Text size="2">Size 2 (default)</Text>
-					<Switch size="2" checked={checked2} onCheckedChange={setChecked2} />
-				</Flex>
-				<Flex align="center" justify="between">
-					<Text size="2">Size 3 (large)</Text>
-					<Switch size="3" checked={checked3} onCheckedChange={setChecked3} />
-				</Flex>
+export const Disabled: Story = {
+	args: {
+		'aria-label': 'Toggle setting',
+		disabled: true,
+		size: '2',
+	},
+};
+
+export const WithLabel: Story = {
+	render: () => (
+		<Flex align="center" justify="between" style={{ width: '300px' }}>
+			<Stack gap="1">
+				<label htmlFor="archive-switch">
+					<Text size="3">Archive Mode</Text>
+				</label>
+				<Text size="2" color="secondary">
+					Show archived specimens
+				</Text>
 			</Stack>
+			<Switch id="archive-switch" size="3" />
+		</Flex>
+	),
+};
 
-			{/* States */}
-			<Stack gap="3">
-				<Flex align="center" justify="between">
-					<Text size="2">Disabled (unchecked)</Text>
-					<Switch disabled checked={false} />
-				</Flex>
-				<Flex align="center" justify="between">
-					<Text size="2">Disabled (checked)</Text>
-					<Switch disabled checked={true} />
-				</Flex>
-			</Stack>
-
-			{/* Use Cases */}
-			<Stack gap="3">
-				<Flex align="center" justify="between">
-					<Stack gap="1">
-						<label htmlFor="public-switch">
-							<Text size="3">Public Pack</Text>
-						</label>
-						<Text size="2" color="secondary">
-							Make your pack visible to others
-						</Text>
-					</Stack>
-					<Switch
-						id="public-switch"
-						size="3"
-						checked={checked4}
-						onCheckedChange={setChecked4}
-					/>
-				</Flex>
-
-				<Flex align="center" justify="between">
-					<Stack gap="1">
-						<label htmlFor="pricing-switch">
-							<Text size="3">Show Pricing</Text>
-						</label>
-						<Text size="2" color="secondary">
-							Display item prices in your pack
-						</Text>
-					</Stack>
-					<Switch
-						id="pricing-switch"
-						size="3"
-						checked={checked5}
-						onCheckedChange={setChecked5}
-					/>
-				</Flex>
-			</Stack>
+export const AllVariants: Story = {
+	render: () => (
+		<Stack gap="4" style={{ width: '300px' }}>
+			<Flex align="center" justify="between">
+				<Text size="2">Small</Text>
+				<Switch size="1" />
+			</Flex>
+			<Flex align="center" justify="between">
+				<Text size="2">Medium (default)</Text>
+				<Switch size="2" defaultChecked />
+			</Flex>
+			<Flex align="center" justify="between">
+				<Text size="2">Large</Text>
+				<Switch size="3" />
+			</Flex>
+			<Flex align="center" justify="between">
+				<Text size="2" color="tertiary">
+					Disabled
+				</Text>
+				<Switch size="2" disabled />
+			</Flex>
 		</Stack>
-	);
-};
-
-export const Examples: Story = {
-	render: () => <ExamplesComponent />,
+	),
 };

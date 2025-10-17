@@ -8,6 +8,40 @@ const meta = {
 	parameters: {
 		layout: 'centered',
 	},
+	tags: ['autodocs'],
+	argTypes: {
+		variant: {
+			control: 'select',
+			options: ['default', 'minimal', 'icon'],
+			description: 'Visual style variant',
+		},
+		size: {
+			control: 'select',
+			options: ['1', '2', '3', '4'],
+			description: 'Size scale',
+		},
+		error: {
+			control: 'boolean',
+			description: 'Error state',
+		},
+		disabled: {
+			control: 'boolean',
+			description: 'Disabled state',
+		},
+		placeholder: {
+			control: 'text',
+			description: 'Placeholder text',
+		},
+		compact: {
+			control: 'boolean',
+			description: 'Compact spacing',
+		},
+		radius: {
+			control: 'select',
+			options: ['none', '1', '2', '3', 'full'],
+			description: 'Border radius',
+		},
+	},
 } satisfies Meta<typeof TextField.Standalone>;
 
 export default meta;
@@ -15,60 +49,61 @@ type Story = StoryObj;
 
 export const Default: Story = {
 	args: {
-		placeholder: 'Enter your text...',
+		placeholder: 'Search catalog...',
 		variant: 'default',
 	},
 };
 
 export const Minimal: Story = {
 	args: {
-		placeholder: 'Minimal input',
+		placeholder: 'Enter specimen ID...',
 		variant: 'minimal',
 	},
 };
 
-export const Examples: Story = {
+export const WithIcon: Story = {
+	args: {
+		placeholder: 'Search archives...',
+		variant: 'icon',
+		iconLeft: <SearchIcon />,
+	},
+};
+
+export const Error: Story = {
+	args: {
+		placeholder: 'Enter catalog number...',
+		variant: 'default',
+		error: true,
+	},
+};
+
+export const Disabled: Story = {
+	args: {
+		placeholder: 'Field is locked',
+		variant: 'default',
+		disabled: true,
+		value: 'Archived collection',
+	},
+};
+
+export const AllVariants: Story = {
 	render: () => (
 		<div
 			style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '300px' }}>
-			{/* Variants */}
 			<TextField.Standalone placeholder="Default variant" variant="default" />
 			<TextField.Standalone placeholder="Minimal variant" variant="minimal" />
 			<TextField.Standalone
-				placeholder="Icon variant"
+				placeholder="Search specimens..."
 				variant="icon"
 				iconLeft={<SearchIcon />}
 			/>
-
-			{/* States */}
 			<TextField.Standalone placeholder="Error state" variant="default" error />
-			<TextField.Standalone placeholder="Disabled state" variant="default" disabled />
-
-			{/* Sizes */}
-			<TextField.Standalone placeholder="Size 1 (small)" variant="default" size="1" />
-			<TextField.Standalone placeholder="Size 2 (default)" variant="default" size="2" />
-			<TextField.Standalone placeholder="Size 3 (large)" variant="default" size="3" />
-			<TextField.Standalone placeholder="Size 4 (xl)" variant="default" size="4" />
-
-			{/* Compact */}
 			<TextField.Standalone
-				placeholder="Compact default"
+				placeholder="Disabled state"
 				variant="default"
-				size="2"
-				compact
+				disabled
+				value="Locked"
 			/>
-			<TextField.Standalone
-				placeholder="Compact with icon"
-				variant="icon"
-				size="2"
-				compact
-				iconLeft={<SearchIcon />}
-			/>
-
-			{/* Radius */}
-			<TextField.Standalone placeholder="Radius 1" variant="default" radius="1" />
-			<TextField.Standalone placeholder="Radius 2" variant="default" radius="2" />
-			<TextField.Standalone placeholder="Radius 3" variant="default" radius="3" />
 		</div>
 	),
 };

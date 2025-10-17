@@ -10,6 +10,7 @@ const meta: Meta<typeof Tabs.Root> = {
 	parameters: {
 		layout: 'centered',
 	},
+	tags: ['autodocs'],
 };
 
 export default meta;
@@ -44,38 +45,38 @@ export const Default: Story = {
 	render: () => <DefaultComponent />,
 };
 
-const WithIconsComponent = () => {
-	const [activeTab, setActiveTab] = useState('info');
+const WithContentComponent = () => {
+	const [activeTab, setActiveTab] = useState('overview');
 
 	return (
 		<div style={{ width: '600px' }}>
 			<Tabs.Root value={activeTab} onValueChange={setActiveTab}>
 				<Tabs.List size="2">
-					<Tabs.Trigger value="info">Pack Info</Tabs.Trigger>
-					<Tabs.Trigger value="settings">Pack Settings</Tabs.Trigger>
-					<Tabs.Trigger value="profile">Profile</Tabs.Trigger>
+					<Tabs.Trigger value="overview">Overview</Tabs.Trigger>
+					<Tabs.Trigger value="specimens">Specimens</Tabs.Trigger>
+					<Tabs.Trigger value="metadata">Metadata</Tabs.Trigger>
 				</Tabs.List>
-				<Tabs.Content value="info">
+				<Tabs.Content value="overview">
 					<Stack gap="2">
-						<Text weight="medium">Pack Information</Text>
+						<Text weight="medium">Collection Overview</Text>
 						<Text size="2" color="secondary">
-							Edit your pack name, description, and other details.
+							Summary of archived specimens and catalog information.
 						</Text>
 					</Stack>
 				</Tabs.Content>
-				<Tabs.Content value="settings">
+				<Tabs.Content value="specimens">
 					<Stack gap="2">
-						<Text weight="medium">Pack Settings</Text>
+						<Text weight="medium">Specimen List</Text>
 						<Text size="2" color="secondary">
-							Configure pack settings like pricing, affiliate links, and theme.
+							View and manage individual specimens in this collection.
 						</Text>
 					</Stack>
 				</Tabs.Content>
-				<Tabs.Content value="profile">
+				<Tabs.Content value="metadata">
 					<Stack gap="2">
-						<Text weight="medium">Profile Settings</Text>
+						<Text weight="medium">Collection Metadata</Text>
 						<Text size="2" color="secondary">
-							Manage your profile information and preferences.
+							Detailed research notes and catalog documentation.
 						</Text>
 					</Stack>
 				</Tabs.Content>
@@ -84,8 +85,8 @@ const WithIconsComponent = () => {
 	);
 };
 
-export const WithIcons: Story = {
-	render: () => <WithIconsComponent />,
+export const WithContent: Story = {
+	render: () => <WithContentComponent />,
 };
 
 const SizesComponent = () => {
@@ -168,54 +169,49 @@ export const Sizes: Story = {
 	render: () => <SizesComponent />,
 };
 
-const ExamplesComponent = () => {
+const AllColorsComponent = () => {
 	const [activeTab, setActiveTab] = useState('primary');
 
 	return (
-		<Stack gap="8" style={{ width: '600px' }}>
-			<div>
-				<Text size="2" weight="medium" style={{ marginBottom: '0.5rem' }}>
-					Colors
-				</Text>
-				<Tabs.Root value={activeTab} onValueChange={setActiveTab}>
-					<Tabs.List>
-						<Tabs.Trigger value="primary" color="primary">
-							Primary
-						</Tabs.Trigger>
-						<Tabs.Trigger value="neutral" color="neutral">
-							Neutral
-						</Tabs.Trigger>
-						<Tabs.Trigger value="success" color="success">
-							Success
-						</Tabs.Trigger>
-						<Tabs.Trigger value="info" color="info">
-							Info
-						</Tabs.Trigger>
-						<Tabs.Trigger value="danger" color="danger">
-							Danger
-						</Tabs.Trigger>
-					</Tabs.List>
-					<Tabs.Content value="primary">
-						<Text>Primary tab content with default brand color.</Text>
-					</Tabs.Content>
-					<Tabs.Content value="neutral">
-						<Text>Neutral tab content for secondary or archived sections.</Text>
-					</Tabs.Content>
-					<Tabs.Content value="success">
-						<Text>Success tab content for completed or positive states.</Text>
-					</Tabs.Content>
-					<Tabs.Content value="info">
-						<Text>Info tab content for informational sections.</Text>
-					</Tabs.Content>
-					<Tabs.Content value="danger">
-						<Text>Danger tab content for errors or warnings.</Text>
-					</Tabs.Content>
-				</Tabs.Root>
-			</div>
-		</Stack>
+		<div style={{ width: '600px' }}>
+			<Tabs.Root value={activeTab} onValueChange={setActiveTab}>
+				<Tabs.List>
+					<Tabs.Trigger value="primary" color="primary">
+						Primary
+					</Tabs.Trigger>
+					<Tabs.Trigger value="neutral" color="neutral">
+						Neutral
+					</Tabs.Trigger>
+					<Tabs.Trigger value="success" color="success">
+						Success
+					</Tabs.Trigger>
+					<Tabs.Trigger value="info" color="info">
+						Info
+					</Tabs.Trigger>
+					<Tabs.Trigger value="danger" color="danger">
+						Danger
+					</Tabs.Trigger>
+				</Tabs.List>
+				<Tabs.Content value="primary">
+					<Text>Primary tab content</Text>
+				</Tabs.Content>
+				<Tabs.Content value="neutral">
+					<Text>Neutral tab content</Text>
+				</Tabs.Content>
+				<Tabs.Content value="success">
+					<Text>Success tab content</Text>
+				</Tabs.Content>
+				<Tabs.Content value="info">
+					<Text>Info tab content</Text>
+				</Tabs.Content>
+				<Tabs.Content value="danger">
+					<Text>Danger tab content</Text>
+				</Tabs.Content>
+			</Tabs.Root>
+		</div>
 	);
 };
 
-export const Examples: Story = {
-	render: () => <ExamplesComponent />,
+export const AllColors: Story = {
+	render: () => <AllColorsComponent />,
 };

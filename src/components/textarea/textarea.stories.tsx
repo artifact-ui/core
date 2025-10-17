@@ -8,6 +8,33 @@ const meta: Meta<typeof TextArea.Input> = {
 	parameters: {
 		layout: 'centered',
 	},
+	tags: ['autodocs'],
+	argTypes: {
+		error: {
+			control: 'boolean',
+			description: 'Error state',
+		},
+		disabled: {
+			control: 'boolean',
+			description: 'Disabled state',
+		},
+		label: {
+			control: 'text',
+			description: 'Label text',
+		},
+		placeholder: {
+			control: 'text',
+			description: 'Placeholder text',
+		},
+		message: {
+			control: 'text',
+			description: 'Helper or error message',
+		},
+		rows: {
+			control: 'number',
+			description: 'Number of visible text rows',
+		},
+	},
 };
 
 export default meta;
@@ -16,7 +43,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
 	args: {
 		name: 'description',
-		placeholder: 'Enter your message...',
+		placeholder: 'Enter specimen observations...',
 	},
 	render: (args) => (
 		<Form.Root>
@@ -27,9 +54,9 @@ export const Default: Story = {
 
 export const WithLabel: Story = {
 	args: {
-		name: 'feedback',
-		label: 'Feedback',
-		placeholder: 'Please share your thoughts...',
+		name: 'notes',
+		label: 'Research Notes',
+		placeholder: 'Document findings and analysis...',
 	},
 	render: (args) => (
 		<Form.Root>
@@ -40,11 +67,11 @@ export const WithLabel: Story = {
 
 export const ErrorState: Story = {
 	args: {
-		name: 'required-field',
-		label: 'Required Field',
-		placeholder: 'This field is required...',
+		name: 'provenance',
+		label: 'Provenance Information',
+		placeholder: 'Enter artifact origin details...',
 		error: true,
-		message: 'This field is required',
+		message: 'Provenance information is required',
 	},
 	render: (args) => (
 		<Form.Root>
@@ -55,11 +82,11 @@ export const ErrorState: Story = {
 
 export const Disabled: Story = {
 	args: {
-		name: 'disabled-field',
-		label: 'Disabled Field',
-		placeholder: 'This field is disabled',
+		name: 'archived-notes',
+		label: 'Archived Documentation',
+		placeholder: 'Field is locked',
 		disabled: true,
-		value: 'This content cannot be edited',
+		value: 'This specimen has been archived and documentation is locked for preservation.',
 	},
 	render: (args) => (
 		<Form.Root>
@@ -70,7 +97,7 @@ export const Disabled: Story = {
 
 export const Standalone: Story = {
 	args: {
-		placeholder: 'Standalone textarea...',
+		placeholder: 'Enter catalog notes...',
 		rows: 4,
 	},
 	render: (args) => <TextArea.Standalone {...args} />,

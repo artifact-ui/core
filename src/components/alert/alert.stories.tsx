@@ -8,6 +8,19 @@ const meta: Meta<typeof Alert> = {
 	parameters: {
 		layout: 'centered',
 	},
+	tags: ['autodocs'],
+	argTypes: {
+		variant: {
+			control: 'select',
+			options: ['default', 'success', 'error'],
+			description: 'Semantic variant',
+		},
+		size: {
+			control: 'select',
+			options: ['1', '2', '3'],
+			description: 'Size scale',
+		},
+	},
 };
 
 export default meta;
@@ -15,22 +28,34 @@ type Story = StoryObj<typeof Alert>;
 
 export const Default: Story = {
 	args: {
-		children: 'Your changes have been saved.',
+		variant: 'default',
+		size: '2',
+		children: 'System notification message.',
 	},
 };
 
-export const Examples: Story = {
+export const Success: Story = {
+	args: {
+		variant: 'success',
+		size: '2',
+		children: 'Archive successfully updated.',
+	},
+};
+
+export const Error: Story = {
+	args: {
+		variant: 'error',
+		size: '2',
+		children: 'Unable to process request. Please try again.',
+	},
+};
+
+export const AllVariants: Story = {
 	render: () => (
 		<Stack gap="4" style={{ width: '500px' }}>
-			<Alert variant="success" size="1">
-				Changes saved successfully.
-			</Alert>
-			<Alert variant="error" size="2">
-				Unable to complete action. Please try again.
-			</Alert>
-			<Alert variant="default" size="3">
-				Remember to save your work before closing.
-			</Alert>
+			<Alert variant="default">System notification message.</Alert>
+			<Alert variant="success">Operation completed successfully.</Alert>
+			<Alert variant="error">An error occurred during processing.</Alert>
 		</Stack>
 	),
 };

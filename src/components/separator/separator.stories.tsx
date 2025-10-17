@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Separator } from './separator';
 import { Stack } from '../layout/stack';
 import { Flex } from '../layout/flex';
+import { Text } from '../text/text';
 
 const meta: Meta<typeof Separator> = {
 	title: 'Artifact/Separator',
@@ -9,65 +10,94 @@ const meta: Meta<typeof Separator> = {
 	parameters: {
 		layout: 'centered',
 	},
+	tags: ['autodocs'],
+	argTypes: {
+		orientation: {
+			control: 'select',
+			options: ['horizontal', 'vertical'],
+			description: 'Direction of the separator',
+		},
+		size: {
+			control: 'select',
+			options: ['1', '2', '3', '4'],
+			description: 'Thickness scale',
+		},
+		color: {
+			control: 'select',
+			options: ['default', 'accent'],
+			description: 'Color variant',
+		},
+	},
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-	args: {},
+export const Horizontal: Story = {
+	args: {
+		orientation: 'horizontal',
+		size: '1',
+	},
+	render: (args) => (
+		<div style={{ width: '300px' }}>
+			<Separator {...args} />
+		</div>
+	),
 };
 
-export const Examples: Story = {
-	render: () => (
-		<Stack gap="6" style={{ padding: '2rem' }}>
-			<div>
-				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
-					Sizes
-				</h3>
-				<Stack gap="5">
-					<div>
-						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
-							Size 1 (default)
-						</p>
-						<Separator size="1" />
-					</div>
-					<div>
-						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>Size 2</p>
-						<Separator size="2" />
-					</div>
-					<div>
-						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>Size 3</p>
-						<Separator size="3" />
-					</div>
-					<div>
-						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>Size 4</p>
-						<Separator size="4" />
-					</div>
-				</Stack>
-			</div>
+export const Vertical: Story = {
+	args: {
+		orientation: 'vertical',
+		size: '1',
+	},
+	render: (args) => (
+		<Flex align="center" gap="4" style={{ height: '80px' }}>
+			<Text>Archive A</Text>
+			<Separator {...args} />
+			<Text>Archive B</Text>
+		</Flex>
+	),
+};
 
-			<div>
-				<h3 style={{ marginBottom: '1rem', fontSize: '1.125rem', fontWeight: 600 }}>
-					Orientations
-				</h3>
-				<Stack gap="5">
-					<div>
-						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>
-							Horizontal (default)
-						</p>
-						<Separator orientation="horizontal" />
-					</div>
-					<div>
-						<p style={{ marginBottom: '0.5rem', fontSize: '0.875rem' }}>Vertical</p>
-						<Flex align="center" gap="4" style={{ height: '100px' }}>
-							<span>Content</span>
-							<Separator orientation="vertical" />
-							<span>More content</span>
-						</Flex>
-					</div>
-				</Stack>
-			</div>
+export const Thick: Story = {
+	args: {
+		orientation: 'horizontal',
+		size: '4',
+	},
+	render: (args) => (
+		<div style={{ width: '300px' }}>
+			<Separator {...args} />
+		</div>
+	),
+};
+
+export const AllVariants: Story = {
+	render: () => (
+		<Stack gap="6" style={{ width: '300px' }}>
+			<Stack gap="3">
+				<Text size="2" color="secondary">
+					Size 1 (default)
+				</Text>
+				<Separator size="1" />
+			</Stack>
+			<Stack gap="3">
+				<Text size="2" color="secondary">
+					Size 2
+				</Text>
+				<Separator size="2" />
+			</Stack>
+			<Stack gap="3">
+				<Text size="2" color="secondary">
+					Size 4 (thick)
+				</Text>
+				<Separator size="4" />
+			</Stack>
+			<Stack gap="3">
+				<Text size="2" color="secondary">
+					Accent color
+				</Text>
+				<Separator size="2" color="accent" />
+			</Stack>
 		</Stack>
 	),
 };

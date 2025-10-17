@@ -1,6 +1,63 @@
+/* Dark theme - system preference */
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* Dark theme shadows */
+		--shadow-classic:
+			0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.3),
+			0 2px 1px -1px rgba(0, 0, 0, 0.3), 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+		--shadow-spread:
+			0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+		--shadow-paper: 0px 8px 0px -4px rgba(0, 0, 0, 0.6);
+
+		/* Background colors */
+		--color-bg-default: var(--gray-900);
+		--color-bg-subtle: var(--gray-800);
+		--color-bg-muted: var(--gray-700);
+		--color-bg-overlay: rgba(17, 24, 39, 0.9);
+		--color-bg-accent: #1d2b28;
+
+		/* Text colors */
+		--color-text-default: #ffffff;
+		--color-text-subtle: var(--gray-300);
+		--color-text-muted: var(--gray-400);
+		--color-text-inverse: var(--gray-900);
+		--color-bg-inverse: #ffffff;
+
+		/* Border colors */
+		--color-border-default: var(--gray-600);
+		--color-border-subtle: var(--gray-600);
+		--color-border-muted: var(--gray-500);
+		--color-border-focus: var(--gray-300);
+
+		/* State colors */
+		--color-success: var(--green-400);
+		--color-success-hover: var(--green-300);
+		--color-success-bg: var(--green-900);
+
+		--color-error: var(--red-500);
+		--color-error-hover: var(--red-400);
+		--color-error-bg: var(--red-900);
+
+		--color-warning: var(--yellow-400);
+		--color-warning-hover: var(--yellow-300);
+		--color-warning-bg: var(--yellow-900);
+
+		--color-info: var(--blue-400);
+		--color-info-hover: var(--blue-300);
+		--color-info-bg: var(--blue-900);
+
+		/* Interactive colors */
+		--color-hover: var(--gray-700);
+		--color-active: var(--gray-600);
+		--color-focus: var(--gray-700);
+	}
+}
+
+/* Dark theme set via data-attribute */
 [data-theme='dark'] {
 	/* Dark theme shadows */
-	--shadow-classic: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.3),
+	--shadow-classic:
+		0 0 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.3),
 		0 2px 1px -1px rgba(0, 0, 0, 0.3), 0 1px 3px 0 rgba(0, 0, 0, 0.4);
 	--shadow-spread: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
 	--shadow-paper: 0px 8px 0px -4px rgba(0, 0, 0, 0.6);

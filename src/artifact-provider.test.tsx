@@ -27,7 +27,7 @@ describe('ArtifactProvider', () => {
 			</ArtifactProvider>,
 		);
 
-		expect(document.documentElement).toHaveAttribute('data-theme', 'light');
+		expect(document.documentElement).not.toHaveAttribute('data-theme');
 		expect(document.documentElement).toHaveAttribute('data-accent', 'obsidian');
 		expect(document.documentElement).toHaveAttribute('data-radius', 'medium');
 	});
