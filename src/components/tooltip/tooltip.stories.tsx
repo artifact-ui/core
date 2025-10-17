@@ -20,10 +20,6 @@ const meta = {
 			options: ['start', 'center', 'end'],
 			description: 'Alignment of tooltip',
 		},
-		delayDuration: {
-			control: 'number',
-			description: 'Delay in milliseconds before showing',
-		},
 	},
 	decorators: [
 		(Story) => (

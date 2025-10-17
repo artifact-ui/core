@@ -12,7 +12,7 @@ const meta: Meta<typeof Alert> = {
 	argTypes: {
 		variant: {
 			control: 'select',
-			options: ['default', 'success', 'error', 'warning', 'info'],
+			options: ['default', 'success', 'error'],
 			description: 'Semantic variant',
 		},
 		size: {
@@ -50,29 +50,12 @@ export const Error: Story = {
 	},
 };
 
-export const Warning: Story = {
-	args: {
-		variant: 'warning',
-		size: '2',
-		children: 'Changes will be permanently deleted.',
-	},
-};
-
-export const Info: Story = {
-	args: {
-		variant: 'info',
-		size: '2',
-		children: 'New specimens available for review.',
-	},
-};
-
 export const AllVariants: Story = {
 	render: () => (
 		<Stack gap="4" style={{ width: '500px' }}>
+			<Alert variant="default">System notification message.</Alert>
 			<Alert variant="success">Operation completed successfully.</Alert>
 			<Alert variant="error">An error occurred during processing.</Alert>
-			<Alert variant="warning">This action cannot be undone.</Alert>
-			<Alert variant="info">System maintenance scheduled for tomorrow.</Alert>
 		</Stack>
 	),
 };

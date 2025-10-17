@@ -9,35 +9,6 @@ const meta: Meta<typeof Select.Root> = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
-	argTypes: {
-		variant: {
-			control: 'select',
-			options: ['default', 'minimal'],
-			description: 'Visual style of the select',
-		},
-		size: {
-			control: 'select',
-			options: ['1', '2', '3', '4'],
-			description: 'Size scale',
-		},
-		color: {
-			control: 'select',
-			options: ['default', 'secondary', 'tertiary'],
-			description: 'Color emphasis',
-		},
-		error: {
-			control: 'boolean',
-			description: 'Error state',
-		},
-		disabled: {
-			control: 'boolean',
-			description: 'Disabled state',
-		},
-		compact: {
-			control: 'boolean',
-			description: 'Compact spacing',
-		},
-	},
 };
 
 export default meta;

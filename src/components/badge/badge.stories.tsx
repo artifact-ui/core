@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Badge } from './badge';
 import { Flex } from '../layout/flex';
-import { CheckIcon, InfoIcon } from '../../icons';
+import { CheckIcon } from '../../icons';
 
 const meta: Meta<typeof Badge> = {
 	title: 'Artifact/Badge',

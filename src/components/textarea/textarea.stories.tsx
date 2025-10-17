@@ -10,16 +10,6 @@ const meta: Meta<typeof TextArea.Input> = {
 	},
 	tags: ['autodocs'],
 	argTypes: {
-		variant: {
-			control: 'select',
-			options: ['default', 'simple'],
-			description: 'Visual style variant',
-		},
-		size: {
-			control: 'select',
-			options: ['1', '2', '3'],
-			description: 'Size scale',
-		},
 		error: {
 			control: 'boolean',
 			description: 'Error state',
