@@ -11,37 +11,35 @@ npm install @artifact-ui/core
 ## Quick Start
 
 ```tsx
-import { ArtifactProvider, Button, Card } from '@artifact-ui/core';
+import { ArtifactProvider, Button, Card, Heading, Text } from '@artifact-ui/core';
 import '@artifact-ui/core/styles.css';
 
 function App() {
-  return (
-    <ArtifactProvider theme="light" accent="obsidian" radius="medium">
-      <Card.Root>
-        <Card.Header>
-          <h2>Welcome</h2>
-        </Card.Header>
-        <Card.Body>
-          <p>Get started with Artifact UI components.</p>
-          <Button color="primary">Click me</Button>
-        </Card.Body>
-      </Card.Root>
-    </ArtifactProvider>
-  );
+	return (
+		<ArtifactProvider accent="obsidian" radius="medium">
+			<Card.Root>
+				<Card.Header>
+					<Heading>Welcome</Heading>
+				</Card.Header>
+				<Card.Body>
+					<Text>Get started with Artifact UI components.</Text>
+					<Button color="primary">Click me</Button>
+				</Card.Body>
+			</Card.Root>
+		</ArtifactProvider>
+	);
 }
 ```
 
 ## Theming
 
-Artifact UI supports light/dark themes, 10 accent colors, and 5 radius presets:
+Artifact UI supports light/dark themes, 10 accent colors, and 5 radius presets.
+
+By default, the theme matches system preference (light/dark mode). You can override this by passing the `theme` prop:
 
 ```tsx
-<ArtifactProvider
-  theme="dark" // 'light' | 'dark'
-  accent="twilight" // 'obsidian' | 'sage' | 'twilight' | 'canopy' | 'blush' | 'clay' | 'amber' | 'crimson' | 'patina' | 'meridian'
-  radius="large" // 'none' | 'small' | 'medium' | 'large' | 'full'
->
-  {children}
+<ArtifactProvider theme="dark" accent="twilight" radius="large">
+	{children}
 </ArtifactProvider>
 ```
 

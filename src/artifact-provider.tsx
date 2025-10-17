@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect } from 'react';
 
 export type Theme = 'light' | 'dark';
@@ -23,12 +25,17 @@ export interface ArtifactProviderProps {
 
 export const ArtifactProvider = ({
 	children,
-	theme = 'light',
+	theme,
 	accent = 'obsidian',
 	radius = 'medium',
 }: ArtifactProviderProps) => {
 	useEffect(() => {
-		document.documentElement.setAttribute('data-theme', theme);
+		if (theme) {
+			document.documentElement.setAttribute('data-theme', theme);
+		} else {
+			document.documentElement.removeAttribute('data-theme');
+		}
+
 		document.documentElement.setAttribute('data-accent', accent);
 		document.documentElement.setAttribute('data-radius', radius);
 	}, [theme, accent, radius]);
