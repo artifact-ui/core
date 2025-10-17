@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArtifactProvider } from '../src/artifact-provider';
 import type { Theme, Accent, Radius } from '../src/artifact-provider';
+import '../dist/artifact-ui-layers.css';
 import '../src/index';
 
 const preview = {
