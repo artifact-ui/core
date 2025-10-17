@@ -1,33 +1,29 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import dts from 'vite-plugin-dts';
 
+// Layers build - preserves @layer declarations
+// Only builds CSS (JS already built in no-layers step)
 export default defineConfig({
-	plugins: [react(), dts({ include: ['src'] })],
+	plugins: [react()],
 	build: {
 		lib: {
 			entry: resolve(__dirname, 'src/index.ts'),
 			name: 'ArtifactUI',
 			formats: ['es'],
-			fileName: 'artifact-ui',
+			fileName: 'artifact-ui-layers',
 		},
 		rollupOptions: {
 			external: ['react', 'react-dom', 'react/jsx-runtime'],
 			output: {
-				preserveModules: true,
-				preserveModulesRoot: 'src',
-				entryFileNames: '[name].js',
 				assetFileNames: (assetInfo) => {
-					// CSS files get renamed to artifact-ui.css
 					if (assetInfo.names?.[0] === 'style.css') {
-						return 'artifact-ui.css';
+						return 'artifact-ui-layers.css';
 					}
 					return '[name][extname]';
 				},
 			},
 		},
-		sourcemap: true,
-		emptyOutDir: true,
+		emptyOutDir: false, // Don't clear dist
 	},
 });
