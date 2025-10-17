@@ -113,7 +113,7 @@
 
 	.heading .iconLeft svg,
 	.heading .iconRight svg {
-		width: 1em;
-		height: 1em;
+		width: var(--icon-match);
+		height: var(--icon-match);
 	}
 }

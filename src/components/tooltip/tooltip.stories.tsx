@@ -8,6 +8,23 @@ const meta = {
 	parameters: {
 		layout: 'centered',
 	},
+	tags: ['autodocs'],
+	argTypes: {
+		side: {
+			control: 'select',
+			options: ['top', 'right', 'bottom', 'left'],
+			description: 'Tooltip position relative to trigger',
+		},
+		align: {
+			control: 'select',
+			options: ['start', 'center', 'end'],
+			description: 'Alignment of tooltip',
+		},
+		delayDuration: {
+			control: 'number',
+			description: 'Delay in milliseconds before showing',
+		},
+	},
 	decorators: [
 		(Story) => (
 			<Tooltip.Provider>
@@ -26,10 +43,10 @@ export const Default: Story = {
 	render: () => (
 		<Tooltip.Root>
 			<Tooltip.Trigger asChild>
-				<Button variant="outline">Hover me</Button>
+				<Button variant="outline">View Details</Button>
 			</Tooltip.Trigger>
 			<Tooltip.Content>
-				<p>This is a tooltip with helpful information</p>
+				<p>View complete specimen catalog information</p>
 			</Tooltip.Content>
 		</Tooltip.Root>
 	),
@@ -39,10 +56,10 @@ export const WithDelay: Story = {
 	render: () => (
 		<Tooltip.Root delayDuration={1000}>
 			<Tooltip.Trigger asChild>
-				<Button variant="outline">Hover me (1s delay)</Button>
+				<Button variant="outline">Archive Item</Button>
 			</Tooltip.Trigger>
 			<Tooltip.Content>
-				<p>This tooltip appears after 1 second</p>
+				<p>Move specimen to archived collection</p>
 			</Tooltip.Content>
 		</Tooltip.Root>
 	),
@@ -62,7 +79,7 @@ export const Positioning: Story = {
 					<Button variant="outline">Top (default)</Button>
 				</Tooltip.Trigger>
 				<Tooltip.Content side="top">
-					<p>Tooltip on top</p>
+					<p>Archive A - Ceramics</p>
 				</Tooltip.Content>
 			</Tooltip.Root>
 
@@ -71,7 +88,7 @@ export const Positioning: Story = {
 					<Button variant="outline">Right</Button>
 				</Tooltip.Trigger>
 				<Tooltip.Content side="right">
-					<p>Tooltip on right</p>
+					<p>Archive B - Textiles</p>
 				</Tooltip.Content>
 			</Tooltip.Root>
 
@@ -80,7 +97,7 @@ export const Positioning: Story = {
 					<Button variant="outline">Bottom</Button>
 				</Tooltip.Trigger>
 				<Tooltip.Content side="bottom">
-					<p>Tooltip on bottom</p>
+					<p>Archive C - Stone Tools</p>
 				</Tooltip.Content>
 			</Tooltip.Root>
 
@@ -89,7 +106,7 @@ export const Positioning: Story = {
 					<Button variant="outline">Left</Button>
 				</Tooltip.Trigger>
 				<Tooltip.Content side="left">
-					<p>Tooltip on left</p>
+					<p>Archive D - Metalwork</p>
 				</Tooltip.Content>
 			</Tooltip.Root>
 		</div>
@@ -100,12 +117,13 @@ export const LongContent: Story = {
 	render: () => (
 		<Tooltip.Root>
 			<Tooltip.Trigger asChild>
-				<Button variant="outline">Hover for details</Button>
+				<Button variant="outline">Specimen Info</Button>
 			</Tooltip.Trigger>
 			<Tooltip.Content>
 				<p>
-					This is a longer tooltip with more detailed information that wraps across
-					multiple lines. The max-width is set to 300px.
+					This ceramic vessel fragment from the Neolithic period was discovered in Archive
+					A during the 2019 excavation. The provenance includes detailed documentation of
+					its preservation status.
 				</p>
 			</Tooltip.Content>
 		</Tooltip.Root>
@@ -119,7 +137,7 @@ export const IconOnly: Story = {
 				<Button variant="ghost" />
 			</Tooltip.Trigger>
 			<Tooltip.Content>
-				<p>Get more information</p>
+				<p>View collection documentation</p>
 			</Tooltip.Content>
 		</Tooltip.Root>
 	),

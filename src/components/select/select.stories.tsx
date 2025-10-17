@@ -8,6 +8,36 @@ const meta: Meta<typeof Select.Root> = {
 	parameters: {
 		layout: 'centered',
 	},
+	tags: ['autodocs'],
+	argTypes: {
+		variant: {
+			control: 'select',
+			options: ['default', 'minimal'],
+			description: 'Visual style of the select',
+		},
+		size: {
+			control: 'select',
+			options: ['1', '2', '3', '4'],
+			description: 'Size scale',
+		},
+		color: {
+			control: 'select',
+			options: ['default', 'secondary', 'tertiary'],
+			description: 'Color emphasis',
+		},
+		error: {
+			control: 'boolean',
+			description: 'Error state',
+		},
+		disabled: {
+			control: 'boolean',
+			description: 'Disabled state',
+		},
+		compact: {
+			control: 'boolean',
+			description: 'Compact spacing',
+		},
+	},
 };
 
 export default meta;
@@ -15,14 +45,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
 	render: () => (
-		<Select.Root defaultValue="day-hike">
-			<Select.Trigger placeholder="Choose a trail type..." />
+		<Select.Root defaultValue="pottery">
+			<Select.Trigger placeholder="Select collection..." />
 			<Select.Content>
 				<Select.Group>
-					<Select.Label>Trail Types</Select.Label>
-					<Select.Item value="day-hike">Day Hike</Select.Item>
-					<Select.Item value="overnight">Overnight</Select.Item>
-					<Select.Item value="thru-hike">Thru-Hike</Select.Item>
+					<Select.Label>Collections</Select.Label>
+					<Select.Item value="pottery">Pottery</Select.Item>
+					<Select.Item value="textiles">Textiles</Select.Item>
+					<Select.Item value="tools">Stone Tools</Select.Item>
 				</Select.Group>
 			</Select.Content>
 		</Select.Root>
@@ -35,115 +65,79 @@ export const Minimal: Story = {
 			<Select.Trigger variant="minimal" placeholder="Filter..." />
 			<Select.Content compact>
 				<Select.Item value="all">All</Select.Item>
-				<Select.Item value="active">Active</Select.Item>
 				<Select.Item value="archived">Archived</Select.Item>
+				<Select.Item value="active">Active</Select.Item>
 			</Select.Content>
 		</Select.Root>
 	),
 };
 
-export const Examples: Story = {
+export const Error: Story = {
+	render: () => (
+		<Select.Root error defaultValue="invalid">
+			<Select.Trigger placeholder="Select status..." />
+			<Select.Content>
+				<Select.Item value="invalid">Invalid Entry</Select.Item>
+				<Select.Item value="valid">Valid Entry</Select.Item>
+			</Select.Content>
+		</Select.Root>
+	),
+};
+
+export const WithGroups: Story = {
+	render: () => (
+		<Select.Root defaultValue="neolithic">
+			<Select.Trigger placeholder="Select period..." />
+			<Select.Content>
+				<Select.Group>
+					<Select.Label>Ancient Periods</Select.Label>
+					<Select.Item value="neolithic">Neolithic Era</Select.Item>
+					<Select.Item value="bronze">Bronze Age</Select.Item>
+					<Select.Item value="iron">Iron Age</Select.Item>
+				</Select.Group>
+				<Select.Separator />
+				<Select.Group>
+					<Select.Label>Classical Periods</Select.Label>
+					<Select.Item value="greek">Greek Classical</Select.Item>
+					<Select.Item value="roman">Roman Empire</Select.Item>
+				</Select.Group>
+			</Select.Content>
+		</Select.Root>
+	),
+};
+
+export const AllVariants: Story = {
 	render: () => (
 		<Stack gap="4" style={{ width: '20rem' }}>
-			{/* Variants */}
-			<Select.Root defaultValue="default">
+			<Select.Root defaultValue="archive-a">
 				<Select.Trigger variant="default" placeholder="Default variant..." />
 				<Select.Content>
-					<Select.Item value="default">Default</Select.Item>
-					<Select.Item value="minimal">Minimal</Select.Item>
+					<Select.Item value="archive-a">Archive A</Select.Item>
+					<Select.Item value="archive-b">Archive B</Select.Item>
+					<Select.Item value="archive-c">Archive C</Select.Item>
 				</Select.Content>
 			</Select.Root>
 
-			<Select.Root defaultValue="minimal">
+			<Select.Root defaultValue="catalog-1">
 				<Select.Trigger variant="minimal" placeholder="Minimal variant..." />
 				<Select.Content>
-					<Select.Item value="default">Default</Select.Item>
-					<Select.Item value="minimal">Minimal</Select.Item>
+					<Select.Item value="catalog-1">Catalog 1</Select.Item>
+					<Select.Item value="catalog-2">Catalog 2</Select.Item>
 				</Select.Content>
 			</Select.Root>
 
-			{/* Sizes */}
-			<Select.Root defaultValue="1" size="1">
-				<Select.Trigger placeholder="Size 1 (small)..." />
-				<Select.Content>
-					<Select.Item value="1">Small</Select.Item>
-					<Select.Item value="2">Medium</Select.Item>
-					<Select.Item value="3">Large</Select.Item>
-					<Select.Item value="4">Extra Large</Select.Item>
-				</Select.Content>
-			</Select.Root>
-
-			<Select.Root defaultValue="3" size="3">
-				<Select.Trigger placeholder="Size 3 (large)..." />
-				<Select.Content>
-					<Select.Item value="1">Small</Select.Item>
-					<Select.Item value="2">Medium</Select.Item>
-					<Select.Item value="3">Large</Select.Item>
-					<Select.Item value="4">Extra Large</Select.Item>
-				</Select.Content>
-			</Select.Root>
-
-			{/* Colors */}
-			<Select.Root defaultValue="secondary" color="secondary">
-				<Select.Trigger placeholder="Secondary color..." />
-				<Select.Content>
-					<Select.Item value="default">Default</Select.Item>
-					<Select.Item value="secondary">Secondary</Select.Item>
-					<Select.Item value="tertiary">Tertiary</Select.Item>
-				</Select.Content>
-			</Select.Root>
-
-			{/* States */}
-			<Select.Root error defaultValue="invalid">
+			<Select.Root error defaultValue="error">
 				<Select.Trigger placeholder="Error state..." />
 				<Select.Content>
-					<Select.Item value="invalid">Invalid</Select.Item>
-					<Select.Item value="valid">Valid</Select.Item>
+					<Select.Item value="error">Error</Select.Item>
+					<Select.Item value="success">Success</Select.Item>
 				</Select.Content>
 			</Select.Root>
 
 			<Select.Root disabled defaultValue="disabled">
-				<Select.Trigger placeholder="Disabled..." />
+				<Select.Trigger placeholder="Disabled state..." />
 				<Select.Content>
 					<Select.Item value="disabled">Disabled</Select.Item>
-				</Select.Content>
-			</Select.Root>
-
-			{/* Compact */}
-			<Select.Root defaultValue="oz">
-				<Select.Trigger compact placeholder="Compact..." />
-				<Select.Content compact>
-					<Select.Item value="oz">oz</Select.Item>
-					<Select.Item value="lb">lb</Select.Item>
-					<Select.Item value="kg">kg</Select.Item>
-				</Select.Content>
-			</Select.Root>
-
-			{/* Radius */}
-			<Select.Root defaultValue="3" radius="3">
-				<Select.Trigger placeholder="Radius 3 (pill)..." />
-				<Select.Content>
-					<Select.Item value="1">Radius 1</Select.Item>
-					<Select.Item value="2">Radius 2</Select.Item>
-					<Select.Item value="3">Radius 3</Select.Item>
-				</Select.Content>
-			</Select.Root>
-
-			{/* Multiple Groups */}
-			<Select.Root defaultValue="tent">
-				<Select.Trigger placeholder="Select gear..." />
-				<Select.Content>
-					<Select.Group>
-						<Select.Label>Shelter</Select.Label>
-						<Select.Item value="tent">Tent</Select.Item>
-						<Select.Item value="hammock">Hammock</Select.Item>
-					</Select.Group>
-					<Select.Separator />
-					<Select.Group>
-						<Select.Label>Sleep System</Select.Label>
-						<Select.Item value="sleeping-bag">Sleeping Bag</Select.Item>
-						<Select.Item value="quilt">Quilt</Select.Item>
-					</Select.Group>
 				</Select.Content>
 			</Select.Root>
 		</Stack>
