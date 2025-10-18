@@ -1,0 +1,72 @@
+@layer components {
+	.skeleton {
+		position: relative;
+		overflow: hidden;
+		background: var(--color-bg-subtle);
+		border-radius: var(--radius-default-simple);
+		--skeleton-shimmer-strength: 0.04;
+	}
+
+	[data-theme='dark'] .skeleton {
+		--skeleton-shimmer-strength: 0.05;
+	}
+
+	.skeleton::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(0, 0, 0, calc(var(--skeleton-shimmer-strength) * 0.25)) 20%,
+			rgba(0, 0, 0, var(--skeleton-shimmer-strength)) 50%,
+			rgba(0, 0, 0, calc(var(--skeleton-shimmer-strength) * 0.25)) 80%,
+			transparent 100%
+		);
+		transform: translateX(-120%);
+		animation: shimmer 1.5s ease-in-out infinite;
+		will-change: transform;
+		pointer-events: none;
+	}
+
+	[data-theme='dark'] .skeleton::after {
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(255, 255, 255, calc(var(--skeleton-shimmer-strength) * 0.4)) 20%,
+			rgba(255, 255, 255, var(--skeleton-shimmer-strength)) 50%,
+			rgba(255, 255, 255, calc(var(--skeleton-shimmer-strength) * 0.4)) 80%,
+			transparent 100%
+		);
+	}
+
+	.skeleton.noAnimation::after {
+		animation: none;
+	}
+
+	@keyframes shimmer {
+		100% {
+			transform: translateX(120%);
+		}
+	}
+
+	.text {
+		height: 1em;
+		border-radius: var(--radius-1);
+	}
+
+	.circle {
+		border-radius: var(--radius-full);
+		aspect-ratio: 1;
+	}
+
+	.rectangle {
+		border-radius: var(--radius-default-simple);
+	}
+
+	.textContainer {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+	}
+}

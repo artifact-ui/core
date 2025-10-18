@@ -86,6 +86,7 @@
 
 	/* Animations */
 	--animation-spin: spin 1s linear infinite;
+	--animation-skeleton-shine: skeleton-shine 1.5s linear infinite;
 
 	/* Effects */
 	--color-overlay: rgba(0, 0, 0, 0.5);
@@ -260,5 +261,14 @@
 	}
 	to {
 		transform: rotate(360deg);
+	}
+}
+
+@keyframes skeleton-shine {
+	0% {
+		background-position: -500px 0;
+	}
+	100% {
+		background-position: 500px 0;
 	}
 }

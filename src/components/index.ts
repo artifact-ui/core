@@ -16,6 +16,7 @@ export { Separator } from './separator/separator';
 export { Badge } from './badge/badge';
 export { Switch } from './switch/switch';
 export { Checkbox } from './checkbox/checkbox';
+export { Skeleton, SkeletonText } from './skeleton/skeleton';
 
 // Layout components
 export { Stack } from './layout/stack';
