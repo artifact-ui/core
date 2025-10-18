@@ -1,0 +1,132 @@
+/* Artifact UI - Progress Component */
+
+@layer components {
+	/* Progress - Track */
+	.progress {
+		position: relative;
+		overflow: hidden;
+		background-color: var(--color-bg-muted);
+		border-radius: var(--progress-radius-default, var(--radius-full));
+		width: 100%;
+		height: var(--space-2);
+	}
+
+	/* Progress - Theme-based radius defaults */
+	[data-radius='none'] .progress {
+		--progress-radius-default: 0;
+	}
+
+	[data-radius='small'] .progress {
+		--progress-radius-default: var(--radius-1);
+	}
+
+	[data-radius='medium'] .progress {
+		--progress-radius-default: var(--radius-full);
+	}
+
+	[data-radius='large'] .progress {
+		--progress-radius-default: var(--radius-full);
+	}
+
+	[data-radius='full'] .progress {
+		--progress-radius-default: var(--radius-full);
+	}
+
+	/* Progress - Explicit radius props */
+	.progress.radiusNone {
+		border-radius: 0;
+	}
+
+	.progress.radius1 {
+		border-radius: 0.25rem;
+	}
+
+	.progress.radiusFull {
+		border-radius: var(--radius-full);
+	}
+
+	/* Progress - Indicator */
+	.progressIndicator {
+		width: 100%;
+		height: 100%;
+		transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		border-radius: inherit;
+	}
+
+	/* Progress - Sizes */
+	.progress.progressSize1 {
+		height: var(--space-1);
+	}
+
+	.progress.progressSize2 {
+		height: var(--space-2);
+	}
+
+	.progress.progressSize3 {
+		height: var(--space-3);
+	}
+
+	/* Progress - Color Variants */
+	.progressIndicator.progressPrimary {
+		background-color: var(--color-primary);
+	}
+
+	.progressIndicator.progressNeutral {
+		background-color: var(--gray-400);
+	}
+
+	.progressIndicator.progressSuccess {
+		background-color: var(--color-success);
+	}
+
+	/* Spinner */
+	.spinner {
+		width: var(--space-6);
+		height: var(--space-6);
+		border: 2px solid var(--color-bg-muted);
+		border-top-color: var(--color-primary);
+		border-radius: var(--radius-full);
+		animation: spin 1s linear infinite;
+	}
+
+	/* Spinner - Sizes */
+	.spinner.progressSize1 {
+		width: var(--space-4);
+		height: var(--space-4);
+		border-width: 1.5px;
+	}
+
+	.spinner.progressSize2 {
+		width: var(--space-6);
+		height: var(--space-6);
+		border-width: 2px;
+	}
+
+	.spinner.progressSize3 {
+		width: var(--space-8);
+		height: var(--space-8);
+		border-width: 3px;
+	}
+
+	/* Spinner - Color Variants */
+	.spinner.progressPrimary {
+		border-top-color: var(--color-primary);
+	}
+
+	.spinner.progressNeutral {
+		border-top-color: var(--gray-400);
+	}
+
+	.spinner.progressSuccess {
+		border-top-color: var(--color-success);
+	}
+
+	@keyframes spin {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+}

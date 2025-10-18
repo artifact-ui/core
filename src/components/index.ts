@@ -20,6 +20,7 @@ export { Checkbox } from './checkbox/checkbox';
 export { Skeleton, SkeletonText } from './skeleton/skeleton';
 export { Avatar } from './avatar/avatar';
 export { Toast, ToastProvider } from './toast/toast';
+export { Progress } from './progress/progress';
 
 // Layout components
 export { Stack } from './layout/stack';
