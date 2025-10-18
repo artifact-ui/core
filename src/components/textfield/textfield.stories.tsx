@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import * as TextField from './textfield';
 import { SearchIcon } from '../../icons';
@@ -106,4 +107,65 @@ export const AllVariants: Story = {
 			/>
 		</div>
 	),
+};
+
+export const WithPrefix: Story = {
+	args: {
+		placeholder: '0.00',
+		variant: 'icon',
+		prefix: <span>$</span>,
+	},
+};
+
+export const WithSuffix: Story = {
+	args: {
+		placeholder: '0',
+		variant: 'icon',
+		suffix: <span>kg</span>,
+	},
+};
+
+export const WithPrefixAndSuffix: Story = {
+	args: {
+		placeholder: '0.00',
+		variant: 'icon',
+		prefix: <span>$</span>,
+		suffix: <span>USD</span>,
+	},
+};
+
+export const Clearable: Story = {
+	render: () => {
+		const [value, setValue] = React.useState('Ancient pottery collection');
+
+		return (
+			<TextField.Standalone
+				placeholder="Search collections..."
+				variant="icon"
+				iconLeft={<SearchIcon />}
+				clearable
+				onClear={() => setValue('')}
+				value={value}
+				onChange={(e) => setValue(e.target.value)}
+			/>
+		);
+	},
+};
+
+export const ClearableWithSuffix: Story = {
+	render: () => {
+		const [value, setValue] = React.useState('150');
+
+		return (
+			<TextField.Standalone
+				placeholder="Enter weight..."
+				variant="icon"
+				suffix={<span>kg</span>}
+				clearable
+				onClear={() => setValue('')}
+				value={value}
+				onChange={(e) => setValue(e.target.value)}
+			/>
+		);
+	},
 };

@@ -257,6 +257,39 @@
 		margin: 0;
 	}
 
+	/* Clear button spacing and padding overrides */
+	.inputContainer .clearButton {
+		margin-right: var(--space-1);
+		padding: var(--space-1);
+		min-width: auto;
+	}
+
+	.rootIcon:has(.inputLg) .inputContainer .clearButton,
+	.rootIcon:has(.inputXl) .inputContainer .clearButton {
+		margin-right: var(--space-2);
+	}
+
+	/* Push suffix left when clear button is present */
+	.rootIcon:has(button):has(.inputSm) .slotRight {
+		right: calc(var(--space-1) + 1em + var(--space-1) + var(--space-1) + var(--space-2));
+	}
+
+	.rootIcon:has(button):has(.inputMd) .slotRight {
+		right: calc(var(--space-1) + 1em + var(--space-1) + var(--space-1) + var(--space-2));
+	}
+
+	.rootIcon:has(button):has(.inputLg) .slotRight {
+		right: calc(var(--space-2) + 1em + var(--space-1) + var(--space-1) + var(--space-3));
+	}
+
+	.rootIcon:has(button):has(.inputXl) .slotRight {
+		right: calc(var(--space-2) + 1em + var(--space-1) + var(--space-1) + var(--space-4));
+	}
+
+	.rootIcon:has(button):has(.inputCompact) .slotRight {
+		right: calc(var(--space-1) + 1em + var(--space-1) + var(--space-1) + var(--space-2));
+	}
+
 	/* Icon slot */
 	.slot {
 		position: absolute;
@@ -347,6 +380,28 @@
 
 	.rootIcon:has(.slotRight):has(.inputCompact) .inputIcon {
 		padding-left: var(--space-2);
+		padding-right: calc(var(--space-2) + 1em + 0.5em);
+	}
+
+	/* Both left and right slots */
+	.rootIcon:has(.slot:not(.slotRight)):has(.slotRight):has(.inputSm) .inputIcon {
+		padding-left: calc(var(--space-2) + 1em + 0.5em);
+		padding-right: calc(var(--space-2) + 1em + 0.5em);
+	}
+
+	.rootIcon:has(.slot:not(.slotRight)):has(.slotRight):has(.inputMd) .inputIcon {
+		padding-left: calc(var(--space-2) + 1em + 0.5em);
+		padding-right: calc(var(--space-2) + 1em + 0.5em);
+	}
+
+	.rootIcon:has(.slot:not(.slotRight)):has(.slotRight):has(.inputLg) .inputIcon,
+	.rootIcon:has(.slot:not(.slotRight)):has(.slotRight):has(.inputXl) .inputIcon {
+		padding-left: calc(var(--space-3) + 1em + 0.5em);
+		padding-right: calc(var(--space-3) + 1em + 0.5em);
+	}
+
+	.rootIcon:has(.slot:not(.slotRight)):has(.slotRight):has(.inputCompact) .inputIcon {
+		padding-left: calc(var(--space-2) + 1em + 0.5em);
 		padding-right: calc(var(--space-2) + 1em + 0.5em);
 	}
 
