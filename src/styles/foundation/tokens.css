@@ -55,6 +55,13 @@
 	--icon-lg: 2rem; /* 32px */
 	--icon-xl: 3rem; /* 48px */
 
+	/* Avatars */
+	--avatar-1: 1rem; /* 16px */
+	--avatar-2: 1.5rem; /* 24px */
+	--avatar-3: 2rem; /* 32px */
+	--avatar-4: 3rem; /* 48px */
+	--avatar-5: 4rem; /* 64px */
+
 	/* Border radius */
 	--radius-1: 0.125rem; /* 2px */
 	--radius-2: 0.25rem; /* 4px */
