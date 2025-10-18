@@ -30,7 +30,7 @@ const meta: Meta<typeof IconButton> = {
 		},
 		color: {
 			control: 'select',
-			options: ['primary', 'neutral', 'info', 'success', 'danger'],
+			options: ['primary', 'neutral', 'success', 'warning', 'danger'],
 			description: 'Semantic color',
 		},
 		size: {
@@ -86,8 +86,8 @@ export const AllColors: Story = {
 		<Flex gap="3" align="center">
 			<IconButton icon={<PlusIcon />} label="Add" variant="default" color="primary" />
 			<IconButton icon={<PlusIcon />} label="Add" variant="default" color="neutral" />
-			<IconButton icon={<PlusIcon />} label="Add" variant="default" color="info" />
 			<IconButton icon={<PlusIcon />} label="Add" variant="default" color="success" />
+			<IconButton icon={<PlusIcon />} label="Add" variant="default" color="warning" />
 			<IconButton icon={<PlusIcon />} label="Add" variant="default" color="danger" />
 		</Flex>
 	),

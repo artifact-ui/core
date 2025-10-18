@@ -6,7 +6,7 @@ import styles from './button.module.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	variant?: 'default' | 'outline' | 'secondary' | 'tertiary' | 'ghost' | 'link';
-	color?: 'primary' | 'neutral' | 'info' | 'success' | 'danger';
+	color?: 'primary' | 'neutral' | 'info' | 'success' | 'warning' | 'danger';
 	customColor?: string;
 	size?: '1' | '2' | '3';
 	radius?: Radius;
@@ -52,6 +52,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			neutral: styles.buttonColorNeutral,
 			info: styles.buttonColorInfo,
 			success: styles.buttonColorSuccess,
+			warning: styles.buttonColorWarning,
 			danger: styles.buttonColorDanger,
 		};
 

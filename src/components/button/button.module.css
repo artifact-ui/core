@@ -47,11 +47,11 @@
 	}
 
 	.buttonMd.buttonIconOnly {
-		padding: var(--space-2);
+		padding: var(--space-1);
 	}
 
 	.buttonLg.buttonIconOnly {
-		padding: var(--space-3);
+		padding: var(--space-1);
 	}
 
 	/* Button - Variants */
@@ -114,8 +114,39 @@
 		font-weight: var(--font-weight-medium);
 	}
 
+	.buttonGhost.buttonColorInfo {
+		color: var(--color-info);
+	}
+
+	.buttonGhost.buttonColorSuccess {
+		color: var(--color-success);
+	}
+
+	.buttonGhost.buttonColorWarning {
+		color: var(--color-warning);
+	}
+
+	.buttonGhost.buttonColorDanger {
+		color: var(--color-error);
+	}
+
 	.buttonGhost:hover {
 		background-color: var(--color-hover);
+	}
+
+	/* Ghost button with colors - subtle tinted hover */
+	.buttonGhost.buttonColorInfo:hover,
+	.buttonGhost.buttonColorSuccess:hover,
+	.buttonGhost.buttonColorWarning:hover,
+	.buttonGhost.buttonColorDanger:hover {
+		background-color: rgba(0, 0, 0, 0.03);
+	}
+
+	[data-theme='dark'] .buttonGhost.buttonColorInfo:hover,
+	[data-theme='dark'] .buttonGhost.buttonColorSuccess:hover,
+	[data-theme='dark'] .buttonGhost.buttonColorWarning:hover,
+	[data-theme='dark'] .buttonGhost.buttonColorDanger:hover {
+		background-color: rgba(255, 255, 255, 0.05);
 	}
 
 	.buttonLink {
@@ -167,13 +198,13 @@
 		--btn-text-outline: var(--color-success);
 	}
 
-	.buttonColorInfo {
-		--btn-bg: var(--color-info);
-		--btn-bg-hover: var(--color-info-hover);
-		--btn-border: var(--color-info);
-		--btn-border-hover: var(--color-info-hover);
+	.buttonColorWarning {
+		--btn-bg: var(--color-warning);
+		--btn-bg-hover: var(--color-warning-hover);
+		--btn-border: var(--color-warning);
+		--btn-border-hover: var(--color-warning-hover);
 		--btn-text: var(--color-constant-white);
-		--btn-text-outline: var(--color-info);
+		--btn-text-outline: var(--color-warning);
 	}
 
 	.buttonColorDanger {
@@ -190,7 +221,7 @@
 	.buttonDefault.buttonColorPrimary,
 	.buttonDefault.buttonColorNeutral,
 	.buttonDefault.buttonColorSuccess,
-	.buttonDefault.buttonColorInfo,
+	.buttonDefault.buttonColorWarning,
 	.buttonDefault.buttonColorDanger {
 		background-color: var(--btn-bg);
 		color: var(--btn-text);
@@ -201,7 +232,7 @@
 	.buttonDefault.buttonColorPrimary:hover,
 	.buttonDefault.buttonColorNeutral:hover,
 	.buttonDefault.buttonColorSuccess:hover,
-	.buttonDefault.buttonColorInfo:hover,
+	.buttonDefault.buttonColorWarning:hover,
 	.buttonDefault.buttonColorDanger:hover {
 		background-color: var(--btn-bg-hover);
 		border-color: var(--btn-border-hover);
@@ -254,7 +285,7 @@
 	.buttonDefault.buttonCustomColor svg,
 	.buttonDefault.buttonColorPrimary svg,
 	.buttonDefault.buttonColorSuccess svg,
-	.buttonDefault.buttonColorInfo svg,
+	.buttonDefault.buttonColorWarning svg,
 	.buttonDefault.buttonColorDanger svg {
 		color: var(--color-constant-white);
 	}
@@ -275,7 +306,7 @@
 	.buttonDefault.buttonCustomColor .spinner,
 	.buttonDefault.buttonColorPrimary .spinner,
 	.buttonDefault.buttonColorSuccess .spinner,
-	.buttonDefault.buttonColorInfo .spinner,
+	.buttonDefault.buttonColorWarning .spinner,
 	.buttonDefault.buttonColorDanger .spinner {
 		border-top-color: var(--color-constant-white);
 	}
@@ -289,8 +320,8 @@
 		border-top-color: var(--color-success);
 	}
 
-	.buttonOutline.buttonColorInfo .spinner {
-		border-top-color: var(--color-info);
+	.buttonOutline.buttonColorWarning .spinner {
+		border-top-color: var(--color-warning);
 	}
 
 	.buttonOutline.buttonColorPrimary .spinner {
