@@ -9,6 +9,7 @@ export * as Tabs from './tabs/tabs';
 export * as Popover from './popover/popover';
 export * as Tooltip from './tooltip/tooltip';
 export { Button } from './button/button';
+export { IconButton } from './icon-button/icon-button';
 export { Alert } from './alert/alert';
 export { Text } from './text/text';
 export { Heading } from './heading/heading';
