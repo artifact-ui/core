@@ -17,18 +17,34 @@
 
 	/* Alert - Sizes */
 	.alertSize1 {
-		padding: var(--space-2);
+		padding: var(--space-1) var(--space-2);
 		font-size: var(--font-size-2);
 	}
 
 	.alertSize2 {
-		padding: var(--space-3);
+		padding: var(--space-2) var(--space-3);
 		font-size: var(--font-size-3);
 	}
 
 	.alertSize3 {
-		padding: var(--space-4);
+		padding: var(--space-2) var(--space-4);
 		font-size: var(--font-size-4);
+	}
+
+	/* Alert - Dismissible (reduce vertical padding and right padding) */
+	.alertDismissible.alertSize1 {
+		padding-block: calc(var(--space-1) - 1px);
+		padding-inline-end: var(--space-1);
+	}
+
+	.alertDismissible.alertSize2 {
+		padding-block: var(--space-1);
+		padding-inline-end: var(--space-1);
+	}
+
+	.alertDismissible.alertSize3 {
+		padding-block: var(--space-1);
+		padding-inline-end: var(--space-2);
 	}
 
 	/* Alert - Full Radius (adjust padding)  */
@@ -51,10 +67,22 @@
 		border-color: var(--color-border-default);
 	}
 
+	.alertInfo {
+		background-color: var(--color-info-bg);
+		color: var(--color-info);
+		border-color: var(--color-info);
+	}
+
 	.alertSuccess {
 		background-color: var(--color-success-bg);
 		color: var(--color-success);
 		border-color: var(--color-success);
+	}
+
+	.alertWarning {
+		background-color: var(--color-warning-bg);
+		color: var(--color-warning);
+		border-color: var(--color-warning);
 	}
 
 	.alertError {
@@ -64,9 +92,23 @@
 	}
 
 	/* Dark mode changes */
+	[data-theme='dark'] .alertDefault {
+		background-color: var(--color-bg-muted);
+	}
+
+	[data-theme='dark'] .alertInfo {
+		color: var(--blue-300);
+		border-color: var(--blue-500);
+	}
+
 	[data-theme='dark'] .alertSuccess {
 		color: var(--green-300);
 		border-color: var(--green-500);
+	}
+
+	[data-theme='dark'] .alertWarning {
+		color: var(--yellow-300);
+		border-color: var(--yellow-500);
 	}
 
 	[data-theme='dark'] .alertError {
@@ -89,19 +131,29 @@
 		height: 1.25em;
 	}
 
+	.alertDefault .iconLeft svg,
+	.alertDefault .iconRight svg {
+		color: var(--color-text-default);
+	}
+
+	.alertInfo .iconLeft svg,
+	.alertInfo .iconRight svg {
+		color: var(--color-info);
+	}
+
 	.alertSuccess .iconLeft svg,
 	.alertSuccess .iconRight svg {
 		color: var(--color-success);
 	}
 
+	.alertWarning .iconLeft svg,
+	.alertWarning .iconRight svg {
+		color: var(--color-warning);
+	}
+
 	.alertError .iconLeft svg,
 	.alertError .iconRight svg {
 		color: var(--color-error);
-	}
-
-	.alertDefault .iconLeft svg,
-	.alertDefault .iconRight svg {
-		color: var(--color-text-default);
 	}
 
 	.iconLeft,
@@ -114,6 +166,14 @@
 	.content {
 		flex: 1;
 		min-width: 0;
+	}
+
+	/* Alert - Dismiss Button */
+	.dismissButton {
+		padding: var(--space-1);
+		min-width: auto;
+		margin-left: auto;
+		align-self: center;
 	}
 
 	/* Alert - Modifiers */
