@@ -1,0 +1,117 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Testing" />
+
+# Testing
+
+Artifact UI components are built on Radix UI primitives, which require specific mocks when rendering in test environments like Vitest or Jest.
+
+## Required Test Setup
+
+Add the following to your test setup file (`test/setup.ts` or `vitest.setup.ts`):
+
+```typescript
+import { afterEach, vi } from 'vitest';
+import { cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
+// Required for Radix UI overlay components
+global.ResizeObserver =
+  global.ResizeObserver ||
+  vi.fn(() => ({
+    observe: vi.fn(),
+    unobserve: vi.fn(),
+    disconnect: vi.fn(),
+  }));
+
+// Required for Radix Select
+Element.prototype.hasPointerCapture = vi.fn(() => false);
+Element.prototype.releasePointerCapture = vi.fn();
+Element.prototype.setPointerCapture = vi.fn();
+
+afterEach(() => {
+  cleanup();
+});
+```
+
+## Why These Mocks Are Needed
+
+**ResizeObserver** - Radix overlay components (Modal, Popover, Tooltip, DropdownMenu) use ResizeObserver to position elements.
+
+**Pointer Capture APIs** - Radix Select uses `hasPointerCapture`, `setPointerCapture`, and `releasePointerCapture` for managing pointer events.
+
+## Vitest Configuration
+
+If using Vitest, reference your setup file in `vitest.config.ts`:
+
+```typescript
+import { defineConfig } from 'vitest/config';
+
+export default defineConfig({
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './test/setup.ts',
+  },
+});
+```
+
+## Jest Configuration
+
+If using Jest, replace `vi` with `jest` in your setup file, then reference it in `jest.config.js`:
+
+```typescript
+// test/setup.ts
+import { afterEach } from '@jest/globals';
+import { cleanup } from '@testing-library/react';
+import '@testing-library/jest-dom';
+
+global.ResizeObserver =
+  global.ResizeObserver ||
+  jest.fn(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+  }));
+
+Element.prototype.hasPointerCapture = jest.fn(() => false);
+Element.prototype.releasePointerCapture = jest.fn();
+Element.prototype.setPointerCapture = jest.fn();
+
+afterEach(() => {
+  cleanup();
+});
+```
+
+```javascript
+// jest.config.js
+module.exports = {
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['<rootDir>/test/setup.ts'],
+};
+```
+
+## Example Test
+
+Once setup is complete, you can render and test components:
+
+```typescript
+import { render, screen } from '@testing-library/react';
+import { Select } from '@artifact-ui/core';
+
+it('renders select component', () => {
+  render(
+    <Select.Root>
+      <Select.Trigger>
+        <Select.Value placeholder="Choose option" />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Item value="option1">Option 1</Select.Item>
+        <Select.Item value="option2">Option 2</Select.Item>
+      </Select.Content>
+    </Select.Root>
+  );
+
+  expect(screen.getByText('Choose option')).toBeInTheDocument();
+});
+```
