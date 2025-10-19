@@ -2,6 +2,7 @@ import React from 'react';
 import { ArtifactProvider } from '../src/artifact-provider';
 import type { Theme, Accent, Radius } from '../src/artifact-provider';
 import '../src/styles.css';
+import './code-theme.css';
 
 const preview = {
 	parameters: {
@@ -12,7 +13,22 @@ const preview = {
 				date: /Date$/i,
 			},
 		},
+		options: {
+			storySort: {
+				order: [
+					'Getting Started',
+					'Foundations',
+					'Components',
+					'Forms',
+					'Data Display',
+					'Feedback',
+					'Overlay',
+					'Navigation',
+				],
+			},
+		},
 	},
+	initialRoute: '/docs/getting-started--docs',
 	globalTypes: {
 		theme: {
 			defaultValue: 'light',

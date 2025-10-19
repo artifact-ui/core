@@ -1,0 +1,100 @@
+/* Syntax highlighting colors */
+:root {
+	--syntax-bg: #0d1117;
+	--syntax-text: #c9d1d9;
+	--syntax-comment: #8b949e;
+	--syntax-punctuation: #c9d1d9;
+	--syntax-property: #79c0ff;
+	--syntax-string: #a5d6ff;
+	--syntax-keyword: #ff7b72;
+	--syntax-function: #d2a8ff;
+	--syntax-variable: #ffa657;
+}
+
+/* Base Code Blocks */
+.prismjs,
+pre.prismjs,
+pre code[class*='language-'],
+div[data-radix-scroll-area-content],
+.docblock-source {
+	background-color: var(--syntax-bg) !important;
+	color: var(--syntax-text) !important;
+	box-shadow: none !important;
+}
+
+/* Story Preview Blocks */
+.sbdocs.sbdocs-preview.sb-unstyled {
+	box-shadow: var(--shadow-paper-subtle) !important;
+}
+
+/* Code Toggle Button */
+.docblock-code-toggle {
+	box-shadow: none !important;
+}
+
+/* Copy Button */
+div.docblock-source.sb-unstyled div button,
+div.docblock-source.sb-unstyled div button:focus {
+	box-shadow: none !important;
+	background: var(--syntax-bg) !important;
+	color: white !important;
+	border-radius: 0 !important;
+	border: 0 !important;
+	padding: var(--space-3) var(--space-4) !important;
+}
+
+/* Docs Table (ArgsTable) */
+tbody.docblock-argstable-body {
+	filter: none !important;
+	box-shadow: var(--shadow-paper-subtle) !important;
+}
+
+/* Syntax Colors */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--syntax-comment) !important;
+}
+
+.token.punctuation {
+	color: var(--syntax-punctuation) !important;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+	color: var(--syntax-property) !important;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: var(--syntax-string) !important;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: var(--syntax-keyword) !important;
+}
+
+.token.function,
+.token.class-name {
+	color: var(--syntax-function) !important;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: var(--syntax-variable) !important;
+}
