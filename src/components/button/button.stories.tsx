@@ -4,7 +4,7 @@ import { SearchIcon } from '../../icons';
 import { Flex } from '../layout/flex';
 
 const meta: Meta<typeof Button> = {
-	title: 'Artifact/Button',
+	title: 'Components/Button',
 	component: Button,
 	parameters: {
 		layout: 'centered',

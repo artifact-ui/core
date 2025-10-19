@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Skeleton, SkeletonText } from './skeleton';
 
 const meta = {
-	title: 'Artifact/Skeleton',
+	title: 'Data Display/Skeleton',
 	component: Skeleton,
 	parameters: {
 		layout: 'padded',

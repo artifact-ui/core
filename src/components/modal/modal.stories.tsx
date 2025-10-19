@@ -5,7 +5,7 @@ import { Text } from '../text/text';
 import { useState } from 'react';
 
 const meta: Meta<typeof Modal.Root> = {
-	title: 'Artifact/Modal',
+	title: 'Overlay/Modal',
 	component: Modal.Root,
 	parameters: {
 		layout: 'centered',

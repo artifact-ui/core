@@ -5,7 +5,7 @@ import { Flex } from '../layout/flex';
 import { Text } from '../text/text';
 
 const meta: Meta<typeof Separator> = {
-	title: 'Artifact/Separator',
+	title: 'Data Display/Separator',
 	component: Separator,
 	parameters: {
 		layout: 'centered',

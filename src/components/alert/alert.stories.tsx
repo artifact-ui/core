@@ -4,7 +4,7 @@ import { Alert } from './alert';
 import { Stack } from '../layout/stack';
 
 const meta: Meta<typeof Alert> = {
-	title: 'Artifact/Alert',
+	title: 'Feedback/Alert',
 	component: Alert,
 	parameters: {
 		layout: 'centered',

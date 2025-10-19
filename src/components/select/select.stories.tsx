@@ -3,7 +3,7 @@ import * as Select from './select';
 import { Stack } from '../layout/stack';
 
 const meta: Meta<typeof Select.Root> = {
-	title: 'Artifact/Select',
+	title: 'Forms/Select',
 	component: Select.Root,
 	parameters: {
 		layout: 'centered',

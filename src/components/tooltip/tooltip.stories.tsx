@@ -3,7 +3,7 @@ import * as Tooltip from './tooltip';
 import { Button } from '../button/button';
 
 const meta = {
-	title: 'Artifact/Tooltip',
+	title: 'Feedback/Tooltip',
 	component: Tooltip.Content,
 	parameters: {
 		layout: 'centered',

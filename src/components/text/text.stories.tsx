@@ -4,7 +4,7 @@ import { Stack } from '../layout/stack';
 import { CheckIcon } from '../../icons';
 
 const meta: Meta<typeof Text> = {
-	title: 'Artifact/Text',
+	title: 'Foundations/Text',
 	component: Text,
 	parameters: {
 		layout: 'centered',

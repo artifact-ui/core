@@ -4,7 +4,7 @@ import { Flex } from '../layout/flex';
 import { CheckIcon } from '../../icons';
 
 const meta: Meta<typeof Badge> = {
-	title: 'Artifact/Badge',
+	title: 'Data Display/Badge',
 	component: Badge,
 	parameters: {
 		layout: 'centered',

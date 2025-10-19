@@ -6,7 +6,7 @@ import { Stack } from '../layout/stack';
 import { Text } from '../text/text';
 
 const meta: Meta<typeof IconButton> = {
-	title: 'Artifact/IconButton',
+	title: 'Components/IconButton',
 	component: IconButton,
 	parameters: {
 		layout: 'centered',

@@ -4,7 +4,7 @@ import * as TextField from './textfield';
 import { SearchIcon } from '../../icons';
 
 const meta = {
-	title: 'Artifact/TextField',
+	title: 'Forms/TextField',
 	component: TextField.Standalone,
 	parameters: {
 		layout: 'centered',

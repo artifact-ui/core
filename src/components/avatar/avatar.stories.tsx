@@ -6,7 +6,7 @@ import { Flex } from '../layout/flex';
 import { Stack } from '../layout/stack';
 
 const meta = {
-	title: 'Artifact/Avatar',
+	title: 'Data Display/Avatar',
 	component: Avatar,
 	parameters: {
 		layout: 'padded',

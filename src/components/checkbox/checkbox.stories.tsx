@@ -4,7 +4,7 @@ import { Text } from '../text/text';
 import { Stack } from '../layout/stack';
 
 const meta = {
-	title: 'Artifact/Checkbox',
+	title: 'Forms/Checkbox',
 	component: Checkbox,
 	parameters: {
 		layout: 'centered',

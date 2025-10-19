@@ -5,7 +5,7 @@ import { Button } from '../button/button';
 import { Grid } from '../layout/grid';
 
 const meta: Meta<typeof Toast> = {
-	title: 'Artifact/Toast',
+	title: 'Feedback/Toast',
 	component: Toast,
 	parameters: {
 		layout: 'fullscreen',
