@@ -6,7 +6,7 @@ import { Heading } from '../heading/heading';
 import { Flex } from '../layout/flex';
 
 const meta: Meta<typeof Card.Root> = {
-	title: 'Artifact/Card',
+	title: 'Data Display/Card',
 	component: Card.Root,
 	parameters: {
 		layout: 'centered',

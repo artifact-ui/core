@@ -5,7 +5,7 @@ import { Text } from '../text/text';
 import { useState } from 'react';
 
 const meta: Meta<typeof Tabs.Root> = {
-	title: 'Artifact/Tabs',
+	title: 'Navigation/Tabs',
 	component: Tabs.Root,
 	parameters: {
 		layout: 'centered',

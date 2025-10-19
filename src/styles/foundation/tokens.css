@@ -55,6 +55,13 @@
 	--icon-lg: 2rem; /* 32px */
 	--icon-xl: 3rem; /* 48px */
 
+	/* Avatars */
+	--avatar-1: 1rem; /* 16px */
+	--avatar-2: 1.5rem; /* 24px */
+	--avatar-3: 2rem; /* 32px */
+	--avatar-4: 3rem; /* 48px */
+	--avatar-5: 4rem; /* 64px */
+
 	/* Border radius */
 	--radius-1: 0.125rem; /* 2px */
 	--radius-2: 0.25rem; /* 4px */
@@ -68,7 +75,9 @@
 		0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 1px 0 rgba(0, 0, 0, 0.1),
 		0 2px 1px -1px rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 	--shadow-spread: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+	--shadow-paper-subtle: 0px 4px 0px -2px rgba(0, 0, 0, 0.1);
 	--shadow-paper: 0px 8px 0px -6px rgba(0, 0, 0, 0.1);
+	--shadow-paper-raised: 0px 2px 0px 1px rgba(0, 0, 0, 0.1);
 
 	/* Z-Index */
 	--z-base: 0;
@@ -86,6 +95,7 @@
 
 	/* Animations */
 	--animation-spin: spin 1s linear infinite;
+	--animation-skeleton-shine: skeleton-shine 1.5s linear infinite;
 
 	/* Effects */
 	--color-overlay: rgba(0, 0, 0, 0.5);
@@ -260,5 +270,14 @@
 	}
 	to {
 		transform: rotate(360deg);
+	}
+}
+
+@keyframes skeleton-shine {
+	0% {
+		background-position: -500px 0;
+	}
+	100% {
+		background-position: 500px 0;
 	}
 }

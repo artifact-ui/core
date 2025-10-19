@@ -1,11 +1,12 @@
 import React, { forwardRef } from 'react';
-import { CheckIcon, CircleAlertIcon, InfoIcon } from '../../icons';
+import { CheckIcon, CircleAlertIcon, InfoIcon, CloseIcon } from '../../icons';
+import { IconButton } from '../icon-button/icon-button';
 import { cn } from '../../utils/cn';
 import { Radius } from '../../types/style-props';
 import { radiusClasses } from '../../styles/shared/shared-styles';
 import styles from './alert.module.css';
 
-type AlertVariant = 'default' | 'success' | 'error';
+type AlertVariant = 'default' | 'info' | 'success' | 'warning' | 'error';
 type AlertSize = '1' | '2' | '3';
 
 export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -15,13 +16,31 @@ export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
 	shadow?: false | 'classic' | 'spread' | 'paper';
 	iconLeft?: React.ReactNode;
 	iconRight?: React.ReactNode;
+	dismissible?: boolean;
+	onDismiss?: () => void;
 	override?: boolean;
 }
 
 const defaultIconMap = {
 	default: InfoIcon,
+	info: InfoIcon,
 	success: CheckIcon,
+	warning: CircleAlertIcon,
 	error: CircleAlertIcon,
+} as const;
+
+const dismissButtonSizeMap = {
+	'1': '1',
+	'2': '2',
+	'3': '3',
+} as const;
+
+const dismissButtonColorMap = {
+	default: 'neutral',
+	info: 'info',
+	success: 'success',
+	warning: 'warning',
+	error: 'danger',
 } as const;
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(
@@ -33,6 +52,8 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
 			shadow = false,
 			iconLeft,
 			iconRight,
+			dismissible,
+			onDismiss,
 			override = false,
 			className,
 			children,
@@ -47,7 +68,9 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
 
 		const variantClasses = {
 			default: styles.alertDefault,
+			info: styles.alertInfo,
 			success: styles.alertSuccess,
+			warning: styles.alertWarning,
 			error: styles.alertError,
 		};
 
@@ -69,6 +92,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
 			sizeClasses[size],
 			radius && radiusClasses[radius],
 			shadow && shadowClasses[shadow],
+			dismissible && onDismiss && styles.alertDismissible,
 			override && 'aow',
 			className,
 		);
@@ -78,6 +102,17 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>(
 				{leftIcon && <span className={styles.iconLeft}>{leftIcon}</span>}
 
 				<div className={styles.content}>{children}</div>
+
+				{dismissible && onDismiss && (
+					<IconButton
+						icon={<CloseIcon />}
+						label="Dismiss alert"
+						size={dismissButtonSizeMap[size]}
+						color={dismissButtonColorMap[variant]}
+						onClick={onDismiss}
+						className={styles.dismissButton}
+					/>
+				)}
 
 				{iconRight && <span className={styles.iconRight}>{iconRight}</span>}
 			</div>

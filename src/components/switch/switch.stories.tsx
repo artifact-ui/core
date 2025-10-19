@@ -5,7 +5,7 @@ import { Flex } from '../layout/flex';
 import { Text } from '../text/text';
 
 const meta: Meta<typeof Switch> = {
-	title: 'Artifact/Switch',
+	title: 'Forms/Switch',
 	component: Switch,
 	parameters: {
 		layout: 'centered',

@@ -1,0 +1,150 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Getting Started" />
+
+# Getting Started
+
+Artifact UI is a React component library built on Radix UI primitives with theming support.
+
+## Installation
+
+Install the package via npm:
+
+```bash
+npm install @artifact-ui/core
+```
+
+## Setup
+
+### 1. Import Styles
+
+Import the global stylesheet in your app entry point (e.g., `main.tsx` or `App.tsx`):
+
+```tsx
+import '@artifact-ui/core/styles.css';
+```
+
+**Using CSS Layers?**
+
+If your project uses CSS Cascade Layers, import the layers version:
+
+```tsx
+import '@artifact-ui/core/layers.css';
+```
+
+### 2. Wrap Your App with ArtifactProvider
+
+Wrap your app with `ArtifactProvider` to enable theming:
+
+```tsx
+import { ArtifactProvider } from '@artifact-ui/core';
+
+function App() {
+  return (
+    <ArtifactProvider theme="light" accent="obsidian" radius="medium">
+      {/* Your app components */}
+    </ArtifactProvider>
+  );
+}
+```
+
+### 3. Start Using Components
+
+Import and use components:
+
+```tsx
+import { Button, Card, Heading, Text } from '@artifact-ui/core';
+
+function Example() {
+  return (
+    <Card.Root>
+      <Card.Header>
+        <Heading>Welcome to Artifact UI</Heading>
+      </Card.Header>
+      <Card.Body>
+        <Text color="secondary">
+          A modern component library built with accessibility in mind.
+        </Text>
+        <Button color="primary">Get Started</Button>
+      </Card.Body>
+    </Card.Root>
+  );
+}
+```
+
+## Theming
+
+Customize your app's appearance with three theme settings:
+
+### Theme (Color Mode)
+
+- `light` - Light mode
+- `dark` - Dark mode
+- `system` (default) - Automatically matches system preference
+
+### Accent Colors
+
+Choose from 10 accent colors:
+
+`obsidian` (default), `sage`, `twilight`, `canopy`, `blush`, `clay`, `amber`, `crimson`, `patina`, `meridian`
+
+### Border Radius
+
+Select from 5 radius presets:
+
+`none`, `small`, `medium` (default), `large`, `full`
+
+### Example Configuration
+
+```tsx
+<ArtifactProvider theme="dark" accent="twilight" radius="large">
+  {children}
+</ArtifactProvider>
+```
+
+### Dynamic Theme Switching
+
+Update theme dynamically by changing provider props:
+
+```tsx
+import { useState } from 'react';
+import { ArtifactProvider, Button } from '@artifact-ui/core';
+
+function App() {
+  const [theme, setTheme] = useState('light');
+
+  return (
+    <ArtifactProvider theme={theme} accent="obsidian" radius="medium">
+      <Button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+        Toggle Theme
+      </Button>
+    </ArtifactProvider>
+  );
+}
+```
+
+## Component Categories
+
+Components are organized by category in the sidebar:
+
+- **Foundations** - Text, Heading
+- **Components** - Button, IconButton
+- **Forms** - TextField, TextArea, Select, Checkbox, Switch
+- **Data Display** - Table, Card, Badge, Avatar, Separator, Skeleton
+- **Feedback** - Alert, Toast, Tooltip, Progress
+- **Overlay** - Modal, Popover, DropdownMenu
+- **Navigation** - Tabs
+- **Layout** - Box, Flex, Grid, Stack
+
+## Features
+
+- **Themeable** - 10 accent colors, 5 radius presets, light/dark mode
+- **Accessible** - Built on Radix UI primitives with ARIA support
+- **Tree-shakeable** - Import only what you need
+- **TypeScript** - Full type definitions included
+- **Composable** - Flexible component APIs with compound patterns
+- **CSS Layers** - Optional layers version for better cascade control
+
+## Next Steps
+
+Check out the component categories in the sidebar for interactive examples and API docs.

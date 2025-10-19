@@ -3,7 +3,7 @@ import * as TextArea from './textarea';
 import { Form } from 'radix-ui';
 
 const meta: Meta<typeof TextArea.Input> = {
-	title: 'Artifact/TextArea',
+	title: 'Forms/TextArea',
 	component: TextArea.Input,
 	parameters: {
 		layout: 'centered',

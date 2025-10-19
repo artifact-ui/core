@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import * as Table from './table';
 
 const meta: Meta<typeof Table.Root> = {
-	title: 'Artifact/Table',
+	title: 'Data Display/Table',
 	component: Table.Root,
 	parameters: {
 		layout: 'padded',

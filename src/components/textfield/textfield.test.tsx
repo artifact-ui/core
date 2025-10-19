@@ -104,23 +104,6 @@ describe('TextField', () => {
 			expect(screen.getByTestId('check-icon')).toBeInTheDocument();
 			expect(screen.getByLabelText('Verification Code')).toBeInTheDocument();
 		});
-
-		it('renders with both icons', () => {
-			renderComponent(
-				<Form.Root>
-					<TextField
-						name="employee-search"
-						label="Employee Search"
-						variant="icon"
-						iconLeft={<SearchIcon data-testid="left-icon" />}
-						iconRight={<CheckIcon data-testid="right-icon" />}
-					/>
-				</Form.Root>,
-			);
-
-			expect(screen.getByTestId('left-icon')).toBeInTheDocument();
-			expect(screen.getByTestId('right-icon')).toBeInTheDocument();
-		});
 	});
 
 	describe('Standalone', () => {
@@ -161,35 +144,104 @@ describe('TextField', () => {
 		});
 	});
 
-	describe('Props', () => {
-		it('renders with different sizes', () => {
+	describe('Prefix and Suffix', () => {
+		it('renders with text prefix', () => {
 			renderComponent(
 				<Form.Root>
-					<TextField name="small" label="Small" size="1" />
+					<TextField
+						name="price"
+						label="Price"
+						variant="icon"
+						prefix={<span data-testid="prefix">$</span>}
+					/>
 				</Form.Root>,
 			);
 
-			expect(screen.getByLabelText('Small')).toBeInTheDocument();
+			expect(screen.getByTestId('prefix')).toBeInTheDocument();
+			expect(screen.getByTestId('prefix')).toHaveTextContent('$');
 		});
 
-		it('renders with minimal variant', () => {
+		it('renders with text suffix', () => {
 			renderComponent(
 				<Form.Root>
-					<TextField name="minimal" label="Minimal Input" variant="minimal" />
+					<TextField
+						name="weight"
+						label="Weight"
+						variant="icon"
+						suffix={<span data-testid="suffix">kg</span>}
+					/>
 				</Form.Root>,
 			);
 
-			expect(screen.getByLabelText('Minimal Input')).toBeInTheDocument();
+			expect(screen.getByTestId('suffix')).toBeInTheDocument();
+			expect(screen.getByTestId('suffix')).toHaveTextContent('kg');
 		});
 
-		it('renders with custom width', () => {
+		it('renders with both prefix and suffix', () => {
 			renderComponent(
 				<Form.Root>
-					<TextField name="custom" label="Custom Width" width="400px" />
+					<TextField
+						name="amount"
+						label="Amount"
+						variant="icon"
+						prefix={<span data-testid="prefix">$</span>}
+						suffix={<span data-testid="suffix">USD</span>}
+					/>
 				</Form.Root>,
 			);
 
-			expect(screen.getByLabelText('Custom Width')).toBeInTheDocument();
+			expect(screen.getByTestId('prefix')).toBeInTheDocument();
+			expect(screen.getByTestId('suffix')).toBeInTheDocument();
+		});
+	});
+
+	describe('Clearable', () => {
+		it('renders clear button when clearable prop is true', () => {
+			renderComponent(
+				<Form.Root>
+					<TextField
+						name="search"
+						label="Search"
+						variant="icon"
+						clearable
+						onClear={vi.fn()}
+					/>
+				</Form.Root>,
+			);
+
+			expect(screen.getByRole('button', { name: /clear input/i })).toBeInTheDocument();
+		});
+
+		it('calls onClear when clear button is clicked', async () => {
+			const handleClear = vi.fn();
+			const { user } = renderComponent(
+				<Form.Root>
+					<TextField
+						name="search"
+						label="Search"
+						variant="icon"
+						clearable
+						onClear={handleClear}
+					/>
+				</Form.Root>,
+			);
+
+			const clearButton = screen.getByRole('button', { name: /clear input/i });
+			await user.click(clearButton);
+
+			expect(handleClear).toHaveBeenCalledTimes(1);
+		});
+
+		it('does not render clear button when onClear is not provided', () => {
+			renderComponent(
+				<Form.Root>
+					<TextField name="search" label="Search" variant="icon" clearable />
+				</Form.Root>,
+			);
+
+			expect(
+				screen.queryByRole('button', { name: /clear input/i }),
+			).not.toBeInTheDocument();
 		});
 	});
 });

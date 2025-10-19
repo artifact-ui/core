@@ -4,7 +4,7 @@ import { Stack } from '../layout/stack';
 import { UserIcon } from '../../icons';
 
 const meta: Meta<typeof Heading> = {
-	title: 'Artifact/Heading',
+	title: 'Foundations/Heading',
 	component: Heading,
 	parameters: {
 		layout: 'centered',

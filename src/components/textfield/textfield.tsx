@@ -6,10 +6,12 @@ import { type RadixInputType, type RadixFormMatchType } from '../../types/radix-
 import { type FormError } from '../../types/form-types';
 import { getErrorState, getErrorMessage } from '../../utils/form-error-helpers';
 import { radiusClasses } from '../../styles/shared/shared-styles';
+import { CloseIcon } from '../../icons';
+import { IconButton } from '../icon-button/icon-button';
 import styles from './textfield.module.css';
 
 export interface TextFieldProps
-	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
+	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'prefix'> {
 	variant?: 'default' | 'minimal' | 'icon';
 	size?: '1' | '2' | '3' | '4';
 	radius?: Radius;
@@ -19,6 +21,10 @@ export interface TextFieldProps
 	message?: string;
 	iconLeft?: React.ReactNode;
 	iconRight?: React.ReactNode;
+	prefix?: React.ReactNode;
+	suffix?: React.ReactNode;
+	clearable?: boolean;
+	onClear?: () => void;
 	width?: string;
 	match?: RadixFormMatchType;
 	compact?: boolean;
@@ -100,6 +106,13 @@ const Message = forwardRef<
 
 Message.displayName = 'TextFieldMessage';
 
+const buttonSizeMap = {
+	'1': '1',
+	'2': '1',
+	'3': '2',
+	'4': '3',
+} as const;
+
 const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 	(
 		{
@@ -111,6 +124,10 @@ const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 			className,
 			iconLeft,
 			iconRight,
+			prefix,
+			suffix,
+			clearable,
+			onClear,
 			label,
 			message,
 			name,
@@ -171,14 +188,25 @@ const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 			override && 'aow',
 		);
 
-		if (variant === 'icon' && (iconLeft || iconRight)) {
+		if (variant === 'icon' && (iconLeft || iconRight || prefix || suffix || clearable)) {
 			return (
 				<Root name={name} className={rootClassName} style={rootStyle}>
 					{label && <Label>{label}</Label>}
 					<div className={cn(styles.inputContainer, radius && radiusClasses[radius])}>
+						{prefix && <Slot side="left">{prefix}</Slot>}
 						{iconLeft && <Slot side="left">{iconLeft}</Slot>}
 						{input}
+						{clearable && onClear && (
+							<IconButton
+								icon={<CloseIcon />}
+								label="Clear input"
+								size={buttonSizeMap[size]}
+								onClick={onClear}
+								className={styles.clearButton}
+							/>
+						)}
 						{iconRight && <Slot side="right">{iconRight}</Slot>}
+						{suffix && <Slot side="right">{suffix}</Slot>}
 					</div>
 					{errorMessage && (
 						<Message id={errorId} match={match}>
@@ -206,10 +234,8 @@ const Input = forwardRef<HTMLInputElement, TextFieldProps>(
 	},
 );
 
-// forwardRef loses the function name, so set displayName for React DevTools
 Input.displayName = 'TextFieldInput';
 
-// For standalone usage without form context
 const Standalone = forwardRef<
 	HTMLInputElement,
 	Omit<TextFieldProps, 'name'> & { name?: string }
@@ -224,6 +250,10 @@ const Standalone = forwardRef<
 			className,
 			iconLeft,
 			iconRight,
+			prefix,
+			suffix,
+			clearable,
+			onClear,
 			width,
 			compact = false,
 			collapsibleError = false,
@@ -267,15 +297,26 @@ const Standalone = forwardRef<
 			override && 'aow',
 		);
 
-		if (variant === 'icon' && (iconLeft || iconRight)) {
+		if (variant === 'icon' && (iconLeft || iconRight || prefix || suffix || clearable)) {
 			return (
 				<div
 					className={cn(styles.rootIcon, containerClass, radius && radiusClasses[radius])}
 					style={rootStyle}>
 					<div className={cn(styles.inputContainer, radius && radiusClasses[radius])}>
+						{prefix && <Slot side="left">{prefix}</Slot>}
 						{iconLeft && <Slot side="left">{iconLeft}</Slot>}
 						<input ref={ref} type={type} className={inputClasses} {...props} />
+						{clearable && onClear && (
+							<IconButton
+								icon={<CloseIcon />}
+								label="Clear input"
+								size={buttonSizeMap[size]}
+								onClick={onClear}
+								className={styles.clearButton}
+							/>
+						)}
 						{iconRight && <Slot side="right">{iconRight}</Slot>}
+						{suffix && <Slot side="right">{suffix}</Slot>}
 					</div>
 					{errorMessage &&
 						(collapsibleError ? (
@@ -315,8 +356,6 @@ const Standalone = forwardRef<
 	},
 );
 
-// forwardRef loses the function name, so set displayName for React DevTools
 Standalone.displayName = 'TextFieldStandalone';
 
-// Export components
 export { Root, Input, Standalone, Label, Message, Slot };

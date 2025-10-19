@@ -5,7 +5,7 @@ import { Text } from '../text/text';
 import { Flex } from '../layout/flex';
 
 const meta: Meta<typeof Popover.Root> = {
-	title: 'Artifact/Popover',
+	title: 'Overlay/Popover',
 	component: Popover.Root,
 	parameters: {
 		layout: 'centered',

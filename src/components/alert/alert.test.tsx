@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { screen } from '@testing-library/react';
 import { renderComponent } from '@/tests/test-utils';
 import { Alert } from './alert';
@@ -32,9 +32,29 @@ describe('Alert', () => {
 	});
 
 	describe('Default Icons', () => {
+		it('renders InfoIcon for info variant', () => {
+			const { container } = renderComponent(
+				<Alert variant="info">New updates available</Alert>,
+			);
+
+			const icon = container.querySelector('svg');
+
+			expect(icon).toBeInTheDocument();
+		});
+
 		it('renders CheckIcon for success variant', () => {
 			const { container } = renderComponent(
 				<Alert variant="success">Client profile updated successfully</Alert>,
+			);
+
+			const icon = container.querySelector('svg');
+
+			expect(icon).toBeInTheDocument();
+		});
+
+		it('renders CircleAlertIcon for warning variant', () => {
+			const { container } = renderComponent(
+				<Alert variant="warning">Session expiring soon</Alert>,
 			);
 
 			const icon = container.querySelector('svg');
@@ -120,8 +140,24 @@ describe('Alert', () => {
 			expect(alert).toBeInTheDocument();
 		});
 
+		it('renders info variant', () => {
+			renderComponent(<Alert variant="info">System maintenance scheduled</Alert>);
+
+			const alert = screen.getByRole('alert');
+
+			expect(alert).toBeInTheDocument();
+		});
+
 		it('renders success variant', () => {
 			renderComponent(<Alert variant="success">Data sync completed</Alert>);
+
+			const alert = screen.getByRole('alert');
+
+			expect(alert).toBeInTheDocument();
+		});
+
+		it('renders warning variant', () => {
+			renderComponent(<Alert variant="warning">Disk space running low</Alert>);
 
 			const alert = screen.getByRole('alert');
 
@@ -134,6 +170,40 @@ describe('Alert', () => {
 			const alert = screen.getByRole('alert');
 
 			expect(alert).toBeInTheDocument();
+		});
+	});
+
+	describe('Dismissible', () => {
+		it('renders dismiss button when dismissible is true', () => {
+			renderComponent(
+				<Alert dismissible onDismiss={vi.fn()}>
+					System notification
+				</Alert>,
+			);
+
+			expect(screen.getByRole('button', { name: /dismiss alert/i })).toBeInTheDocument();
+		});
+
+		it('calls onDismiss when dismiss button is clicked', async () => {
+			const handleDismiss = vi.fn();
+			const { user } = renderComponent(
+				<Alert dismissible onDismiss={handleDismiss}>
+					System notification
+				</Alert>,
+			);
+
+			const dismissButton = screen.getByRole('button', { name: /dismiss alert/i });
+			await user.click(dismissButton);
+
+			expect(handleDismiss).toHaveBeenCalledTimes(1);
+		});
+
+		it('does not render dismiss button when onDismiss is not provided', () => {
+			renderComponent(<Alert dismissible>System notification</Alert>);
+
+			expect(
+				screen.queryByRole('button', { name: /dismiss alert/i }),
+			).not.toBeInTheDocument();
 		});
 	});
 });

@@ -4,7 +4,7 @@ import { SearchIcon } from '../../icons';
 import { Flex } from '../layout/flex';
 
 const meta: Meta<typeof Button> = {
-	title: 'Artifact/Button',
+	title: 'Components/Button',
 	component: Button,
 	parameters: {
 		layout: 'centered',
@@ -18,7 +18,7 @@ const meta: Meta<typeof Button> = {
 		},
 		color: {
 			control: 'select',
-			options: ['primary', 'neutral', 'info', 'success', 'danger'],
+			options: ['primary', 'neutral', 'success', 'warning', 'danger'],
 			description: 'Semantic color',
 		},
 		size: {
@@ -40,29 +40,11 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Default: Story = {
 	args: {
 		children: 'Submit',
 		variant: 'default',
 		color: 'primary',
-		size: '2',
-	},
-};
-
-export const Outline: Story = {
-	args: {
-		children: 'Cancel',
-		variant: 'outline',
-		color: 'neutral',
-		size: '2',
-	},
-};
-
-export const Danger: Story = {
-	args: {
-		children: 'Delete',
-		variant: 'default',
-		color: 'danger',
 		size: '2',
 	},
 };
@@ -87,13 +69,25 @@ export const Loading: Story = {
 	},
 };
 
+export const AllSizes: Story = {
+	render: () => (
+		<Flex gap="4" align="center">
+			<Button size="1">Size 1</Button>
+			<Button size="2">Size 2</Button>
+			<Button size="3">Size 3</Button>
+		</Flex>
+	),
+};
+
 export const AllVariants: Story = {
 	render: () => (
 		<Flex gap="4" align="center" style={{ flexWrap: 'wrap' }}>
 			<Button variant="default">Default</Button>
 			<Button variant="outline">Outline</Button>
 			<Button variant="ghost">Ghost</Button>
-			<Button color="danger">Delete</Button>
+			<Button color="success">Success</Button>
+			<Button color="warning">Warning</Button>
+			<Button color="danger">Danger</Button>
 			<Button iconLeft={<SearchIcon />}>Search</Button>
 			<Button loading>Loading</Button>
 		</Flex>

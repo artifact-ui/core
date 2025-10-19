@@ -9,6 +9,7 @@ export * as Tabs from './tabs/tabs';
 export * as Popover from './popover/popover';
 export * as Tooltip from './tooltip/tooltip';
 export { Button } from './button/button';
+export { IconButton } from './icon-button/icon-button';
 export { Alert } from './alert/alert';
 export { Text } from './text/text';
 export { Heading } from './heading/heading';
@@ -16,6 +17,10 @@ export { Separator } from './separator/separator';
 export { Badge } from './badge/badge';
 export { Switch } from './switch/switch';
 export { Checkbox } from './checkbox/checkbox';
+export { Skeleton, SkeletonText } from './skeleton/skeleton';
+export { Avatar } from './avatar/avatar';
+export { Toast, ToastProvider } from './toast/toast';
+export { Progress } from './progress/progress';
 
 // Layout components
 export { Stack } from './layout/stack';

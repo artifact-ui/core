@@ -1,0 +1,247 @@
+/* Artifact UI - Toast Component */
+
+@layer components {
+	/* Toast - Root */
+	.toast {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-3);
+		border-radius: var(--radius-default);
+		border: 1px solid;
+		font-size: var(--font-size-3);
+		font-weight: var(--font-weight-normal);
+		line-height: 1.4;
+		min-width: 300px;
+		max-width: 420px;
+		box-shadow: var(--shadow-paper);
+		background-color: var(--color-bg-default);
+	}
+
+	.toast[data-state='open'] {
+		animation: slideIn 200ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.toast[data-state='closed'] {
+		animation: slideOut 150ms ease-in;
+	}
+
+	.toast[data-swipe='move'] {
+		transform: translateX(var(--radix-toast-swipe-move-x));
+	}
+
+	.toast[data-swipe='cancel'] {
+		transform: translateX(0);
+		transition: transform 200ms ease-out;
+	}
+
+	.toast[data-swipe='end'] {
+		animation: swipeOut 100ms ease-out;
+	}
+
+	/* Toast - Content Layout */
+	.toastContent {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-2);
+		width: 100%;
+	}
+
+	.textContent {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.toastTitle {
+		font-size: var(--font-size-3);
+		font-weight: var(--font-weight-semibold);
+		line-height: 1.4;
+		margin: 0;
+	}
+
+	.toastDescription {
+		font-size: var(--font-size-2);
+		color: var(--color-text-secondary);
+		line-height: 1.4;
+		margin-top: var(--space-1);
+	}
+
+	/* Toast - Icon */
+	.iconLeft {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		margin-top: 2px;
+	}
+
+	.iconLeft svg {
+		width: var(--icon-match);
+		height: var(--icon-match);
+	}
+
+	/* Toast - Close Button */
+	.closeButton {
+		flex-shrink: 0;
+		margin-top: -2px;
+		margin-right: -4px;
+	}
+
+	/* Toast - Variants */
+	.toastDefault {
+		background-color: var(--color-bg-default);
+		color: var(--color-text-default);
+		border-color: var(--color-border-default);
+	}
+
+	.toastInfo {
+		background-color: var(--color-info-bg);
+		color: var(--color-info);
+		border-color: var(--color-info);
+	}
+
+	.toastSuccess {
+		background-color: var(--color-success-bg);
+		color: var(--color-success);
+		border-color: var(--color-success);
+	}
+
+	.toastWarning {
+		background-color: var(--color-warning-bg);
+		color: var(--color-warning);
+		border-color: var(--color-warning);
+	}
+
+	.toastError {
+		background-color: var(--color-error-bg);
+		color: var(--color-error);
+		border-color: var(--color-error);
+	}
+
+	/* Dark mode adjustments */
+	[data-theme='dark'] .toastDefault {
+		background-color: var(--color-bg-muted);
+	}
+
+	[data-theme='dark'] .toastInfo {
+		color: var(--blue-300);
+		border-color: var(--blue-500);
+	}
+
+	[data-theme='dark'] .toastSuccess {
+		color: var(--green-300);
+		border-color: var(--green-500);
+	}
+
+	[data-theme='dark'] .toastWarning {
+		color: var(--yellow-300);
+		border-color: var(--yellow-500);
+	}
+
+	[data-theme='dark'] .toastError {
+		color: var(--red-400);
+		border-color: var(--red-500);
+	}
+
+	/* Toast - Full Radius (adjust padding) */
+	[data-radius='full'] .toast {
+		padding-inline: var(--space-6);
+	}
+
+	/* Toast - Icon Colors */
+	.toastDefault .iconLeft svg {
+		color: var(--color-text-default);
+	}
+
+	.toastInfo .iconLeft svg {
+		color: var(--color-info);
+	}
+
+	.toastSuccess .iconLeft svg {
+		color: var(--color-success);
+	}
+
+	.toastWarning .iconLeft svg {
+		color: var(--color-warning);
+	}
+
+	.toastError .iconLeft svg {
+		color: var(--color-error);
+	}
+
+	/* Viewport - Positioning */
+	.viewport {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+		max-width: 100vw;
+		padding: var(--space-4);
+		z-index: 9999;
+		outline: none;
+	}
+
+	.viewportTopLeft {
+		top: 0;
+		left: 0;
+	}
+
+	.viewportTopCenter {
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.viewportTopRight {
+		top: 0;
+		right: 0;
+	}
+
+	.viewportBottomLeft {
+		bottom: 0;
+		left: 0;
+	}
+
+	.viewportBottomCenter {
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.viewportBottomRight {
+		bottom: 0;
+		right: 0;
+	}
+
+	/* Animations */
+	@keyframes slideIn {
+		from {
+			transform: translateY(calc(100% + var(--space-4)));
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	@keyframes slideOut {
+		from {
+			transform: translateY(0);
+			opacity: 1;
+		}
+		to {
+			transform: translateY(calc(100% + var(--space-4)));
+			opacity: 0;
+		}
+	}
+
+	@keyframes swipeOut {
+		from {
+			transform: translateX(var(--radix-toast-swipe-end-x));
+		}
+		to {
+			transform: translateX(calc(100% + var(--space-4)));
+		}
+	}
+}
