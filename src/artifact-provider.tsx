@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 
 export type Theme = 'light' | 'dark';
 export type Accent =
@@ -21,6 +21,7 @@ export interface ArtifactProviderProps {
 	theme?: Theme;
 	accent?: Accent;
 	radius?: Radius;
+	storageKey?: string;
 }
 
 export const ArtifactProvider = ({
@@ -28,17 +29,24 @@ export const ArtifactProvider = ({
 	theme,
 	accent = 'obsidian',
 	radius = 'medium',
+	storageKey = 'artifact-theme',
 }: ArtifactProviderProps) => {
-	useEffect(() => {
-		if (theme) {
-			document.documentElement.setAttribute('data-theme', theme);
-		} else {
-			document.documentElement.removeAttribute('data-theme');
-		}
+	useLayoutEffect(() => {
+		const stored = localStorage.getItem(storageKey) as Theme | null;
+		const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+			? 'dark'
+			: 'light';
 
+		const resolvedTheme = theme ?? stored ?? systemTheme;
+
+		document.documentElement.setAttribute('data-theme', resolvedTheme);
 		document.documentElement.setAttribute('data-accent', accent);
 		document.documentElement.setAttribute('data-radius', radius);
-	}, [theme, accent, radius]);
+
+		if (theme) {
+			localStorage.setItem(storageKey, theme);
+		}
+	}, [theme, accent, radius, storageKey]);
 
 	return <>{children}</>;
 };
