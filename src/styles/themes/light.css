@@ -49,7 +49,7 @@
 	--color-focus: var(--gray-100);
 }
 
-/*  Light theme set via data-attribute */
+/* Light theme override */
 [data-theme='light'] {
 	/* Light theme shadows */
 	--shadow-classic:

@@ -13,6 +13,10 @@ import './styles/themes/radius.css';
 export { ArtifactProvider } from './artifact-provider';
 export type { Theme, Accent, Radius, ArtifactProviderProps } from './artifact-provider';
 
+// Script (SSR/SSG flash prevention)
+export { ArtifactScript } from './artifact-script';
+export type { ArtifactScriptProps } from './artifact-script';
+
 // Components
 export * from './components';
 
