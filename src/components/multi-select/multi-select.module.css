@@ -1,0 +1,346 @@
+/* Artifact UI - MultiSelect */
+
+@layer components {
+	/* Trigger */
+	.trigger {
+		all: unset;
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5em;
+		font-family: var(--font-family);
+		font-size: var(--font-size-2);
+		line-height: 1;
+		font-weight: var(--font-weight-medium);
+		color: var(--color-text-default);
+		background-color: var(--color-bg-default);
+		border: 1px solid var(--color-border-default);
+		border-radius: var(--radius-default);
+		padding: var(--space-2);
+		cursor: pointer;
+		user-select: none;
+		transition: all 0.15s ease;
+		box-sizing: border-box;
+	}
+
+	.trigger:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+
+	/* Trigger Variants */
+	.triggerDefault {
+		/* Base styles already applied */
+	}
+
+	.triggerMinimal {
+		border: none;
+		background-color: transparent;
+		padding: var(--space-1);
+	}
+
+	.triggerMinimal:hover {
+		background-color: var(--color-bg-muted);
+	}
+
+	/* Trigger Colors */
+	.triggerColorPrimary {
+		background-color: var(--color-bg-default);
+		border-color: var(--color-border-default);
+	}
+
+	.triggerColorPrimary:hover {
+		border-color: var(--color-border-subtle);
+	}
+
+	.triggerColorPrimary:focus {
+		border-color: var(--color-brand);
+		box-shadow: 0 0 0 1px var(--color-brand);
+		outline: none;
+	}
+
+	.triggerColorSecondary {
+		background-color: var(--color-bg-subtle);
+		border-color: var(--color-border-default);
+	}
+
+	.triggerColorSecondary:hover {
+		background-color: var(--color-bg-muted);
+		border-color: var(--color-border-subtle);
+	}
+
+	.triggerColorSecondary:focus {
+		border-color: var(--color-brand);
+		box-shadow: 0 0 0 1px var(--color-brand);
+		outline: none;
+	}
+
+	/* Trigger Error State */
+	.triggerError {
+		border-color: var(--color-error);
+		background-color: var(--color-error-bg);
+	}
+
+	.triggerError:hover {
+		border-color: var(--color-error-hover);
+		background-color: var(--color-error-bg);
+	}
+
+	.triggerError:focus {
+		outline-color: var(--color-error);
+	}
+
+	/* Trigger Sizes */
+	.triggerSm {
+		font-size: var(--font-size-2);
+		padding: 0 var(--space-1);
+		height: var(--form-input-height-sm);
+	}
+
+	.triggerMd {
+		font-size: var(--font-size-3);
+		padding: 0 var(--space-2);
+		height: var(--form-input-height-md);
+	}
+
+	.triggerLg {
+		font-size: var(--font-size-4);
+		padding: 0 var(--space-3);
+		height: var(--form-input-height-lg);
+	}
+
+	.triggerXl {
+		font-size: var(--font-size-5);
+		padding: 0 var(--space-4);
+		height: var(--form-input-height-xl);
+	}
+
+	/* Value Container */
+	.valueContainer {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		flex: 1;
+		min-width: 0;
+	}
+
+	/* Placeholder */
+	.placeholder {
+		color: var(--color-text-subtle);
+		font-weight: 400;
+		padding-block: 3px;
+	}
+
+	/* Badge Container */
+	.badgeContainer {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		min-width: 0;
+		flex: 1;
+	}
+
+	.valueBadge {
+		font-weight: var(--font-weight-normal);
+		white-space: nowrap;
+		display: inline-block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-width: 100%;
+	}
+
+	.valueBadgeConstrained {
+		max-width: 12ch;
+	}
+
+	.remainingCount {
+		color: var(--color-text-muted);
+		font-size: 0.875em;
+		font-weight: var(--font-weight-normal);
+		white-space: nowrap;
+		flex-shrink: 0;
+		margin-left: 0.25em;
+	}
+
+	/* Clear Button */
+	.clearButton {
+		all: unset;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--color-text-muted);
+		cursor: pointer;
+		flex-shrink: 0;
+		padding: 2px;
+		border-radius: var(--radius-2);
+		transition: all 0.15s ease;
+	}
+
+	.clearButtonPrimary:hover {
+		background-color: var(--color-bg-subtle);
+	}
+
+	.clearButtonSecondary:hover {
+		background-color: var(--color-bg-muted);
+	}
+
+	.clearButton:focus-visible {
+		outline: 2px solid var(--color-brand);
+		outline-offset: 1px;
+	}
+
+	/* Trigger Icon (Caret) */
+	.triggerIcon {
+		display: flex;
+		align-items: center;
+		color: var(--color-text-muted);
+		transition: transform 0.2s ease;
+		flex-shrink: 0;
+	}
+
+	.trigger[data-state='open'] .triggerIcon {
+		transform: rotate(180deg);
+	}
+
+	/* Custom Icons (iconLeft/iconRight) */
+	.iconLeft,
+	.iconRight {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 1em;
+		height: 1em;
+	}
+
+	.iconLeft svg,
+	.iconRight svg {
+		width: 1em;
+		height: 1em;
+	}
+
+	/* Content */
+	.content {
+		overflow-y: auto;
+		background-color: var(--color-bg-default);
+		border: 1px solid var(--color-border-default);
+		border-radius: var(--radius-default-simple);
+		z-index: 1100;
+		min-width: var(--radix-dropdown-menu-trigger-width);
+		max-height: 300px;
+		max-width: 300px;
+		padding: var(--space-1);
+	}
+
+	.content[data-state='open'] {
+		animation: fadeIn 0.15s ease-out;
+	}
+
+	.content[data-state='closed'] {
+		animation: fadeOut 0.1s ease-in;
+	}
+
+	/* Content Sizes */
+	.contentSm {
+		font-size: var(--font-size-2);
+	}
+
+	.contentMd {
+		font-size: var(--font-size-3);
+	}
+
+	.contentLg {
+		font-size: var(--font-size-4);
+	}
+
+	.contentXl {
+		font-size: var(--font-size-5);
+	}
+
+	/* Content Shadow */
+	.contentShadowClassic {
+		box-shadow: var(--shadow-classic);
+	}
+
+	.contentShadowSpread {
+		box-shadow: var(--shadow-spread);
+	}
+
+	.contentShadowPaper {
+		box-shadow: var(--shadow-paper);
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(-4px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeOut {
+		from {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		to {
+			opacity: 0;
+			transform: translateY(-4px);
+		}
+	}
+
+	/* Item */
+	.item {
+		all: unset;
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-size: inherit;
+		line-height: inherit;
+		color: var(--color-text-default);
+		border-radius: var(--radius-default-simple);
+		padding: var(--space-2) var(--space-3);
+		cursor: pointer;
+		user-select: none;
+		transition: background-color 0.1s ease;
+	}
+
+	.item:hover {
+		background-color: var(--color-bg-subtle);
+		outline: none;
+	}
+
+	.item:focus {
+		background-color: var(--color-bg-subtle);
+		outline: none;
+	}
+
+	.item[data-highlighted] {
+		background-color: var(--color-bg-subtle);
+		outline: none;
+	}
+
+	/* Checkbox inside Item */
+	.checkbox {
+		pointer-events: none;
+	}
+
+	/* Item Text */
+	.itemText {
+		flex: 1;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		min-width: 0;
+	}
+
+	/* Error Message */
+	.errorMessage {
+		display: block;
+		margin-top: var(--space-1);
+	}
+}

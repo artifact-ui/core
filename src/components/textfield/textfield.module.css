@@ -7,7 +7,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--space-1);
-		margin: var(--space-2) 0;
 	}
 
 	@media (max-width: 768px) {
@@ -37,26 +36,26 @@
 	/* Input Sizes - match Select sizes (opt-in) */
 	.inputSm {
 		font-size: var(--font-size-2);
-		padding: var(--space-1) var(--space-2);
-		min-height: 28px;
+		padding: 0 var(--space-2);
+		height: var(--form-input-height-sm);
 	}
 
 	.inputMd {
 		font-size: var(--font-size-3);
-		padding: var(--space-2);
-		min-height: 36px;
+		padding: 0 var(--space-2);
+		height: var(--form-input-height-md);
 	}
 
 	.inputLg {
 		font-size: var(--font-size-4);
-		padding: var(--space-3);
-		min-height: 44px;
+		padding: 0 var(--space-3);
+		height: var(--form-input-height-lg);
 	}
 
 	.inputXl {
 		font-size: var(--font-size-5);
-		padding: var(--space-3);
-		min-height: 52px;
+		padding: 0 var(--space-3);
+		height: var(--form-input-height-xl);
 	}
 
 	/* Full Radius (padding adjustment) */

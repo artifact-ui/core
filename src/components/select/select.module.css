@@ -93,26 +93,26 @@
 /* Select - Trigger Sizes */
 .triggerSm {
 	font-size: var(--font-size-2);
-	padding: var(--space-1) var(--space-2);
-	min-height: 28px;
+	padding: 0 var(--space-2);
+	height: var(--form-input-height-sm);
 }
 
 .triggerMd {
 	font-size: var(--font-size-3);
-	padding: var(--space-2) var(--space-3);
-	min-height: 36px;
+	padding: 0 var(--space-3);
+	height: var(--form-input-height-md);
 }
 
 .triggerLg {
 	font-size: var(--font-size-4);
-	padding: var(--space-3) var(--space-4);
-	min-height: 44px;
+	padding: 0 var(--space-4);
+	height: var(--form-input-height-lg);
 }
 
 .triggerXl {
 	font-size: var(--font-size-5);
-	padding: var(--space-4) var(--space-5);
-	min-height: 52px;
+	padding: 0 var(--space-5);
+	height: var(--form-input-height-xl);
 }
 
 /* Select - Full Radius (padding adjustment) */

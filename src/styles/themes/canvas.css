@@ -1,0 +1,51 @@
+/* Canvas theme - warm beige light */
+[data-theme='canvas'] {
+	/* Canvas theme shadows */
+	--shadow-classic:
+		0 0 0 1px rgba(157, 119, 86, 0.1), 0 1px 1px 0 rgba(157, 119, 86, 0.1),
+		0 2px 1px -1px rgba(157, 119, 86, 0.1), 0 1px 3px 0 rgba(157, 119, 86, 0.1);
+	--shadow-spread:
+		0 10px 15px -3px rgba(157, 119, 86, 0.15), 0 4px 6px -4px rgba(157, 119, 86, 0.1);
+	--shadow-paper: 0px 8px 0px -6px rgba(157, 119, 86, 0.15);
+
+	/* Background colors */
+	--color-bg-default: var(--canvas-50);
+	--color-bg-subtle: var(--canvas-100);
+	--color-bg-muted: var(--canvas-200);
+	--color-bg-overlay: rgba(246, 244, 240, 0.9);
+	--color-bg-accent: var(--canvas-100);
+
+	/* Text colors */
+	--color-text-default: var(--canvas-950);
+	--color-text-subtle: var(--canvas-800);
+	--color-text-muted: var(--canvas-700);
+	--color-text-inverse: var(--canvas-50);
+	--color-bg-inverse: var(--canvas-950);
+
+	/* Border colors */
+	--color-border-default: var(--canvas-200);
+	--color-border-subtle: var(--canvas-300);
+	--color-border-muted: var(--canvas-400);
+
+	/* State colors */
+	--color-success: var(--green-600);
+	--color-success-hover: var(--green-700);
+	--color-success-bg: var(--green-100);
+
+	--color-error: var(--red-600);
+	--color-error-hover: var(--red-700);
+	--color-error-bg: #fef2f2;
+
+	--color-warning: var(--yellow-600);
+	--color-warning-hover: var(--yellow-700);
+	--color-warning-bg: #fffbeb;
+
+	--color-info: var(--blue-600);
+	--color-info-hover: var(--blue-700);
+	--color-info-bg: #eff6ff;
+
+	/* Interactive colors */
+	--color-hover: var(--canvas-100);
+	--color-active: var(--canvas-200);
+	--color-focus: var(--canvas-200);
+}

@@ -70,9 +70,11 @@ Customize your app's appearance with theme, accent, and radius options.
 
 **Color Mode** (`theme`)
 
-- `light` - Light mode
+- `light` - Light mode (default)
 - `dark` - Dark mode
-- `system` (default) - Follows system preference
+- `slate` - Cool dark blue-gray
+- `canvas` - Warm beige light
+- `system` - Follows system preference (resolves to light/dark)
 
 **Accent Colors** (`accent`)
 
@@ -95,8 +97,11 @@ Customize your app's appearance with theme, accent, and radius options.
 You can change themes dynamically by updating the provider props:
 
 ```tsx
+import { useState } from 'react';
+import type { Theme } from '@artifact-ui/core';
+
 function App() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<Theme>('light');
 
   return (
     <ArtifactProvider theme={theme} accent="obsidian" radius="medium">
@@ -110,7 +115,7 @@ function App() {
 
 ## Components
 
-The library includes 27 components. See our [Storybook](https://artifact-ui.com/storybook) for the full list and interactive examples.
+The library includes 31 components. See our [Storybook](https://artifact-ui.com/storybook) for the full list and interactive examples.
 
 ## Component Usage
 
@@ -181,7 +186,7 @@ function DeleteConfirmation() {
 
 ## Features
 
-- 🎨 **Themeable** - 10 accent colors, 5 radius presets, light/dark mode
+- 🎨 **Themeable** - 4 color modes, 10 accent colors, 5 radius presets
 - ♿ **Accessible** - Built on Radix UI primitives with ARIA support
 - 📦 **Tree-shakeable** - Import only what you need
 - 🎯 **TypeScript** - Full type definitions included

@@ -34,7 +34,7 @@ const preview = {
 			defaultValue: 'light',
 			toolbar: {
 				title: 'Theme',
-				items: ['light', 'dark'],
+				items: ['light', 'dark', 'slate', 'canvas'],
 				dynamicTitle: true,
 			},
 		},

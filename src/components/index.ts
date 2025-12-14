@@ -1,3 +1,5 @@
+export * as Form from './form/form';
+export * as MultiSelect from './multi-select/multi-select';
 export * as TextField from './textfield/textfield';
 export * as TextArea from './textarea/textarea';
 export * as Table from './table/table';
@@ -21,6 +23,8 @@ export { Skeleton, SkeletonText } from './skeleton/skeleton';
 export { Avatar } from './avatar/avatar';
 export { Toast, ToastProvider } from './toast/toast';
 export { Progress } from './progress/progress';
+export { SegmentControl } from './segment-control/segment-control';
+export { Slider } from './slider/slider';
 
 // Layout components
 export { Stack } from './layout/stack';
