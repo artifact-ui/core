@@ -1,7 +1,9 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
+import { Form } from 'radix-ui';
 import * as TextField from './textfield';
 import { SearchIcon } from '../../icons';
+import { Stack } from '../layout/stack';
 
 const meta = {
 	title: 'Forms/TextField',
@@ -168,4 +170,30 @@ export const ClearableWithSuffix: Story = {
 			/>
 		);
 	},
+};
+
+export const WithLabel: Story = {
+	render: () => (
+		<Form.Root style={{ width: '300px' }}>
+			<Stack gap="4">
+				<TextField.Input
+					name="catalogId"
+					label="Catalog ID"
+					placeholder="ART-2024-0001"
+				/>
+				<TextField.Input
+					name="specimenName"
+					label="Specimen Name"
+					placeholder="Bronze Age vessel fragment"
+				/>
+				<TextField.Input
+					name="location"
+					label="Excavation Site"
+					placeholder="Enter site location"
+					error
+					message="Location is required"
+				/>
+			</Stack>
+		</Form.Root>
+	),
 };
