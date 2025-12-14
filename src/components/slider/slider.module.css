@@ -1,0 +1,89 @@
+/* Artifact UI - Slider */
+
+@layer components {
+	.slider {
+		position: relative;
+		display: flex;
+		align-items: center;
+		user-select: none;
+		touch-action: none;
+		width: 100%;
+		cursor: pointer;
+	}
+
+	.slider:focus-visible {
+		outline: none;
+	}
+
+	.slider[data-disabled] {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+
+	/* Sizes */
+	.size1 {
+		height: 20px;
+	}
+
+	.size2 {
+		height: 25px;
+	}
+
+	.size3 {
+		height: 30px;
+	}
+
+	/* Track */
+	.track {
+		position: relative;
+		flex-grow: 1;
+		background-color: var(--color-bg-muted);
+		border-radius: 9999px;
+		height: 4px;
+	}
+
+	/* Range */
+	.range {
+		position: absolute;
+		background-color: var(--color-primary);
+		border-radius: 9999px;
+		height: 100%;
+	}
+
+	.slider:hover .range {
+		background-color: var(--color-primary-hover);
+	}
+
+	/* Thumb */
+	.thumb {
+		display: block;
+		background-color: white;
+		border-radius: 9999px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		transition: box-shadow 0.15s ease;
+	}
+
+	.thumb:hover {
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+	}
+
+	.thumb:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 2px;
+	}
+
+	.thumb1 {
+		width: 16px;
+		height: 16px;
+	}
+
+	.thumb2 {
+		width: 20px;
+		height: 20px;
+	}
+
+	.thumb3 {
+		width: 24px;
+		height: 24px;
+	}
+}
