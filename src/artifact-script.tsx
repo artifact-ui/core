@@ -36,6 +36,8 @@ export function ArtifactScript({
 (function() {
   try {
     var theme = localStorage.getItem('${storageKey}');
+    var savedAccent = localStorage.getItem('${storageKey}-accent');
+    var savedRadius = localStorage.getItem('${storageKey}-radius');
     var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     var resolved = theme === 'dark' || (!theme && '${defaultTheme}' === 'dark')
       ? 'dark'
@@ -43,8 +45,8 @@ export function ArtifactScript({
         ? 'light'
         : systemDark ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', resolved);
-    document.documentElement.setAttribute('data-accent', '${accent}');
-    document.documentElement.setAttribute('data-radius', '${radius}');
+    document.documentElement.setAttribute('data-accent', savedAccent || '${accent}');
+    document.documentElement.setAttribute('data-radius', savedRadius || '${radius}');
   } catch (e) {}
 })();
   `.trim();
