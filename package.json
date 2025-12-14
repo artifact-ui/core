@@ -1,6 +1,6 @@
 {
 	"name": "@artifact-ui/core",
-	"version": "1.2.2",
+	"version": "1.3.1",
 	"description": "React component library - design artifacts built on Radix UI primitives.",
 	"type": "module",
 	"module": "./dist/index.js",
