@@ -36,6 +36,12 @@
 	--space-12: 3rem; /* 48px */
 	--space-16: 4rem; /* 64px */
 
+	/* Form Inputs */
+	--form-input-height-sm: 28px;
+	--form-input-height-md: 36px;
+	--form-input-height-lg: 44px;
+	--form-input-height-xl: 52px;
+
 	/* Layout */
 	--max-width: 1280px;
 	--full-height: 100vh;
