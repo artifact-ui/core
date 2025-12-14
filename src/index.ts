@@ -6,6 +6,8 @@ import './styles/foundation/global.css';
 // Themes
 import './styles/themes/light.css';
 import './styles/themes/dark.css';
+import './styles/themes/slate.css';
+import './styles/themes/canvas.css';
 import './styles/themes/accent.css';
 import './styles/themes/radius.css';
 

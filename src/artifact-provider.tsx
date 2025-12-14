@@ -2,7 +2,7 @@
 
 import React, { useLayoutEffect } from 'react';
 
-export type Theme = 'light' | 'dark';
+export type Theme = 'light' | 'dark' | 'slate' | 'canvas';
 export type Accent =
 	| 'obsidian'
 	| 'sage'

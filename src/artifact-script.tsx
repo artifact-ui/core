@@ -1,5 +1,5 @@
 export interface ArtifactScriptProps {
-	defaultTheme?: 'light' | 'dark' | 'system';
+	defaultTheme?: 'light' | 'dark' | 'slate' | 'canvas' | 'system';
 	accent?: string;
 	radius?: string;
 	storageKey?: string;
@@ -35,15 +35,19 @@ export function ArtifactScript({
 	const script = `
 (function() {
   try {
-    var theme = localStorage.getItem('${storageKey}');
-    var savedAccent = localStorage.getItem('${storageKey}-accent');
-    var savedRadius = localStorage.getItem('${storageKey}-radius');
-    var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var resolved = theme === 'dark' || (!theme && '${defaultTheme}' === 'dark')
-      ? 'dark'
-      : theme === 'light' || (!theme && '${defaultTheme}' === 'light')
-        ? 'light'
-        : systemDark ? 'dark' : 'light';
+    const theme = localStorage.getItem('${storageKey}');
+    const savedAccent = localStorage.getItem('${storageKey}-accent');
+    const savedRadius = localStorage.getItem('${storageKey}-radius');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const validThemes = ['light', 'dark', 'slate', 'canvas'];
+    let resolved;
+    if (theme && validThemes.indexOf(theme) !== -1) {
+      resolved = theme;
+    } else if ('${defaultTheme}' !== 'system' && validThemes.indexOf('${defaultTheme}') !== -1) {
+      resolved = '${defaultTheme}';
+    } else {
+      resolved = systemDark ? 'dark' : 'light';
+    }
     document.documentElement.setAttribute('data-theme', resolved);
     document.documentElement.setAttribute('data-accent', savedAccent || '${accent}');
     document.documentElement.setAttribute('data-radius', savedRadius || '${radius}');

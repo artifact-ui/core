@@ -261,6 +261,19 @@
 	--crimson-700: #ab2536;
 	--crimson-800: #8f2233;
 	--crimson-900: #7b2031;
+
+	/* Canvas theme palette */
+	--canvas-50: #f6f4f0;
+	--canvas-100: #e9e3d8;
+	--canvas-200: #d6c7b2;
+	--canvas-300: #bea686;
+	--canvas-400: #aa8965;
+	--canvas-500: #9a7756;
+	--canvas-600: #856249;
+	--canvas-700: #6b4c3d;
+	--canvas-800: #5c4137;
+	--canvas-900: #503933;
+	--canvas-950: #2d1e1b;
 }
 
 /* Override if dynamic viewport is suported - mobile fix */

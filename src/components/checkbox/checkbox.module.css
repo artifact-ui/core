@@ -93,6 +93,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: var(--color-text-inverse);
+		color: var(--color-constant-white);
 	}
 }
