@@ -25,6 +25,7 @@ export interface TableBodyProps extends React.HTMLAttributes<HTMLTableSectionEle
 
 export interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
 	children: React.ReactNode;
+	override?: boolean;
 }
 
 export interface TableHeaderCellProps
@@ -32,12 +33,14 @@ export interface TableHeaderCellProps
 	children?: React.ReactNode;
 	justify?: 'start' | 'center' | 'end';
 	textAlign?: 'start' | 'center' | 'end';
+	override?: boolean;
 }
 
 export interface TableCellProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
 	children?: React.ReactNode;
 	textAlign?: 'start' | 'center' | 'end';
 	verticalAlign?: 'top' | 'middle' | 'bottom';
+	override?: boolean;
 }
 
 export interface TableFooterProps extends React.HTMLAttributes<HTMLTableSectionElement> {
@@ -131,9 +134,9 @@ const Body = forwardRef<HTMLTableSectionElement, TableBodyProps>(
 Body.displayName = 'TableBody';
 
 const Row = forwardRef<HTMLTableRowElement, TableRowProps>(
-	({ className, children, ...props }, ref) => {
+	({ className, children, override = false, ...props }, ref) => {
 		return (
-			<tr ref={ref} className={cn(styles.row, className)} {...props}>
+			<tr ref={ref} className={cn(styles.row, override && 'aow', className)} {...props}>
 				{children}
 			</tr>
 		);
@@ -143,7 +146,10 @@ const Row = forwardRef<HTMLTableRowElement, TableRowProps>(
 Row.displayName = 'TableRow';
 
 const HeaderCell = forwardRef<HTMLTableCellElement, TableHeaderCellProps>(
-	({ className, children, justify = 'start', textAlign, ...domProps }, ref) => {
+	(
+		{ className, children, justify = 'start', textAlign, override = false, ...domProps },
+		ref,
+	) => {
 		const alignment = textAlign ?? justify;
 
 		const cellClasses = cn(
@@ -151,6 +157,7 @@ const HeaderCell = forwardRef<HTMLTableCellElement, TableHeaderCellProps>(
 			alignment === 'start' && styles.justifyStart,
 			alignment === 'center' && styles.justifyCenter,
 			alignment === 'end' && styles.justifyEnd,
+			override && 'aow',
 			className,
 		);
 
@@ -166,7 +173,14 @@ HeaderCell.displayName = 'TableHeaderCell';
 
 const Cell = forwardRef<HTMLTableCellElement, TableCellProps>(
 	(
-		{ className, children, textAlign = 'start', verticalAlign = 'middle', ...domProps },
+		{
+			className,
+			children,
+			textAlign = 'start',
+			verticalAlign = 'middle',
+			override = false,
+			...domProps
+		},
 		ref,
 	) => {
 		const cellClasses = cn(
@@ -177,6 +191,7 @@ const Cell = forwardRef<HTMLTableCellElement, TableCellProps>(
 			verticalAlign === 'top' && styles.valignTop,
 			verticalAlign === 'middle' && styles.valignMiddle,
 			verticalAlign === 'bottom' && styles.valignBottom,
+			override && 'aow',
 			className,
 		);
 
