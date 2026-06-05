@@ -143,9 +143,8 @@ const Row = forwardRef<HTMLTableRowElement, TableRowProps>(
 Row.displayName = 'TableRow';
 
 const HeaderCell = forwardRef<HTMLTableCellElement, TableHeaderCellProps>(
-	({ className, children, justify = 'start', textAlign = 'start', ...domProps }, ref) => {
-		// Use textAlign if provided, otherwise fall back to justify
-		const alignment = textAlign || justify;
+	({ className, children, justify = 'start', textAlign, ...domProps }, ref) => {
+		const alignment = textAlign ?? justify;
 
 		const cellClasses = cn(
 			styles.headerCell,
