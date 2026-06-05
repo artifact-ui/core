@@ -18,11 +18,13 @@ Import the global stylesheet in your app entry point:
 import '@artifact-ui/core/styles.css';
 ```
 
-**Using CSS Layers?** Import the layers version for better cascade control:
+**Using Tailwind or utility classes?** Import the layers build instead. It wraps the component styles in an `@layer`, so your own classes (like `bg-green-50` on a `Table.Row`) reliably win over the defaults:
 
 ```tsx
 import '@artifact-ui/core/layers.css';
 ```
+
+Only import one of the two stylesheets, not both.
 
 ### 2. Wrap Your App
 
