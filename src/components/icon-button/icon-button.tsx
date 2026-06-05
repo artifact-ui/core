@@ -1,8 +1,7 @@
 import React, { forwardRef } from 'react';
 import { Button, ButtonProps } from '../button/button';
 
-export interface IconButtonProps
-	extends Omit<ButtonProps, 'iconLeft' | 'iconRight' | 'children'> {
+export interface IconButtonProps extends Omit<ButtonProps, 'iconLeft' | 'iconRight'> {
 	icon: React.ReactNode;
 	label: string;
 }

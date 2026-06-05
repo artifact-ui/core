@@ -10,6 +10,8 @@
 		background-color: var(--color-bg-default);
 		transition: var(--transition);
 		overflow: hidden;
+		text-decoration: none;
+		color: inherit;
 	}
 
 	/* Card - Variants */

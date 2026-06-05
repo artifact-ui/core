@@ -99,7 +99,9 @@ export const Ghost: Story = {
 				<Heading size="4">Research Notes</Heading>
 			</Card.Header>
 			<Card.Body>
-				<Text>Ghost variant with minimal visual styling for subtle content grouping.</Text>
+				<Text>
+					Ghost variant with minimal visual styling for subtle content grouping.
+				</Text>
 			</Card.Body>
 		</Card.Root>
 	),
@@ -163,5 +165,20 @@ export const AllVariants: Story = {
 				</Card.Body>
 			</Card.Root>
 		</Flex>
+	),
+};
+
+export const AsLink: Story = {
+	render: () => (
+		<Card.Root asChild interactive variant="surface" style={{ width: '250px' }}>
+			<a href="https://github.com" target="_blank" rel="noreferrer">
+				<Card.Header>
+					<Heading size="4">View Project</Heading>
+				</Card.Header>
+				<Card.Body>
+					<Text size="2">The whole card is a link. Click anywhere on it.</Text>
+				</Card.Body>
+			</a>
+		</Card.Root>
 	),
 };

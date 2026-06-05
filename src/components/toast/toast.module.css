@@ -47,6 +47,16 @@
 		width: 100%;
 	}
 
+	/* No title means a single line, so center the icons instead of top-aligning */
+	.toastContent:not(:has(.toastTitle)) {
+		align-items: center;
+	}
+
+	.toastContent:not(:has(.toastTitle)) .iconLeft,
+	.toastContent:not(:has(.toastTitle)) .closeButton {
+		margin-top: 0;
+	}
+
 	.textContent {
 		flex: 1;
 		min-width: 0;
@@ -63,6 +73,9 @@
 		font-size: var(--font-size-2);
 		color: var(--color-text-secondary);
 		line-height: 1.4;
+	}
+
+	.toastTitle + .toastDescription {
 		margin-top: var(--space-1);
 	}
 

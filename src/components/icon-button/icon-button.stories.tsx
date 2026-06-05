@@ -165,3 +165,11 @@ export const NavigationControls: Story = {
 		</Flex>
 	),
 };
+
+export const AsLink: Story = {
+	render: () => (
+		<IconButton asChild icon={<SearchIcon />} label="Search docs">
+			<a href="https://github.com" target="_blank" rel="noreferrer" />
+		</IconButton>
+	),
+};

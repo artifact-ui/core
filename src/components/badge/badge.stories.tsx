@@ -18,7 +18,7 @@ const meta: Meta<typeof Badge> = {
 		},
 		color: {
 			control: 'select',
-			options: ['primary', 'neutral', 'info', 'success', 'danger'],
+			options: ['primary', 'neutral', 'info', 'success', 'warning', 'danger'],
 			description: 'Semantic color',
 		},
 		size: {
@@ -97,5 +97,15 @@ export const AllVariants: Story = {
 				24
 			</Badge>
 		</Flex>
+	),
+};
+
+export const AsLink: Story = {
+	render: () => (
+		<Badge asChild variant="soft" color="info">
+			<a href="https://github.com" target="_blank" rel="noreferrer">
+				Documentation
+			</a>
+		</Badge>
 	),
 };

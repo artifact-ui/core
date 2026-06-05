@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import { Slot } from 'radix-ui';
 import { cn } from '../../utils/cn';
 import { Radius } from '../../types/style-props';
 import { radiusClasses } from '../../styles/shared/shared-styles';
@@ -14,6 +15,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 	iconLeft?: React.ReactNode;
 	iconRight?: React.ReactNode;
 	override?: boolean;
+	asChild?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -28,6 +30,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			iconLeft,
 			iconRight,
 			override = false,
+			asChild = false,
 			className,
 			disabled,
 			children,
@@ -83,19 +86,23 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 				}
 			: style;
 
+		const isDisabled = disabled || loading;
+		const Comp = asChild ? Slot.Root : 'button';
+		const nativeProps = asChild ? {} : { disabled: isDisabled };
+
 		return (
-			<button
+			<Comp
 				ref={ref}
 				className={buttonClasses}
 				style={buttonStyle}
-				disabled={disabled || loading}
-				aria-disabled={disabled || loading}
+				aria-disabled={isDisabled || undefined}
+				{...nativeProps}
 				{...props}>
 				{loading && <span className={styles.spinner} />}
 				{iconLeft && !loading && <span className={styles.iconLeft}>{iconLeft}</span>}
-				{children}
+				{asChild ? <Slot.Slottable>{children}</Slot.Slottable> : children}
 				{iconRight && !loading && <span className={styles.iconRight}>{iconRight}</span>}
-			</button>
+			</Comp>
 		);
 	},
 );
