@@ -44,6 +44,7 @@
 	"homepage": "https://github.com/artifact-ui/core#readme",
 	"scripts": {
 		"build": "npm run build:no-layers && npm run build:layers",
+		"prepublishOnly": "npm run build",
 		"build:no-layers": "BUILD_MODE=no-layers tsc && BUILD_MODE=no-layers vite build",
 		"build:layers": "BUILD_MODE=layers vite build --config vite.config.layers.ts",
 		"dev": "vite build --watch",
