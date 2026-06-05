@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import { Slot } from 'radix-ui';
 import { cn } from '../../utils/cn';
 import { SimpleRadius } from '../../types/style-props';
 import { radiusClasses } from '../../styles/shared/shared-styles';
@@ -11,6 +12,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 	shadow?: false | true | 'classic' | 'spread' | 'paper';
 	interactive?: boolean;
 	override?: boolean;
+	asChild?: boolean;
 }
 
 export interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -34,6 +36,7 @@ const Root = forwardRef<HTMLDivElement, CardProps>(
 			shadow = false,
 			interactive = false,
 			override = false,
+			asChild = false,
 			className,
 			children,
 			...props
@@ -73,10 +76,12 @@ const Root = forwardRef<HTMLDivElement, CardProps>(
 			className,
 		);
 
+		const Comp = asChild ? Slot.Root : 'div';
+
 		return (
-			<div ref={ref} className={cardClasses} {...props}>
+			<Comp ref={ref} className={cardClasses} {...props}>
 				{children}
-			</div>
+			</Comp>
 		);
 	},
 );

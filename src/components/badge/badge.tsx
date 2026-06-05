@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import { Slot } from 'radix-ui';
 import { cn } from '../../utils/cn';
 import { Radius } from '../../types/style-props';
 import { radiusClasses } from '../../styles/shared/shared-styles';
@@ -14,6 +15,7 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 	iconRight?: React.ReactNode;
 	iconGap?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
 	override?: boolean;
+	asChild?: boolean;
 }
 
 const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
@@ -28,6 +30,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 			iconRight,
 			iconGap,
 			override = false,
+			asChild = false,
 			className,
 			children,
 			...props
@@ -68,9 +71,10 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 		};
 
 		const hasIcons = !!(iconLeft || iconRight);
+		const Comp = asChild ? Slot.Root : 'span';
 
 		return (
-			<span
+			<Comp
 				ref={ref}
 				className={cn(
 					styles.badge,
@@ -86,9 +90,9 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 				)}
 				{...props}>
 				{iconLeft && <span className={styles.iconLeft}>{iconLeft}</span>}
-				{children}
+				{asChild ? <Slot.Slottable>{children}</Slot.Slottable> : children}
 				{iconRight && <span className={styles.iconRight}>{iconRight}</span>}
-			</span>
+			</Comp>
 		);
 	},
 );

@@ -99,3 +99,13 @@ export const AllVariants: Story = {
 		</Flex>
 	),
 };
+
+export const AsLink: Story = {
+	render: () => (
+		<Badge asChild variant="soft" color="info">
+			<a href="https://github.com" target="_blank" rel="noreferrer">
+				Documentation
+			</a>
+		</Badge>
+	),
+};

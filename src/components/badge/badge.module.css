@@ -11,6 +11,7 @@
 		white-space: nowrap;
 		vertical-align: middle;
 		border-radius: var(--radius-default);
+		text-decoration: none;
 	}
 
 	/* Badge with icons */
