@@ -70,4 +70,30 @@ describe('Badge', () => {
 
 		expect(screen.getByText('Action Required')).toBeInTheDocument();
 	});
+
+	describe('asChild', () => {
+		it('renders as an anchor when asChild wraps a link', () => {
+			renderComponent(
+				<Badge asChild color="info">
+					<a href="/tags/sales">Sales</a>
+				</Badge>,
+			);
+
+			const link = screen.getByRole('link', { name: /sales/i });
+
+			expect(link).toHaveAttribute('href', '/tags/sales');
+		});
+
+		it('composes icons inside the slotted element', () => {
+			renderComponent(
+				<Badge asChild iconLeft={<CheckIcon data-testid="check-icon" />}>
+					<a href="/tags/approved">Approved</a>
+				</Badge>,
+			);
+
+			const link = screen.getByRole('link', { name: /approved/i });
+
+			expect(link).toContainElement(screen.getByTestId('check-icon'));
+		});
+	});
 });

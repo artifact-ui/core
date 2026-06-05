@@ -182,4 +182,57 @@ describe('Button', () => {
 			expect(screen.getByTestId('chevron-icon')).toBeInTheDocument();
 		});
 	});
+
+	describe('asChild', () => {
+		it('renders as an anchor when asChild wraps a link', () => {
+			renderComponent(
+				<Button asChild>
+					<a href="/invoices">View Invoices</a>
+				</Button>,
+			);
+
+			const link = screen.getByRole('link', { name: /view invoices/i });
+
+			expect(link).toHaveAttribute('href', '/invoices');
+			expect(screen.queryByRole('button')).not.toBeInTheDocument();
+		});
+
+		it('applies the same button styling to the slotted element', () => {
+			const { rerender } = renderComponent(<Button>View Invoices</Button>);
+			const buttonClass = screen.getByRole('button').className;
+
+			rerender(
+				<Button asChild>
+					<a href="/invoices">View Invoices</a>
+				</Button>,
+			);
+
+			expect(screen.getByRole('link').className).toBe(buttonClass);
+		});
+
+		it('forwards the click handler to the slotted element', async () => {
+			const handleClick = vi.fn();
+			const { user } = renderComponent(
+				<Button asChild onClick={handleClick}>
+					<a href="#">View Invoices</a>
+				</Button>,
+			);
+
+			await user.click(screen.getByRole('link', { name: /view invoices/i }));
+
+			expect(handleClick).toHaveBeenCalledTimes(1);
+		});
+
+		it('composes icons inside the slotted element', () => {
+			renderComponent(
+				<Button asChild iconLeft={<CheckIcon data-testid="check-icon" />}>
+					<a href="/invoices">View Invoices</a>
+				</Button>,
+			);
+
+			const link = screen.getByRole('link', { name: /view invoices/i });
+
+			expect(link).toContainElement(screen.getByTestId('check-icon'));
+		});
+	});
 });

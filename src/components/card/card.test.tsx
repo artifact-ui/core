@@ -47,4 +47,36 @@ describe('Card', () => {
 
 		expect(screen.getByText('Budget summary')).toBeInTheDocument();
 	});
+
+	describe('asChild', () => {
+		it('renders as an anchor when asChild wraps a link', () => {
+			renderComponent(
+				<Card asChild>
+					<a href="/clients/42">Client summary for Q4</a>
+				</Card>,
+			);
+
+			const link = screen.getByRole('link', { name: /client summary for q4/i });
+
+			expect(link).toHaveAttribute('href', '/clients/42');
+		});
+
+		it('renders compound children inside the slotted element', () => {
+			renderComponent(
+				<Card asChild>
+					<a href="/employees/jim">
+						<Header>Employee Details</Header>
+						<Body>Jim Halpert - Sales Representative</Body>
+					</a>
+				</Card>,
+			);
+
+			const link = screen.getByRole('link');
+
+			expect(link).toContainElement(screen.getByText('Employee Details'));
+			expect(link).toContainElement(
+				screen.getByText('Jim Halpert - Sales Representative'),
+			);
+		});
+	});
 });
