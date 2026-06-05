@@ -10,6 +10,7 @@ export * as Select from './select/select';
 export * as Tabs from './tabs/tabs';
 export * as Popover from './popover/popover';
 export * as Tooltip from './tooltip/tooltip';
+export * as Breadcrumb from './breadcrumb/breadcrumb';
 export { Button } from './button/button';
 export { IconButton } from './icon-button/icon-button';
 export { Alert } from './alert/alert';
