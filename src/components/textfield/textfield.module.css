@@ -130,7 +130,8 @@
 		outline-color: var(--color-border-default);
 	}
 
-	.inputMinimal:focus {
+	.inputMinimal:focus,
+	.inputMinimal:focus-visible {
 		outline-color: var(--color-primary);
 	}
 
