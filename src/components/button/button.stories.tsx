@@ -93,3 +93,28 @@ export const AllVariants: Story = {
 		</Flex>
 	),
 };
+
+export const AsLink: Story = {
+	args: {
+		variant: 'default',
+		color: 'primary',
+		size: '2',
+	},
+	render: (args) => (
+		<Button {...args} asChild>
+			<a href="https://github.com" target="_blank" rel="noreferrer">
+				View on GitHub
+			</a>
+		</Button>
+	),
+};
+
+export const AsLinkWithIcon: Story = {
+	render: () => (
+		<Button asChild variant="outline" iconLeft={<SearchIcon />}>
+			<a href="https://github.com" target="_blank" rel="noreferrer">
+				Search Docs
+			</a>
+		</Button>
+	),
+};
