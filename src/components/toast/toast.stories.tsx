@@ -122,6 +122,21 @@ export const WithDescription: Story = {
 	},
 };
 
+export const SingleLineNoTitle: Story = {
+	render: () => {
+		const [open, setOpen] = React.useState(false);
+
+		return (
+			<>
+				<Button onClick={() => setOpen(true)}>Show Single-Line Toast</Button>
+				<Toast open={open} onOpenChange={setOpen} variant="success">
+					Your changes have been saved.
+				</Toast>
+			</>
+		);
+	},
+};
+
 export const Positions: Story = {
 	decorators: [],
 	render: () => {
