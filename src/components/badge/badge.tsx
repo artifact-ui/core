@@ -6,7 +6,7 @@ import styles from './badge.module.css';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 	variant?: 'solid' | 'soft' | 'outline';
-	color?: 'primary' | 'neutral' | 'info' | 'success' | 'danger';
+	color?: 'primary' | 'neutral' | 'info' | 'success' | 'warning' | 'danger';
 	size?: '1' | '2' | '3' | '4';
 	radius?: Radius;
 	highContrast?: boolean;
@@ -45,6 +45,7 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
 			neutral: styles.badgeColorNeutral,
 			info: styles.badgeColorInfo,
 			success: styles.badgeColorSuccess,
+			warning: styles.badgeColorWarning,
 			danger: styles.badgeColorDanger,
 		};
 
