@@ -9,40 +9,52 @@ const meta: Meta<typeof Calendar> = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
+	argTypes: {
+		numberOfMonths: {
+			control: { type: 'number', min: 1, max: 3 },
+			description: 'Number of months to display',
+		},
+		showOutsideDays: {
+			control: 'boolean',
+			description: 'Show days from the previous and next month',
+		},
+		captionLayout: {
+			control: 'select',
+			options: ['label', 'dropdown', 'dropdown-months', 'dropdown-years'],
+			description: 'Caption and navigation style',
+		},
+		disableNavigation: {
+			control: 'boolean',
+			description: 'Disable month navigation',
+		},
+	},
 };
 
 export default meta;
 type Story = StoryObj;
 
-export const Single: Story = {
-	render: () => {
-		const [selected, setSelected] = useState<Date | undefined>(new Date(2026, 5, 6));
-		return <Calendar mode="single" selected={selected} onSelect={setSelected} />;
+const showcaseDate = new Date(2026, 5, 15);
+
+export const Default: Story = {
+	args: {
+		numberOfMonths: 1,
+		showOutsideDays: true,
+		captionLayout: 'label',
+		disableNavigation: false,
+	},
+	render: (args) => {
+		const [selected, setSelected] = useState<Date | undefined>(showcaseDate);
+		return (
+			<Calendar {...args} mode="single" selected={selected} onSelect={setSelected} />
+		);
 	},
 };
 
 export const Range: Story = {
 	render: () => {
-		const [range, setRange] = useState<DateRange | undefined>({
-			from: new Date(2026, 5, 6),
-			to: new Date(2026, 5, 12),
-		});
+		const [range, setRange] = useState<DateRange | undefined>();
 		return (
 			<Calendar mode="range" selected={range} onSelect={setRange} numberOfMonths={2} />
-		);
-	},
-};
-
-export const DisabledDays: Story = {
-	render: () => {
-		const [selected, setSelected] = useState<Date | undefined>();
-		return (
-			<Calendar
-				mode="single"
-				selected={selected}
-				onSelect={setSelected}
-				disabled={{ before: new Date() }}
-			/>
 		);
 	},
 };

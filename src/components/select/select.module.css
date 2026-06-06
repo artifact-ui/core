@@ -372,3 +372,9 @@
 	background-color: var(--color-border-default);
 	margin: var(--space-1) 0;
 }
+
+/* Select - Error Message */
+.message {
+	display: block;
+	margin-top: var(--space-1);
+}

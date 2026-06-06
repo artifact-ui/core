@@ -103,7 +103,7 @@ const Root = ({
 			value={{ size, radius, color, error: hasError, shadow, compact: false }}>
 			<SelectPrimitive.Root {...props}>{children}</SelectPrimitive.Root>
 			{hasError && errorMessage && (
-				<Text size="1" color="danger" className="mt-1 block">
+				<Text size="1" color="danger" className={styles.message}>
 					{errorMessage}
 				</Text>
 			)}

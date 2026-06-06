@@ -10,15 +10,40 @@ const meta: Meta<typeof DatePicker> = {
 		layout: 'centered',
 	},
 	tags: ['autodocs'],
+	argTypes: {
+		size: {
+			control: 'select',
+			options: ['1', '2', '3'],
+			description: 'Trigger size',
+		},
+		radius: {
+			control: 'select',
+			options: ['none', '1', '2', '3', 'full'],
+			description: 'Corner radius (overrides the theme radius)',
+		},
+		placeholder: {
+			control: 'text',
+			description: 'Placeholder shown when no date is selected',
+		},
+		disabled: {
+			control: 'boolean',
+			description: 'Disabled state',
+		},
+	},
 };
 
 export default meta;
 type Story = StoryObj;
 
-export const Single: Story = {
-	render: () => {
+export const Default: Story = {
+	args: {
+		size: '2',
+		placeholder: 'Select date',
+		disabled: false,
+	},
+	render: (args) => {
 		const [date, setDate] = useState<Date | undefined>();
-		return <DatePicker selected={date} onSelect={setDate} />;
+		return <DatePicker {...args} selected={date} onSelect={setDate} />;
 	},
 };
 
@@ -34,23 +59,6 @@ export const Range: Story = {
 			/>
 		);
 	},
-};
-
-export const Sizes: Story = {
-	render: () => {
-		const [date, setDate] = useState<Date | undefined>();
-		return (
-			<div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-				{(['1', '2', '3'] as const).map((size) => (
-					<DatePicker key={size} size={size} selected={date} onSelect={setDate} />
-				))}
-			</div>
-		);
-	},
-};
-
-export const Disabled: Story = {
-	render: () => <DatePicker disabled placeholder="Unavailable" />,
 };
 
 export const WithError: Story = {

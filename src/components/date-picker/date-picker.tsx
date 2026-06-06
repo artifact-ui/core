@@ -55,6 +55,11 @@ const dateFormat: Intl.DateTimeFormatOptions = {
 
 const formatDate = (date: Date) => date.toLocaleDateString(undefined, dateFormat);
 
+const isCompleteRange = (
+	range: DateRange | undefined,
+): range is { from: Date; to: Date } =>
+	!!range?.from && !!range?.to && range.from.getTime() !== range.to.getTime();
+
 export const DatePicker = (props: DatePickerProps) => {
 	const {
 		placeholder = 'Select date',
@@ -116,7 +121,7 @@ export const DatePicker = (props: DatePickerProps) => {
 				</Popover.Content>
 			</Popover.Root>
 			{hasError && errorMessage && (
-				<Text size="1" color="danger" className="mt-1 block">
+				<Text size="1" color="danger" className={styles.message}>
 					{errorMessage}
 				</Text>
 			)}
@@ -128,7 +133,7 @@ export const DatePicker = (props: DatePickerProps) => {
 		const onSelect = props.onSelect;
 
 		let label: string | null = null;
-		if (range?.from && range?.to) {
+		if (isCompleteRange(range)) {
 			label = `${formatDate(range.from)} - ${formatDate(range.to)}`;
 		} else if (range?.from) {
 			label = formatDate(range.from);
@@ -141,7 +146,7 @@ export const DatePicker = (props: DatePickerProps) => {
 				selected={range}
 				onSelect={(next) => {
 					onSelect?.(next);
-					if (next?.from && next?.to) setOpen(false);
+					if (isCompleteRange(next)) setOpen(false);
 				}}
 				disabled={disabledDays}
 				numberOfMonths={numberOfMonths ?? 2}

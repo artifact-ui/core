@@ -3,12 +3,26 @@ import { useState } from 'react';
 import { screen } from '@testing-library/react';
 import { renderComponent } from '@/tests/test-utils';
 import { DatePicker } from './date-picker';
+import { type DateRange } from '../calendar/calendar';
 
 const june2026 = new Date(2026, 5, 1);
 
 const SingleWrapper = () => {
 	const [date, setDate] = useState<Date | undefined>();
 	return <DatePicker selected={date} onSelect={setDate} defaultMonth={june2026} />;
+};
+
+const RangeWrapper = () => {
+	const [range, setRange] = useState<DateRange | undefined>();
+	return (
+		<DatePicker
+			mode="range"
+			selected={range}
+			onSelect={setRange}
+			defaultMonth={june2026}
+			numberOfMonths={1}
+		/>
+	);
 };
 
 describe('DatePicker', () => {
@@ -35,6 +49,15 @@ describe('DatePicker', () => {
 		await user.click(screen.getByText('15'));
 
 		expect(screen.getByRole('button', { name: /jun 15, 2026/i })).toBeInTheDocument();
+	});
+
+	it('keeps the calendar open after the first click in range mode', async () => {
+		const { user } = renderComponent(<RangeWrapper />);
+
+		await user.click(screen.getByRole('button', { name: /select date/i }));
+		await user.click(screen.getByText('10'));
+
+		expect(screen.getByRole('grid')).toBeInTheDocument();
 	});
 
 	it('does not open when disabled', () => {

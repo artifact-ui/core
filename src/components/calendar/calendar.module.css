@@ -4,11 +4,16 @@
 	.calendar {
 		--cal-day-size: 2.25rem;
 		--cal-nav-height: 2rem;
+		--cal-range-bg: color-mix(in srgb, var(--color-primary) 15%, var(--color-bg-default));
+		--cal-range-bg-hover: color-mix(in srgb, var(--color-primary) 25%, var(--color-bg-default));
 
 		display: inline-block;
 		font-family: var(--font-family);
 		font-size: var(--font-size-2);
 		color: var(--color-text-default);
+		background-color: var(--color-bg-default);
+		border-radius: var(--radius-default-simple);
+		padding: var(--space-2);
 		box-sizing: border-box;
 	}
 
@@ -37,21 +42,52 @@
 		display: flex;
 		align-items: center;
 		height: var(--cal-nav-height);
-		padding-inline: var(--space-1);
+		padding-inline-start: var(--space-2);
 		margin-bottom: var(--space-2);
 	}
 
 	.captionLabel {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		position: relative;
+		z-index: 1;
 		font-weight: var(--font-weight-semibold);
 		font-size: var(--font-size-3);
 		white-space: nowrap;
 		border: 0;
 	}
 
+	/* Dropdown caption (captionLayout="dropdown") */
+	.dropdowns {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-2);
+	}
+
+	.dropdownRoot {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.dropdown {
+		position: absolute;
+		inset: 0;
+		z-index: 2;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		opacity: 0;
+		appearance: none;
+		border: none;
+		cursor: pointer;
+	}
+
 	.nav {
 		position: absolute;
-		top: 0;
-		inset-inline-end: 0;
+		top: var(--space-2);
+		inset-inline-end: var(--space-2);
 		display: flex;
 		align-items: center;
 		gap: var(--space-1);
@@ -72,7 +108,7 @@
 	}
 
 	.navButton:hover {
-		background-color: var(--color-bg-subtle);
+		background-color: var(--color-bg-muted);
 		color: var(--color-text-default);
 	}
 
@@ -140,7 +176,7 @@
 	}
 
 	.dayButton:hover {
-		background-color: var(--color-bg-subtle);
+		background-color: var(--color-bg-muted);
 	}
 
 	.dayButton:focus-visible {
@@ -167,23 +203,15 @@
 
 	/* Range */
 	.rangeMiddle {
-		background-color: var(--color-primary-surface);
+		background-color: var(--cal-range-bg);
 	}
 
 	.rangeStart {
-		background: linear-gradient(
-			90deg,
-			transparent 50%,
-			var(--color-primary-surface) 50%
-		);
+		background: linear-gradient(90deg, transparent 50%, var(--cal-range-bg) 50%);
 	}
 
 	.rangeEnd {
-		background: linear-gradient(
-			90deg,
-			var(--color-primary-surface) 50%,
-			transparent 50%
-		);
+		background: linear-gradient(90deg, var(--cal-range-bg) 50%, transparent 50%);
 	}
 
 	.rangeStart.rangeEnd {
@@ -194,11 +222,11 @@
 		background-color: transparent;
 		color: var(--color-text-default);
 		border-radius: 0;
-		font-weight: var(--font-weight-regular);
+		font-weight: var(--font-weight-normal);
 	}
 
 	.rangeMiddle .dayButton:hover {
-		background-color: var(--color-primary-surface-hover);
+		background-color: var(--cal-range-bg-hover);
 	}
 
 	/* Outside / disabled / hidden */

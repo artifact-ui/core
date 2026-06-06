@@ -92,8 +92,14 @@
 		padding-inline: var(--space-5);
 	}
 
-	/* Content wrapper */
+	/* Content wrapper (calendar brings its own padding, so trim the popover's) */
 	.content {
 		width: fit-content;
+		padding: var(--space-2);
+	}
+
+	.message {
+		display: block;
+		margin-top: var(--space-1);
 	}
 }
