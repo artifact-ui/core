@@ -26,6 +26,8 @@ export { Toast, ToastProvider } from './toast/toast';
 export { Progress } from './progress/progress';
 export { SegmentControl } from './segment-control/segment-control';
 export { Slider } from './slider/slider';
+export { Calendar } from './calendar/calendar';
+export type { CalendarProps } from './calendar/calendar';
 
 // Layout components
 export { Stack } from './layout/stack';

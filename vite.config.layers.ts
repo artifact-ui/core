@@ -14,7 +14,7 @@ export default defineConfig({
 			fileName: 'artifact-ui-layers',
 		},
 		rollupOptions: {
-			external: ['react', 'react-dom', 'react/jsx-runtime'],
+			external: ['react', 'react-dom', 'react/jsx-runtime', 'react-day-picker'],
 			output: {
 				assetFileNames: (assetInfo) => {
 					if (assetInfo.names?.[0] === 'style.css') {

@@ -1,0 +1,219 @@
+/* Artifact UI - Calendar Component */
+
+@layer components {
+	.calendar {
+		--cal-day-size: 2.25rem;
+		--cal-nav-height: 2rem;
+
+		display: inline-block;
+		font-family: var(--font-family);
+		font-size: var(--font-size-2);
+		color: var(--color-text-default);
+		box-sizing: border-box;
+	}
+
+	.calendar *,
+	.calendar *::before,
+	.calendar *::after {
+		box-sizing: border-box;
+	}
+
+	.root {
+		position: relative;
+	}
+
+	.months {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-6);
+	}
+
+	.month {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.monthCaption {
+		display: flex;
+		align-items: center;
+		height: var(--cal-nav-height);
+		padding-inline: var(--space-1);
+		margin-bottom: var(--space-2);
+	}
+
+	.captionLabel {
+		font-weight: var(--font-weight-semibold);
+		font-size: var(--font-size-3);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.nav {
+		position: absolute;
+		top: 0;
+		inset-inline-end: 0;
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
+		height: var(--cal-nav-height);
+	}
+
+	.navButton {
+		all: unset;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--cal-nav-height);
+		height: var(--cal-nav-height);
+		color: var(--color-text-subtle);
+		border-radius: var(--radius-default-simple);
+		cursor: pointer;
+		transition: background-color 0.15s ease;
+	}
+
+	.navButton:hover {
+		background-color: var(--color-bg-subtle);
+		color: var(--color-text-default);
+	}
+
+	.navButton:focus-visible {
+		outline: 2px solid var(--color-border-focus);
+		outline-offset: 1px;
+	}
+
+	.navButton:disabled,
+	.navButton[aria-disabled='true'] {
+		opacity: 0.4;
+		cursor: not-allowed;
+	}
+
+	.chevron {
+		width: 1.1em;
+		height: 1.1em;
+	}
+
+	.monthGrid {
+		border-collapse: collapse;
+	}
+
+	.weekdays {
+		display: flex;
+	}
+
+	.weekday {
+		width: var(--cal-day-size);
+		height: var(--cal-day-size);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: var(--font-size-1);
+		font-weight: var(--font-weight-medium);
+		color: var(--color-text-muted);
+		text-transform: uppercase;
+	}
+
+	.week {
+		display: flex;
+	}
+
+	.day {
+		width: var(--cal-day-size);
+		height: var(--cal-day-size);
+		text-align: center;
+		padding: 0;
+	}
+
+	.dayButton {
+		all: unset;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		font: inherit;
+		color: inherit;
+		border-radius: var(--radius-default);
+		cursor: pointer;
+		transition:
+			background-color 0.12s ease,
+			color 0.12s ease;
+	}
+
+	.dayButton:hover {
+		background-color: var(--color-bg-subtle);
+	}
+
+	.dayButton:focus-visible {
+		outline: 2px solid var(--color-border-focus);
+		outline-offset: -2px;
+	}
+
+	/* Today */
+	.today .dayButton {
+		color: var(--color-primary);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	/* Selected */
+	.selected .dayButton {
+		background-color: var(--color-primary);
+		color: var(--color-text-inverse);
+		font-weight: var(--font-weight-medium);
+	}
+
+	.selected .dayButton:hover {
+		background-color: var(--color-primary-hover);
+	}
+
+	/* Range */
+	.rangeMiddle {
+		background-color: var(--color-primary-surface);
+	}
+
+	.rangeStart {
+		background: linear-gradient(
+			90deg,
+			transparent 50%,
+			var(--color-primary-surface) 50%
+		);
+	}
+
+	.rangeEnd {
+		background: linear-gradient(
+			90deg,
+			var(--color-primary-surface) 50%,
+			transparent 50%
+		);
+	}
+
+	.rangeStart.rangeEnd {
+		background: none;
+	}
+
+	.rangeMiddle .dayButton {
+		background-color: transparent;
+		color: var(--color-text-default);
+		border-radius: 0;
+		font-weight: var(--font-weight-regular);
+	}
+
+	.rangeMiddle .dayButton:hover {
+		background-color: var(--color-primary-surface-hover);
+	}
+
+	/* Outside / disabled / hidden */
+	.outside .dayButton {
+		color: var(--color-text-muted);
+		opacity: 0.6;
+	}
+
+	.disabled .dayButton {
+		opacity: 0.4;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+
+	.hidden {
+		visibility: hidden;
+	}
+}
