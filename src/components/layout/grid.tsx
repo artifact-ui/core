@@ -3,7 +3,7 @@ import { cn } from '../../utils/cn';
 import styles from './grid.module.css';
 import { gapClasses } from './shared';
 
-interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: ReactNode;
 	columns?: number | string;
 	gap?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
