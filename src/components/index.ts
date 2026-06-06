@@ -49,6 +49,8 @@ export type {
 	DatePickerSingleProps,
 	DatePickerRangeProps,
 } from './date-picker/date-picker';
+export { Combobox } from './combobox/combobox';
+export type { ComboboxProps, ComboboxOption } from './combobox/combobox';
 
 // Layout components
 export { Stack } from './layout/stack';
