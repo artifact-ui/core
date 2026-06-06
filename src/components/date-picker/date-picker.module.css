@@ -1,0 +1,99 @@
+/* Artifact UI - DatePicker Component */
+
+@layer components {
+	.trigger {
+		all: unset;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5em;
+		font-family: var(--font-family);
+		font-weight: var(--font-weight-medium);
+		line-height: 1;
+		color: var(--color-text-default);
+		background-color: var(--color-bg-default);
+		border: 1px solid var(--color-border-default);
+		border-radius: var(--radius-default);
+		cursor: pointer;
+		user-select: none;
+		box-sizing: border-box;
+		transition: all 0.15s ease;
+	}
+
+	.trigger:hover {
+		background-color: var(--color-bg-subtle);
+		border-color: var(--color-border-subtle);
+	}
+
+	.trigger:focus-visible {
+		outline: 2px solid var(--color-border-focus);
+		outline-offset: 1px;
+	}
+
+	.trigger:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		pointer-events: none;
+	}
+
+	.trigger[data-placeholder] {
+		color: var(--color-text-muted);
+	}
+
+	.triggerError {
+		border-color: var(--color-error);
+		background-color: var(--color-error-bg);
+	}
+
+	.triggerError:hover {
+		border-color: var(--color-error-hover);
+		background-color: var(--color-error-bg);
+	}
+
+	.triggerIcon {
+		display: flex;
+		flex-shrink: 0;
+		width: 1em;
+		height: 1em;
+		color: var(--color-text-subtle);
+	}
+
+	.triggerLabel {
+		flex: 1;
+	}
+
+	/* Sizes */
+	.triggerSm {
+		font-size: var(--font-size-2);
+		padding: 0 var(--space-2);
+		height: var(--form-input-height-sm);
+	}
+
+	.triggerMd {
+		font-size: var(--font-size-3);
+		padding: 0 var(--space-3);
+		height: var(--form-input-height-md);
+	}
+
+	.triggerLg {
+		font-size: var(--font-size-4);
+		padding: 0 var(--space-4);
+		height: var(--form-input-height-lg);
+	}
+
+	[data-radius='full'] .trigger.triggerSm {
+		padding-inline: var(--space-3);
+	}
+
+	[data-radius='full'] .trigger.triggerMd {
+		padding-inline: var(--space-4);
+	}
+
+	[data-radius='full'] .trigger.triggerLg {
+		padding-inline: var(--space-5);
+	}
+
+	/* Content wrapper */
+	.content {
+		width: fit-content;
+	}
+}

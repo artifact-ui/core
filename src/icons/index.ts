@@ -12,3 +12,4 @@ export { InfoIcon } from './InfoIcon';
 export { CircleAlertIcon } from './CircleAlertIcon';
 export { UserIcon } from './UserIcon';
 export { PlusIcon } from './PlusIcon';
+export { CalendarIcon } from './CalendarIcon';

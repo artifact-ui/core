@@ -28,6 +28,12 @@ export { SegmentControl } from './segment-control/segment-control';
 export { Slider } from './slider/slider';
 export { Calendar } from './calendar/calendar';
 export type { CalendarProps } from './calendar/calendar';
+export { DatePicker } from './date-picker/date-picker';
+export type {
+	DatePickerProps,
+	DatePickerSingleProps,
+	DatePickerRangeProps,
+} from './date-picker/date-picker';
 
 // Layout components
 export { Stack } from './layout/stack';
