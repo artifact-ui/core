@@ -13,6 +13,7 @@ export * as Tooltip from './tooltip/tooltip';
 export * as Breadcrumb from './breadcrumb/breadcrumb';
 export * as RadioGroup from './radio-group/radio-group';
 export * as Accordion from './accordion/accordion';
+export * as AlertDialog from './alert-dialog/alert-dialog';
 
 export { Button } from './button/button';
 export type { ButtonProps } from './button/button';
