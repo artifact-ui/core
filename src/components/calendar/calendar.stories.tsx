@@ -27,6 +27,11 @@ const meta: Meta<typeof Calendar> = {
 			control: 'boolean',
 			description: 'Disable month navigation',
 		},
+		shadow: {
+			control: 'select',
+			options: ['classic', 'spread', 'paper'],
+			description: 'Drop shadow style',
+		},
 	},
 };
 

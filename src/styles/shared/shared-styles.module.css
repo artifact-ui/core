@@ -18,3 +18,16 @@
 .radiusFull {
 	border-radius: var(--radius-full);
 }
+
+/* Shared Shadows */
+.shadowClassic {
+	box-shadow: var(--shadow-classic);
+}
+
+.shadowSpread {
+	box-shadow: var(--shadow-spread);
+}
+
+.shadowPaper {
+	box-shadow: var(--shadow-paper);
+}

@@ -29,6 +29,11 @@ const meta: Meta<typeof DatePicker> = {
 			control: 'boolean',
 			description: 'Disabled state',
 		},
+		shadow: {
+			control: 'select',
+			options: ['classic', 'spread', 'paper'],
+			description: 'Popover drop shadow style',
+		},
 	},
 };
 
@@ -40,6 +45,7 @@ export const Default: Story = {
 		size: '2',
 		placeholder: 'Select date',
 		disabled: false,
+		shadow: 'spread',
 	},
 	render: (args) => {
 		const [date, setDate] = useState<Date | undefined>();

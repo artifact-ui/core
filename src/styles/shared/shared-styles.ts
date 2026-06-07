@@ -7,3 +7,9 @@ export const radiusClasses = {
 	'3': sharedStyles.radius3,
 	full: sharedStyles.radiusFull,
 };
+
+export const shadowClasses = {
+	classic: sharedStyles.shadowClassic,
+	spread: sharedStyles.shadowSpread,
+	paper: sharedStyles.shadowPaper,
+};

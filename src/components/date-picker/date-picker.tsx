@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { cn } from '../../utils/cn';
-import { type Radius } from '../../types/style-props';
+import { type Radius, type Shadow } from '../../types/style-props';
 import { type FormError } from '../../types/form-types';
 import { getErrorState, getErrorMessage } from '../../utils/form-error-helpers';
-import { radiusClasses } from '../../styles/shared/shared-styles';
+import { radiusClasses, shadowClasses } from '../../styles/shared/shared-styles';
 import { CalendarIcon } from '../../icons';
 import { Text } from '../text/text';
 import * as Popover from '../popover/popover';
@@ -17,6 +17,7 @@ interface DatePickerBaseProps {
 	disabled?: boolean;
 	size?: DatePickerSize;
 	radius?: Radius;
+	shadow?: Shadow;
 	numberOfMonths?: number;
 	defaultMonth?: Date;
 	startMonth?: Date;
@@ -66,6 +67,7 @@ export const DatePicker = (props: DatePickerProps) => {
 		disabled = false,
 		size = '2',
 		radius,
+		shadow = 'spread',
 		numberOfMonths,
 		defaultMonth,
 		startMonth,
@@ -116,7 +118,10 @@ export const DatePicker = (props: DatePickerProps) => {
 						<span className={styles.triggerLabel}>{label ?? placeholder}</span>
 					</button>
 				</Popover.Trigger>
-				<Popover.Content align={align} side={side} className={styles.content}>
+				<Popover.Content
+					align={align}
+					side={side}
+					className={cn(styles.content, shadowClasses[shadow])}>
 					{calendar}
 				</Popover.Content>
 			</Popover.Root>

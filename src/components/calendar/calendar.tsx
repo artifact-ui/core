@@ -1,5 +1,7 @@
 import { DayPicker, type DayPickerProps, type ChevronProps } from 'react-day-picker';
 import { cn } from '../../utils/cn';
+import { type Shadow } from '../../types/style-props';
+import { shadowClasses } from '../../styles/shared/shared-styles';
 import {
 	ChevronLeftIcon,
 	ChevronRightIcon,
@@ -8,7 +10,9 @@ import {
 } from '../../icons';
 import styles from './calendar.module.css';
 
-export type CalendarProps = DayPickerProps;
+export type CalendarProps = DayPickerProps & {
+	shadow?: Shadow;
+};
 
 const calendarClassNames = {
 	root: styles.root,
@@ -52,11 +56,12 @@ export const Calendar = ({
 	className,
 	classNames,
 	components,
+	shadow,
 	...props
 }: CalendarProps) => {
 	return (
 		<DayPicker
-			className={cn(styles.calendar, className)}
+			className={cn(styles.calendar, shadow && shadowClasses[shadow], className)}
 			classNames={{ ...calendarClassNames, ...classNames }}
 			components={{ Chevron: CalendarChevron, ...components }}
 			{...props}
