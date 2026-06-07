@@ -11,6 +11,7 @@ export * as Tabs from './tabs/tabs';
 export * as Popover from './popover/popover';
 export * as Tooltip from './tooltip/tooltip';
 export * as Breadcrumb from './breadcrumb/breadcrumb';
+export * as RadioGroup from './radio-group/radio-group';
 export { Button } from './button/button';
 export type { ButtonProps } from './button/button';
 export { IconButton } from './icon-button/icon-button';
