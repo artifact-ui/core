@@ -57,6 +57,7 @@ export interface SelectTriggerProps
 	iconRight?: React.ReactNode;
 	compact?: boolean;
 	override?: boolean;
+	truncate?: boolean;
 }
 
 export interface SelectContentProps
@@ -133,6 +134,7 @@ const Trigger = forwardRef<
 			iconRight,
 			compact = false,
 			override = false,
+			truncate = false,
 			className,
 			...props
 		},
@@ -172,9 +174,16 @@ const Trigger = forwardRef<
 
 		return (
 			<SelectPrimitive.Trigger ref={ref} className={triggerClasses} {...props}>
-				<span className={styles.valueContainer}>
+				<span
+					className={cn(
+						styles.valueContainer,
+						truncate && styles.valueContainerTruncate,
+					)}>
 					{iconLeft && <span className={styles.iconLeft}>{iconLeft}</span>}
-					<SelectPrimitive.Value placeholder={placeholder} />
+					<SelectPrimitive.Value
+						placeholder={placeholder}
+						className={cn(truncate && styles.valueTruncate)}
+					/>
 					{iconRight && <span className={styles.iconRight}>{iconRight}</span>}
 				</span>
 				<SelectPrimitive.Icon className={styles.triggerIcon}>

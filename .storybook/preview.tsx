@@ -84,7 +84,16 @@ const preview = {
 
 			return (
 				<ArtifactProvider theme={theme} accent={accent} radius={radius}>
-					<Story />
+					{/* Themed surface so transparent components stay visible in every
+					    theme — covers the autodocs doc-blocks, which ignore the body bg */}
+					<div
+						style={{
+							backgroundColor: 'var(--color-bg-default)',
+							color: 'var(--color-text-default)',
+							padding: '2rem',
+						}}>
+						<Story />
+					</div>
 				</ArtifactProvider>
 			);
 		},
