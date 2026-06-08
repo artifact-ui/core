@@ -1,3 +1,55 @@
 .grid {
 	display: grid;
 }
+
+.inline {
+	display: inline-grid;
+}
+
+.flowRow {
+	grid-auto-flow: row;
+}
+
+.flowColumn {
+	grid-auto-flow: column;
+}
+
+.flowRowDense {
+	grid-auto-flow: row dense;
+}
+
+.flowColumnDense {
+	grid-auto-flow: column dense;
+}
+
+.alignStart {
+	align-items: start;
+}
+
+.alignCenter {
+	align-items: center;
+}
+
+.alignEnd {
+	align-items: end;
+}
+
+.alignStretch {
+	align-items: stretch;
+}
+
+.justifyStart {
+	justify-items: start;
+}
+
+.justifyCenter {
+	justify-items: center;
+}
+
+.justifyEnd {
+	justify-items: end;
+}
+
+.justifyStretch {
+	justify-items: stretch;
+}

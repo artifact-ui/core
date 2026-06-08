@@ -5,10 +5,12 @@ import { gapClasses } from './shared';
 
 export interface FlexProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: ReactNode;
-	direction?: 'row' | 'column';
+	direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse';
+	wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
 	gap?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8';
-	justify?: 'start' | 'center' | 'end' | 'between';
-	align?: 'start' | 'center' | 'end';
+	justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
+	align?: 'start' | 'center' | 'end' | 'stretch' | 'baseline';
+	inline?: boolean;
 }
 
 export const Flex = forwardRef<HTMLDivElement, FlexProps>(
@@ -16,9 +18,11 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(
 		{
 			children,
 			direction = 'row',
+			wrap,
 			gap,
 			justify = 'start',
 			align = 'start',
+			inline = false,
 			className,
 			...props
 		},
@@ -27,6 +31,14 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(
 		const directionClasses = {
 			row: styles.row,
 			column: styles.column,
+			'row-reverse': styles.rowReverse,
+			'column-reverse': styles.columnReverse,
+		};
+
+		const wrapClasses = {
+			nowrap: styles.wrapNowrap,
+			wrap: styles.wrap,
+			'wrap-reverse': styles.wrapReverse,
 		};
 
 		const justifyClasses = {
@@ -34,12 +46,16 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(
 			center: styles.justifyCenter,
 			end: styles.justifyEnd,
 			between: styles.justifyBetween,
+			around: styles.justifyAround,
+			evenly: styles.justifyEvenly,
 		};
 
 		const alignClasses = {
 			start: styles.alignStart,
 			center: styles.alignCenter,
 			end: styles.alignEnd,
+			stretch: styles.alignStretch,
+			baseline: styles.alignBaseline,
 		};
 
 		return (
@@ -47,7 +63,9 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(
 				ref={ref}
 				className={cn(
 					styles.flex,
+					inline && styles.inline,
 					directionClasses[direction],
+					wrap && wrapClasses[wrap],
 					justifyClasses[justify],
 					alignClasses[align],
 					gap && gapClasses[gap],
