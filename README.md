@@ -1,5 +1,10 @@
 # @artifact-ui/core
 
+[![npm version](https://img.shields.io/npm/v/@artifact-ui/core)](https://www.npmjs.com/package/@artifact-ui/core)
+[![npm downloads](https://img.shields.io/npm/dt/@artifact-ui/core)](https://www.npmjs.com/package/@artifact-ui/core)
+![license](https://img.shields.io/npm/l/@artifact-ui/core)
+[![GitHub stars](https://img.shields.io/github/stars/artifact-ui/core?style=social)](https://github.com/artifact-ui/core)
+
 A React component library built on Radix UI primitives with theming support.
 
 ## Installation

@@ -13,7 +13,7 @@ export default defineConfig({
 			fileName: 'artifact-ui',
 		},
 		rollupOptions: {
-			external: ['react', 'react-dom', 'react/jsx-runtime'],
+			external: ['react', 'react-dom', 'react/jsx-runtime', 'react-day-picker'],
 			output: {
 				preserveModules: true,
 				preserveModulesRoot: 'src',

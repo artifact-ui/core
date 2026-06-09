@@ -1,0 +1,91 @@
+/* Artifact UI - AlertDialog Component */
+
+@layer components {
+	.overlay {
+		position: fixed;
+		inset: 0;
+		background-color: var(--color-bg-overlay);
+		z-index: 1000;
+		animation: alertOverlayShow var(--transition);
+	}
+
+	@keyframes alertOverlayShow {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.content {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1001;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-3);
+		width: 90vw;
+		background: var(--color-bg-default);
+		border-radius: var(--radius-default-simple);
+		box-shadow: var(--shadow-spread);
+		padding: var(--space-5);
+		animation: alertContentShow var(--transition);
+	}
+
+	@keyframes alertContentShow {
+		from {
+			opacity: 0;
+			transform: translate(-50%, -48%) scale(0.97);
+		}
+		to {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1);
+		}
+	}
+
+	.contentSm {
+		max-width: 24rem;
+	}
+
+	.contentMd {
+		max-width: 30rem;
+	}
+
+	.contentLg {
+		max-width: 36rem;
+	}
+
+	.title {
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		font-size: var(--font-size-4);
+		font-weight: var(--font-weight-semibold);
+		color: var(--color-text-default);
+		margin: 0;
+	}
+
+	.titleIcon {
+		display: inline-flex;
+		flex-shrink: 0;
+		width: 1em;
+		height: 1em;
+	}
+
+	.description {
+		font-size: var(--font-size-2);
+		color: var(--color-text-subtle);
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.footer {
+		display: flex;
+		justify-content: flex-end;
+		gap: var(--space-2);
+		margin-top: var(--space-2);
+	}
+}

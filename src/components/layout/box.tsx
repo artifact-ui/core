@@ -3,7 +3,7 @@ import { cn } from '../../utils/cn';
 import { toStyleUnit } from '../../utils/css';
 import styles from './box.module.css';
 
-interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: ReactNode;
 	padding?: string | number;
 	margin?: string | number;

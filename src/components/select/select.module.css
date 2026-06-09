@@ -146,6 +146,19 @@
 	flex: 1;
 }
 
+/* Select - Trigger value truncation */
+.valueContainerTruncate {
+	min-width: 0;
+}
+
+.valueTruncate {
+	display: block;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 /* Select - Trigger Icon (Caret) */
 .triggerIcon {
 	display: flex;
@@ -371,4 +384,10 @@
 	height: 1px;
 	background-color: var(--color-border-default);
 	margin: var(--space-1) 0;
+}
+
+/* Select - Error Message */
+.message {
+	display: block;
+	margin-top: var(--space-1);
 }
