@@ -19,6 +19,25 @@
 		gap: 0.5em;
 	}
 
+	/* Button - Press (tactile scale on active; tunable via token, opt-out via preset) */
+	.button:active {
+		transform: scale(var(--button-press-scale, 0.97));
+	}
+
+	.pressFirm {
+		--button-press-scale: 0.95;
+	}
+
+	.pressNone {
+		--button-press-scale: 1;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.button:active {
+			transform: none;
+		}
+	}
+
 	/* Button - Sizes */
 	.buttonSm {
 		padding: var(--space-1) var(--space-2);

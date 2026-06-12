@@ -26,6 +26,11 @@ const meta: Meta<typeof Button> = {
 			options: ['1', '2', '3'],
 			description: 'Size scale',
 		},
+		press: {
+			control: 'select',
+			options: ['default', 'firm', false],
+			description: 'Tactile press depth (false to disable)',
+		},
 		disabled: {
 			control: 'boolean',
 			description: 'Disabled state',
@@ -46,6 +51,7 @@ export const Default: Story = {
 		variant: 'default',
 		color: 'primary',
 		size: '2',
+		press: 'default',
 	},
 };
 

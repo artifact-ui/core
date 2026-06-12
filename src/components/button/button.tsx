@@ -11,6 +11,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 	customColor?: string;
 	size?: '1' | '2' | '3';
 	radius?: Radius;
+	press?: 'default' | 'firm' | false;
 	loading?: boolean;
 	iconLeft?: React.ReactNode;
 	iconRight?: React.ReactNode;
@@ -26,6 +27,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			customColor,
 			size = '2',
 			radius,
+			press = 'default',
 			loading = false,
 			iconLeft,
 			iconRight,
@@ -65,6 +67,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			'3': styles.buttonLg,
 		};
 
+		const pressClasses = {
+			default: undefined,
+			firm: styles.pressFirm,
+		};
+		const pressClass = press === false ? styles.pressNone : pressClasses[press];
+
 		const buttonClasses = cn(
 			styles.button,
 			variantClasses[variant],
@@ -72,6 +80,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 			customColor && styles.buttonCustomColor,
 			sizeClasses[size],
 			radius && radiusClasses[radius],
+			pressClass,
 			loading && styles.buttonLoading,
 			(disabled || loading) && styles.buttonDisabled,
 			isIconOnly && styles.buttonIconOnly,
