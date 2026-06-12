@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.1 - 2026-06-12
+
+### Added
+
+- Combobox: `minimal` trigger variant and `iconLeft` prop.
+
+### Fixed
+
+- `react-day-picker` is now a regular dependency instead of an optional peer, so importing the package no longer fails to resolve it when it wasn't separately installed.
+
 ## 1.5.0 - 2026-06-09
 
 ### Added
