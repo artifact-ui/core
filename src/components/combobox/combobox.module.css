@@ -106,6 +106,17 @@
 		padding-inline: var(--space-5);
 	}
 
+	/* Minimal variant (matches Select) */
+	.triggerMinimal {
+		border: none;
+		background-color: transparent;
+		padding: var(--space-1) var(--space-2);
+	}
+
+	.triggerMinimal:hover {
+		background-color: var(--color-bg-muted);
+	}
+
 	/* Content (calendar/popover brings its own surface; we own the layout) */
 	.content {
 		display: flex;

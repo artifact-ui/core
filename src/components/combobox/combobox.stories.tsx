@@ -21,6 +21,11 @@ const meta: Meta<typeof Combobox> = {
 	},
 	tags: ['autodocs'],
 	argTypes: {
+		variant: {
+			control: 'inline-radio',
+			options: ['default', 'minimal'],
+			description: 'Trigger visual style',
+		},
 		size: {
 			control: 'select',
 			options: ['1', '2', '3'],
@@ -46,6 +51,7 @@ type Story = StoryObj;
 
 export const Default: Story = {
 	args: {
+		variant: 'default',
 		size: '2',
 		placeholder: 'Select collection...',
 		searchPlaceholder: 'Search collections...',
