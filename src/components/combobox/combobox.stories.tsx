@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { Combobox, type ComboboxOption } from './combobox';
+import { SearchIcon } from '../../icons';
 
 const collections: ComboboxOption[] = [
 	{ label: 'Pottery', value: 'pottery' },
@@ -21,6 +22,11 @@ const meta: Meta<typeof Combobox> = {
 	},
 	tags: ['autodocs'],
 	argTypes: {
+		variant: {
+			control: 'inline-radio',
+			options: ['default', 'minimal'],
+			description: 'Trigger visual style',
+		},
 		size: {
 			control: 'select',
 			options: ['1', '2', '3'],
@@ -46,6 +52,7 @@ type Story = StoryObj;
 
 export const Default: Story = {
 	args: {
+		variant: 'default',
 		size: '2',
 		placeholder: 'Select collection...',
 		searchPlaceholder: 'Search collections...',
@@ -59,6 +66,22 @@ export const Default: Story = {
 				options={collections}
 				value={value}
 				onValueChange={setValue}
+				width="240px"
+			/>
+		);
+	},
+};
+
+export const WithIcon: Story = {
+	render: () => {
+		const [value, setValue] = useState<string>();
+		return (
+			<Combobox
+				options={collections}
+				value={value}
+				onValueChange={setValue}
+				iconLeft={<SearchIcon />}
+				placeholder="Search collection..."
 				width="240px"
 			/>
 		);

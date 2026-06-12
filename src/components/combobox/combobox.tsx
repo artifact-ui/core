@@ -25,6 +25,8 @@ export interface ComboboxProps {
 	defaultValue?: string;
 	onValueChange?: (value: string | undefined) => void;
 	clearable?: boolean;
+	variant?: 'default' | 'minimal';
+	iconLeft?: React.ReactNode;
 	placeholder?: string;
 	searchPlaceholder?: string;
 	emptyMessage?: string;
@@ -49,6 +51,8 @@ export const Combobox = ({
 	defaultValue,
 	onValueChange,
 	clearable = false,
+	variant = 'default',
+	iconLeft,
 	placeholder = 'Select...',
 	searchPlaceholder = 'Search...',
 	emptyMessage = 'No results found',
@@ -121,6 +125,11 @@ export const Combobox = ({
 		'3': styles.triggerLg,
 	};
 
+	const variantClasses = {
+		default: undefined,
+		minimal: styles.triggerMinimal,
+	};
+
 	return (
 		<>
 			<Popover.Root open={open} onOpenChange={setOpen}>
@@ -134,11 +143,13 @@ export const Combobox = ({
 						style={width ? { width } : undefined}
 						className={cn(
 							styles.trigger,
+							variantClasses[variant],
 							sizeClasses[size],
 							radius && radiusClasses[radius],
 							hasError && styles.triggerError,
 							className,
 						)}>
+						{iconLeft && <span className={styles.triggerIconLeft}>{iconLeft}</span>}
 						<span className={styles.triggerLabel}>
 							{selectedOption ? selectedOption.label : placeholder}
 						</span>

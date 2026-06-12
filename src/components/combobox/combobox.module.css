@@ -50,6 +50,20 @@
 		background-color: var(--color-error-bg);
 	}
 
+	.triggerIconLeft {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 1em;
+		height: 1em;
+	}
+
+	.triggerIconLeft svg {
+		width: 1em;
+		height: 1em;
+	}
+
 	.triggerLabel {
 		flex: 1;
 		overflow: hidden;
@@ -104,6 +118,17 @@
 
 	[data-radius='full'] .trigger.triggerLg {
 		padding-inline: var(--space-5);
+	}
+
+	/* Minimal variant (matches Select) */
+	.triggerMinimal {
+		border: none;
+		background-color: transparent;
+		padding: var(--space-1) var(--space-2);
+	}
+
+	.triggerMinimal:hover {
+		background-color: var(--color-bg-muted);
 	}
 
 	/* Content (calendar/popover brings its own surface; we own the layout) */
