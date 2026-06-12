@@ -50,6 +50,20 @@
 		background-color: var(--color-error-bg);
 	}
 
+	.triggerIconLeft {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 1em;
+		height: 1em;
+	}
+
+	.triggerIconLeft svg {
+		width: 1em;
+		height: 1em;
+	}
+
 	.triggerLabel {
 		flex: 1;
 		overflow: hidden;

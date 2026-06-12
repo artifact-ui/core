@@ -26,6 +26,7 @@ export interface ComboboxProps {
 	onValueChange?: (value: string | undefined) => void;
 	clearable?: boolean;
 	variant?: 'default' | 'minimal';
+	iconLeft?: React.ReactNode;
 	placeholder?: string;
 	searchPlaceholder?: string;
 	emptyMessage?: string;
@@ -51,6 +52,7 @@ export const Combobox = ({
 	onValueChange,
 	clearable = false,
 	variant = 'default',
+	iconLeft,
 	placeholder = 'Select...',
 	searchPlaceholder = 'Search...',
 	emptyMessage = 'No results found',
@@ -147,6 +149,7 @@ export const Combobox = ({
 							hasError && styles.triggerError,
 							className,
 						)}>
+						{iconLeft && <span className={styles.triggerIconLeft}>{iconLeft}</span>}
 						<span className={styles.triggerLabel}>
 							{selectedOption ? selectedOption.label : placeholder}
 						</span>

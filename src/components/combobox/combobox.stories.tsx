@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
 import { Combobox, type ComboboxOption } from './combobox';
+import { SearchIcon } from '../../icons';
 
 const collections: ComboboxOption[] = [
 	{ label: 'Pottery', value: 'pottery' },
@@ -65,6 +66,22 @@ export const Default: Story = {
 				options={collections}
 				value={value}
 				onValueChange={setValue}
+				width="240px"
+			/>
+		);
+	},
+};
+
+export const WithIcon: Story = {
+	render: () => {
+		const [value, setValue] = useState<string>();
+		return (
+			<Combobox
+				options={collections}
+				value={value}
+				onValueChange={setValue}
+				iconLeft={<SearchIcon />}
+				placeholder="Search collection..."
 				width="240px"
 			/>
 		);
